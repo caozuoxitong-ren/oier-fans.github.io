@@ -1,1 +1,34 @@
-site_name: My Docs
+site_name: 信奥粉 NOI fans # 设置网站名称
+
+# Theme 主题设置
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.expand
+  language: 'zh'
+  font:
+    text: 'Fira Sans'
+    code: 'Fira Mono'
+  palette:
+      # Toggle light mode
+      - scheme: default
+        primary: white
+        accent: red
+        toggle:
+          icon: material/weather-sunny
+          name: Switch to dark mode
+      # Toggle dark mode
+      - scheme: slate
+        primary: black
+        accent: teal
+        toggle:
+          icon: material/weather-night
+          name: Switch to light mode
+
+# 导航目录
+nav:
+  - 首页: index.md
+  - 大纲: 
+      - 序言: outline.md
+      - 目录: table-of-contents.md

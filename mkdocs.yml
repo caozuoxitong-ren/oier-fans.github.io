@@ -10,25 +10,41 @@ theme:
   font:
     text: 'Fira Sans'
     code: 'Fira Mono'
-  palette:
-      # Toggle light mode
-      - scheme: default
-        primary: white
-        accent: red
-        toggle:
-          icon: material/weather-sunny
-          name: Switch to dark mode
-      # Toggle dark mode
-      - scheme: slate
-        primary: black
-        accent: teal
-        toggle:
-          icon: material/weather-night
-          name: Switch to light mode
+  palette: # 白天模式/黑夜模式
+    # Toggle light mode
+    - scheme: default
+      primary: white
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # Toggle dark mode
+    - scheme: slate
+      primary: black
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+# 设置底部
+
+# Copyright
+copyright: 'Copyright &copy; 2020 - 2025 noi.fan All Rights Reserved.'
+
+extra:
+  social:
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<admin@noi.fan>
+      name: 联系邮箱
+  # generator: false # 移除生成标记 Made with Material for MkDocs
 
 # 导航目录
 nav:
   - 首页: index.md
-  - 大纲: 
-      - 序言: outline.md
-      - 目录: table-of-contents.md
+  - 赛事介绍: 
+      - 赛事介绍: noi\introduction.md
+      - 比赛大纲: outline.md
+  - 入门级CSP-J: junior\junior.md
+  - 提高级CSP-S: senior\senior.md
+  - NOI级: noiji.md
+  - 相关书籍: booklist.md

@@ -41,7 +41,7 @@ extra:
 # 导航目录
 nav:
   - 首页: index.md
-  - 赛事介绍: 
+  - 信息学奥赛: 
       - 赛事介绍: noi\introduction.md
       - 比赛大纲: outline.md
   - 入门级CSP-J: junior\junior.md

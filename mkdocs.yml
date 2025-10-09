@@ -43,7 +43,7 @@ nav:
   - 首页: index.md
   - 信息学奥赛: 
       - 赛事介绍: noi\introduction.md
-      - 比赛大纲: outline.md
+      - 比赛大纲: noi\outline.md
   - 入门级CSP-J: junior\junior.md
   - 提高级CSP-S: senior\senior.md
   - NOI级: noiji.md

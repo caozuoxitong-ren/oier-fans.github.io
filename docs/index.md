@@ -1,7 +1,7 @@
 # 项目介绍
 
 <p style="text-align: justify; margin-bottom: 1em;">
-欢迎来到 NOI Fan ！
+欢迎来到 OIer Fans ！
 </p>
 
 <p style="text-align: justify; margin-bottom: 1em;">
@@ -9,7 +9,7 @@
 </p>
 
 <p style="text-align: justify; margin-bottom: 1em;">
-OI在中国起源于 1984 年，全国性赛事名称为<a href="https://www.noi.cn" target="_blank">全国青少年信息学奥林匹克竞赛（National Olympiad in Informatics, NOI）</a>，是五大学科竞赛（数学、物理、化学、生物、信息学）之一。第一届国际信息学奥林匹克竞赛（International Olympiad in Informatics，IOI）于1989年在保加利亚的布拉维茨举行。
+OI在中国起源于 1984 年，全国性赛事名称为<a href="https://www.noi.cn" target="_blank">全国青少年信息学奥林匹克竞赛（National Olympiad in Informatics, NOI）</a>，是五大学科竞赛（数学、物理、化学、生物、信息学）之一。第一届<a href="https://ioinformatics.org" target="_blank">国际信息学奥林匹克竞赛（International Olympiad in Informatics，IOI）</a>于1989年在保加利亚的布拉维茨举行。
 </p>
 
 <p style="text-align: justify; margin-bottom: 1em;">
@@ -17,7 +17,7 @@ OI在中国起源于 1984 年，全国性赛事名称为<a href="https://www.noi
 </p>
 
 <p style="text-align: justify; margin-bottom: 1em;">
-计算机领域的开源精神由来已久，许多知识和项目等都是以开源的形式存在。这一开源精神同样体现在信息学奥赛领域，相关的算法知识被信息学爱好者整理在 <a href="https://oi.wiki" target="_blank">OI Wiki</a> 网站上。OI Wiki 是一个免费开放且持续更新的编程竞赛（competitive programming）知识整合站点，这里有与竞赛相关的、有趣又实用的知识，包括竞赛中的基础知识、常见题型、解题思路以及常用工具等内容，可以帮助更快速深入地学习编程竞赛中涉及到的知识。
+计算机领域的开放共享理念由来已久，这一宝贵精神同样体现在信息学奥赛领域，相关的算法知识被信息学爱好者整理在 <a href="https://oi.wiki" target="_blank">OI Wiki</a> 网站上。OI Wiki 是一个免费开放且持续更新的编程竞赛（competitive programming）知识整合站点，这里有与竞赛相关的、有趣又实用的知识，包括竞赛中的基础知识、常见题型、解题思路以及常用工具等内容，可以帮助更快速深入地学习编程竞赛中涉及到的知识。
 </p>
 
 <p style="text-align: justify; margin-bottom: 1em;">
@@ -29,5 +29,5 @@ OI在中国起源于 1984 年，全国性赛事名称为<a href="https://www.noi
 </p>
 
 <p style="text-align: justify; margin-bottom: 1em;">
-本网站受 <a href="https://ctf-wiki.org" target="_blank">CTF Wiki</a> 和 <a href="https://oi.wiki" target="_blank">OI Wiki</a> 的启发，以开源精神为理念，提倡知识自由、协作共建、开放共享。在编写过程中一定会参考和引用诸多资料，在此一并致谢。如有意见建议，欢迎交流。如有侵权，可联系删除。联系邮件为 <a href="mailto:<admin@noi.fan>">admin@noi.fan</a> 。
+本网站受 <a href="https://ctf-wiki.org" target="_blank">CTF Wiki</a> 和 <a href="https://oi.wiki" target="_blank">OI Wiki</a> 的启发，提倡知识自由、免费开放、协作共享。在编写过程中一定会参考和引用诸多资料，在此一并致谢。如有意见建议，欢迎交流。如有侵权，可联系删除。联系邮件为 <a href="mailto:<admin@oier.fans>">admin@oier.fans</a> 。
 </p>

@@ -1,4 +1,16 @@
-site_name: 信奥粉 NOI fan # 设置网站名称
+site_name: 信奥粉丝 OIer Fans # 设置网站名称
+
+# 导航目录
+nav:
+  - 首页: index.md
+  - 信息学奥赛: 
+      # - 赛事介绍: noi\introduction.md
+      - 比赛大纲: noi\outline.md
+  - 入门级CSP-J: junior\junior.md
+  - 提高级CSP-S: senior\senior.md
+  - NOI级: noiji.md
+  - 相关网站: websitelist.md
+  - 相关书籍: booklist.md
 
 # Theme 主题设置
 theme:
@@ -27,24 +39,10 @@ theme:
         name: Switch to light mode
 
 # 设置底部
-
-# Copyright
-copyright: 'Copyright &copy; 2020 - 2025 noi.fan All Rights Reserved.'
-
+copyright: 'Copyright &copy; 2024 - 2025 noi.fan All Rights Reserved.'
 extra:
   social:
     - icon: fontawesome/solid/paper-plane
-      link: mailto:<admin@noi.fan>
+      link: mailto:<admin@oier.fans>
       name: 联系邮箱
   # generator: false # 移除生成标记 Made with Material for MkDocs
-
-# 导航目录
-nav:
-  - 首页: index.md
-  - 信息学奥赛: 
-      - 赛事介绍: noi\introduction.md
-      - 比赛大纲: noi\outline.md
-  - 入门级CSP-J: junior\junior.md
-  - 提高级CSP-S: senior\senior.md
-  - NOI级: noiji.md
-  - 相关书籍: booklist.md

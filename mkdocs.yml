@@ -1,4 +1,4 @@
-site_name: 信奥粉丝 OIer Fans # 设置网站名称
+site_name: 信奥爱好者 OIer Fans # 设置网站名称
 
 # 导航目录
 nav:
@@ -9,8 +9,8 @@ nav:
   - 入门级CSP-J: junior\junior.md
   - 提高级CSP-S: senior\senior.md
   - NOI级: noiji.md
-  - 相关网站: websitelist.md
-  - 相关书籍: booklist.md
+#  - 相关网站: websitelist.md
+#  - 相关书籍: booklist.md
 
 # Theme 主题设置
 theme:

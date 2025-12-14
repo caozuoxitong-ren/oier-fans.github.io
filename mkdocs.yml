@@ -3,12 +3,15 @@ site_name: 信奥爱好者 OIer Fans # 设置网站名称
 # 导航目录
 nav:
   - 首页: index.md
-  - 信息学奥赛: 
-      # - 赛事介绍: noi\introduction.md
-      - 比赛大纲: noi\outline.md
-  - 入门级CSP-J: junior\junior.md
-  - 提高级CSP-S: senior\senior.md
-  - NOI级: noiji.md
+  - 信息学奥林匹克竞赛 OI: 
+      - 关于NOI: noi\introduction.md
+      - 竞赛大纲: noi\outline.md
+      - 入门级CSP-J: junior\junior.md
+      - 提高级CSP-S: senior\senior.md
+      - NOI级: noi\noiji.md
+  - 大模型能力认证 LMCC: 
+      - 关于LMCC: lmcc\lmcc.md
+      - 认证大纲: lmcc\outline.md
 #  - 相关网站: websitelist.md
 #  - 相关书籍: booklist.md
 

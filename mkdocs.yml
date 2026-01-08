@@ -3,12 +3,13 @@ site_name: 信奥爱好者 OIer Fans # 设置网站名称
 # 导航目录
 nav:
   - 首页: index.md
-  - 信奥介绍: intro.md
-  - 知识体系: learning_path.md
-  - 分类题库: problem_categories.md
-  - 赛事证书: contests.md
-  - 工具资源: resources.md
-  - 常见问题: faq.md
+  # - 信奥介绍: introduction.md
+  # - 知识体系: learning_path.md
+  # - 分类题库: problem_categories.md
+  # - 赛事证书: contests.md
+  # - 工具资源: resources.md
+  # - 常见问题: faq.md
+  # - 友情链接: friends.md
 
 # Theme 主题设置
 theme:

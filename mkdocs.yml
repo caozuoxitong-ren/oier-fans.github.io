@@ -3,7 +3,16 @@ site_name: 信奥爱好者 OIer Fans # 设置网站名称
 # 导航目录
 nav:
   - 首页: index.md
-  # - 信奥介绍: introduction.md
+  - scanf: cpp/scanf.md
+  - 输入那些事儿: cpp/input.md
+  # - C++语言:
+      # - switch语句: cpp/switch.md
+      # - C++介绍: cpp/introduction.md
+      # - C++基础: cpp/basics.md
+      # - C++进阶: cpp/advanced.md
+  # - GESP:
+  #     - GESP介绍: gesp/introduction.md
+  #     - GESP 四级知识点: gesp/level-4.md
   # - 知识体系: learning_path.md
   # - 分类题库: problem_categories.md
   # - 赛事证书: contests.md
@@ -38,7 +47,7 @@ theme:
         name: Switch to light mode
 
 # 设置底部
-copyright: 'Copyright &copy; 2024 - 2025 noi.fan All Rights Reserved.'
+copyright: 'Copyright &copy; 2024 - 2025 oier.fans All Rights Reserved.'
 extra:
   social:
     - icon: fontawesome/solid/paper-plane

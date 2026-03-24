@@ -1,0 +1,961 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+    
+    
+      
+        <title>switch 多分支结构 - 信奥爱好者 OIer Fans</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#switch" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="信奥爱好者 OIer Fans" class="md-header__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            信奥爱好者 OIer Fans
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              switch 多分支结构
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../scanf/" class="md-tabs__link">
+        
+  
+    
+  
+  scanf
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../input.md" class="md-tabs__link">
+        
+  
+    
+  
+  输入那些事儿
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="信奥爱好者 OIer Fans" class="md-nav__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    信奥爱好者 OIer Fans
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scanf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scanf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    输入那些事儿
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#switch_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、switch语句核心知识点
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、switch语句核心知识点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 基本概念与适用场景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 语法格式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 执行流程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-switch-vs-if-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. switch vs if-else 对比
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、奥赛必知的避坑指南
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、奥赛必知的避坑指南">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 表达式类型限制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. case常量要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. case穿透（最重要坑点）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. break的合理使用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. default的位置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 变量定义问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、奥赛常见题型与真题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、奥赛常见题型与真题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      题型一：概念选择题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      题型二：程序阅读题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      题型三：编程题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、进阶思考题（拔高训练）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结口诀：
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="switch">switch 多分支结构</h1>
+<p>在 C++ 中，switch 语句用于基于不同的条件执行不同的代码块，它通常用来替代一系列的 if-else 语句，使代码更清晰和易读。一个 switch 语句允许测试一个变量等于多个值时的情况。每个值称为一个 case，且被测试的变量会对每个 switch case 进行检查。</p>
+<h2 id="switch_1">一、switch语句核心知识点</h2>
+<h3 id="1">1. 基本概念与适用场景</h3>
+<p>switch语句是C++提供的多分支选择语句，适用于等值多分支判断的场景。当分支较多时，使用switch比嵌套的if-else结构更清晰、更高效。</p>
+<p>适用场景特征：</p>
+<ul>
+<li>
+<p>判断条件单一：仅判断「表达式的值是否等于某个固定常量」</p>
+</li>
+<li>
+<p>分支数量多：通常≥3个分支时switch优势明显</p>
+</li>
+<li>
+<p>值域离散：如菜单选项、星期几、月份等</p>
+</li>
+</ul>
+<h3 id="2">2. 语法格式</h3>
+<pre><code class="language-cpp">switch (表达式) {
+    case 常量表达式1:
+        语句序列1;
+        break;
+    case 常量表达式2:
+        语句序列2;
+        break;
+    // 可以有任意多个case
+    case 常量表达式n:
+        语句序列n;
+        break;
+    default:
+        语句序列n+1;
+}
+</code></pre>
+<h3 id="3">3. 执行流程</h3>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>操作说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>计算switch后圆括号内表达式的值，得到M（整型/字符型/枚举型）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>将M与各case后的常量表达式进行比较</td>
+</tr>
+<tr>
+<td>3</td>
+<td>若找到匹配的case，从该处开始执行后续语句，直到遇到break语句或switch结束</td>
+</tr>
+<tr>
+<td>4</td>
+<td>若未找到匹配，且存在default，则执行default</td>
+</tr>
+<tr>
+<td>5</td>
+<td>若未找到匹配且无default，则不执行任何操作</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-switch-vs-if-else">4. switch vs if-else 对比</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">对比维度</th>
+<th style="text-align: left;">switch</th>
+<th style="text-align: left;">if-else</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">适用条件</td>
+<td style="text-align: left;">仅等值判断（==）</td>
+<td style="text-align: left;">等值+范围+复杂条件</td>
+</tr>
+<tr>
+<td style="text-align: left;">表达式类型</td>
+<td style="text-align: left;">整型/字符型/枚举</td>
+<td style="text-align: left;">任意布尔表达式</td>
+</tr>
+<tr>
+<td style="text-align: left;">执行效率</td>
+<td style="text-align: left;">可能生成跳转表，效率高</td>
+<td style="text-align: left;">逐条件判断，分支多时效率低</td>
+</tr>
+<tr>
+<td style="text-align: left;">代码可读性</td>
+<td style="text-align: left;">多分支时结构清晰</td>
+<td style="text-align: left;">多分支嵌套易臃肿</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">二、奥赛必知的避坑指南</h2>
+<h3 id="1_1">1. 表达式类型限制</h3>
+<p>switch后的表达式必须是整型、字符型或枚举类型，不支持浮点型、字符串、布尔型。</p>
+<pre><code class="language-cpp">double d = 3.14;
+switch (d) {  // ❌ 错误：浮点型不能用于switch
+    case 3.14: ...
+}
+
+string s = &quot;abc&quot;;
+switch (s) {  // ❌ 错误：字符串不能用于switch
+    case &quot;abc&quot;: ...
+}
+</code></pre>
+<h3 id="2-case">2. case常量要求</h3>
+<p>必须是常量：不能是变量或表达式</p>
+<p>必须唯一：同一switch中不能出现相同值的case</p>
+<p>类型匹配：应与表达式类型兼容</p>
+<pre><code class="language-cpp">int a = 5;
+switch (n) {
+    case a:      // ❌ 错误：case后不能是变量
+    case 1+2:    // ❌ 错误：case后不能是表达式
+    case 5:      // ✅ 正确
+}
+</code></pre>
+<h3 id="3-case">3. case穿透（最重要坑点）</h3>
+<p>一旦匹配某个case，会从该处一直执行到遇到break或switch结束，即使后面有其他的case标签也会继续执行。</p>
+<pre><code class="language-cpp">int n = 2;
+switch (n) {
+    case 1: cout &lt;&lt; &quot;A&quot;;
+    case 2: cout &lt;&lt; &quot;B&quot;;  // 匹配，执行
+    case 3: cout &lt;&lt; &quot;C&quot;;  // 没有break，继续执行
+    default: cout &lt;&lt; &quot;D&quot;; // 继续执行
+}
+// 输出：BCD（不是B！）
+</code></pre>
+<h3 id="4-break">4. break的合理使用</h3>
+<pre><code class="language-cpp">switch (x) {
+    case 1:
+        cout &lt;&lt; &quot;选项1&quot;;
+        break;      // ✅ 正确：每个case后加break
+    case 2:
+    case 3:         // ✅ 合法穿透：2和3执行相同代码
+        cout &lt;&lt; &quot;选项2或3&quot;;
+        break;
+    default:
+        cout &lt;&lt; &quot;其他&quot;;
+        // default后可不加break（最后分支）
+}
+</code></pre>
+<h3 id="5-default">5. default的位置</h3>
+<p>default可以放在任意位置，但执行逻辑仍是"先匹配case，无匹配才执行default"。</p>
+<pre><code class="language-cpp">switch (x) {
+    default:        // default放前面
+        cout &lt;&lt; &quot;默认&quot;;
+        // 注意：若放在前面且无break，匹配后会继续向下执行
+    case 1:
+        cout &lt;&lt; &quot;1&quot;;
+}
+// 当x=1时：输出&quot;1&quot;（先匹配case1，跳过default）
+// 当x=2时：输出&quot;默认1&quot;（匹配default，然后穿透执行case1）
+</code></pre>
+<h3 id="6">6. 变量定义问题</h3>
+<p>在case中定义变量存在风险，因为变量的初始化可能被跳过。若必须定义，应用花括号创建作用域。</p>
+<pre><code class="language-cpp">switch (n) {
+    case 1:
+        int a = 10;    // ❌ 危险！如果n=2直接跳到其他case，a可能未初始化
+        break;
+    case 2:
+        // 这里a可能未初始化就被使用
+        break;
+}
+
+// 正确做法：
+switch (n) {
+    case 1: {
+        int a = 10;    // ✅ 用花括号限定作用域
+        break;
+    }
+    case 2: {
+        int a = 20;    // 另一个独立变量
+        break;
+    }
+}
+</code></pre>
+<h2 id="_2">三、奥赛常见题型与真题</h2>
+<h3 id="_3">题型一：概念选择题</h3>
+<p><strong>例题1（GESP C++三级）：下列场景中，最适合用switch实现的是（ ）</strong></p>
+<p>A. 判断分数是否≥90</p>
+<p>B. 判断月份是否为春季（1/2/3月）</p>
+<p>C. 判断年龄是否在18-60之间</p>
+<p>D. 判断一个数是否为偶数</p>
+<p>答案：B（A/C是范围判断，D虽然可写但分支少，B是纯等值多分支）</p>
+<p><strong>例题2：C++的switch语句中default标号能使用几次？（ ）</strong></p>
+<p>A. 0次 </p>
+<p>B. 1次 </p>
+<p>C. 任意次 </p>
+<p>D. 2次</p>
+<p>答案：B</p>
+<h3 id="_4">题型二：程序阅读题</h3>
+<p><strong>例题3：以下程序输出什么？</strong></p>
+<pre><code class="language-cpp">int num = 2;
+switch (num) {
+    case 1: cout &lt;&lt; &quot;A&quot;;
+    case 2: cout &lt;&lt; &quot;B&quot;;
+    case 3: cout &lt;&lt; &quot;C&quot;;
+    default: cout &lt;&lt; &quot;D&quot;;
+}
+</code></pre>
+<p>答案：BCD（考察case穿透）</p>
+<p><strong>例题4：以下程序输出什么？</strong></p>
+<pre><code class="language-cpp">int x = 1;
+switch (x) {
+    default:
+        cout &lt;&lt; &quot;D&quot;;
+    case 1:
+        cout &lt;&lt; &quot;A&quot;;
+    case 2:
+        cout &lt;&lt; &quot;B&quot;;
+}
+</code></pre>
+<p>答案：AB（x=1匹配case1，从case1执行到结束，跳过default）</p>
+<h3 id="_5">题型三：编程题</h3>
+<p><strong>例题5（晶晶去看展）：每周1、3、5有课，输入星期几（1-7），如果有课输出"NO"，否则输出"YES"。</strong></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int n;
+    cin &gt;&gt; n;
+    switch (n) {
+        case 1:
+        case 3:
+        case 5: 
+            cout &lt;&lt; &quot;NO&quot;; 
+            break;
+        default:
+            cout &lt;&lt; &quot;YES&quot;;
+    }
+    return 0;
+}
+</code></pre>
+<p>注意多个case共用代码块的技巧。</p>
+<p><strong>例题6（月份天数）：输入月份，输出该月的天数（假设平年）。</strong></p>
+<pre><code class="language-cpp">int m, d;
+cin &gt;&gt; m;
+switch (m) {
+    case 2: 
+        d = 28; 
+        break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        d = 30; 
+        break;
+    default:
+        d = 31;
+}
+cout &lt;&lt; d &lt;&lt; endl;
+</code></pre>
+<p>考察多个case穿透共用代码。</p>
+<p><strong>例题7（简单计算器）：输入两个整数和一个运算符，输出运算结果。</strong></p>
+<pre><code class="language-cpp">int a, b;
+char op;
+cin &gt;&gt; a &gt;&gt; b &gt;&gt; op;
+switch (op) {
+    case '+':
+        cout &lt;&lt; a + b &lt;&lt; endl;
+        break;
+    case '-':
+        cout &lt;&lt; a - b &lt;&lt; endl;
+        break;
+    case '*':
+        cout &lt;&lt; a * b &lt;&lt; endl;
+        break;
+    case '/':
+        if (b == 0) 
+            cout &lt;&lt; &quot;Divided by zero!&quot; &lt;&lt; endl;
+        else 
+            cout &lt;&lt; a / b &lt;&lt; endl;
+        break;
+    default:
+        cout &lt;&lt; &quot;Invalid operator!&quot; &lt;&lt; endl;
+}
+</code></pre>
+<p>考察字符类型和除零判断。</p>
+<p><strong>例题8（买笔问题）：用x元钱买笔，单价6、5、4元，要买尽量多支笔且把钱用完，输出三种笔的数量。</strong></p>
+<pre><code class="language-cpp">int a, b, c, x, y;
+cin &gt;&gt; x;
+c = x / 4;  // 最多能买的笔数（全买4元）
+y = x % 4;  // 余数
+switch (y) {
+    case 0: 
+        a = 0; b = 0; 
+        break;
+    case 1: 
+        a = 0; b = 1; c--; 
+        break;
+    case 2: 
+        a = 1; b = 0; c--; 
+        break;
+    case 3: 
+        a = 1; b = 1; c -= 2; 
+        break;
+}
+cout &lt;&lt; a &lt;&lt; ' ' &lt;&lt; b &lt;&lt; ' ' &lt;&lt; c &lt;&lt; endl;
+</code></pre>
+<p>考察用switch处理余数分支。</p>
+<h2 id="_6">四、进阶思考题（拔高训练）</h2>
+<p><strong>思考题1：以下代码输出什么？为什么？</strong></p>
+<pre><code class="language-cpp">int n = 0;
+switch (n) {
+    case 0: 
+        int x = 5;
+        cout &lt;&lt; x;
+    case 1: 
+        cout &lt;&lt; x;  // x是否可用？
+}
+</code></pre>
+<p><strong>思考题2：如果不使用if，能否用switch判断一个数是否在[10,20]区间内？有哪些方法？</strong></p>
+<p><strong>思考题3：以下代码有什么问题？</strong></p>
+<pre><code class="language-cpp">double d = 1.5;
+switch (d) {
+    case 1.5: cout &lt;&lt; &quot;1.5&quot;;
+}
+</code></pre>
+<h2 id="_7">总结口诀：</h2>
+<p>switch只能等值判，整型字符和枚举</p>
+<p>case后边是常量，变量表达都不行</p>
+<p>匹配之后顺序跑，遇到break才停脚</p>
+<p>穿透有时是技巧，多个case共代码</p>
+<p>default位置随便放，无匹配时它来当</p>
+<p>推荐练习：《信息学奥赛一本通》1049-1058题，以及zerojudge的a053、d460、a244等题目。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2025 oier.fans All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<admin@oier.fans>" target="_blank" rel="noopener" title="联系邮箱" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -95,3 +95,7 @@ int scanf ( const char * format, ... );
 特定的库实现可能支持额外的说明符和子说明符。
 
 此处列出的说明符和子说明符受最新的 C 和 C++ 标准（均发布于 2011 年）支持，但特殊说明的说明符和子说明符是 C99 引入的（仅自 C++11 及以后支持），并且可能不受旧标准库的支持。
+
+## 参考内容
+
+- [scanf - cplusplus.com](https://cplusplus.com/reference/cstdio/scanf/)

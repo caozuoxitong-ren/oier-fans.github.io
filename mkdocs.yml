@@ -5,7 +5,8 @@ nav:
   - 首页: index.md
   - C/C++参考文档:
       - cstdio:
-          - scanf: cpp/scanf.md
+          - scanf: cpp/cstdio/scanf.md
+          - printf: cpp/cstdio/printf.md
   # - 语言基础:
   # - 输入那些事儿: cpp/input.md
   # - C++语言:

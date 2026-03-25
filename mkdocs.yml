@@ -3,8 +3,11 @@ site_name: 信奥爱好者 OIer Fans # 设置网站名称
 # 导航目录
 nav:
   - 首页: index.md
-  - scanf: cpp/scanf.md
-  - 输入那些事儿: cpp/input.md
+  - C/C++参考文档:
+      - cstdio:
+          - scanf: cpp/scanf.md
+  # - 语言基础:
+  # - 输入那些事儿: cpp/input.md
   # - C++语言:
       # - switch语句: cpp/switch.md
       # - C++介绍: cpp/introduction.md

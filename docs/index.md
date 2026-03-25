@@ -1,5 +1,5 @@
 <p style="text-align: justify; margin-bottom: 1em;">
-欢迎来到 <b>OIer Fans</b> ！本站内容基于<a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.zh-hans" target="_blank"><b>CC BY-SA 4.0</b></a> 协议共享。
+欢迎来到 <b>OIer Fans</b> ！本站内容基于<a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.zh-hans" target="_blank"><b>CC BY-SA 4.0</b></a> 协议发布。
 </p>
 
 <div style="position: relative; text-align: center; width: fit-content; max-width: 100%; margin: 0 auto;">

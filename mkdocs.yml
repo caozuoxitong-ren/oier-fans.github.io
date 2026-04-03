@@ -3,10 +3,29 @@ site_name: 信奥爱好者 OIer Fans # 设置网站名称
 # 导航目录
 nav:
   - 首页: index.md
-  - C/C++参考文档:
+  - C++参考文档:
       - cstdio:
-          - scanf: cpp/cstdio/scanf.md
-          - printf: cpp/cstdio/printf.md
+          - scanf: cpp_reference/cstdio/scanf.md
+          # - printf: cpp_reference/cstdio/printf.md
+      - STL模板:
+          - STL介绍: cpp_reference/STL/stl.md
+          - "map": cpp_reference/STL/map.md
+  - 算法基础:
+      - 前缀和算法: basic_algorithm/prefix_sum.md
+  # - 语法基础:
+  #     - 数据类型: cpp/syntax/data_types.md
+  #     - 变量和常量: cpp/syntax/variables_and_constants.md
+  #     - 运算符: cpp/syntax/operators.md
+  #     - 控制结构: cpp/syntax/control_structures.md
+  #     - 函数: cpp/syntax/functions.md
+  #     - 数组和字符串: cpp/syntax/arrays_and_strings.md
+  #     - 指针: cpp/syntax/pointers.md
+  #     - 结构体和类: cpp/syntax/structs_and_classes.md
+  #     - 模板: cpp/syntax/templates.md
+  #     - 标准库: cpp/syntax/standard_library.md
+  #     - 输入输出: cpp/syntax/input_output.md
+  #     - 错误处理: cpp/syntax/error_handling.md
+  #     - 进阶知识: cpp/syntax/advanced.md
   # - 语言基础:
   # - 输入那些事儿: cpp/input.md
   # - C++语言:

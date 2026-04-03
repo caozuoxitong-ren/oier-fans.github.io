@@ -1,0 +1,1504 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../stl/">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+    
+    
+      
+        <title>map - 信奥爱好者 OIer Fans</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#map" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-header__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            信奥爱好者 OIer Fans
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              map
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../cstdio/scanf/" class="md-tabs__link">
+          
+  
+  C++参考文档
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../basic_algorithm/prefix_sum.md" class="md-tabs__link">
+          
+  
+  算法基础
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-nav__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    信奥爱好者 OIer Fans
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    C++参考文档
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            C++参考文档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    cstdio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            cstdio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cstdio/scanf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scanf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    STL模板
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            STL模板
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STL介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    map
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    map
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#map_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、map简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、容器属性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、头文件和定义
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、键值对 pair
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、成员函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、成员函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      0、基本操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1、迭代器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2、容量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3、元素访问
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4、修改操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5、其他操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      六、时间复杂度
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    算法基础
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            算法基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic_algorithm/prefix_sum.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    前缀和算法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#map_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、map简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、容器属性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、头文件和定义
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、键值对 pair
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、成员函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、成员函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      0、基本操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1、迭代器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2、容量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3、元素访问
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4、修改操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5、其他操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      六、时间复杂度
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="map">map 模板</h1>
+<h2 id="map_1">一、map简介</h2>
+<p>map是一种关联容器，用于存储由<strong>键值(key value)</strong>和<strong>映射值(mapped value)</strong>按特定顺序组合而成的元素。</p>
+<p>在 map 中，键值（key value）通常用于对元素进行排序和唯一标识，而映射值(mapped value)则存储与该键关联的内容。键和映射值的类型可以不同，它们被归类到成员类型 <code>value_type</code>中，该类型是一个键值对，包含键和映射值:</p>
+<pre><code class="language-cpp">typedef pair&lt;const Key, T&gt; value_type;
+</code></pre>
+<p>在内部，map 中的元素始终按照其键值（key value）进行排序，排序遵循由其内部比较对象指定的特定严格弱排序准则。</p>
+<p>map 容器通常比 unordered_map 通过键(key value)访问单个元素的速度慢，但它们允许基于顺序直接迭代子集。</p>
+<p>map 中的映射值(mapped value)可以通过方括号运算符（<code>operator[]</code> ）直接通过其对应的键(key value)访问。</p>
+<p>映射通常以二叉搜索树的形式实现。</p>
+<h2 id="_1">二、容器属性</h2>
+<ul>
+<li><strong>访问标识</strong>：map 容器中的元素是通过其键（key value)来引用的，而不是通过它们在容器中的绝对位置来引用的。</li>
+<li><strong>有序性</strong>: map 容器中的元素始终遵循严格的顺序。所有插入的元素都会按照此顺序被赋予一个位置。</li>
+<li><strong>键值对</strong>：每个元素都将一个键(key value)与一个映射值(mapped value)关联起来。</li>
+<li><strong>唯一性</strong>：容器中任意两个元素都不能拥有相同的键（key value)。</li>
+<li><strong>自动管理内存使用</strong>：容器使用分配器对象来动态处理其存储需求。</li>
+</ul>
+<h2 id="_2">三、头文件和定义</h2>
+<p>包含头文件：</p>
+<pre><code class="language-cpp">#include &lt;map&gt;
+</code></pre>
+<p>声明 map 容器：</p>
+<pre><code class="language-cpp">#include&lt;map&gt;
+map&lt;key_type, value_type&gt; myMap; //key_type 是键的类型,value_type 是值的类型
+</code></pre>
+<p>示例：</p>
+<pre><code class="language-cpp">map&lt;string,int&gt; mp; //声明一个key为string，value为int的map
+</code></pre>
+<h2 id="pair">四、键值对 pair</h2>
+<p>在map中，存储的元素有key和value，对应的是STL中定义的pair类型。</p>
+<p><strong>std::pair</strong>：是键值对容器，是 utility 库中最常用的组件，用于将两个值组合成一个单一对象。</p>
+<p>pair类型可以单独定义，它可以理解为含有两个变量first和second的结构体。</p>
+<pre><code class="language-cpp">#include &lt;utility&gt;
+
+// 创建 pair 对象的基本方式
+// std::pair&lt;类型1, 类型2&gt; 变量名(值1, 值2);
+
+std::pair&lt;string,int&gt; p(&quot;jim&quot;,12);
+cout&lt;&lt; p.first&lt;&lt;&quot; &quot;&lt;&lt;p.second&lt;&lt;endl;
+</code></pre>
+<p>pair的定义和初始化方式：</p>
+<pre><code class="language-cpp">pair&lt;int,double&gt; p1;//未初始化，int和double均不保证 
+pair&lt;string,int&gt; p2;//string调用构造函数初始化为空串，int不保证
+pair&lt;string,int&gt; p3{};//直接列表式初始化，first为空串，second=0
+pair&lt;string,int&gt; p4={};//拷贝列表式初始化，first为空串，second=0
+pair&lt;string,int&gt; p5(&quot;hello&quot;,1);//直接调用构造函数初始化
+pair&lt;string,int&gt; p6=make_pair(&quot;hello&quot;,1);//使用make_pair
+pair&lt;string,int&gt; p6=make_pair&lt;string,int&gt;(&quot;hello&quot;,1);//使用make_pair，并显式指定类型 
+</code></pre>
+<!-- ## map常用操作汇总
+|   map常用操作 |   |
+|   -----   |   -----   |
+|   **迭代器**  |
+|   begin() |   返回指向容器第一个元素的迭代器  |
+|   end()  |   返回指向容器末尾（最后一个元素之后）的迭代器 |
+|   rbegin()    |   返回指向容器第一个元素的反向迭代器（即反向遍历的开始）  |
+|   rend()  |   返回指向容器末尾的反向迭代器（即反向遍历的结束）    |
+|   **容量**    |
+|   empty() |   判断容器是否为空（无元素）  |
+|   size()  |   返回容器中的元素数量    |
+|   **元素访问**    |
+|   operator[]  |   通过键访问元素。若键不存在，则插入一个值初始化的新元素并返回其引用  |
+|   at() (C++11)    |   通过键访问元素，若键不存在则抛出 std::out_of_range 异常 |
+|  **修改操作**    |
+|   insert()    |   插入一个或多个元素（接受值、迭代器范围或初始化列表）    |
+|   erase() |   移除指定位置或键的元素（可接受迭代器、键或迭代器范围）  |
+|   clear() |   清空所有元素    |
+|   **查找操作**    |
+|   find(key)   |   查找指定键的元素，返回迭代器；若未找到则返回 end()  |
+|   **统计**    |
+|   count() |   返回键等于给定值的元素数量（对于 map 只能是 0 或 1）    | -->
+
+<h2 id="_3">五、成员函数</h2>
+<h3 id="0">0、<strong>基本操作</strong></h3>
+<ul>
+<li>（构造函数）：构建映射</li>
+<li>（析构函数）：映射析构函数</li>
+<li>运算符 = ：复制容器内容</li>
+</ul>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    map&lt;int,string&gt; mp1;
+    mp1[1]=&quot;cat&quot;;
+    mp1[2]=&quot;dog&quot;;
+    mp1[3]=&quot;bird&quot;;
+    map&lt;int,string&gt; mp2=mp1;//将mp1赋值给mp2 
+    for(map&lt;int,string&gt;::iterator it=mp2.begin();it!=mp2.end();it++){
+        cout&lt;&lt; it-&gt;first &lt;&lt;&quot; &quot;&lt;&lt;it-&gt;second&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="1">1、<strong>迭代器</strong></h3>
+<ul>
+<li>begin()：返回迭代器，指向第一个元素作为开头</li>
+<li>end()：返回迭代器末尾</li>
+<li>rbegin()：返回反向迭代器，指向最后一个元素作为开头</li>
+<li>rend()：返回反向迭代器对应的末尾</li>
+</ul>
+<p><strong>遍历 map</strong>:</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;map&gt;
+using namespace std;
+
+int main(){
+    map&lt;string,int&gt; mp;
+    mp[&quot;jim&quot;]=5;
+    mp[&quot;lily&quot;]=12;
+
+    //正序遍历 
+    for(map&lt;string,int&gt;::iterator it=mp.begin();it!=mp.end();it++){
+        cout&lt;&lt; it-&gt;first &lt;&lt;&quot; &quot;&lt;&lt;it-&gt;second&lt;&lt;endl;
+    }
+    cout&lt;&lt;endl;
+    //倒序遍历
+    for(map&lt;string,int&gt;::reverse_iterator rit=mp.rbegin();rit!=mp.rend();rit++){
+        cout&lt;&lt; rit-&gt;first &lt;&lt;&quot; &quot;&lt;&lt; rit-&gt;second &lt;&lt;endl;
+    }   
+    return 0;
+}
+</code></pre>
+<p>C++11 及以上标准，遍历部分可以简化为范围 for 循环，代码更简洁：</p>
+<pre><code class="language-cpp">for (auto &amp;p : m) {
+    std::cout &lt;&lt; p.first &lt;&lt; &quot; : &quot; &lt;&lt; p.second &lt;&lt; std::endl;
+}
+</code></pre>
+<h3 id="2">2、<strong>容量</strong></h3>
+<ul>
+<li>empty()：测试容器是否为空，为空返回true，非空返回false</li>
+<li>size()：返回容器大小（即包含元素个数）</li>
+</ul>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    map&lt;int,string&gt; mp;
+    mp[1]=&quot;cat&quot;;
+    mp[2]=&quot;dog&quot;;
+    mp[3]=&quot;bird&quot;;
+
+    //判断mp是否为空 
+    if(!mp.empty()) cout&lt;&lt;&quot;mp is not empty.&quot;&lt;&lt;endl;
+    else cout&lt;&lt;&quot;mp is empty.&quot;&lt;&lt;endl;
+
+    //输出map中元素个数 
+    cout&lt;&lt;mp.size()&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<h3 id="3">3、<strong>元素访问</strong></h3>
+<ul>
+<li>operator[]：访问元素</li>
+<li>at()：访问元素</li>
+</ul>
+<p><strong>方法一：直接使用operator[]</strong></p>
+<pre><code class="language-cpp">// accessing mapped values
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;string&gt;
+
+int main ()
+{
+  std::map&lt;char,std::string&gt; mymap;
+
+  mymap['a']=&quot;an element&quot;;
+  mymap['b']=&quot;another element&quot;;
+  mymap['c']=mymap['b'];
+
+  std::cout &lt;&lt; &quot;mymap['a'] is &quot; &lt;&lt; mymap['a'] &lt;&lt; '\n';
+  std::cout &lt;&lt; &quot;mymap['b'] is &quot; &lt;&lt; mymap['b'] &lt;&lt; '\n';
+  std::cout &lt;&lt; &quot;mymap['c'] is &quot; &lt;&lt; mymap['c'] &lt;&lt; '\n';
+  std::cout &lt;&lt; &quot;mymap['d'] is &quot; &lt;&lt; mymap['d'] &lt;&lt; '\n';
+
+  std::cout &lt;&lt; &quot;mymap now contains &quot; &lt;&lt; mymap.size() &lt;&lt; &quot; elements.\n&quot;;
+
+  return 0;
+}
+</code></pre>
+<p><strong>方法二：使用map.at()</strong></p>
+<pre><code class="language-cpp">//mp.at(key),若key存在，则返回对应的value，若key不存在，抛出异常
+#include&lt;iostream&gt;
+#include&lt;map&gt;
+#include&lt;utility&gt; 
+using namespace std;
+
+int main(){
+    map&lt;string,int&gt; mp;
+
+    mp.insert(pair&lt;string,int&gt;(&quot;jim&quot;,12));
+    mp.insert(pair&lt;string,int&gt;(&quot;lily&quot;,13));
+
+    try{
+        cout&lt;&lt;mp.at(&quot;jim&quot;)&lt;&lt;endl;
+        cout&lt;&lt;mp.at(&quot;lily&quot;)&lt;&lt;endl;
+        cout&lt;&lt;mp.at(&quot;cat&quot;)&lt;&lt;endl;
+    }catch(...){
+        cout&lt;&lt;&quot;访问的key不存在&quot;&lt;&lt;endl; 
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="4">4、<strong>修改操作</strong></h3>
+<ul>
+<li>insert()：插入元素，用于插入已经构造好的pair</li>
+</ul>
+<pre><code class="language-cpp">// map::insert (C++98)
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main ()
+{
+  std::map&lt;char,int&gt; mymap;
+
+  // first insert function version (single parameter):
+  mymap.insert ( std::pair&lt;char,int&gt;('a',100) );
+  mymap.insert ( std::pair&lt;char,int&gt;('z',200) );
+
+  std::pair&lt;std::map&lt;char,int&gt;::iterator,bool&gt; ret;
+  ret = mymap.insert ( std::pair&lt;char,int&gt;('z',500) );
+  if (ret.second==false) {
+    std::cout &lt;&lt; &quot;element 'z' already existed&quot;;
+    std::cout &lt;&lt; &quot; with a value of &quot; &lt;&lt; ret.first-&gt;second &lt;&lt; '\n';
+  }
+
+  // second insert function version (with hint position):
+  std::map&lt;char,int&gt;::iterator it = mymap.begin();
+  mymap.insert (it, std::pair&lt;char,int&gt;('b',300));  // max efficiency inserting
+  mymap.insert (it, std::pair&lt;char,int&gt;('c',400));  // no max efficiency inserting
+
+  // third insert function version (range insertion):
+  std::map&lt;char,int&gt; anothermap;
+  anothermap.insert(mymap.begin(),mymap.find('c'));
+
+  // showing contents:
+  std::cout &lt;&lt; &quot;mymap contains:\n&quot;;
+  for (it=mymap.begin(); it!=mymap.end(); ++it)
+    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; '\n';
+
+  std::cout &lt;&lt; &quot;anothermap contains:\n&quot;;
+  for (it=anothermap.begin(); it!=anothermap.end(); ++it)
+    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; '\n';
+
+  return 0;
+}
+</code></pre>
+<ul>
+<li>erase()：删除元素</li>
+</ul>
+<pre><code class="language-cpp">// erasing from map
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main ()
+{
+  std::map&lt;char,int&gt; mymap;
+  std::map&lt;char,int&gt;::iterator it;
+
+  // insert some values:
+  mymap['a']=10;
+  mymap['b']=20;
+  mymap['c']=30;
+  mymap['d']=40;
+  mymap['e']=50;
+  mymap['f']=60;
+
+  it=mymap.find('b');
+  mymap.erase (it);                   // erasing by iterator
+
+  mymap.erase ('c');                  // erasing by key
+
+  it=mymap.find ('e');
+  mymap.erase ( it, mymap.end() );    // erasing by range
+
+  // show content:
+  for (it=mymap.begin(); it!=mymap.end(); ++it)
+    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; '\n';
+
+  return 0;
+}
+</code></pre>
+<ul>
+<li>swap()：交换内容</li>
+</ul>
+<pre><code class="language-cpp">// swap maps
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main ()
+{
+  std::map&lt;char,int&gt; foo,bar;
+
+  foo['x']=100;
+  foo['y']=200;
+
+  bar['a']=11;
+  bar['b']=22;
+  bar['c']=33;
+
+  foo.swap(bar);
+
+  std::cout &lt;&lt; &quot;foo contains:\n&quot;;
+  for (std::map&lt;char,int&gt;::iterator it=foo.begin(); it!=foo.end(); ++it)
+    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; '\n';
+
+  std::cout &lt;&lt; &quot;bar contains:\n&quot;;
+  for (std::map&lt;char,int&gt;::iterator it=bar.begin(); it!=bar.end(); ++it)
+    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; '\n';
+
+  return 0;
+}
+</code></pre>
+<ul>
+<li>clear()：清空容器</li>
+</ul>
+<pre><code class="language-cpp">// map::clear
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main ()
+{
+  std::map&lt;char,int&gt; mymap;
+
+  mymap['x']=100;
+  mymap['y']=200;
+  mymap['z']=300;
+
+  std::cout &lt;&lt; &quot;mymap contains:\n&quot;;
+  for (std::map&lt;char,int&gt;::iterator it=mymap.begin(); it!=mymap.end(); ++it)
+    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; '\n';
+
+  mymap.clear();
+  mymap['a']=1101;
+  mymap['b']=2202;
+
+  std::cout &lt;&lt; &quot;mymap contains:\n&quot;;
+  for (std::map&lt;char,int&gt;::iterator it=mymap.begin(); it!=mymap.end(); ++it)
+    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; '\n';
+
+  return 0;
+}
+</code></pre>
+<ul>
+<li>emplace()：构造并插入元素</li>
+</ul>
+<pre><code class="language-cpp">// map::emplace
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main ()
+{
+  std::map&lt;char,int&gt; mymap;
+
+  mymap.emplace('x',100);
+  mymap.emplace('y',200);
+  mymap.emplace('z',100);
+
+  std::cout &lt;&lt; &quot;mymap contains:&quot;;
+  for (auto&amp; x: mymap)
+    std::cout &lt;&lt; &quot; [&quot; &lt;&lt; x.first &lt;&lt; ':' &lt;&lt; x.second &lt;&lt; ']';
+  std::cout &lt;&lt; '\n';
+
+  return 0;
+}
+</code></pre>
+<h3 id="5">5、<strong>其他操作</strong></h3>
+<ul>
+<li>find()：获取元素的迭代器</li>
+</ul>
+<pre><code class="language-cpp">// map::find
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main ()
+{
+  std::map&lt;char,int&gt; mymap;
+  std::map&lt;char,int&gt;::iterator it;
+
+  mymap['a']=50;
+  mymap['b']=100;
+  mymap['c']=150;
+  mymap['d']=200;
+
+  it = mymap.find('b');
+  if (it != mymap.end())
+    mymap.erase (it);
+
+  // print content:
+  std::cout &lt;&lt; &quot;elements in mymap:&quot; &lt;&lt; '\n';
+  std::cout &lt;&lt; &quot;a =&gt; &quot; &lt;&lt; mymap.find('a')-&gt;second &lt;&lt; '\n';
+  std::cout &lt;&lt; &quot;c =&gt; &quot; &lt;&lt; mymap.find('c')-&gt;second &lt;&lt; '\n';
+  std::cout &lt;&lt; &quot;d =&gt; &quot; &lt;&lt; mymap.find('d')-&gt;second &lt;&lt; '\n';
+
+  return 0;
+}
+</code></pre>
+<ul>
+<li>count()：统计具有特定键(key value)的元素数量</li>
+</ul>
+<pre><code class="language-cpp">// map::count
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main ()
+{
+  std::map&lt;char,int&gt; mymap;
+  char c;
+
+  mymap ['a']=101;
+  mymap ['c']=202;
+  mymap ['f']=303;
+
+  for (c='a'; c&lt;'h'; c++)
+  {
+    std::cout &lt;&lt; c;
+    if (mymap.count(c)&gt;0)
+      std::cout &lt;&lt; &quot; is an element of mymap.\n&quot;;
+    else 
+      std::cout &lt;&lt; &quot; is not an element of mymap.\n&quot;;
+  }
+
+  return 0;
+}
+</code></pre>
+<ul>
+<li>lower_bound()：返回下界迭代器（指向大于等于key的第一个元素的迭代器）</li>
+</ul>
+<pre><code class="language-cpp">// map::lower_bound/upper_bound
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main ()
+{
+  std::map&lt;char,int&gt; mymap;
+  std::map&lt;char,int&gt;::iterator itlow,itup;
+
+  mymap['a']=20;
+  mymap['b']=40;
+  mymap['c']=60;
+  mymap['d']=80;
+  mymap['e']=100;
+
+  itlow=mymap.lower_bound ('b');  // itlow points to b
+  itup=mymap.upper_bound ('d');   // itup points to e (not d!)
+
+  mymap.erase(itlow,itup);        // erases [itlow,itup)
+
+  // print content:
+  for (std::map&lt;char,int&gt;::iterator it=mymap.begin(); it!=mymap.end(); ++it)
+    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; '\n';
+
+  return 0;
+}
+</code></pre>
+<ul>
+<li>upper_bound()：返回上限迭代器（指向大于key的第一个元素的迭代器）</li>
+</ul>
+<pre><code class="language-cpp">// map::lower_bound/upper_bound
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main ()
+{
+  std::map&lt;char,int&gt; mymap;
+  std::map&lt;char,int&gt;::iterator itlow,itup;
+
+  mymap['a']=20;
+  mymap['b']=40;
+  mymap['c']=60;
+  mymap['d']=80;
+  mymap['e']=100;
+
+  itlow=mymap.lower_bound ('b');  // itlow points to b
+  itup=mymap.upper_bound ('d');   // itup points to e (not d!)
+
+  mymap.erase(itlow,itup);        // erases [itlow,itup)
+
+  // print content:
+  for (std::map&lt;char,int&gt;::iterator it=mymap.begin(); it!=mymap.end(); ++it)
+    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; '\n';
+
+  return 0;
+}
+</code></pre>
+<ul>
+<li>equal_range()：获取相等元素的范围</li>
+</ul>
+<pre><code class="language-cpp">// map::equal_range
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main ()
+{
+  std::map&lt;char,int&gt; mymap;
+
+  mymap['a']=10;
+  mymap['b']=20;
+  mymap['c']=30;
+
+  std::pair&lt;std::map&lt;char,int&gt;::iterator,std::map&lt;char,int&gt;::iterator&gt; ret;
+  ret = mymap.equal_range('b');
+
+  std::cout &lt;&lt; &quot;lower bound points to: &quot;;
+  std::cout &lt;&lt; ret.first-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; ret.first-&gt;second &lt;&lt; '\n';
+
+  std::cout &lt;&lt; &quot;upper bound points to: &quot;;
+  std::cout &lt;&lt; ret.second-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; ret.second-&gt;second &lt;&lt; '\n';
+
+  return 0;
+}
+</code></pre>
+<h2 id="_4">六、时间复杂度</h2>
+<p>C++ 标准库中的 std::map 是一个有序关联容器，其内部通常采用红黑树（Red-Black Tree） 实现。红黑树是一种自平衡的二叉查找树，能够保证在最坏情况下仍具有较好的性能。</p>
+<p>主要操作的复杂度（根据key操作，且不带提示的情况下）：</p>
+<ul>
+<li>插入（Insert）：O(log⁡ n)</li>
+<li>删除（Erase）：O(log⁡ n)</li>
+<li>查找（Find / Count / [] / at）：O(log⁡ n)</li>
+<li>遍历整个 map（如使用迭代器）的时间复杂度为 O(n)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2025 oier.fans All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<admin@oier.fans>" target="_blank" rel="noopener" title="联系邮箱" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -306,7 +306,11 @@ int lcm(int a,int b){
 
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="left">  <mo>=</mo>  <mi>G</mi>  <mi>C</mi>  <mi>D</mi>  <mo>&#xD7;</mo>  <mi>L</mi>  <mi>C</mi>  <mi>M</mi></math>
 
-所以
+也就是说
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mi>A</mi>  <mo>&#xD7;</mo>  <mi>B</mi>  <mo>=</mo>  <mi>G</mi>  <mi>C</mi>  <mi>D</mi>  <mo>&#xD7;</mo>  <mi>L</mi>  <mi>C</mi>  <mi>M</mi></math>
+
+那么，最小公倍数
 
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mi>L</mi>  <mi>C</mi>  <mi>M</mi>  <mo>=</mo>  <mfrac>    <mrow>      <mi>A</mi>      <mo>&#xD7;</mo>      <mi>B</mi>    </mrow>    <mrow>      <mi>G</mi>      <mi>C</mi>      <mi>D</mi>    </mrow>  </mfrac></math>
 

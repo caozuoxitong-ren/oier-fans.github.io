@@ -251,7 +251,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../basic_algorithm/prefix_sum.md" class="md-tabs__link">
+        <a href="../../../basic_algorithm/prefix_sum/" class="md-tabs__link">
           
   
   算法基础
@@ -683,11 +683,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../basic_algorithm/prefix_sum.md" class="md-nav__link">
+      <a href="../../../basic_algorithm/prefix_sum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    前缀和算法
+    前缀和
     
   </span>
   
@@ -1151,14 +1151,16 @@ printf(&quot;%s&quot;,a);//输出：12345
 //注1：%s表示接收任意数量的非空白字符，遇到空白符就停止，末尾自动添加空字符'\0'
 //注2：数组a要多开辟1个字节的空间用于存储尾部自动添加的空字符 '\0' 
 </code></pre>
-<p>&lt;!-- 
-- 接收宽度的影像。。。。。</p>
-<pre><code class="language-cpp">char a[5];
-scanf(&quot;%5c&quot;,a);//输入：hello
-printf(&quot;%c%c%c%c%c&quot;,a[0],a[1],a[2],a[3],a[4]);//输出：hello
-//注1：%nc表示接收n个char字符，末尾不会附加空字符'\0'  --&gt;
-//注2：%5c表示接收5个char字符，依次存入以a为首地址的连续区域，末尾不会附加空字符'\0' 
-</code></pre>
+<!-- 
+- 接收宽度的影像。。。。。
+```cpp
+char a[5];
+scanf("%5c",a);//输入：hello
+printf("%c%c%c%c%c",a[0],a[1],a[2],a[3],a[4]);//输出：hello
+//注1：%nc表示接收n个char字符，末尾不会附加空字符'\0'  -->
+<!-- //注2：%5c表示接收5个char字符，依次存入以a为首地址的连续区域，末尾不会附加空字符'\0' 
+``` -->
+
 <h2 id="_7"><strong>参考内容</strong></h2>
 <ul>
 <li><a href="https://cplusplus.com/reference/cstdio/scanf/">scanf - cplusplus.com</a></li>

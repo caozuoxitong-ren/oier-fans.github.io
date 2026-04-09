@@ -11,7 +11,7 @@ nav:
           - STL介绍: cpp_reference/STL/stl.md
           - "map": cpp_reference/STL/map.md
   - 算法基础:
-      - 前缀和算法: basic_algorithm/prefix_sum.md
+      - 前缀和: basic_algorithm/prefix_sum.md
   # - 语法基础:
   #     - 数据类型: cpp/syntax/data_types.md
   #     - 变量和常量: cpp/syntax/variables_and_constants.md

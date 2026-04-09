@@ -16,6 +16,7 @@
 
 5207 = 41 × 127
 
+19 = 19
 
 算术基本定理的内容由两部分构成：
 
@@ -88,7 +89,7 @@ int main(){
 		}
 	}
 	if(num>1) a[++len]=num,cnt[len]=1;
-    
+
 	//输出
 	for(int i=1;i<=len;i++){
 		cout<<a[i]<<" "<<cnt[i]<<endl;

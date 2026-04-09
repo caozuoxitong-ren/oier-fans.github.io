@@ -14,6 +14,8 @@ nav:
       - 前缀和: basic_algorithm/prefix_sum.md
   - 数学问题:
       - 唯一分解定理: math/unique_factorization.md
+      - 最大公约数/最小公倍数: math/gcd_lcm.md
+      - 素数的筛法: math/sieve.md
   # - 语法基础:
   #     - 数据类型: cpp/syntax/data_types.md
   #     - 变量和常量: cpp/syntax/variables_and_constants.md

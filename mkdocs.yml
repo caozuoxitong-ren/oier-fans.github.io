@@ -7,7 +7,6 @@ nav:
       - 基础语法:
           - 输入输出:
               - scanf: cpp_reference/cstdio/scanf.md
-          # - printf: cpp_reference/cstdio/printf.md
           - 分支结构:
               - switch语句: cpp/switch.md
       - STL模板:
@@ -18,45 +17,10 @@ nav:
   - 数学问题:
       - 唯一分解定理: math/unique_factorization.md
       - 最大公约数/最小公倍数: math/gcd_lcm.md
-  # - 技术文章:
-  #     - 用GitHub Pages搭建网站: tech_article/用GitHubPages搭建网站.md
-  #     - 让GitHub Page支持Latex公式: tech_article/让GitHubPage支持Latex公式.md
-      # - 素数的筛法: math/sieve.md
-  # - 语法基础:
-  #     - 数据类型: cpp/syntax/data_types.md
-  #     - 变量和常量: cpp/syntax/variables_and_constants.md
-  #     - 运算符: cpp/syntax/operators.md
-  #     - 控制结构: cpp/syntax/control_structures.md
-  #     - 函数: cpp/syntax/functions.md
-  #     - 数组和字符串: cpp/syntax/arrays_and_strings.md
-  #     - 指针: cpp/syntax/pointers.md
-  #     - 结构体和类: cpp/syntax/structs_and_classes.md
-  #     - 模板: cpp/syntax/templates.md
-  #     - 标准库: cpp/syntax/standard_library.md
-  #     - 输入输出: cpp/syntax/input_output.md
-  #     - 错误处理: cpp/syntax/error_handling.md
-  #     - 进阶知识: cpp/syntax/advanced.md
-  # - 语言基础:
-  # - 输入那些事儿: cpp/input.md
-  # - C++语言:
-      # - switch语句: cpp/switch.md
-      # - C++介绍: cpp/introduction.md
-      # - C++基础: cpp/basics.md
-      # - C++进阶: cpp/advanced.md
-  # - GESP:
-  #     - GESP介绍: gesp/introduction.md
-  #     - GESP 四级知识点: gesp/level-4.md
-  # - 知识体系: learning_path.md
-  # - 分类题库: problem_categories.md
-  # - 赛事证书: contests.md
-  # - 工具资源: resources.md
-  # - 常见问题: faq.md
-  # - 友情链接: friends.md
 
 # Theme 主题设置
 theme:
   name: material
-  # custom_dir: custom_theme/
   features:
     - navigation.tabs
     - navigation.expand
@@ -88,6 +52,5 @@ extra:
       link: mailto:<admin@oier.fans>
       name: 联系邮箱
   # generator: false # 移除生成标记 Made with Material for MkDocs
-
 
 # markdown: kramdown

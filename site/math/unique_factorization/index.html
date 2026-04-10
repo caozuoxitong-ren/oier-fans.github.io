@@ -844,7 +844,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      一、算术基本定理
+      算术基本定理
     </span>
   </a>
   
@@ -853,17 +853,17 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      二、分解质因数的方法
+      分解质因数的方法
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="二、分解质因数的方法">
+    <nav class="md-nav" aria-label="分解质因数的方法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      方法一：暴力枚举法
+      暴力枚举法
     </span>
   </a>
   
@@ -872,7 +872,7 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      方法二：利用数学结论
+      利用数学结论
     </span>
   </a>
   
@@ -968,7 +968,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      一、算术基本定理
+      算术基本定理
     </span>
   </a>
   
@@ -977,17 +977,17 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      二、分解质因数的方法
+      分解质因数的方法
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="二、分解质因数的方法">
+    <nav class="md-nav" aria-label="分解质因数的方法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      方法一：暴力枚举法
+      暴力枚举法
     </span>
   </a>
   
@@ -996,7 +996,7 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      方法二：利用数学结论
+      利用数学结论
     </span>
   </a>
   
@@ -1052,7 +1052,7 @@
 </script>
 
 <h1 id="_1">算术基本定理（唯一分解定理）</h1>
-<h2 id="_2">一、算术基本定理</h2>
+<h2 id="_2">算术基本定理</h2>
 <p><strong>算术基本定理</strong>，又称为<strong>正整数</strong>的<strong>唯一分解定理</strong>，即：每个大于1的自然数，要么本身就是素数，要么可以写为2个或以上的素数的积，而且这些素因子按大小排列之后，写法仅有一种方式。</p>
 <p><strong>也可以表述为：</strong>对于任意整数 A &gt; 1 , 存在 A 的一种质因数分解形式 A = p1^b1 × p2^b2 × ... × Pk^bk，其中p1 &lt; p2 &lt; ... &lt; pk，且pi是质数，bi是正整数。这种表示的方法是存在的，而且是唯一的。</p>
 <p><strong>也可以表述为：</strong>设正整数 A &gt; 1，那么必有表示 A=p1 * p2 * ... * pk，其中pi(1&lt;=i&lt;=k)是素数，并且在不考虑次序的情况下，这种表示方式是唯一的。</p>
@@ -1066,8 +1066,8 @@
 <li>分解的存在性：</li>
 <li>分解的唯一性，即若不考虑排列的顺序，正整数分解为素数乘积的方式是唯一的。</li>
 </ul>
-<h2 id="_3">二、分解质因数的方法</h2>
-<h3 id="_4">方法一：暴力枚举法</h3>
+<h2 id="_3">分解质因数的方法</h2>
+<h3 id="_4">暴力枚举法</h3>
 <p>num 的质因子一定在区间 [2,num]之间，只需要枚举 2 到 num 之间的每一个数 i ，如果 i 能整除 num ，则说明当前的 i 是 num 的因子（<strong>必是质因子，为什么？</strong>），那么将 num 连续除以 i 直到不含质因子 i，同时记录质因子 i 的个数。<strong>时间复杂度 O(n)</strong>.</p>
 <pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
@@ -1092,7 +1092,7 @@ int main(){
     return 0;
 }
 </code></pre>
-<h3 id="_5">方法二：利用数学结论</h3>
+<h3 id="_5">利用数学结论</h3>
 <p>结论：<strong>任意正整数 N 至多有一个大于 sqrt(N) 的质因子。</strong></p>
 <p>证明：（反证法）假设正整数 N 存在两个不同的质因子 a 和 b，并且a &gt; sqrt(N) , b &gt; sqrt(N) .</p>
 <p>由于 a 和 b 是 N 的质因子，且互质，故 ab|N，因此 a*b &lt;= N　　　　(1)</p>

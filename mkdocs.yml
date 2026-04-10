@@ -52,5 +52,3 @@ extra:
       link: mailto:<admin@oier.fans>
       name: 联系邮箱
   # generator: false # 移除生成标记 Made with Material for MkDocs
-
-# markdown: kramdown

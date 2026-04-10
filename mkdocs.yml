@@ -3,10 +3,13 @@ site_name: 信奥爱好者 OIer Fans # 设置网站名称
 # 导航目录
 nav:
   - 首页: index.md
-  - C++参考文档:
-      - cstdio:
-          - scanf: cpp_reference/cstdio/scanf.md
+  - C++语言基础:
+      - 基础语法:
+          - 输入输出:
+              - scanf: cpp_reference/cstdio/scanf.md
           # - printf: cpp_reference/cstdio/printf.md
+          - 分支结构:
+              - switch语句: cpp/switch.md
       - STL模板:
           - STL介绍: cpp_reference/STL/stl.md
           - "map": cpp_reference/STL/map.md
@@ -15,7 +18,7 @@ nav:
   - 数学问题:
       - 唯一分解定理: math/unique_factorization.md
       - 最大公约数/最小公倍数: math/gcd_lcm.md
-      - 素数的筛法: math/sieve.md
+      # - 素数的筛法: math/sieve.md
   # - 语法基础:
   #     - 数据类型: cpp/syntax/data_types.md
   #     - 变量和常量: cpp/syntax/variables_and_constants.md

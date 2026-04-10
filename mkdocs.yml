@@ -18,9 +18,9 @@ nav:
   - 数学问题:
       - 唯一分解定理: math/unique_factorization.md
       - 最大公约数/最小公倍数: math/gcd_lcm.md
-  - 技术文章:
-      - 用GitHub Pages搭建网站: tech_article/用GitHubPages搭建网站.md
-      - 让GitHub Page支持Latex公式: tech_article/让GitHubPage支持Latex公式.md
+  # - 技术文章:
+  #     - 用GitHub Pages搭建网站: tech_article/用GitHubPages搭建网站.md
+  #     - 让GitHub Page支持Latex公式: tech_article/让GitHubPage支持Latex公式.md
       # - 素数的筛法: math/sieve.md
   # - 语法基础:
   #     - 数据类型: cpp/syntax/data_types.md
@@ -90,4 +90,4 @@ extra:
   # generator: false # 移除生成标记 Made with Material for MkDocs
 
 
-markdown: kramdown
+# markdown: kramdown

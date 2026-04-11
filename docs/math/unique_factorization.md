@@ -113,7 +113,7 @@ int main(){
 定理：由算数基本定理可知，对于一个大于 $1$ 的正整数 $N$ 可以分解质因数
 
 <div align="center">
-$ N = p_{1}^{a_{1}} \times p_{1}^{a_{1}} \times \dots  \times p_{k}^{a_{k}} $
+$ N = p_{1}^{a_{1}} \times p_{2}^{a_{2}} \times \dots  \times p_{k}^{a_{k}} $
 </div>
 
 其中 $p_{i}(1 \leq i \leq k) $ 为质数，则 $N$ 的正约数个数
@@ -131,7 +131,7 @@ $ N = p_{1}^{a_{1}} \times p_{1}^{a_{1}} \times \dots  \times p_{k}^{a_{k}} $
 定理：由算数基本定理可知，对于一个大于 $1$ 的正整数 $N$ 可以分解质因数
 
 <div align="center">
-$ N = p_{1}^{a_{1}} \times p_{1}^{a_{1}} \times \dots  \times p_{k}^{a_{k}} $
+$ N = p_{1}^{a_{1}} \times p_{2}^{a_{2}} \times \dots  \times p_{k}^{a_{k}} $
 </div>
 
 由约数个数定理可知 $N$ 的正约数的个数为
@@ -150,7 +150,7 @@ $ N = p_{1}^{a_{1}} \times p_{1}^{a_{1}} \times \dots  \times p_{k}^{a_{k}} $
 
 记
 <div align="center">
- $S_{i}=p_{i}^{0} + p_{i}^{1} + ... +p_{i}^{a_{i}-1}+ p_{i}^{a_{i}}$　　　　　（1）式
+ $S_{i}=p_{i}^{0} + p_{i}^{1} + ... +p_{i}^{a_{i}-1}+ p_{i}^{a_{i}}$　　　　　　　（1）式
 </div>
 
 两边同乘以公比 $p_{i}$,得

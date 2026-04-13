@@ -13,10 +13,11 @@ nav:
           - STL介绍: cpp_reference/STL/stl.md
           - "map": cpp_reference/STL/map.md
   - 算法基础:
-      - 前缀和: basic_algorithm/prefix_sum.md
+      - 前缀和: 算法基础/前缀和.md
   - 数学问题:
-      - 唯一分解定理: math/unique_factorization.md
-      - 最大公约数/最小公倍数: math/gcd_lcm.md
+      - 素数的判定: 数学问题/素数的判定.md
+      - 唯一分解定理: 数学问题/唯一分解定理.md
+      - 最大公约数/最小公倍数: 数学问题/最大公约数_最小公倍数.md
 
 # Theme 主题设置
 theme:

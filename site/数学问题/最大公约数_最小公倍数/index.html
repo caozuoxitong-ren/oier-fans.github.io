@@ -1138,7 +1138,7 @@
 <p>思路：正整数a和b的最大公约数一定处于[1,min(a,b)]之间，只要暴力枚举区间中的所有值，记录最大的公约数，就是最大公约数。</p>
 <pre><code class="language-cpp">int gcd=1;
 for(int i=1;i&lt;=min(a,b);i++){ 
-    if(a%i==0 &amp;&amp; b%i==0) d=i;
+    if(a%i==0 &amp;&amp; b%i==0) gcd=i;
 }
 cout&lt;&lt;gcd&lt;&lt;endl;
 </code></pre>

@@ -863,7 +863,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      朴素枚举法
+      朴素试除法
     </span>
   </a>
   
@@ -872,7 +872,16 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      平方根优化法
+      平方根优化试除法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#millerrabin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miller–Rabin素性测试
     </span>
   </a>
   
@@ -991,7 +1000,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      朴素枚举法
+      朴素试除法
     </span>
   </a>
   
@@ -1000,7 +1009,16 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      平方根优化法
+      平方根优化试除法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#millerrabin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miller–Rabin素性测试
     </span>
   </a>
   
@@ -1043,7 +1061,7 @@
 <p>比 $1$ 大但不是素数的数成为合数。 $1$ 和 $0$ 既非素数也非合数。</p>
 <p>素数在数论中有着很重要的地位。</p>
 <h2 id="_3">素数的判定</h2>
-<h3 id="_4">朴素枚举法</h3>
+<h3 id="_4">朴素试除法</h3>
 <p>思路：要判断 $N$ 是否为素数，只需检查从 $2$ 到 $N-1$ 的每一个数是否能整除 $N$ 即可。若存在能整除 $N$ 的数，则说明 $N$ 不是素数；若都不能整除 $N$ ，则说明 $N$ 为素数。时间复杂度为 $O(n)$ .</p>
 <p>代码实现：</p>
 <pre><code class="language-cpp">bool isPrime(int n){
@@ -1054,7 +1072,7 @@
     return true;
 } 
 </code></pre>
-<h3 id="_5">平方根优化法</h3>
+<h3 id="_5">平方根优化试除法</h3>
 <p>思路：整数 $N$ 的因子是成对出现的：若 $1$ 是 $N$ 的因子，则 $N/1$ 必是 $N$ 的因子；若 $2$ 是 $N$ 的因子，则 $N/2$ 必是 $N$ 的因子；若 $3$ 是 $N$ 的因子，则 $N/3$ 必是 $N$ 的因子；... ...；若 $N$ 是 $N$ 的因子，则 $N/N$ 必是 $N$ 的因子。</p>
 <p>可能的<strong>因子对</strong>：<br>
 $1$　　　　$N/1$ <br>
@@ -1088,6 +1106,8 @@ $N/1$　　　$1$ <br></p>
 <div style="text-align: justify;">
 需要注意，上述代码中 for 循环判定条件的写法是 i<=N/i，若写为 i*i<=N 则 i*i 可能会溢出，从而导致结果错误。32 位的 int 类型有符号数最大是 $2147483647$ ，$46340 \le \sqrt{2147483647} \le 46341$ 。因此，当要判断的数为 $N=2147483647$ 时，枚举到 $i=46340$ 时，因为 $46340^2 = 2147395600$ 不超过 int 最大值，可以正常运行；进一步 $i=46341$ 时，$46341^2 = 2147488281 \gt 2147483647$ 超过了 int 最大值，就会溢出导致程序错误。
 </div>
+
+<h3 id="millerrabin">Miller–Rabin素性测试</h3>
 
 
 

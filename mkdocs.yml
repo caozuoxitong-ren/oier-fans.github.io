@@ -3,21 +3,36 @@ site_name: 信奥爱好者 OIer Fans # 设置网站名称
 # 导航目录
 nav:
   - 首页: index.md
-  - C++语言基础:
-      - 基础语法:
-          - 输入输出:
-              - scanf: cpp_reference/cstdio/scanf.md
-          - 分支结构:
-              - switch语句: cpp/switch.md
-      - STL模板:
-          - STL介绍: cpp_reference/STL/stl.md
-          - "map": cpp_reference/STL/map.md
-  - 算法基础:
-      - 前缀和: 算法基础/前缀和.md
+  # - CSP-J:
+  #     - 【C1】C++语法入门:
+  #         - 01_程序设计入门: CSP-J\C1-level\C1D01-程序设计入门.md
+  #     - 【C2】C++语法进阶:
+  #         - 02_变量和数据类型: CSP-J\C2-level\C2D02-变量和数据类型.md
+  #     - 【J1】算法基础:
+  #         - 01_排序算法: J1/J1D01-排序算法.md
+  #     - 【J2】搜索和动规:
+  #         - 01_搜索算法: J2/J2D01-搜索算法.md
+  #         - 02_动态规划: J2/J2D02-动态规划.md
+  #     - 【J3】树和图:
+  #         - 01_树的遍历: J3/J3D01-树的遍历.md
+  #         - 02_图的表示和遍历: J3/J3D02-图的表示和遍历.md
+  # - C++语言基础:
+  #     - 基础语法:
+  #         - 输入输出:
+  #             - scanf: cpp_reference/cstdio/scanf.md
+  #         - 分支结构:
+  #             - switch语句: cpp/switch.md
+  #     - STL模板:
+  #         - STL介绍: cpp_reference/STL/stl.md
+  #         - "map": cpp_reference/STL/map.md
+  # - 算法基础:
+  #     - 前缀和: 算法基础/前缀和.md
   - 数学问题:
-      - 素数的判定: 数学问题/素数的判定.md
-      - 唯一分解定理: 数学问题/唯一分解定理.md
-      - 最大公约数/最小公倍数: 数学问题/最大公约数_最小公倍数.md
+      - 素数的判定: math/素数的判定.md
+      - 唯一分解定理: math/唯一分解定理.md
+      - 最大公约数/最小公倍数: math/最大公约数_最小公倍数.md
+      - 欧拉函数: math/euler-function.md
+  - OJ平台: http://101.42.90.238/ 
 
 # Theme 主题设置
 theme:

@@ -1,0 +1,4075 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../C1_03_%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/">
+      
+      
+        <link rel="next" href="../C1_05_for%E5%BE%AA%E7%8E%AF/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>04 分支嵌套与逻辑运算符 - 信奥爱好者 OIer Fans</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-header__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            信奥爱好者 OIer Fans
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              04 分支嵌套与逻辑运算符
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+          
+  
+  
+  信奥语法入门
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../math/%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E5%AE%9A/" class="md-tabs__link">
+          
+  
+  
+  数学问题
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cpp_reference/compound_data_type/pointer/" class="md-tabs__link">
+          
+  
+  
+  参考文档
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-nav__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    信奥爱好者 OIer Fans
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    信奥语法入门
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    信奥语法入门
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1阶段
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C1阶段
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 程序设计入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_02_%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 变量及其输入输出
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_03_%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 比较运算符与if语句
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 分支嵌套与逻辑运算符
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 分支嵌套与逻辑运算符
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、教学目标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、教学目标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-abcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 课时目标（ABCD 表述）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 目标说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、教学内容概览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、教学重点与难点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、教学重点与难点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 教学重点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 教学难点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、为什么需要多条件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、为什么需要多条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 第 3 课的局限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 两种组合方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、逻辑运算符
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、逻辑运算符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 三个逻辑运算符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. &amp;&amp;（与）：两边都真才真
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ||（或）：至少一真就真
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. !（非）：取反
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、真值表
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、真值表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. &amp;&amp;（与）真值表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ||（或）真值表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. !（非）真值表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、短路求值
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、短路求值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 什么是短路求值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 短路的实际价值
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、用逻辑运算符组合条件（经典例子）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、用逻辑运算符组合条件（经典例子）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-b2040" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 判断两位数（B2040）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 判断字母
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-p5711" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 闰年判断（P5711）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-b2050" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 三角形判断（B2050）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、嵌套 if 语句
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、嵌套 if 语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 什么是嵌套 if
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 示例：先判段再判级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 嵌套 if 与逻辑运算符的等价转换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 嵌套 if 的层数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、悬空 else 陷阱
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十、悬空 else 陷阱">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 问题代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 配对规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 避免方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、两种多条件实现方式的对比与选择
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十一、两种多条件实现方式的对比与选择">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选择决策
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、三目运算符（条件表达式，拓展）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、三目运算符（条件表达式，拓展）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 语法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 示例：两数较大值
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十三、switch 语句（拓展，了解即可）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十三、switch 语句（拓展，了解即可）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 语法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 示例：星期几
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 两个要点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十四、常见错误与注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十四、常见错误与注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        浮点数比较的正确写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逻辑运算符优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入法提醒
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十五、方法、套路与策略小结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十五、方法、套路与策略小结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 多条件分支两步套路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 条件书写决策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 多条件实现选择决策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 信奥策略意识
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十六、分级分类练习题单
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十六、分级分类练习题单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A 级 · 本课核心（逻辑运算符 + 多条件）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A 级 · 本课核心（逻辑运算符 + 多条件）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A 级 · 自编题题面
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B 级 · 综合/挑战
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B 级 · 综合/挑战">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B 级 · 自编题题面
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录 · 本课代码模板速查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录 · 本课代码模板速查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 1：逻辑运算符速记
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 2：多条件分支万能框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 3：闰年判断（逻辑组合经典）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 4：三角形判断（多条件 &amp;&amp; 组合）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 5：嵌套 if 标准框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 6：浮点数比较正确写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_05_for%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05_for循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_06_while%E5%BE%AA%E7%8E%AF%E4%B8%8Edo-while%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06_while循环和do-while循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_07_%E5%BE%AA%E7%8E%AF%E8%AF%BB%E5%85%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07_循环读入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_08_%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08_数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_09_%E5%BE%AA%E7%8E%AF%E4%B8%8E%E5%88%86%E6%94%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09_循环与分支
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_10_%E5%BE%AA%E7%8E%AF%E5%B5%8C%E5%A5%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10_循环嵌套
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_11_%E6%95%B0%E4%BD%8D%E6%8B%86%E5%88%86%E4%B8%93%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11_数位拆分专题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学问题
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数学问题
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E5%AE%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    素数的判定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/%E5%94%AF%E4%B8%80%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    唯一分解定理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0_%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    最大公约数/最小公倍数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/euler-function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欧拉函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文档
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    参考文档
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    复合数据类型
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    复合数据类型
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/compound_data_type/pointer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指针
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    类
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/class_basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类基础与构造函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/operator_overloading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运算符重载与类模板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/special_members/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类的特殊成员
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/friendship_and_inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    友元与继承
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/polymorphism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、教学目标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、教学目标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-abcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 课时目标（ABCD 表述）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 目标说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、教学内容概览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、教学重点与难点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、教学重点与难点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 教学重点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 教学难点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、为什么需要多条件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、为什么需要多条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 第 3 课的局限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 两种组合方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、逻辑运算符
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、逻辑运算符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 三个逻辑运算符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. &amp;&amp;（与）：两边都真才真
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ||（或）：至少一真就真
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. !（非）：取反
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、真值表
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、真值表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. &amp;&amp;（与）真值表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ||（或）真值表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. !（非）真值表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、短路求值
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、短路求值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 什么是短路求值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 短路的实际价值
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、用逻辑运算符组合条件（经典例子）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、用逻辑运算符组合条件（经典例子）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-b2040" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 判断两位数（B2040）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 判断字母
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-p5711" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 闰年判断（P5711）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-b2050" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 三角形判断（B2050）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、嵌套 if 语句
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、嵌套 if 语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 什么是嵌套 if
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 示例：先判段再判级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 嵌套 if 与逻辑运算符的等价转换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 嵌套 if 的层数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、悬空 else 陷阱
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十、悬空 else 陷阱">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 问题代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 配对规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 避免方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、两种多条件实现方式的对比与选择
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十一、两种多条件实现方式的对比与选择">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选择决策
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、三目运算符（条件表达式，拓展）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、三目运算符（条件表达式，拓展）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 语法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 示例：两数较大值
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十三、switch 语句（拓展，了解即可）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十三、switch 语句（拓展，了解即可）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 语法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 示例：星期几
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 两个要点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十四、常见错误与注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十四、常见错误与注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        浮点数比较的正确写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逻辑运算符优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入法提醒
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十五、方法、套路与策略小结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十五、方法、套路与策略小结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 多条件分支两步套路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 条件书写决策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 多条件实现选择决策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 信奥策略意识
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十六、分级分类练习题单
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十六、分级分类练习题单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A 级 · 本课核心（逻辑运算符 + 多条件）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A 级 · 本课核心（逻辑运算符 + 多条件）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A 级 · 自编题题面
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B 级 · 综合/挑战
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B 级 · 综合/挑战">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B 级 · 自编题题面
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录 · 本课代码模板速查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录 · 本课代码模板速查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 1：逻辑运算符速记
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 2：多条件分支万能框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 3：闰年判断（逻辑组合经典）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 4：三角形判断（多条件 &amp;&amp; 组合）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 5：嵌套 if 标准框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 6：浮点数比较正确写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="4">第 4 课 · 多条件分支与逻辑运算符</h1>
+<blockquote>
+<p>逻辑运算符 · 短路求值 · 组合条件 · 嵌套 if · 悬空 else · 分级题单  </p>
+</blockquote>
+<hr />
+<h2 id="_1">一、教学目标</h2>
+<p>本课目标依据布鲁姆教育目标分类学（修订版）制定，采用 ABCD 撰写法（主体 A、行为动词 B、行为条件 C、表现程度 D），确保目标可观测、可评估。</p>
+<h3 id="1-abcd">1. 课时目标（ABCD 表述）</h3>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>目标表述（ABCD）</th>
+<th>分类定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1 记忆</td>
+<td>在给出 3 个逻辑运算符的条件下，学生能够准确写出 <code>&amp;&amp;</code>、<code>\|\|</code>、<code>!</code> 的含义与读法，无遗漏。</td>
+<td>事实性知识 × 记忆</td>
+</tr>
+<tr>
+<td>G2 理解</td>
+<td>在给出 <code>&amp;&amp;</code>、<code>\|\|</code> 真值表的条件下，学生能够解释"两边都为真结果才为真""至少一个为真结果就为真"，并说明短路求值。</td>
+<td>概念性知识 × 理解</td>
+</tr>
+<tr>
+<td>G3 应用</td>
+<td>在无参考的条件下，学生能够用 <code>&amp;&amp;</code>、<code>\|\|</code>、<code>!</code> 正确组合多个比较条件，编写多条件分支程序，语法正确率不低于 90%。</td>
+<td>程序性知识 × 应用</td>
+</tr>
+<tr>
+<td>G4 应用</td>
+<td>在给出需要"先分大类再分小类"的问题的条件下，学生能够正确编写嵌套 if 结构，并避免悬空 else 错误。</td>
+<td>程序性知识 × 应用</td>
+</tr>
+<tr>
+<td>G5 分析</td>
+<td>在给出含错误代码的条件下，学生能够区分"<code>&amp;&amp;</code> 写成 <code>&amp;</code>""悬空 else 配对错误""浮点数用 <code>==</code> 比较"等典型错误并改正。</td>
+<td>程序性知识 × 分析</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">2. 目标说明</h3>
+<ul>
+<li><strong>认知层次：</strong> 本课承接第 3 课，认知重心在"理解—应用"，分析层以纠错形式渗透。</li>
+<li><strong>知识类型：</strong> 概念性知识（逻辑组合、真/假、短路）与程序性知识（逻辑运算符、嵌套 if）并重。</li>
+<li><strong>边界：</strong> 本课在第 3 课"单条件分支"基础上，学习"多条件组合"的两种方式——逻辑运算符连接、嵌套 if。学完本课可完成含闰年判断、三角形判断、范围判断等多条件分支题目。循环结构（for/while）留待后续课程。</li>
+</ul>
+<hr />
+<h2 id="_2">二、教学内容概览</h2>
+<ul>
+<li>模块1　为什么需要多条件（从第 3 课过渡）</li>
+<li>模块2　逻辑运算符（<code>&amp;&amp;</code>、<code>||</code>、<code>!</code>）</li>
+<li>模块3　真值表</li>
+<li>模块4　短路求值</li>
+<li>模块5　用逻辑运算符组合条件（经典例子）</li>
+<li>模块6　嵌套 if 语句</li>
+<li>模块7　悬空 else 陷阱</li>
+<li>模块8　两种多条件实现方式的对比与选择</li>
+<li>模块9　三目运算符（拓展）</li>
+<li>模块10　switch 语句（拓展，了解即可）</li>
+<li>模块11　常见错误与注意事项</li>
+<li>模块12　方法、套路与策略小结</li>
+<li>模块13　分级分类练习题单（洛谷 + 自编）</li>
+</ul>
+<hr />
+<h2 id="_3">三、教学重点与难点</h2>
+<h3 id="1">1. 教学重点</h3>
+<ul>
+<li>3 个逻辑运算符 <code>&amp;&amp;</code>（且）、<code>||</code>（或）、<code>!</code>（非）的含义与组合用法。</li>
+<li>真值表的理解：<code>&amp;&amp;</code> 两边都真才真，<code>||</code> 至少一真就真。</li>
+<li>短路求值：<code>&amp;&amp;</code> 左边为假时右边不计算，<code>||</code> 左边为真时右边不计算。</li>
+<li>嵌套 if 的写法：if 里套 if，用于"先分大类再分小类"。</li>
+<li>用逻辑运算符组合条件解决实际问题（闰年、三角形、范围判断）。</li>
+</ul>
+<h3 id="2_1">2. 教学难点</h3>
+<ul>
+<li><code>&amp;&amp;</code> 与 <code>||</code> 的混淆——"且"还是"或"要想清楚，写反逻辑全错。</li>
+<li><code>&amp;&amp;</code> 写成 <code>&amp;</code>（单个与号）——变成位运算，结果可能错。</li>
+<li>悬空 else：<code>else</code> 总是与最近的未配对 <code>if</code> 配对，缩进会骗人。</li>
+<li>浮点数不能用 <code>==</code> 直接比较（精度误差），要用误差范围判断。</li>
+<li>逻辑运算符优先级：<code>!</code> &gt; <code>&amp;&amp;</code> &gt; <code>||</code>，拿不准就加括号。</li>
+</ul>
+<hr />
+<h2 id="_4">四、为什么需要多条件</h2>
+<h3 id="1-3">1. 第 3 课的局限</h3>
+<p>第 3 课学的 if，每个条件都是<strong>单个比较</strong>——比如 <code>score &gt;= 60</code>、<code>n % 2 == 0</code>。一个条件，一次判断。</p>
+<p>但很多问题需要<strong>多个条件同时满足</strong>，或者<strong>多个条件满足其一</strong>：</p>
+<ul>
+<li>判断闰年：能被 4 整除<strong>且</strong>不能被 100 整除，<strong>或者</strong>能被 400 整除。</li>
+<li>判断两位数：n ≥ 10 <strong>且</strong> n ≤ 99。</li>
+<li>判断三角形：a+b&gt;c <strong>且</strong> a+c&gt;b <strong>且</strong> b+c&gt;a。</li>
+<li>判断字母：(ch ≥ 'a' <strong>且</strong> ch ≤ 'z') <strong>或者</strong> (ch ≥ 'A' <strong>且</strong> ch ≤ 'Z')。</li>
+</ul>
+<p>这些都需要把多个条件<strong>组合</strong>起来——这就是本课的核心。</p>
+<h3 id="2_2">2. 两种组合方式</h3>
+<p>C++ 提供两种方式实现多条件：</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>做法</th>
+<th>适合场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>逻辑运算符</td>
+<td>用 <code>&amp;&amp;</code>、<code>\|\|</code>、<code>!</code> 把多个条件连成一个表达式</td>
+<td>条件间"且""或"关系，条件不复杂</td>
+</tr>
+<tr>
+<td>嵌套 if</td>
+<td>if 里再套 if，分层判断</td>
+<td>"先分大类，再分小类"的层次结构</td>
+</tr>
+</tbody>
+</table>
+<p>两种方式往往可以互相转换，选哪种看哪种更清晰。本课先学逻辑运算符，再学嵌套 if，最后对比选择。</p>
+<hr />
+<h2 id="_5">五、逻辑运算符</h2>
+<h3 id="1_1">1. 三个逻辑运算符</h3>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>读法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>逻辑与（且）</td>
+<td>"并且"</td>
+<td><code>a &gt; 0 &amp;&amp; b &gt; 0</code>（a、b 都大于 0 才成立）</td>
+</tr>
+<tr>
+<td><code>\|\|</code></td>
+<td>逻辑或</td>
+<td>"或者"</td>
+<td><code>a &gt; 0 \|\| b &gt; 0</code>（a、b 至少一个大于 0 就成立）</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>逻辑非</td>
+<td>"非"</td>
+<td><code>!(a &gt; 0)</code>（a 不大于 0，即 a ≤ 0）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_3">2. <code>&amp;&amp;</code>（与）：两边都真才真</h3>
+<pre><code class="language-cpp">int a = 5, b = 3;
+cout &lt;&lt; (a &gt; 0 &amp;&amp; b &gt; 0);    // 5&gt;0 且 3&gt;0，都成立，输出 1（true）
+cout &lt;&lt; (a &gt; 0 &amp;&amp; b &lt; 0);    // 5&gt;0 成立，3&lt;0 不成立，输出 0（false）
+
+</code></pre>
+<blockquote>
+<p><strong>理解要点：</strong> <code>&amp;&amp;</code> 像"串联开关"——两个开关都闭合，电路才通。</p>
+</blockquote>
+<h3 id="3">3. <code>||</code>（或）：至少一真就真</h3>
+<pre><code class="language-cpp">int a = 5, b = -3;
+cout &lt;&lt; (a &gt; 0 || b &gt; 0);    // 5&gt;0 成立（真），输出 1（true）
+cout &lt;&lt; (a &lt; 0 || b &gt; 0);    // 5&lt;0 不成立，-3&gt;0 不成立，输出 0（false）
+
+</code></pre>
+<blockquote>
+<p><strong>理解要点：</strong> <code>||</code> 像"并联开关"——任一个开关闭合，电路就通。</p>
+</blockquote>
+<h3 id="4_1">4. <code>!</code>（非）：取反</h3>
+<pre><code class="language-cpp">int a = 5;
+cout &lt;&lt; !(a &gt; 0);     // a&gt;0 成立（真），取反为假，输出 0
+cout &lt;&lt; !(a &lt; 0);     // a&lt;0 不成立（假），取反为真，输出 1
+
+</code></pre>
+<blockquote>
+<p><code>!(a &gt; 0)</code> 等价于 <code>a &lt;= 0</code>。能用比较运算符直接写的，尽量直接写，<code>!</code> 多用于复杂条件取反。</p>
+</blockquote>
+<hr />
+<h2 id="_6">六、真值表</h2>
+<h3 id="1_2">1. <code>&amp;&amp;</code>（与）真值表</h3>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A &amp;&amp; B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>真</td>
+<td>真</td>
+<td><strong>真</strong></td>
+</tr>
+<tr>
+<td>真</td>
+<td>假</td>
+<td>假</td>
+</tr>
+<tr>
+<td>假</td>
+<td>真</td>
+<td>假</td>
+</tr>
+<tr>
+<td>假</td>
+<td>假</td>
+<td>假</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>只有<strong>两边都为真</strong>，结果才为真。</p>
+</blockquote>
+<h3 id="2_4">2. <code>||</code>（或）真值表</h3>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A || B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>真</td>
+<td>真</td>
+<td><strong>真</strong></td>
+</tr>
+<tr>
+<td>真</td>
+<td>假</td>
+<td><strong>真</strong></td>
+</tr>
+<tr>
+<td>假</td>
+<td>真</td>
+<td><strong>真</strong></td>
+</tr>
+<tr>
+<td>假</td>
+<td>假</td>
+<td>假</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>只要<strong>至少一个为真</strong>，结果就为真。</p>
+</blockquote>
+<h3 id="3_1">3. <code>!</code>（非）真值表</h3>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>!A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>真</td>
+<td>假</td>
+</tr>
+<tr>
+<td>假</td>
+<td>真</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">七、短路求值</h2>
+<h3 id="1_3">1. 什么是短路求值</h3>
+<ul>
+<li><code>&amp;&amp;</code>：如果<strong>左边为假</strong>，右边<strong>不再计算</strong>（因为结果一定是假）。</li>
+<li><code>||</code>：如果<strong>左边为真</strong>，右边<strong>不再计算</strong>（因为结果一定是真）。</li>
+</ul>
+<pre><code class="language-cpp">int a = 0;
+// a==0 时左边 (a != 0) 为假，右边 10/a 不计算，避免除以 0
+if (a != 0 &amp;&amp; 10 / a &gt; 1) {
+    cout &lt;&lt; &quot;安全&quot; &lt;&lt; endl;
+}
+
+</code></pre>
+<h3 id="2_5">2. 短路的实际价值</h3>
+<blockquote>
+<p><strong>利用短路避免错误：</strong> 把可能出错的判断（如除以 0）放在 <code>&amp;&amp;</code> 右边，左边先做安全检查。左边检查不通过（为假），右边就不计算，避免了运行错误。</p>
+</blockquote>
+<pre><code class="language-cpp">// 安全：先检查 b != 0，再算 a/b
+if (b != 0 &amp;&amp; a / b &gt; 2) { ... }
+
+// 危险：如果 b==0，a/b 会除以 0 导致程序崩溃
+if (a / b &gt; 2 &amp;&amp; b != 0) { ... }   // 顺序写反了！
+
+</code></pre>
+<blockquote>
+<p><strong>口诀：</strong> <code>&amp;&amp;</code> 把安全检查放左边，危险操作放右边；<code>||</code> 把容易成立的放左边，能尽早短路。</p>
+</blockquote>
+<hr />
+<h2 id="_8">八、用逻辑运算符组合条件（经典例子）</h2>
+<h3 id="1-b2040">1. 判断两位数（B2040）</h3>
+<p>一个正整数是两位数，当且仅当它 ≥ 10 <strong>且</strong> ≤ 99：</p>
+<pre><code class="language-cpp">int n;
+cin &gt;&gt; n;
+if (n &gt;= 10 &amp;&amp; n &lt;= 99) {
+    cout &lt;&lt; 1 &lt;&lt; endl;    // 是两位数
+} else {
+    cout &lt;&lt; 0 &lt;&lt; endl;    // 不是两位数
+}
+
+</code></pre>
+<blockquote>
+<p>第 3 课只能用嵌套 if 分两步判断，现在用 <code>&amp;&amp;</code> 一行搞定。</p>
+</blockquote>
+<h3 id="2_6">2. 判断字母</h3>
+<p>一个字符是字母，当且仅当它是小写字母（'a'~'z'）**或**大写字母（'A'~'Z'）：</p>
+<pre><code class="language-cpp">char ch;
+cin &gt;&gt; ch;
+if ((ch &gt;= 'a' &amp;&amp; ch &lt;= 'z') || (ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z')) {
+    cout &lt;&lt; &quot;yes&quot; &lt;&lt; endl;
+} else {
+    cout &lt;&lt; &quot;no&quot; &lt;&lt; endl;
+}
+
+</code></pre>
+<blockquote>
+<p><strong>括号建议：</strong> 两个范围用括号分组，再用 <code>||</code> 连接，清晰不易错。</p>
+</blockquote>
+<h3 id="3-p5711">3. 闰年判断（P5711）</h3>
+<p>闰年规则：能被 4 整除<strong>且</strong>不能被 100 整除，<strong>或者</strong>能被 400 整除。</p>
+<pre><code class="language-cpp">int year;
+cin &gt;&gt; year;
+if ((year % 4 == 0 &amp;&amp; year % 100 != 0) || (year % 400 == 0)) {
+    cout &lt;&lt; 1 &lt;&lt; endl;    // 闰年
+} else {
+    cout &lt;&lt; 0 &lt;&lt; endl;    // 平年
+}
+
+</code></pre>
+<blockquote>
+<p><strong>括号建议：</strong> 逻辑表达式较复杂时，<strong>加括号</strong>分组，既不会错，也更好读。这是逻辑运算符组合条件的经典例子。</p>
+</blockquote>
+<h3 id="4-b2050">4. 三角形判断（B2050）</h3>
+<p>三条线段能构成三角形，当且仅当任意两边之和大于第三边：</p>
+<pre><code class="language-cpp">int a, b, c;
+cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a) {
+    cout &lt;&lt; 1 &lt;&lt; endl;    // 能构成三角形
+} else {
+    cout &lt;&lt; 0 &lt;&lt; endl;    // 不能
+}
+
+</code></pre>
+<blockquote>
+<p>三个条件用 <code>&amp;&amp;</code> 连接，<strong>三个都成立</strong>才是三角形。</p>
+</blockquote>
+<hr />
+<h2 id="if">九、嵌套 if 语句</h2>
+<h3 id="1-if">1. 什么是嵌套 if</h3>
+<p>if 里还可以套 if，用于"先分大类，再分小类"的层次判断。</p>
+<h3 id="2_7">2. 示例：先判段再判级</h3>
+<pre><code class="language-cpp">int score;
+cin &gt;&gt; score;
+if (score &gt;= 60) {
+    if (score &gt;= 90) {
+        cout &lt;&lt; &quot;优秀&quot; &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; &quot;及格&quot; &lt;&lt; endl;
+    }
+} else {
+    cout &lt;&lt; &quot;不及格&quot; &lt;&lt; endl;
+}
+
+</code></pre>
+<p><strong>执行流程：</strong> 先判断 <code>score &gt;= 60</code>（大类：及格/不及格），及格后再判断 <code>score &gt;= 90</code>（小类：优秀/及格）。</p>
+<h3 id="3-if">3. 嵌套 if 与逻辑运算符的等价转换</h3>
+<p>很多嵌套 if 可以用逻辑运算符改写。比如"判断 a 是两位数"：</p>
+<pre><code class="language-cpp">// 嵌套 if 写法
+if (n &gt;= 10) {
+    if (n &lt;= 99) {
+        cout &lt;&lt; &quot;两位数&quot; &lt;&lt; endl;
+    }
+}
+
+// 逻辑运算符写法（等价，更简洁）
+if (n &gt;= 10 &amp;&amp; n &lt;= 99) {
+    cout &lt;&lt; &quot;两位数&quot; &lt;&lt; endl;
+}
+
+</code></pre>
+<blockquote>
+<p><strong>选择建议：</strong> 条件之间是"且"关系且都不复杂时，用 <code>&amp;&amp;</code> 更简洁；需要"先分大类再分小类"的层次结构时，用嵌套 if 更清晰。</p>
+</blockquote>
+<h3 id="4-if">4. 嵌套 if 的层数</h3>
+<p>嵌套层数不宜过多。超过 3 层时考虑用逻辑运算符或调整判断顺序简化。层数太多代码难读、容易出错。</p>
+<hr />
+<h2 id="else">十、悬空 else 陷阱</h2>
+<h3 id="1_4">1. 问题代码</h3>
+<pre><code class="language-cpp">if (a &gt; 0)
+    if (b &gt; 0)
+        cout &lt;&lt; &quot;A&quot;;
+else
+    cout &lt;&lt; &quot;B&quot;;
+
+</code></pre>
+<p><strong>缩进看起来</strong> else 配对第一个 if，但<strong>实际上</strong> else 配对最近的 if（第二个）。等价于：</p>
+<pre><code class="language-cpp">if (a &gt; 0) {
+    if (b &gt; 0)
+        cout &lt;&lt; &quot;A&quot;;
+    else
+        cout &lt;&lt; &quot;B&quot;;      // else 配的是第二个 if！
+}
+
+</code></pre>
+<h3 id="2_8">2. 配对规则</h3>
+<blockquote>
+<p><strong>规则：</strong> <code>else</code> 总是与<strong>最近的、未配对的</strong> <code>if</code> 配对，与缩进无关。</p>
+</blockquote>
+<h3 id="3_2">3. 避免方法</h3>
+<p><strong>加花括号</strong>，明确配对关系：</p>
+<pre><code class="language-cpp">// 想让 else 配第一个 if，加花括号
+if (a &gt; 0) {
+    if (b &gt; 0)
+        cout &lt;&lt; &quot;A&quot;;
+} else {
+    cout &lt;&lt; &quot;B&quot;;          // 现在 else 配第一个 if
+}
+
+</code></pre>
+<blockquote>
+<p><strong>规范意识：</strong> 嵌套 if 时<strong>一律加花括号</strong>，这是避免悬空 else 最有效的办法。缩进会骗人，花括号不会。</p>
+</blockquote>
+<hr />
+<h2 id="_9">十一、两种多条件实现方式的对比与选择</h2>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>逻辑运算符</th>
+<th>嵌套 if</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>写法</td>
+<td><code>if (a &gt; 0 &amp;&amp; b &gt; 0)</code></td>
+<td>if 里套 if</td>
+</tr>
+<tr>
+<td>适合场景</td>
+<td>条件间"且""或"关系</td>
+<td>"先分大类再分小类"层次结构</td>
+</tr>
+<tr>
+<td>可读性</td>
+<td>条件少时简洁</td>
+<td>条件多时层次清晰</td>
+</tr>
+<tr>
+<td>易错点</td>
+<td><code>&amp;&amp;</code> 与 <code>\|\|</code> 混淆、优先级</td>
+<td>悬空 else、配对错误</td>
+</tr>
+<tr>
+<td>互换性</td>
+<td>多数情况可互相转换</td>
+<td>多数情况可互相转换</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">选择决策</h3>
+<ul>
+<li>条件之间是"且""或"关系，且每个条件都不复杂 → <strong>用逻辑运算符</strong>。</li>
+<li>需要"先分大类再分小类"，大类和小类判断不同 → <strong>用嵌套 if</strong>。</li>
+<li>条件超过 3 个组合 → 考虑拆成嵌套 if 或调整逻辑，避免一个 if 里条件太长。</li>
+<li>无论哪种方式，<strong>一律加花括号</strong>。</li>
+</ul>
+<hr />
+<h2 id="_11">十二、三目运算符（条件表达式，拓展）</h2>
+<h3 id="1_5">1. 语法</h3>
+<pre><code class="language-cpp">条件 ? 表达式1 : 表达式2
+
+</code></pre>
+<p><strong>含义：</strong> 条件为真，整个表达式的值是"表达式1"；为假，值是"表达式2"。</p>
+<h3 id="2_9">2. 示例：两数较大值</h3>
+<pre><code class="language-cpp">int a, b;
+cin &gt;&gt; a &gt;&gt; b;
+int mx = (a &gt;= b) ? a : b;   // a&gt;=b 时 mx=a，否则 mx=b
+cout &lt;&lt; mx &lt;&lt; endl;
+
+</code></pre>
+<p>等价于：</p>
+<pre><code class="language-cpp">int mx;
+if (a &gt;= b) mx = a;
+else mx = b;
+
+</code></pre>
+<blockquote>
+<p><strong>建议：</strong> 三目运算符适合"二选一取值"的简短场景，逻辑复杂时用 if-else 更清晰，别为短而短。</p>
+</blockquote>
+<hr />
+<h2 id="switch">十三、switch 语句（拓展，了解即可）</h2>
+<p>switch 用于"一个变量等于不同值时走不同分支"，适合<strong>等值判断</strong>（不能判断大小范围）。</p>
+<h3 id="1_6">1. 语法</h3>
+<pre><code class="language-cpp">switch (表达式) {
+    case 值1:
+        语句1;
+        break;
+    case 值2:
+        语句2;
+        break;
+    default:
+        默认语句;
+        break;
+}
+
+</code></pre>
+<h3 id="2_10">2. 示例：星期几</h3>
+<pre><code class="language-cpp">int day;
+cin &gt;&gt; day;
+switch (day) {
+    case 1: cout &lt;&lt; &quot;星期一&quot; &lt;&lt; endl; break;
+    case 2: cout &lt;&lt; &quot;星期二&quot; &lt;&lt; endl; break;
+    case 3: cout &lt;&lt; &quot;星期三&quot; &lt;&lt; endl; break;
+    // ...
+    default: cout &lt;&lt; &quot;输入有误&quot; &lt;&lt; endl; break;
+}
+
+</code></pre>
+<h3 id="3_3">3. 两个要点</h3>
+<ul>
+<li><strong><code>break</code> 不能漏：</strong> 漏了 break 会"穿透"（fall-through），继续执行下一个 case 的语句，直到遇到 break 或 switch 结束。</li>
+<li><strong>表达式只能是整型/字符型：</strong> 不能用 <code>double</code>、<code>string</code>，也不能写 <code>case score &gt;= 60:</code> 这种范围。</li>
+</ul>
+<blockquote>
+<p><strong>信奥建议：</strong> 入门阶段分支题用 if-else if-else 足够，switch 用得少，了解即可。判断范围用 if，判断离散等值可用 switch。</p>
+</blockquote>
+<hr />
+<h2 id="_12">十四、常见错误与注意事项</h2>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>错误</th>
+<th>后果</th>
+<th>改正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1</td>
+<td><code>&amp;&amp;</code> 写成 <code>&amp;</code>（单个与号）</td>
+<td>变成位运算，结果可能错</td>
+<td>逻辑与用两个 <code>&amp;&amp;</code></td>
+</tr>
+<tr>
+<td>E2</td>
+<td><code>\|\|</code> 写成 <code>\|</code>（单个或号）</td>
+<td>变成位运算，结果可能错</td>
+<td>逻辑或用两个 <code>\|\|</code></td>
+</tr>
+<tr>
+<td>E3</td>
+<td><code>&amp;&amp;</code> 与 <code>\|\|</code> 混淆</td>
+<td>"且"写成"或"或反之，逻辑全错</td>
+<td>想清楚是"都满足"还是"满足其一"</td>
+</tr>
+<tr>
+<td>E4</td>
+<td>悬空 else 配对错误</td>
+<td>else 配了非预期的 if</td>
+<td>加花括号明确配对</td>
+</tr>
+<tr>
+<td>E5</td>
+<td>浮点数用 <code>==</code> 比较</td>
+<td>精度误差，可能永远不等</td>
+<td>用误差范围判断</td>
+</tr>
+<tr>
+<td>E6</td>
+<td>比较运算符连写（<code>a &lt; b &lt; c</code>）</td>
+<td>先算 <code>a&lt;b</code> 得 0/1，再和 c 比，逻辑错</td>
+<td>用 <code>a &lt; b &amp;&amp; b &lt; c</code></td>
+</tr>
+<tr>
+<td>E7</td>
+<td>逻辑运算符优先级记错</td>
+<td><code>!</code> &gt; <code>&amp;&amp;</code> &gt; <code>\|\|</code>，不加括号可能错</td>
+<td>复杂条件加括号</td>
+</tr>
+<tr>
+<td>E8</td>
+<td>嵌套层数过多</td>
+<td>代码难读、易错</td>
+<td>超过 3 层考虑简化</td>
+</tr>
+<tr>
+<td>E9</td>
+<td>短路求值顺序写反</td>
+<td>危险操作放左边，可能除以 0</td>
+<td>安全检查放 <code>&amp;&amp;</code> 左边</td>
+</tr>
+<tr>
+<td>E10</td>
+<td>switch 漏 break</td>
+<td>穿透执行后续 case</td>
+<td>每个 case 末尾加 break</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_13">浮点数比较的正确写法</h3>
+<pre><code class="language-cpp">// 错误：精度误差，0.1+0.2 可能不精确等于 0.3
+if (x == 0.3) { ... }
+
+// 正确：用误差范围
+if (fabs(x - 0.3) &lt; 1e-6) { ... }   // 差值小于 0.000001 就认为相等
+
+</code></pre>
+<blockquote>
+<p><code>fabs</code> 需要 <code>#include &lt;cmath&gt;</code>。浮点数存储有精度误差，直接用 <code>==</code> 比较可能永远不相等。用"差值足够小"来判断才是正确做法。</p>
+</blockquote>
+<h3 id="_14">逻辑运算符优先级</h3>
+<pre><code>!（非）  &gt;  &amp;&amp;（且）  &gt;  ||（或）
+
+</code></pre>
+<p>所以 <code>a || b &amp;&amp; c</code> 等价于 <code>a || (b &amp;&amp; c)</code>。<strong>拿不准就加括号</strong>，括号既不会错，也更好读。</p>
+<h3 id="_15">输入法提醒</h3>
+<ul>
+<li>写代码一律英文输入法。<code>&amp;&amp;</code>、<code>||</code>、<code>!</code> 都是英文符号，中文符号会报错。</li>
+</ul>
+<hr />
+<h2 id="_16">十五、方法、套路与策略小结</h2>
+<h3 id="1_7">1. 多条件分支两步套路</h3>
+<ul>
+<li><strong>第1步 分析条件关系：</strong> 想清楚多个条件之间是"且"（都满足）还是"或"（满足其一）关系。</li>
+<li><strong>第2步 选择实现方式：</strong> "且/或"关系用逻辑运算符，"先分大类再分小类"用嵌套 if。</li>
+</ul>
+<h3 id="2_11">2. 条件书写决策</h3>
+<ul>
+<li>单个条件 → 直接用比较运算符（第 3 课）。</li>
+<li>多个条件"同时成立" → 用 <code>&amp;&amp;</code> 连接。</li>
+<li>多个条件"至少一个成立" → 用 <code>||</code> 连接。</li>
+<li>取反 → 用 <code>!</code>，或改写条件（<code>!(a &gt; b)</code> 等价于 <code>a &lt;= b</code>）。</li>
+<li>范围判断 → <code>a &gt;= 10 &amp;&amp; a &lt;= 99</code>，<strong>不能</strong>写成 <code>10 &lt;= a &lt;= 99</code>。</li>
+<li>复杂条件 → <strong>加括号</strong>分组，不靠记忆优先级。</li>
+</ul>
+<h3 id="3_4">3. 多条件实现选择决策</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>条件间"且""或"关系，条件不复杂</td>
+<td>逻辑运算符 <code>&amp;&amp;</code>、<code>\|\|</code></td>
+</tr>
+<tr>
+<td>先分大类再分小类</td>
+<td>嵌套 if</td>
+</tr>
+<tr>
+<td>二选一取值赋给变量</td>
+<td>三目运算符（拓展）</td>
+</tr>
+<tr>
+<td>离散等值（星期几、运算符）</td>
+<td>switch（拓展）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_2">4. 信奥策略意识</h3>
+<ul>
+<li><strong>想清楚"且"还是"或"：</strong> 写条件前先想清楚是"都满足"还是"满足其一"，写完回头检查 <code>&amp;&amp;</code> 和 <code>||</code> 有没有用反。</li>
+<li><strong>复杂条件加括号：</strong> 逻辑运算符组合时用括号分组，不靠记忆优先级。</li>
+<li><strong>一律加花括号：</strong> 嵌套 if 时尤其重要，杜绝悬空 else。</li>
+<li><strong>短路求值利用：</strong> 安全检查放 <code>&amp;&amp;</code> 左边，危险操作放右边。</li>
+<li><strong>样例验证：</strong> 多条件题要测<strong>每种条件组合</strong>——比如闰年要测 2000（闰）、1900（平）、2004（闰）、2001（平）四种情况。</li>
+<li><strong>边界必测：</strong> 范围判断测边界值，如判断两位数测 9、10、99、100。</li>
+</ul>
+<hr />
+<h2 id="_17">十六、分级分类练习题单</h2>
+<blockquote>
+<p>题单分 A、B 两级。A 级为本课核心（逻辑运算符 + 多条件分支），B 级为综合/挑战。洛谷题已标注题号，自编题明确标注。本课题单均<strong>不需要循环</strong>。</p>
+</blockquote>
+<h3 id="a">A 级 · 本课核心（逻辑运算符 + 多条件）</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>题目</th>
+<th>考查点</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>B2040</code></td>
+<td>判断是否为两位数</td>
+<td><code>&amp;&amp;</code> 范围判断 + if-else</td>
+<td>洛谷</td>
+</tr>
+<tr>
+<td><code>P5711</code></td>
+<td>闰年判断</td>
+<td><code>&amp;&amp;</code>、<code>\|\|</code> 组合条件 + if-else</td>
+<td>洛谷</td>
+</tr>
+<tr>
+<td><code>B2050</code></td>
+<td>三角形判断</td>
+<td><code>&amp;&amp;</code> 多条件组合 + if-else</td>
+<td>洛谷</td>
+</tr>
+<tr>
+<td><code>自编-1</code></td>
+<td>判断是否为字母</td>
+<td><code>&amp;&amp;</code>、<code>\|\|</code> 范围组合 + if-else</td>
+<td>自编</td>
+</tr>
+<tr>
+<td><code>自编-2</code></td>
+<td>一元二次方程判断</td>
+<td><code>&amp;&amp;</code>、<code>\|\|</code> + 多分支</td>
+<td>自编</td>
+</tr>
+<tr>
+<td><code>自编-3</code></td>
+<td>判断是否为大写字母</td>
+<td><code>&amp;&amp;</code> 范围判断 + if-else</td>
+<td>自编</td>
+</tr>
+<tr>
+<td><code>自编-4</code></td>
+<td>判断年份是否为世纪年</td>
+<td><code>==</code> + <code>&amp;&amp;</code> + if-else</td>
+<td>自编</td>
+</tr>
+</tbody>
+</table>
+<h4 id="a_1">A 级 · 自编题题面</h4>
+<p><strong>自编-1：</strong> 读入一个字符，判断它是否是字母（a-z 或 A-Z）。是字母输出 <code>yes</code>，否则输出 <code>no</code>。</p>
+<pre><code>输入: F
+输出: yes
+
+</code></pre>
+<blockquote>
+<p>提示：<code>(ch &gt;= 'a' &amp;&amp; ch &lt;= 'z') || (ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z')</code>。</p>
+</blockquote>
+<p><strong>自编-2：</strong> 读入一元二次方程的三个系数 a、b、c（均为整数，a ≠ 0），根据判别式 Δ = b²−4ac 判断：Δ &gt; 0 输出 <code>两个不等实根</code>，Δ == 0 输出 <code>两个相等实根</code>，Δ \&lt; 0 输出 <code>无实根</code>。</p>
+<pre><code>输入: 1 -5 6
+输出: 两个不等实根
+
+</code></pre>
+<blockquote>
+<p>提示：Δ = b_b - 4_a*c，用 if-else if-else 三分支。Δ 是整数可直接用 <code>==</code> 比较。</p>
+</blockquote>
+<p><strong>自编-3：</strong> 读入一个字符，判断它是否是大写字母（A-Z）。是输出 <code>yes</code>，否则输出 <code>no</code>。</p>
+<pre><code>输入: G
+输出: yes
+
+</code></pre>
+<blockquote>
+<p>提示：<code>ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z'</code>。</p>
+</blockquote>
+<p><strong>自编-4：</strong> 读入一个年份，判断它是否是世纪年（能被 100 整除的年份）。是输出 <code>yes</code>，否则输出 <code>no</code>。</p>
+<pre><code>输入: 2000
+输出: yes
+
+</code></pre>
+<blockquote>
+<p>提示：<code>year % 100 == 0</code>。</p>
+</blockquote>
+<h3 id="b">B 级 · 综合/挑战</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>题目</th>
+<th>考查点</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>自编-5</code></td>
+<td>三数最大值（嵌套 if）</td>
+<td>嵌套 if 分层判断</td>
+<td>自编</td>
+</tr>
+<tr>
+<td><code>自编-6</code></td>
+<td>判断成绩是否优秀且出勤合格</td>
+<td><code>&amp;&amp;</code> 组合两个独立条件</td>
+<td>自编</td>
+</tr>
+<tr>
+<td><code>自编-7</code></td>
+<td>闰年判断升级版</td>
+<td><code>&amp;&amp;</code>、<code>\|\|</code>、<code>!</code> 综合</td>
+<td>自编</td>
+</tr>
+<tr>
+<td><code>自编-8</code></td>
+<td>判断点在第几象限</td>
+<td>嵌套 if + 逻辑组合</td>
+<td>自编</td>
+</tr>
+</tbody>
+</table>
+<h4 id="b_1">B 级 · 自编题题面</h4>
+<p><strong>自编-5：</strong> 读入三个整数，用<strong>嵌套 if</strong>输出最大的那个。</p>
+<pre><code>输入: 3 9 5
+输出: 9
+
+</code></pre>
+<blockquote>
+<p>提示：先比较 a 和 b，大的再和 c 比。用嵌套 if 实现，练习分层判断。</p>
+</blockquote>
+<p><strong>自编-6：</strong> 读入一个成绩（0~100 整数）和一个出勤次数（整数）。成绩 ≥ 90 <strong>且</strong>出勤 ≥ 10 输出 <code>优秀</code>，否则输出 <code>未达标</code>。</p>
+<pre><code>输入: 95 12
+输出: 优秀
+
+</code></pre>
+<blockquote>
+<p>提示：两个独立条件用 <code>&amp;&amp;</code> 连接。</p>
+</blockquote>
+<p><strong>自编-7：</strong> 读入一个年份，输出它是闰年还是平年。要求：用 <code>!</code> 运算符参与判断（如 <code>!(year % 4 == 0)</code> 表示不能被 4 整除）。</p>
+<pre><code>输入: 1900
+输出: 平年
+
+</code></pre>
+<blockquote>
+<p>提示：闰年条件 <code>(year % 4 == 0 &amp;&amp; year % 100 != 0) || year % 400 == 0</code>，取反即为平年。</p>
+</blockquote>
+<p><strong>自编-8：</strong> 读入一个点的坐标 x, y（均为整数，不为 0），判断它在第几象限。x&gt;0 且 y&gt;0 是第一象限，x\&lt;0 且 y&gt;0 是第二象限，x\&lt;0 且 y\&lt;0 是第三象限，x&gt;0 且 y\&lt;0 是第四象限。</p>
+<pre><code>输入: 3 5
+输出: 第一象限
+
+</code></pre>
+<blockquote>
+<p>提示：用嵌套 if（先按 x 正负分大类，再按 y 正负分小类）或用 <code>&amp;&amp;</code> 组合四个条件。两种方式都试一试，对比哪种更清晰。</p>
+</blockquote>
+<p><strong>洛谷入口：</strong> <code>https://www.luogu.com.cn/problem/</code> 后接题号即可，如 <code>https://www.luogu.com.cn/problem/P5711</code>。</p>
+<hr />
+<h2 id="_18">附录 · 本课代码模板速查</h2>
+<h3 id="1_8">模板 1：逻辑运算符速记</h3>
+<pre><code class="language-cpp">// 逻辑与（且）：两边都真才真
+a &gt; 0 &amp;&amp; b &gt; 0        // a、b 都大于 0
+
+// 逻辑或：至少一真就真
+a &gt; 0 || b &gt; 0        // a、b 至少一个大于 0
+
+// 逻辑非：取反
+!(a &gt; 0)              // 等价于 a &lt;= 0
+
+// 范围判断（必须用 &amp;&amp;）
+a &gt;= 10 &amp;&amp; a &lt;= 99    // a 在 10~99 之间
+
+</code></pre>
+<h3 id="2_12">模板 2：多条件分支万能框架</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    if (n &gt;= 10 &amp;&amp; n &lt;= 99) {        // 多条件用 &amp;&amp; 组合
+        cout &lt;&lt; &quot;两位数&quot; &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; &quot;不是两位数&quot; &lt;&lt; endl;
+    }
+    return 0;
+}
+
+</code></pre>
+<h3 id="3_5">模板 3：闰年判断（逻辑组合经典）</h3>
+<pre><code class="language-cpp">int year;
+cin &gt;&gt; year;
+if ((year % 4 == 0 &amp;&amp; year % 100 != 0) || (year % 400 == 0)) {
+    cout &lt;&lt; 1 &lt;&lt; endl;   // 闰年
+} else {
+    cout &lt;&lt; 0 &lt;&lt; endl;   // 平年
+}
+
+</code></pre>
+<h3 id="4_3">模板 4：三角形判断（多条件 &amp;&amp; 组合）</h3>
+<pre><code class="language-cpp">int a, b, c;
+cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a) {
+    cout &lt;&lt; 1 &lt;&lt; endl;   // 能构成三角形
+} else {
+    cout &lt;&lt; 0 &lt;&lt; endl;   // 不能
+}
+
+</code></pre>
+<h3 id="5-if">模板 5：嵌套 if 标准框架</h3>
+<pre><code class="language-cpp">if (大类条件) {
+    if (小类条件) {
+        // 大类成立 且 小类成立
+    } else {
+        // 大类成立 且 小类不成立
+    }
+} else {
+    // 大类不成立
+}
+
+</code></pre>
+<blockquote>
+<p><strong>一律加花括号</strong>，避免悬空 else。嵌套层数不宜超过 3 层，超过时考虑用逻辑运算符简化。</p>
+</blockquote>
+<h3 id="6">模板 6：浮点数比较正确写法</h3>
+<pre><code class="language-cpp">#include &lt;cmath&gt;
+double x;
+cin &gt;&gt; x;
+if (fabs(x - 0.3) &lt; 1e-6) {     // 差值小于 0.000001 就认为相等
+    cout &lt;&lt; &quot;相等&quot; &lt;&lt; endl;
+} else {
+    cout &lt;&lt; &quot;不相等&quot; &lt;&lt; endl;
+}
+
+</code></pre>
+<blockquote>
+<p>浮点数不能用 <code>==</code> 直接比较，用"差值足够小"判断。</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2026 oier.fans All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<admin@oier.fans>" target="_blank" rel="noopener" title="联系邮箱" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

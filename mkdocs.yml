@@ -16,11 +16,11 @@ nav:
         - 09_循环与分支: oi_tutorial/cpp/C1_09_循环与分支.md
         - 10_循环嵌套: oi_tutorial/cpp/C1_10_循环嵌套.md
         - 11_数位拆分专题: oi_tutorial/cpp/C1_11_数位拆分专题.md
-      - C2阶段:
-        - 01 循环语句: oi_tutorial/cpp/C2_01_循环语句.md
-        - 02 数组: oi_tutorial/cpp/C2_02_数组.md
-        - 03 函数: oi_tutorial/cpp/C2_03_函数.md
-        - 04 字符串: oi_tutorial/cpp/C2_04_字符串.md
+      # - C2阶段:
+      #   - 01 循环语句: oi_tutorial/cpp/C2_01_循环语句.md
+      #   - 02 数组: oi_tutorial/cpp/C2_02_数组.md
+      #   - 03 函数: oi_tutorial/cpp/C2_03_函数.md
+      #   - 04 字符串: oi_tutorial/cpp/C2_04_字符串.md
   - 数学问题:
     - 素数的判定: math/素数的判定.md
     - 唯一分解定理: math/唯一分解定理.md

@@ -19,7 +19,7 @@
     
     
       
-        <title>程序设计入门 - 信奥爱好者 OIer Fans</title>
+        <title>格式化输入函数scanf - 信奥爱好者 OIer Fans</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#scanf" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              程序设计入门
+              格式化输入函数scanf
             
           </span>
         </div>
@@ -281,7 +281,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../cpp_reference/compound_data_type/pointer/" class="md-tabs__link">
+        <a href="../../compound_data_type/pointer/" class="md-tabs__link">
           
   
   
@@ -1065,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cpp_reference/compound_data_type/pointer/" class="md-nav__link">
+      <a href="../../compound_data_type/pointer/" class="md-nav__link">
         
   
   
@@ -1153,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cpp_reference/class/class_basics/" class="md-nav__link">
+      <a href="../../class/class_basics/" class="md-nav__link">
         
   
   
@@ -1181,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cpp_reference/class/operator_overloading/" class="md-nav__link">
+      <a href="../../class/operator_overloading/" class="md-nav__link">
         
   
   
@@ -1209,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cpp_reference/class/special_members/" class="md-nav__link">
+      <a href="../../class/special_members/" class="md-nav__link">
         
   
   
@@ -1237,7 +1237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cpp_reference/class/friendship_and_inheritance/" class="md-nav__link">
+      <a href="../../class/friendship_and_inheritance/" class="md-nav__link">
         
   
   
@@ -1265,7 +1265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cpp_reference/class/polymorphism/" class="md-nav__link">
+      <a href="../../class/polymorphism/" class="md-nav__link">
         
   
   
@@ -1321,6 +1321,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        语法格式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        功能
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        返回值
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        兼容性
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考内容
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1336,7 +1421,361 @@
 
 
 
-<h1 id="_1">程序设计入门</h1>
+<h1 id="scanf">格式化输入函数scanf</h1>
+<h2 id="_1"><strong>语法格式</strong></h2>
+<div style="display: flex; justify-content: space-between;">
+    <span><b>scanf</b></span>
+    <span>头文件&lt;cstdio&gt;</span>
+</div>
+
+<pre><code class="language-cpp">int scanf ( const char * format, ... );
+</code></pre>
+<h2 id="_2"><strong>功能</strong></h2>
+<p><strong>从标准输入读取格式化数据</strong>。</p>
+<p>从标准输入 ( stdin ) 读取数据，并根据参数格式将其存储到附加参数指向的内存地址。附加参数应指向格式字符串中相应格式说明符所指定的类型已分配的对象。</p>
+<h2 id="_3"><strong>参数</strong></h2>
+<p>（1）<strong>format</strong></p>
+<p>一个C字符串，包含一系列字符，用于控制如何处理从流中提取字符：</p>
+<ul>
+<li><strong>空白字符</strong>：该函数会读取并忽略下一个非空白字符之前遇到的所有空白字符（空白字符包括空格、换行符和制表符）。</li>
+<li><strong>非空白字符</strong>（格式说明符 (%) 除外）：任何非空白字符（空格、换行符或制表符）或格式说明符（以%字符开头）的一部分都会导致函数从流中读取下一个字符，并将其与该非空白字符进行比较。如果匹配，则丢弃该字符，函数继续处理下一个格式字符。如果不匹配，则函数失败并返回，且流中的后续字符将不被读取。</li>
+<li><strong>格式说明符</strong>：由初始百分号 ( % ) 组成的序列表示格式说明符，用于指定要从流中检索并存储到附加参数所指向的位置的数据类型和格式。</li>
+</ul>
+<p><strong>scanf的 格式说明符遵循以下原型</strong>：</p>
+<pre><code class="language-cpp">%[*][width][length]specifier 
+</code></pre>
+<p>其中末尾的说明符字符（specifier）最为重要，因为它定义了要提取哪些字符、它们的解释以及其对应参数的类型：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">说明符</th>
+<th style="text-align: left;">描述</th>
+<th style="text-align: left;">提取的字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">i</td>
+<td style="text-align: left;">整数</td>
+<td style="text-align: left;">任意位数的数字，可选择性地以符号（+或-）开头。默认为十进制数字（ 0-9），但前缀0可表示八进制数字（0-7），0x表示 十六进制数字（0-f）。带符号参数。</td>
+</tr>
+<tr>
+<td style="text-align: left;">d 或 u</td>
+<td style="text-align: left;">十进制整数</td>
+<td style="text-align: left;">任意数量的十进制数字（0-9），可以选择性地以符号（+或-）开头。d 表示有符号参数，u 表示无符号参数。</td>
+</tr>
+<tr>
+<td style="text-align: left;">o</td>
+<td style="text-align: left;">八进制整数</td>
+<td style="text-align: left;">任意数量的八进制数字（0-7），可选择性地以符号（+或-）开头。无符号参数。</td>
+</tr>
+<tr>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">十六进制整数</td>
+<td style="text-align: left;">任意数量的十六进制数字（0-9、af、AF），可选择性地以0x或0X开头，所有数字也可选择性地以符号（+或-）开头。无符号参数。</td>
+</tr>
+<tr>
+<td style="text-align: left;">f、e、g</td>
+<td style="text-align: left;">浮点数</td>
+<td style="text-align: left;">一系列十进制数字，可以包含小数点，可以前面带有符号（+或-），可以后面带有e或E字符和一个十进制整数（或支持的其他一些序列）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">c</td>
+<td style="text-align: left;">字符</td>
+<td style="text-align: left;">下一个字符。如果指定的宽度不是1 ，则该函数会读取指定宽度的字符，并将它们存储在作为参数传递的数组的连续位置中。末尾不会附加空字符。</td>
+</tr>
+<tr>
+<td style="text-align: left;">s</td>
+<td style="text-align: left;">字符串</td>
+<td style="text-align: left;">任意数量的非空白字符，遇到第一个空白字符即停止。存储的序列末尾会自动添加一个终止空字符。</td>
+</tr>
+<tr>
+<td style="text-align: left;">p</td>
+<td style="text-align: left;">指针地址</td>
+<td style="text-align: left;">表示指针的字符序列。具体格式取决于系统和库的实现，但与fprintf中用于格式化 %p 的格式相同。</td>
+</tr>
+<tr>
+<td style="text-align: left;">[字符集]</td>
+<td style="text-align: left;">扫描集</td>
+<td style="text-align: left;">输入可以是任意数量括号内指定的字符。</td>
+</tr>
+<tr>
+<td style="text-align: left;">[^字符集]</td>
+<td style="text-align: left;">否定扫描集</td>
+<td style="text-align: left;">输入不能包含任何括号内指定的字符。</td>
+</tr>
+<tr>
+<td style="text-align: left;">n</td>
+<td style="text-align: left;">数量</td>
+<td style="text-align: left;">不消耗任何输入。截止到当前已经从从stdin读取的字符的数量存储在指定变量中。</td>
+</tr>
+<tr>
+<td style="text-align: left;">%</td>
+<td style="text-align: left;">%</td>
+<td style="text-align: left;">一个百分号后面跟着另一个百分号，表示匹配一个百分号。</td>
+</tr>
+</tbody>
+</table>
+<p>除了n之外，任何格式说明符至少要消耗一个字符。否则匹配失败，扫描到此结束。</p>
+<p><strong>格式说明符specifier</strong>还可以包含子说明符：星号( * )、宽度和长度（按此顺序），这些子说明符是可选的，并遵循以下规范：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">子规范</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">*</td>
+<td style="text-align: left;">可选的起始星号表示要从流中读取数据，但要忽略该数据（即，它不会存储在参数指向的位置）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">width</td>
+<td style="text-align: left;">指定当前读取操作中要读取的最大字符数（可选）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">可以是hh、h、l、ll、j、z、t、L中的一个（可选）。这将改变相应参数所指向的存储的预期类型（见下文）。</td>
+</tr>
+</tbody>
+</table>
+<p>下图显示了存储输入时相应参数的预期类型（包括带长度子说明符和不带长度子说明符的情况）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">length</th>
+<th style="text-align: left;">d i</th>
+<th style="text-align: left;">u o x</th>
+<th style="text-align: left;">f e g a</th>
+<th style="text-align: left;">c s [] [^]</th>
+<th style="text-align: left;">p</th>
+<th style="text-align: left;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">int*</td>
+<td style="text-align: left;">unsigned int*</td>
+<td style="text-align: left;">float*</td>
+<td style="text-align: left;">char*</td>
+<td style="text-align: left;">void**</td>
+<td style="text-align: left;">int*</td>
+</tr>
+<tr>
+<td style="text-align: left;">hh</td>
+<td style="text-align: left;">signed char*</td>
+<td style="text-align: left;">unsigned char*</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">signed char*</td>
+</tr>
+<tr>
+<td style="text-align: left;">h</td>
+<td style="text-align: left;">short int*</td>
+<td style="text-align: left;">unsigned short int*</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">short int*</td>
+</tr>
+<tr>
+<td style="text-align: left;">l</td>
+<td style="text-align: left;">long int*</td>
+<td style="text-align: left;">unsigned long int*</td>
+<td style="text-align: left;">double*</td>
+<td style="text-align: left;">wchar_t*</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">long int*</td>
+</tr>
+<tr>
+<td style="text-align: left;">ll</td>
+<td style="text-align: left;">long long int*</td>
+<td style="text-align: left;">unsigned long long int*</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">long long int*</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">j</td>
+<td style="text-align: left;">intmax_t*</td>
+<td style="text-align: left;">uintmax_t*</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">intmax_t*</td>
+</tr>
+<tr>
+<td style="text-align: left;">z</td>
+<td style="text-align: left;">size_t*</td>
+<td style="text-align: left;">size_t*</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">size_t*</td>
+</tr>
+<tr>
+<td style="text-align: left;">t</td>
+<td style="text-align: left;">ptrdiff_t*</td>
+<td style="text-align: left;">ptrdiff_t*</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ptrdiff_t*</td>
+</tr>
+<tr>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">long double*</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>注意：hh、ll、j、z、t为C99 引入的规范和子规范。</p>
+<p><strong>（2）…… （附加参数）</strong></p>
+<p>根据格式字符串，scanf函数可能需要一系列附加参数，每个参数都包含一个指向已分配存储空间的指针，该存储空间用于存储提取字符的解释结果及其对应的类型。</p>
+<p>这些参数的数量至少应与格式说明符存储的值的数量相同。函数会忽略额外的参数。</p>
+<p>这些参数必须是指针：当scanf的操作结果要存储到常规变量时，常规变量的名称前应加上<strong>取地址运算符( &amp; )</strong>。</p>
+<h2 id="_4"><strong>返回值</strong></h2>
+<p>成功时，该函数返回参数列表中已成功填充的项数。该计数可能与预期项数相符，也可能由于匹配失败、读取错误或到达文件末尾而少于预期项数（甚至为零） 。</p>
+<p>如果在读取过程中发生读取错误或到达文件末尾 (<strong> end-of-file</strong> )，则会设置相应的指示符（ <strong>feof</strong> 或 <strong>ferror</strong> ）。如果在成功读取任何数据之前发生上述任何一种情况，则返回 <strong>EOF</strong> 。</p>
+<p>如果在解释宽字符时发生编码错误，则该函数会将 <strong>errno</strong> 设置为 <strong>EILSEQ</strong> 。</p>
+<h2 id="_5"><strong>兼容性</strong></h2>
+<p>特定的库实现可能支持额外的说明符和子说明符。</p>
+<p>此处列出的说明符和子说明符受最新的 C 和 C++ 标准（均发布于 2011 年）支持，但特殊说明的说明符和子说明符是 C99 引入的（仅自 C++11 及以后支持），并且可能不受旧标准库的支持。</p>
+<h2 id="_6"><strong>代码示例</strong></h2>
+<p>格式化串中有空白符，则scanf会读取并忽略下一个非空白字符之前遇到的所有空白字符（空白字符包括空格、换行符和制表符）。</p>
+<pre><code class="language-cpp">int a,b;
+char c; 
+scanf(&quot;%d%d%c&quot;,&amp;a,&amp;b,&amp;c);//输入：1 2 3
+printf(&quot;(%d)(%d)(%c)&quot;,a,b,c);//输出：(1)(2)( )  
+//注：%c接收了2后面的空格
+</code></pre>
+<pre><code class="language-cpp">int a,b;
+char c; 
+scanf(&quot;%d%d %c&quot;,&amp;a,&amp;b,&amp;c);//输入：1 2 3
+printf(&quot;(%d)(%d)(%c)&quot;,a,b,c);//输出：(1)(2)(3) 
+//注：%c接收了2后面的非空字符3
+</code></pre>
+<p>非空白字符（格式说明符 (%) 除外）：任何非空白字符（空格、换行符或制表符）或格式说明符（以%字符开头）的一部分都会导致函数从流中读取下一个字符，并将其与该非空白字符进行比较。如果匹配，则丢弃该字符，函数继续处理下一个格式字符。如果不匹配，则函数失败并返回，且流中的后续字符将不被读取。</p>
+<pre><code class="language-cpp">int a;
+scanf(&quot;input:%d&quot;,&amp;a);//输入:input:3
+printf(&quot;a=%d&quot;,a); //输出：a=3 
+//注：&quot;input:&quot;对应匹配并丢弃，%d成功接收3存入a
+</code></pre>
+<pre><code class="language-cpp">int a=-1;
+scanf(&quot;input:%d&quot;,&amp;a);//输入:input3
+printf(&quot;a=%d&quot;,a); //输出：a=-1 
+//注：冒号':'不匹配，scanf终止，a未改变依然为-1
+</code></pre>
+<p>格式说明符：由初始百分号 ( % ) 组成的序列表示格式说明符，用于指定要从流中检索并存储到附加参数所指向的位置的数据类型和格式。</p>
+<p>scanf的 格式说明符遵循以下原型：%[*][width][length]specifier </p>
+<p>其中末尾的说明符字符（specifier）最为重要，因为它定义了要提取哪些字符、它们的解释以及其对应参数的类型。</p>
+<ul>
+<li>%i : 有符号整型int</li>
+</ul>
+<pre><code class="language-cpp">int a,b,c;
+scanf(&quot;%i %i %i&quot;,&amp;a,&amp;b,&amp;c);//输入：10 010 0x10
+printf(&quot;%i %i %i&quot;,a,b,c);//输出：10 8 16 
+//注1：%i表示有符号int型整数
+//注2：10是十进制，010是0开头为八进制，0x10是0x开头为16进制
+</code></pre>
+<ul>
+<li>%d：十进制有符号int型整数， %u：十进制无符号int型整数</li>
+</ul>
+<pre><code class="language-cpp">int a;
+unsigned int b; 
+scanf(&quot;%d %u&quot;,&amp;a,&amp;b);//输入：-1 -1 
+printf(&quot;%d %u&quot;,a,b);//输出：-1 4294967295
+//注1：%d表示十进制有符号int型整数，%u表示十进制无符号int型整数
+//注2：-1的补码是全1，对应无符号数4294967295
+</code></pre>
+<ul>
+<li>%d：十进制有符号int型整数</li>
+</ul>
+<pre><code class="language-cpp">int a,b,c;
+scanf(&quot;%d %d %d&quot;,&amp;a,&amp;b,&amp;c);//输入：10 010 0x10 
+printf(&quot;%d %d %d&quot;,a,b,c);//输出：10 10 0 
+//注1：%d表示十进制有符号int型整数
+//注2：%d已标明是10进制，故10按十进制为10,010按十进制为10,0x10只接受了0x前面的0 
+</code></pre>
+<ul>
+<li>%o：八进制无符号int型整数</li>
+</ul>
+<pre><code class="language-cpp">unsigned int a,b,c,d;
+scanf(&quot;%o %o %o %o&quot;,&amp;a,&amp;b,&amp;c,&amp;d);//输入：10 010 -10 -010
+printf(&quot;%o %o %o %o&quot;,a,b,c,d);//输出：10 10 37777777770 37777777770
+//注1：%o表示八进制无符号int型整数，对于负整数会先按有符号八进制整数解析，再转换为无符号数存储
+//注2:八进制10和010对应十进制8，八进制-10和-010对应十进制-8，无符号八进制数为37777777770
+</code></pre>
+<ul>
+<li>%x：十六进制无符号int型整数</li>
+</ul>
+<pre><code class="language-cpp">unsigned int a,b,c,d;
+scanf(&quot;%x %x %X %X&quot;,&amp;a,&amp;b,&amp;c,&amp;d);//输入：1A -1A 0x1A -0X1a
+printf(&quot;%x %x %x %x\n&quot;,a,b,c,d);//输出：1a ffffffe6 1a ffffffe6
+//注1：%x表示16进制无符号int型整数，对于负整数会先按16进制有符号整数解析，再转换为无符号数存储
+//注2:输入时0x、0X、ABCDEF、abcdef大小写均可，输出时 %x 表示用小写输出，%X 表示用大写输出 
+//注3:因%x已标明按照16进制格式读取，输入数字无论是否用0x开头均按照16进制看待
+//注4:16进制1A和0x1A对应十进制26，16进制-1A和-0X1a对应十进制-26，无符号16进制数为FFFFFFE6
+</code></pre>
+<ul>
+<li>%f &nbsp; %e &nbsp; %g：十进制有符号float型浮点数</li>
+</ul>
+<pre><code class="language-cpp">float a,b,c;
+scanf(&quot;%f %e %g&quot;,&amp;a,&amp;b,&amp;c);//输入：123.45 1.23e4 -2E-3 
+printf(&quot;%f %f %f\n&quot;,a,b,c);//输出：123.449997 12300.000000 -0.002000
+printf(&quot;%e %e %e\n&quot;,a,b,c);//输出：1.234500e+002 1.230000e+004 -2.000000e-003
+printf(&quot;%g %g %g\n&quot;,a,b,c);//输出：123.45 12300 -0.002
+//注1：%f、%e、%g表示有符号float型浮点数 
+//注2：%f表示以十进制小数形式输出（默认保留6位小数）
+//注3：%e表示以指数形式（科学计数法）输出（例如 1.234560e+01）
+//注4：%g则根据数值大小自动选择 %f 或 %e 中较紧凑的形式，且不输出无意义的尾随零
+</code></pre>
+<ul>
+<li>%c：字符</li>
+</ul>
+<pre><code class="language-cpp">char a,b;
+scanf(&quot;%c%c&quot;,&amp;a,&amp;b);//输入：1 2 3 4 5
+printf(&quot;(%c)(%c)&quot;,a,b);//输出：(1)( )
+//注1：%c表示接收一个char类型字符 
+//注2：scanf中&quot;%c%c&quot;，两个%c中间无空格，则第二个%c接收1后面的空格
+</code></pre>
+<pre><code class="language-cpp">char a,b;
+scanf(&quot;%c %c&quot;,&amp;a,&amp;b);//输入：1 2 3 4 5
+printf(&quot;(%c)(%c)&quot;,a,b);//输出：(1)(2) 
+//注1：%c表示接收一个char类型字符 
+//注2：scanf接收字符1，因 &quot;%c %c&quot; 中间有空格，故跳过1后面的空白符，再接收2
+</code></pre>
+<ul>
+<li>%s：字符串</li>
+</ul>
+<pre><code class="language-cpp">char a[6];
+scanf(&quot;%s&quot;,a);//输入：12345
+printf(&quot;%s&quot;,a);//输出：12345
+//注1：%s表示接收任意数量的非空白字符，遇到空白符就停止，末尾自动添加空字符'\0'
+//注2：数组a要多开辟1个字节的空间用于存储尾部自动添加的空字符 '\0' 
+</code></pre>
+<!-- 
+- 接收宽度的影像。。。。。
+```cpp
+char a[5];
+scanf("%5c",a);//输入：hello
+printf("%c%c%c%c%c",a[0],a[1],a[2],a[3],a[4]);//输出：hello
+//注1：%nc表示接收n个char字符，末尾不会附加空字符'\0'  -->
+<!-- //注2：%5c表示接收5个char字符，依次存入以a为首地址的连续区域，末尾不会附加空字符'\0' 
+``` -->
+
+<h2 id="_7"><strong>参考内容</strong></h2>
+<ul>
+<li><a href="https://cplusplus.com/reference/cstdio/scanf/">scanf - cplusplus.com</a></li>
+</ul>
 
 
 

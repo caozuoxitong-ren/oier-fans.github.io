@@ -1,0 +1,3853 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/">
+      
+      
+        <link rel="next" href="../C1_03_%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>02 变量及其输入输出 - 信奥爱好者 OIer Fans</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-header__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            信奥爱好者 OIer Fans
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              02 变量及其输入输出
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+          
+  
+  
+  信奥语法入门
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../math/%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E5%AE%9A/" class="md-tabs__link">
+          
+  
+  
+  数学问题
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cpp_reference/compound_data_type/pointer/" class="md-tabs__link">
+          
+  
+  
+  参考文档
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-nav__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    信奥爱好者 OIer Fans
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    信奥语法入门
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    信奥语法入门
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1阶段
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C1阶段
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 程序设计入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 变量及其输入输出
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 变量及其输入输出
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、教学目标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、教学目标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-abcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 课时目标（ABCD 表述）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 目标说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、教学内容概览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、教学重点与难点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、教学重点与难点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 教学重点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 教学难点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、为什么需要变量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、为什么需要变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 第一课的局限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 变量带来的改变
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、变量是什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、变量名规范与注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、变量名规范与注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 命名规则（必须遵守，否则编译错误）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 常见 C++ 关键字（先记这几个，别拿来当变量名）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 命名建议（好习惯，不强制）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 注意事项
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、数据类型与四种基本类型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、数据类型与四种基本类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 为什么要有类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 四种基本数据类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 各类型详解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 类型选择口诀
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、变量的定义、赋值与初始化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、变量的定义、赋值与初始化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 定义变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 赋值（=）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 初始化（定义时直接给值）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 三种写法对照
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、用 cin 输入变量的值
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、用 cin 输入变量的值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 基本语法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 输入一个变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 输入多个变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 不同类型的输入
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-cin-cout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. cin 与 cout 方向对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、用 cout 输出变量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十、用 cout 输出变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 输出变量的值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 变量与字符串混合输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 输出参与算式的变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 完整示例：读入两数输出和
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、算术运算
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十一、算术运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 五个基本算术运算符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 整数除法（重点坑点）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 取余运算 %
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 运算优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 字符与整数的运算（拓展）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 复合赋值与自增（拓展，信奥常用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、常见错误与注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、常见错误与注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入法与标点提醒
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十三、方法、套路与策略小结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十三、方法、套路与策略小结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 顺序结构三步套路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 类型选择决策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 整数除法防坑三问
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 信奥策略意识
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十四、分级分类练习题单
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十四、分级分类练习题单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A 级 · 本课核心（变量 + 输入 + 算术）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A 级 · 本课核心（变量 + 输入 + 算术）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A 级 · 自编题题面
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B 级 · 综合/挑战
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录 · 本课代码模板速查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录 · 本课代码模板速查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 1：变量定义与初始化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 2：顺序结构万能框架（读入→计算→输出）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 3：算术运算速记
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 4：数字拆分（取某一位）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 5：字符大小写转换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_03_%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 比较运算符与if语句
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_04_%E5%88%86%E6%94%AF%E5%B5%8C%E5%A5%97%E4%B8%8E%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 分支嵌套与逻辑运算符
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_05_for%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05_for循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_06_while%E5%BE%AA%E7%8E%AF%E4%B8%8Edo-while%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06_while循环和do-while循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_07_%E5%BE%AA%E7%8E%AF%E8%AF%BB%E5%85%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07_循环读入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_08_%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08_数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_09_%E5%BE%AA%E7%8E%AF%E4%B8%8E%E5%88%86%E6%94%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09_循环与分支
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_10_%E5%BE%AA%E7%8E%AF%E5%B5%8C%E5%A5%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10_循环嵌套
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_11_%E6%95%B0%E4%BD%8D%E6%8B%86%E5%88%86%E4%B8%93%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11_数位拆分专题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学问题
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数学问题
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E5%AE%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    素数的判定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/%E5%94%AF%E4%B8%80%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    唯一分解定理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0_%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    最大公约数/最小公倍数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/euler-function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欧拉函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文档
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    参考文档
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    复合数据类型
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    复合数据类型
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/compound_data_type/pointer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指针
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    类
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/class_basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类基础与构造函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/operator_overloading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运算符重载与类模板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/special_members/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类的特殊成员
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/friendship_and_inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    友元与继承
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/polymorphism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、教学目标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、教学目标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-abcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 课时目标（ABCD 表述）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 目标说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、教学内容概览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、教学重点与难点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、教学重点与难点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 教学重点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 教学难点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、为什么需要变量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、为什么需要变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 第一课的局限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 变量带来的改变
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、变量是什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、变量名规范与注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、变量名规范与注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 命名规则（必须遵守，否则编译错误）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 常见 C++ 关键字（先记这几个，别拿来当变量名）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 命名建议（好习惯，不强制）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 注意事项
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、数据类型与四种基本类型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、数据类型与四种基本类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 为什么要有类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 四种基本数据类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 各类型详解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 类型选择口诀
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、变量的定义、赋值与初始化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、变量的定义、赋值与初始化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 定义变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 赋值（=）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 初始化（定义时直接给值）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 三种写法对照
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、用 cin 输入变量的值
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、用 cin 输入变量的值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 基本语法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 输入一个变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 输入多个变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 不同类型的输入
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-cin-cout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. cin 与 cout 方向对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、用 cout 输出变量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十、用 cout 输出变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 输出变量的值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 变量与字符串混合输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 输出参与算式的变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 完整示例：读入两数输出和
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、算术运算
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十一、算术运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 五个基本算术运算符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 整数除法（重点坑点）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 取余运算 %
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 运算优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 字符与整数的运算（拓展）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 复合赋值与自增（拓展，信奥常用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、常见错误与注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、常见错误与注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入法与标点提醒
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十三、方法、套路与策略小结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十三、方法、套路与策略小结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 顺序结构三步套路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 类型选择决策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 整数除法防坑三问
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 信奥策略意识
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十四、分级分类练习题单
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十四、分级分类练习题单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A 级 · 本课核心（变量 + 输入 + 算术）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A 级 · 本课核心（变量 + 输入 + 算术）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A 级 · 自编题题面
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B 级 · 综合/挑战
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录 · 本课代码模板速查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录 · 本课代码模板速查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 1：变量定义与初始化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 2：顺序结构万能框架（读入→计算→输出）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 3：算术运算速记
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 4：数字拆分（取某一位）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 5：字符大小写转换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2">第 2 课 · 变量与算术运算</h1>
+<blockquote>
+<p>变量概念 · 命名规范 · 四种基本类型 · 定义与赋值 · cin 输入 · 算术运算 · 分级题单  </p>
+</blockquote>
+<hr />
+<h2 id="_1">一、教学目标</h2>
+<p>本课目标依据布鲁姆教育目标分类学（修订版）制定，采用 ABCD 撰写法（主体 A、行为动词 B、行为条件 C、表现程度 D），确保目标可观测、可评估。</p>
+<h3 id="1-abcd">1. 课时目标（ABCD 表述）</h3>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>目标表述（ABCD）</th>
+<th>分类定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1 记忆</td>
+<td>在给出变量命名规则的条件下，学生能够准确判断 5 个变量名是否合法，正确率不低于 80%。</td>
+<td>事实性知识 × 记忆</td>
+</tr>
+<tr>
+<td>G2 理解</td>
+<td>在给出四种基本数据类型的条件下，学生能够用自己的语言解释 int/long long、float/double、char、bool 各自存放什么数据，并举例说明。</td>
+<td>概念性知识 × 理解</td>
+</tr>
+<tr>
+<td>G3 应用</td>
+<td>在无参考的条件下，学生能够独立写出"定义变量、cin 读入、cout 输出"的完整程序，语法正确率不低于 90%。</td>
+<td>程序性知识 × 应用</td>
+</tr>
+<tr>
+<td>G4 应用</td>
+<td>在给出算术表达式的条件下，学生能够正确计算含 +、-、*、/、% 的式子，特别能区分整数除法与求余的取值。</td>
+<td>程序性知识 × 应用</td>
+</tr>
+<tr>
+<td>G5 分析</td>
+<td>在给出含错误代码的条件下，学生能够区分"未赋值就使用""类型不匹配""整数除法丢小数"等典型错误并改正。</td>
+<td>程序性知识 × 分析</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_1">2. 目标说明</h3>
+<ul>
+<li><strong>认知层次：</strong> 本课承接第一课，认知重心在"记忆—理解—应用"，分析层以纠错形式渗透。</li>
+<li><strong>知识类型：</strong> 概念性知识（变量、数据类型）与程序性知识（定义、输入输出、算术运算）并重。</li>
+<li><strong>边界：</strong> 学完本课可完成"读入数据→计算→输出结果"的顺序结构题目；选择结构（if）留待后续课程。</li>
+</ul>
+<hr />
+<h2 id="_2">二、教学内容概览</h2>
+<ul>
+<li>模块1　为什么需要变量（从第一课过渡）</li>
+<li>模块2　变量是什么</li>
+<li>模块3　变量名规范与注意事项</li>
+<li>模块4　数据类型与四种基本类型（int / long long / float / double / char / bool）</li>
+<li>模块5　变量的定义、赋值与初始化</li>
+<li>模块6　用 cin 输入变量的值</li>
+<li>模块7　用 cout 输出变量</li>
+<li>模块8　算术运算符（+ - * / %）</li>
+<li>模块9　常见错误与注意事项</li>
+<li>模块10　方法、套路与策略小结</li>
+<li>模块11　分级分类练习题单（洛谷 + 自编）</li>
+</ul>
+<hr />
+<h2 id="_3">三、教学重点与难点</h2>
+<h3 id="1">1. 教学重点</h3>
+<ul>
+<li>变量命名规则：字母/数字/下划线、不能数字开头、不能是关键字、区分大小写。</li>
+<li>四种基本类型 <code>int</code>/<code>long long</code>、<code>float</code>/<code>double</code>、<code>char</code>、<code>bool</code> 各自存放什么、用什么写法给值。</li>
+<li>变量定义语法 <code>类型 变量名;</code>，赋值 <code>=</code>，初始化 <code>int a = 10;</code>。</li>
+<li>cin 输入语法 <code>cin &gt;&gt; 变量;</code>，与 cout 方向相反（<code>&gt;&gt;</code> 向右流入变量）。</li>
+<li>算术运算五则，尤其整数除法 <code>7/2=3</code> 与求余 <code>7%2=1</code>。</li>
+</ul>
+<h3 id="2_2">2. 教学难点</h3>
+<ul>
+<li>理解"变量是装数据的盒子"，类型决定盒子能装什么。</li>
+<li><code>=</code> 是赋值（把右边的值放进左边的变量），不是数学里的"等于"。</li>
+<li>整数除整数得整数（直接丢小数，不是四舍五入），是本课最大坑。</li>
+<li><code>%</code> 求余只能用于整数，不能用于 double。</li>
+<li>cin 的 <code>&gt;&gt;</code> 与 cout 的 <code>&lt;&lt;</code> 方向容易记混。</li>
+</ul>
+<hr />
+<h2 id="_4">四、为什么需要变量</h2>
+<h3 id="1_1">1. 第一课的局限</h3>
+<p>第一课我们用 cout 输出的是"写死"的内容：</p>
+<pre><code class="language-cpp">cout &lt;&lt; &quot;3 + 4 = &quot; &lt;&lt; 3 + 4 &lt;&lt; endl;   // 永远只算 3+4
+
+</code></pre>
+<p>如果题目要算 <code>5 + 8</code>、<code>100 + 200</code>，难道每次都改代码？当然不行。我们需要一种东西，能<strong>在程序运行时临时存放数据</strong>，还能反复使用、反复计算——这就是<strong>变量</strong>。</p>
+<h3 id="2_3">2. 变量带来的改变</h3>
+<p>有了变量，程序可以"先读入数据，再计算，最后输出"：</p>
+<pre><code class="language-cpp">int a, b;            // 准备两个&quot;盒子&quot;装整数
+cin &gt;&gt; a &gt;&gt; b;       // 从键盘读入 a 和 b
+cout &lt;&lt; a + b;       // 输出它们的和
+
+</code></pre>
+<p>这样一份代码，输入 <code>3 4</code> 就输出 <code>7</code>，输入 <code>100 200</code> 就输出 <code>300</code>——程序变得通用了。这就是变量的价值。</p>
+<hr />
+<h2 id="_5">五、变量是什么</h2>
+<p><strong>变量是内存里的一块空间，用来存放数据。</strong> 你可以把它想象成一个"贴了标签的盒子"：</p>
+<ul>
+<li><strong>盒子</strong> = 内存里的一块空间</li>
+<li><strong>标签（变量名）</strong> = 你给这块空间起的名字</li>
+<li><strong>内容（变量的值）</strong> = 盒子里装的数据</li>
+<li><strong>盒子的形状（数据类型）</strong> = 决定能装什么类型的数据</li>
+</ul>
+<pre><code>┌─────────────┐
+│   a = 10    │   ← 变量名 a，值是 10，类型 int（装整数）
+└─────────────┘
+
+</code></pre>
+<p>关键特点：</p>
+<ul>
+<li>变量的值<strong>可以改变</strong>（所以叫"变"量）：<code>a = 10;</code> 之后可以 <code>a = 20;</code>，新值覆盖旧值。</li>
+<li>变量<strong>必须先定义再使用</strong>：没定义过的变量名不能用。</li>
+</ul>
+<hr />
+<h2 id="_6">六、变量名规范与注意事项</h2>
+<h3 id="1_2">1. 命名规则（必须遵守，否则编译错误）</h3>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>说明</th>
+<th>合法示例</th>
+<th>非法示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>只能由字母、数字、下划线组成</td>
+<td>不能有空格、不能有其他符号</td>
+<td><code>score</code>、<code>a1</code>、<code>_tmp</code></td>
+<td><code>s core</code>、<code>a-b</code>、<code>a#</code></td>
+</tr>
+<tr>
+<td>不能以数字开头</td>
+<td>第一个字符必须是字母或下划线</td>
+<td><code>a1</code>、<code>_x</code></td>
+<td><code>1a</code>、<code>2nd</code></td>
+</tr>
+<tr>
+<td>不能是 C++ 关键字</td>
+<td>关键字是语言保留的词</td>
+<td><code>num</code>、<code>sum</code></td>
+<td><code>int</code>、<code>return</code>、<code>main</code></td>
+</tr>
+<tr>
+<td>区分大小写</td>
+<td><code>a</code> 和 <code>A</code> 是两个不同变量</td>
+<td><code>a</code> 与 <code>A</code> 不同</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-c">2. 常见 C++ 关键字（先记这几个，别拿来当变量名）</h3>
+<p><code>int</code>、<code>double</code>、<code>char</code>、<code>bool</code>、<code>return</code>、<code>if</code>、<code>else</code>、<code>for</code>、<code>while</code>、<code>main</code>（main 不是关键字但保留作主函数名，别用）。</p>
+<h3 id="3">3. 命名建议（好习惯，不强制）</h3>
+<ul>
+<li><strong>见名知意</strong>：<code>score</code> 比 <code>s</code> 好，<code>age</code> 比 <code>a</code> 好。竞赛题变量多时可短，如 <code>a</code>、<code>b</code>、<code>n</code>。</li>
+<li><strong>风格统一</strong>：要么用驼峰 <code>studentScore</code>，要么用下划线 <code>student_score</code>，别混用。</li>
+<li><strong>别太长</strong>：<code>the_score_of_the_student</code> 太啰嗦，<code>score</code> 就够。</li>
+</ul>
+<h3 id="4">4. 注意事项</h3>
+<ul>
+<li>变量名不能重复定义（同一作用域内）：<code>int a; int a;</code> 会报错。</li>
+<li>不要用拼音缩写到自己也看不懂：<code>cj</code> 是成绩还是差价？写 <code>score</code> 更清楚。</li>
+<li>大小写敏感是双刃剑：<code>Sum</code> 和 <code>sum</code> 是两个变量，别手滑。</li>
+</ul>
+<hr />
+<h2 id="_7">七、数据类型与四种基本类型</h2>
+<h3 id="1_3">1. 为什么要有类型</h3>
+<p>不同数据占的空间不同、能做的运算不同。比如：</p>
+<ul>
+<li>整数 <code>3</code> 和 <code>4</code> 能做 <code>3 % 4</code>（求余）；</li>
+<li>小数 <code>3.14</code> 不能做 <code>%</code>；</li>
+<li>字符 <code>'A'</code> 本质存的是 ASCII 码（整数），所以也能做加减运算（如 <code>'a'-32</code> 转大写）。</li>
+</ul>
+<p>所以定义变量时，必须<strong>先告诉计算机这个变量是什么类型</strong>。</p>
+<h3 id="2_4">2. 四种基本数据类型</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>关键字</th>
+<th>存放内容</th>
+<th>占用空间</th>
+<th>取值范围（参考）</th>
+<th>给值写法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整型</td>
+<td><code>int</code></td>
+<td>整数</td>
+<td>4 字节</td>
+<td>约 ±21 亿（−2147483648 ~ 2147483647）</td>
+<td><code>10</code>、<code>-5</code></td>
+</tr>
+<tr>
+<td>整型</td>
+<td><code>long long</code></td>
+<td>整数</td>
+<td>8 字节</td>
+<td>约 ±9.2×10¹⁸（−9223372036854775808 ~ 9223372036854775807）</td>
+<td><code>1000000000</code>、<code>5LL</code></td>
+</tr>
+<tr>
+<td>浮点型</td>
+<td><code>float</code></td>
+<td>小数</td>
+<td>4 字节</td>
+<td>约 ±3.4×10³⁸，有效数字 6~7 位</td>
+<td><code>3.14f</code>、<code>-0.5f</code></td>
+</tr>
+<tr>
+<td>浮点型</td>
+<td><code>double</code></td>
+<td>小数</td>
+<td>8 字节</td>
+<td>约 ±1.7×10³⁰⁸，有效数字 15~16 位</td>
+<td><code>3.14</code>、<code>-0.5</code></td>
+</tr>
+<tr>
+<td>字符型</td>
+<td><code>char</code></td>
+<td>单个字符</td>
+<td>1 字节</td>
+<td>实际存 ASCII 码（0~127）</td>
+<td><code>'A'</code>、<code>'9'</code></td>
+</tr>
+<tr>
+<td>布尔型</td>
+<td><code>bool</code></td>
+<td>真或假</td>
+<td>1 字节</td>
+<td><code>true</code>(1) / <code>false</code>(0)</td>
+<td><code>true</code>、<code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3_1">3. 各类型详解</h3>
+<p><strong>① 整型 <code>int</code> 与 <code>long long</code></strong></p>
+<ul>
+<li><code>int</code>：存整数，4 字节，范围约 ±21 亿，是最常用的整型。</li>
+<li><code>long long</code>：存整数，8 字节，范围约 ±9.2×10¹⁸。当数据或结果可能超过 21 亿时（如人数、大数求和），必须用 <code>long long</code>，否则会溢出得到错误结果。</li>
+<li>写法：直接写数字，不加引号；<code>long long</code> 字面量可加 <code>LL</code> 后缀。</li>
+</ul>
+<pre><code class="language-cpp">int age = 12;
+int score = 100;
+long long big = 1000000000000LL;   // 超过 21 亿，用 long long
+
+</code></pre>
+<p><strong>② 浮点型 <code>float</code> 与 <code>double</code></strong></p>
+<ul>
+<li><code>float</code>：存小数，4 字节，有效数字 6~7 位，精度较低。</li>
+<li><code>double</code>：存小数，8 字节，有效数字 15~16 位，精度高。</li>
+<li>信奥里<strong>小数一律用 <code>double</code></strong>，不用 <code>float</code>（精度不够容易出错）。</li>
+<li>注意：<code>double</code> 存小数有精度误差，<code>0.1 + 0.2</code> 可能不精确等于 <code>0.3</code>，后续会讲。</li>
+</ul>
+<pre><code class="language-cpp">float f = 3.14f;        // float 字面量加 f 后缀
+double pi = 3.14159;
+double temp = 36.5;
+
+</code></pre>
+<p><strong>③ 字符型 <code>char</code></strong></p>
+<ul>
+<li>存<strong>单个</strong>字符，用<strong>单引号</strong> <code>' '</code> 括起来。</li>
+<li>字符本质存的是 ASCII 码：<code>'A'</code> 实际存的是 65，<code>'a'</code> 是 97，<code>'0'</code> 是 48。</li>
+<li>单引号里只能放一个字符：<code>'A'</code> 对，<code>'AB'</code> 错。</li>
+</ul>
+<pre><code class="language-cpp">char ch = 'A';
+char op = '+';
+
+</code></pre>
+<p><strong>④ 布尔型 <code>bool</code></strong></p>
+<ul>
+<li>只有两个值：<code>true</code>（真，等于 1）和 <code>false</code>（假，等于 0）。</li>
+<li>常用来表示"是/否"，如"是否及格"。</li>
+</ul>
+<pre><code class="language-cpp">bool pass = true;
+bool isEnd = false;
+
+</code></pre>
+<h3 id="4_1">4. 类型选择口诀</h3>
+<p><strong>整数用 int（可能超 21 亿用 long long），小数用 double，单个字符用 char，是非判断用 bool。</strong></p>
+<hr />
+<h2 id="_8">八、变量的定义、赋值与初始化</h2>
+<h3 id="1_4">1. 定义变量</h3>
+<p>语法：<code>类型 变量名;</code></p>
+<pre><code class="language-cpp">int a;            // 定义一个整型变量 a
+double x;         // 定义一个浮点变量 x
+char ch;          // 定义一个字符变量 ch
+bool flag;        // 定义一个布尔变量 flag
+
+</code></pre>
+<p>可以一次定义多个同类型变量，用逗号隔开：</p>
+<pre><code class="language-cpp">int a, b, c;      // 一次定义三个整型变量
+
+</code></pre>
+<h3 id="2_5">2. 赋值（=）</h3>
+<p><code>=</code> 是<strong>赋值运算符</strong>：把右边的值放进左边的变量。</p>
+<pre><code class="language-cpp">a = 10;           // 把 10 放进 a
+a = 20;           // 把 a 的值改成 20（旧值 10 被覆盖）
+b = a;            // 把 a 的值复制给 b（此时 b 也是 20）
+
+</code></pre>
+<blockquote>
+<p><strong>关键理解：</strong> <code>=</code> 不是"等于"，是"把右边的放进左边"。所以 <code>a = a + 1;</code> 是合法的——意思是"把 a 加 1 后再放回 a"。</p>
+</blockquote>
+<h3 id="3_2">3. 初始化（定义时直接给值）</h3>
+<p>定义的同时给值，叫初始化：</p>
+<pre><code class="language-cpp">int a = 10;            // 定义 a 并初始化为 10
+double pi = 3.14;      // 定义 pi 并初始化为 3.14
+char ch = 'A';         // 定义 ch 并初始化为 'A'
+int b = 3, c = 4;      // 定义多个并分别初始化
+
+</code></pre>
+<blockquote>
+<p><strong>重要：</strong> 变量<strong>未赋值就读取</strong>，得到的是"垃圾值"（内存里残留的随机数）。养成"定义即初始化"的好习惯。</p>
+</blockquote>
+<h3 id="4_2">4. 三种写法对照</h3>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>含义</th>
+<th>推荐度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int a;</code></td>
+<td>只定义，未给值</td>
+<td>易出垃圾值</td>
+</tr>
+<tr>
+<td><code>int a = 10;</code></td>
+<td>定义并初始化</td>
+<td>推荐</td>
+</tr>
+<tr>
+<td><code>int a; a = 10;</code></td>
+<td>先定义，再赋值</td>
+<td>可以，分两步</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="cin">九、用 cin 输入变量的值</h2>
+<h3 id="1_5">1. 基本语法</h3>
+<p>cin 是"标准输入流"对象，<code>&gt;&gt;</code> 叫<strong>提取运算符</strong>。</p>
+<p><strong>读法：</strong> 把 <code>&gt;&gt;</code> 左边 cin（键盘）的数据，提取到右边的变量里。</p>
+<pre><code class="language-cpp">cin &gt;&gt; 变量名;
+
+</code></pre>
+<p>注意方向：<code>&gt;&gt;</code> 向右，数据从键盘流向变量。</p>
+<h3 id="2_6">2. 输入一个变量</h3>
+<pre><code class="language-cpp">int a;
+cin &gt;&gt; a;         // 从键盘读入一个整数放进 a
+
+</code></pre>
+<p>运行时在键盘输入 <code>10</code> 回车，a 就变成 10。</p>
+<h3 id="3_3">3. 输入多个变量</h3>
+<p>用多个 <code>&gt;&gt;</code> 串起来，输入时用空格或回车分隔：</p>
+<pre><code class="language-cpp">int a, b;
+cin &gt;&gt; a &gt;&gt; b;    // 读入两个整数
+
+</code></pre>
+<p>输入 <code>3 4</code> 或 <code>3↵4</code>（↵表示回车）都可以，a 得 3，b 得 4。</p>
+<h3 id="4_3">4. 不同类型的输入</h3>
+<pre><code class="language-cpp">int n;  cin &gt;&gt; n;        // 输入整数：10
+double x; cin &gt;&gt; x;      // 输入小数：3.14
+char ch; cin &gt;&gt; ch;      // 输入单个字符：A
+
+</code></pre>
+<blockquote>
+<p><strong>注意：</strong> <code>cin &gt;&gt; ch</code> 读字符时会<strong>跳过空格和回车</strong>，直接读下一个非空白字符。</p>
+</blockquote>
+<h3 id="5-cin-cout">5. cin 与 cout 方向对比</h3>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>运算符</th>
+<th>方向</th>
+<th>记忆</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cout</td>
+<td><code>&lt;&lt;</code></td>
+<td>内容流向屏幕（向左）</td>
+<td>"送出去"</td>
+</tr>
+<tr>
+<td>cin</td>
+<td><code>&gt;&gt;</code></td>
+<td>数据流向变量（向右）</td>
+<td>"读进来"</td>
+</tr>
+</tbody>
+</table>
+<p>口诀：<strong>cout 用 <code>&lt;&lt;</code> 往外送，cin 用 <code>&gt;&gt;</code> 往里读。</strong></p>
+<hr />
+<h2 id="cout">十、用 cout 输出变量</h2>
+<h3 id="1_6">1. 输出变量的值</h3>
+<p>变量名不加引号，cout 输出的是变量里的值，不是变量名：</p>
+<pre><code class="language-cpp">int a = 10;
+cout &lt;&lt; a;        // 输出: 10（输出 a 的值，不是字母 a）
+
+</code></pre>
+<h3 id="2_7">2. 变量与字符串混合输出</h3>
+<p>和第一课一样，用 <code>&lt;&lt;</code> 串起来：</p>
+<pre><code class="language-cpp">int a = 10, b = 20;
+cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; &quot;, b = &quot; &lt;&lt; b &lt;&lt; endl;
+// 输出: a = 10, b = 20
+
+</code></pre>
+<h3 id="3_4">3. 输出参与算式的变量</h3>
+<p>变量可以直接参与运算后输出：</p>
+<pre><code class="language-cpp">int a = 3, b = 4;
+cout &lt;&lt; &quot;a + b = &quot; &lt;&lt; a + b &lt;&lt; endl;   // 输出: a + b = 7
+cout &lt;&lt; &quot;a * b = &quot; &lt;&lt; a * b &lt;&lt; endl;   // 输出: a * b = 12
+
+</code></pre>
+<h3 id="4_4">4. 完整示例：读入两数输出和</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int main(){
+    int a, b;
+    cin &gt;&gt; a &gt;&gt; b;
+    cout &lt;&lt; a + b &lt;&lt; endl;
+    return 0;
+}
+
+</code></pre>
+<p>输入 <code>3 4</code>，输出 <code>7</code>。这就是洛谷 P1001（A+B Problem）的核心代码。</p>
+<hr />
+<h2 id="_9">十一、算术运算</h2>
+<h3 id="1_7">1. 五个基本算术运算符</h3>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>示例</th>
+<th>结果</th>
+<th>适用类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>加</td>
+<td><code>3 + 4</code></td>
+<td><code>7</code></td>
+<td>整数、小数</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>减</td>
+<td><code>10 - 3</code></td>
+<td><code>7</code></td>
+<td>整数、小数</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>乘</td>
+<td><code>6 * 7</code></td>
+<td><code>42</code></td>
+<td>整数、小数</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>除</td>
+<td><code>15 / 4</code></td>
+<td><code>3</code>（见下）</td>
+<td>整数、小数</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>取余（取模）</td>
+<td><code>15 % 4</code></td>
+<td><code>3</code></td>
+<td><strong>仅整数</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_8">2. 整数除法（重点坑点）</h3>
+<p><strong>两个整数相除，结果还是整数，小数部分直接丢弃（不是四舍五入）。</strong></p>
+<pre><code class="language-cpp">cout &lt;&lt; 15 / 4;      // 输出 3，不是 3.75
+cout &lt;&lt; 7 / 2;       // 输出 3，不是 3.5
+cout &lt;&lt; 1 / 2;       // 输出 0
+
+</code></pre>
+<p><strong>怎么得到小数？</strong> 只要有一个是小数（浮点），就按小数算：</p>
+<pre><code class="language-cpp">cout &lt;&lt; 15.0 / 4;    // 输出 3.75
+cout &lt;&lt; 7 / 2.0;     // 输出 3.5
+cout &lt;&lt; 1.0 / 2;     // 输出 0.5
+
+</code></pre>
+<blockquote>
+<p><strong>规律：</strong> 整数 ÷ 整数 = 整数（丢小数）；只要有一边是小数 = 小数。变量同理：<code>int a=7; cout &lt;&lt; a/2;</code> 输出 3；<code>double x=7; cout &lt;&lt; x/2;</code> 输出 3.5。</p>
+</blockquote>
+<h3 id="3_5">3. 取余运算 <code>%</code></h3>
+<p><code>%</code> 求的是除法的<strong>余数</strong>。<code>15 % 4</code> 读作"<strong>15 取余 4</strong>"，或"<strong>15 除以 4 的余数</strong>"（两种读法都对，课堂可任选一种统一使用）。</p>
+<pre><code class="language-cpp">cout &lt;&lt; 15 % 4;      // 15÷4=3余1，输出 1
+cout &lt;&lt; 7 % 2;       // 7÷2=3余1，输出 1
+cout &lt;&lt; 10 % 5;      // 10÷5=2余0，输出 0
+
+</code></pre>
+<blockquote>
+<p><strong>重要：</strong> <code>%</code> 只能用于整数，不能用于小数。<code>3.14 % 2</code> 会编译错误。</p>
+</blockquote>
+<p><strong>求余的常见用途：</strong></p>
+<ul>
+<li>判断奇偶：<code>n % 2 == 0</code> 是偶数，<code>n % 2 == 1</code> 是奇数。</li>
+<li>取个位：<code>n % 10</code> 得到 n 的个位数字（如 <code>123 % 10 = 3</code>）。</li>
+<li>取十位：<code>n / 10 % 10</code>（如 <code>123 / 10 = 12</code>，<code>12 % 10 = 2</code>）。</li>
+</ul>
+<h3 id="4_5">4. 运算优先级</h3>
+<p>和数学一样：<strong>先乘除求余，后加减</strong>，有括号先算括号。</p>
+<pre><code class="language-cpp">cout &lt;&lt; 2 + 3 * 4;       // 输出 14，不是 20（先算 3*4=12，再 2+12）
+cout &lt;&lt; (2 + 3) * 4;     // 输出 20（括号改变顺序）
+cout &lt;&lt; 10 - 2 * 3;      // 输出 4（先 2*3=6，再 10-6）
+
+</code></pre>
+<blockquote>
+<p><strong>建议：</strong> 拿不准优先级时，<strong>加括号</strong>，既不会错，也更好读。</p>
+</blockquote>
+<h3 id="5">5. 字符与整数的运算（拓展）</h3>
+<p>char 本质存的是 ASCII 码，所以可以和整数运算：</p>
+<pre><code class="language-cpp">char ch = 'a';           // 'a' 的 ASCII 码是 97
+cout &lt;&lt; char(ch - 32);   // 97-32=65，即 'A'，输出 A（小写转大写）
+
+</code></pre>
+<p>小写转大写的规律：小写字母比对应大写字母大 32。<code>'a'-'A'</code> = 32。这是洛谷 P5704（字母转换）的原理。</p>
+<h3 id="6">6. 复合赋值与自增（拓展，信奥常用）</h3>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>等价于</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a += 5</code></td>
+<td><code>a = a + 5</code></td>
+<td>加 5 后赋回</td>
+</tr>
+<tr>
+<td><code>a -= 2</code></td>
+<td><code>a = a - 2</code></td>
+<td>减 2 后赋回</td>
+</tr>
+<tr>
+<td><code>a *= 3</code></td>
+<td><code>a = a * 3</code></td>
+<td>乘 3 后赋回</td>
+</tr>
+<tr>
+<td><code>a++</code></td>
+<td><code>a = a + 1</code></td>
+<td>自增 1</td>
+</tr>
+<tr>
+<td><code>a--</code></td>
+<td><code>a = a - 1</code></td>
+<td>自减 1</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-cpp">int a = 10;
+a += 5;        // a 变成 15
+a++;           // a 变成 16
+
+</code></pre>
+<hr />
+<h2 id="_10">十二、常见错误与注意事项</h2>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>错误</th>
+<th>后果</th>
+<th>改正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1</td>
+<td>变量未定义就使用</td>
+<td>编译错误 was not declared</td>
+<td>先 <code>int a;</code> 再用</td>
+</tr>
+<tr>
+<td>E2</td>
+<td>变量未赋值就读取</td>
+<td>输出垃圾值（随机数）</td>
+<td>定义即初始化</td>
+</tr>
+<tr>
+<td>E3</td>
+<td>变量名数字开头</td>
+<td>编译错误</td>
+<td>改成字母/下划线开头</td>
+</tr>
+<tr>
+<td>E4</td>
+<td>变量名用关键字</td>
+<td>编译错误</td>
+<td>换个名字</td>
+</tr>
+<tr>
+<td>E5</td>
+<td>同名变量重复定义</td>
+<td>编译错误 redefinition</td>
+<td>一个名字只定义一次</td>
+</tr>
+<tr>
+<td>E6</td>
+<td>char 用双引号 <code>"A"</code></td>
+<td>类型不匹配（变成字符串）</td>
+<td>字符用单引号 <code>'A'</code></td>
+</tr>
+<tr>
+<td>E7</td>
+<td>int 用单引号 <code>'10'</code></td>
+<td>类型错误</td>
+<td>数字不加引号</td>
+</tr>
+<tr>
+<td>E8</td>
+<td>整数除法丢小数</td>
+<td><code>7/2</code> 得 3 而非 3.5</td>
+<td>改用 <code>7.0/2</code> 或 double</td>
+</tr>
+<tr>
+<td>E9</td>
+<td>double 用 <code>%</code></td>
+<td>编译错误</td>
+<td>求余只用整数</td>
+</tr>
+<tr>
+<td>E10</td>
+<td>cin 用 <code>&lt;&lt;</code> / cout 用 <code>&gt;&gt;</code></td>
+<td>方向反，编译错误</td>
+<td>cin 用 <code>&gt;&gt;</code>，cout 用 <code>&lt;&lt;</code></td>
+</tr>
+<tr>
+<td>E11</td>
+<td>大小写写错（<code>Int</code>）</td>
+<td>编译错误</td>
+<td>关键字全小写 <code>int</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_11">输入法与标点提醒</h3>
+<ul>
+<li>写代码一律英文输入法。变量名里的中文标点、空格都会报错。</li>
+<li><code>=</code> 是赋值，<code>==</code> 才是"判断相等"（后续课程会学，先记住别混）。</li>
+</ul>
+<hr />
+<h2 id="_12">十三、方法、套路与策略小结</h2>
+<h3 id="1_8">1. 顺序结构三步套路</h3>
+<p>信奥里最基础的题目都是"读入→计算→输出"三步：</p>
+<ul>
+<li><strong>第1步 读入：</strong> 先按数据类型定义变量，再用 <code>cin &gt;&gt;</code> 把键盘数据读进变量。</li>
+<li><strong>第2步 计算：</strong> 用算术运算把读入的数据算出结果（可存入新变量，也可直接输出）。</li>
+<li><strong>第3步 输出：</strong> 用 <code>cout &lt;&lt;</code> 把结果输出。</li>
+</ul>
+<h3 id="2_9">2. 类型选择决策</h3>
+<ul>
+<li>题目说"整数"→ <code>int</code>；数据或结果可能超过 21 亿 → <code>long long</code></li>
+<li>题目说"小数/浮点/保留几位"→ <code>double</code></li>
+<li>题目说"一个字符/字母"→ <code>char</code></li>
+<li>题目说"是否/判断"→ <code>bool</code></li>
+</ul>
+<h3 id="3_6">3. 整数除法防坑三问</h3>
+<p>写除法前先问自己：</p>
+<ol>
+<li>两个操作数都是整数吗？</li>
+<li>题目要整数结果还是小数结果？</li>
+<li>要小数就加 <code>.0</code> 或用 double 变量。</li>
+</ol>
+<h3 id="4_6">4. 信奥策略意识</h3>
+<ul>
+<li><strong>定义即初始化</strong>：避免垃圾值，减少调试时间。</li>
+<li><strong>变量名见名知意</strong>：长题目里 <code>sum</code>、<code>cnt</code>、<code>ans</code> 比单字母好维护。</li>
+<li><strong>拿不准加括号</strong>：优先级记不清就加括号，绝不靠猜。</li>
+<li><strong>样例验证</strong>：提交前用样例输入跑一遍，逐字符比对输出。</li>
+</ul>
+<hr />
+<h2 id="_13">十四、分级分类练习题单</h2>
+<blockquote>
+<p>题单分 A、B 两级。A 级为本课核心（变量 + cin + 算术），B 级为综合/挑战。洛谷题已标注题号，自编题明确标注。</p>
+</blockquote>
+<h3 id="a">A 级 · 本课核心（变量 + 输入 + 算术）</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>题目</th>
+<th>考查点</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>P1001</code></td>
+<td>A+B Problem</td>
+<td>cin 两数 + 加法输出</td>
+<td>洛谷</td>
+</tr>
+<tr>
+<td><code>P5703</code></td>
+<td>苹果采购</td>
+<td>cin 两数 + 乘法输出</td>
+<td>洛谷</td>
+</tr>
+<tr>
+<td><code>B2003</code></td>
+<td>输出第二个整数</td>
+<td>cin 多数 + 变量选择输出</td>
+<td>洛谷</td>
+</tr>
+<tr>
+<td><code>P5704</code></td>
+<td>字母转换</td>
+<td>char 输入输出 + ASCII 大小写转换</td>
+<td>洛谷</td>
+</tr>
+<tr>
+<td><code>自编-1</code></td>
+<td>定义变量并输出</td>
+<td>定义、初始化、cout 输出变量</td>
+<td>自编</td>
+</tr>
+<tr>
+<td><code>自编-2</code></td>
+<td>长方形面积</td>
+<td>cin 长宽 + 乘法</td>
+<td>自编</td>
+</tr>
+<tr>
+<td><code>自编-3</code></td>
+<td>三数平均值</td>
+<td>cin 三数 + 除法（注意整数除法）</td>
+<td>自编</td>
+</tr>
+<tr>
+<td><code>自编-4</code></td>
+<td>取个位与十位</td>
+<td><code>%</code> 和 <code>/</code> 拆数字</td>
+<td>自编</td>
+</tr>
+</tbody>
+</table>
+<h4 id="a_1">A 级 · 自编题题面</h4>
+<p><strong>自编-1：</strong> 定义整型变量 <code>a</code> 并初始化为 <code>15</code>，定义字符变量 <code>ch</code> 初始化为 <code>'A'</code>，分两行输出它们的值。</p>
+<pre><code>15
+A
+
+</code></pre>
+<p><strong>自编-2：</strong> 读入长方形的长和宽（整数），输出面积（长×宽）。</p>
+<pre><code>输入: 5 3
+输出: 15
+
+</code></pre>
+<p><strong>自编-3：</strong> 读入三个整数，输出它们的平均值（结果保留小数，用 double 计算）。</p>
+<pre><code>输入: 3 4 5
+输出: 4
+
+</code></pre>
+<blockquote>
+<p>思考：如果三个数用 int 相加再除以 3，<code>12/3=4</code> 没问题；但若 <code>4 4 5</code>，<code>13/3=4</code>（丢小数）。要得小数应写成 <code>(a+b+c)/3.0</code>。</p>
+</blockquote>
+<p><strong>自编-4：</strong> 读入一个两位整数，分别输出它的十位和个位。</p>
+<pre><code>输入: 37
+输出:
+3
+7
+
+</code></pre>
+<blockquote>
+<p>提示：十位 = <code>n / 10</code>，个位 = <code>n % 10</code>。</p>
+</blockquote>
+<h3 id="b">B 级 · 综合/挑战</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>题目</th>
+<th>考查点</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>B2004</code></td>
+<td>对齐输出</td>
+<td>cin 三数 + 格式化输出（占位宽度）</td>
+<td>洛谷</td>
+</tr>
+<tr>
+<td><code>P5705</code></td>
+<td>数字反转</td>
+<td>整数拆分（% 和 /）+ 重组</td>
+<td>洛谷</td>
+</tr>
+</tbody>
+</table>
+<p><strong>洛谷入口：</strong> <code>https://www.luogu.com.cn/problem/</code> 后接题号即可，如 <code>https://www.luogu.com.cn/problem/P1001</code>。</p>
+<hr />
+<h2 id="_14">附录 · 本课代码模板速查</h2>
+<h3 id="1_9">模板 1：变量定义与初始化</h3>
+<pre><code class="language-cpp">int a = 10;              // 整型
+long long big = 1000000000000LL;  // 大整数（超 21 亿用 long long）
+float f = 3.14f;         // 单精度浮点（字面量加 f）
+double x = 3.14;         // 双精度浮点（信奥默认用 double）
+char ch = 'A';           // 字符（单引号）
+bool flag = true;        // 布尔
+int b, c, d;             // 多个同类型
+
+</code></pre>
+<h3 id="2_10">模板 2：顺序结构万能框架（读入→计算→输出）</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int main(){
+    int a, b;             // 定义变量（读入前准备）
+    cin &gt;&gt; a &gt;&gt; b;        // 1. 读入
+    cout &lt;&lt; a + b &lt;&lt; endl;// 2. 计算 + 3. 输出
+    return 0;
+}
+
+</code></pre>
+<h3 id="3_7">模板 3：算术运算速记</h3>
+<pre><code class="language-cpp">int sum = a + b;        // 加
+int diff = a - b;       // 减
+int prod = a * b;       // 乘
+int q = a / b;          // 整数除法（丢小数）
+int r = a % b;          // 求余（仅整数）
+double ans = 1.0 * a / b;  // 想要小数结果：先乘 1.0
+
+</code></pre>
+<h3 id="4_7">模板 4：数字拆分（取某一位）</h3>
+<pre><code class="language-cpp">int n = 123;
+int ge = n % 10;        // 个位: 3
+int shi = n / 10 % 10;  // 十位: 2
+int bai = n / 100 % 10; // 百位: 1
+
+</code></pre>
+<h3 id="5_1">模板 5：字符大小写转换</h3>
+<pre><code class="language-cpp">char low = 'a';
+char up = low - 32;        // 小写转大写（'a'-'A'=32）
+// 或更稳的写法：up = low - ('a' - 'A');
+
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2026 oier.fans All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<admin@oier.fans>" target="_blank" rel="noopener" title="联系邮箱" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

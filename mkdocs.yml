@@ -3,26 +3,45 @@ site_name: 信奥爱好者 OIer Fans # 设置网站名称
 # 导航目录
 nav:
   - 首页: index.md
-  - C++语法入门:
+  - 信奥语法入门:
+      - C1阶段:
+        - 01 程序设计入门: oi_tutorial/cpp/C1_01_程序设计入门.md
+        - 02 变量及其输入输出: oi_tutorial/cpp/C1_02_变量及其输入输出.md
+        - 03 比较运算符与if语句: oi_tutorial/cpp/C1_03_分支语句与比较运算符.md
+        - 04 分支嵌套与逻辑运算符: oi_tutorial/cpp/C1_04_分支嵌套与逻辑运算符.md
+        - 05_for循环: oi_tutorial/cpp/C1_05_for循环.md
+        - 06_while循环和do-while循环: oi_tutorial/cpp/C1_06_while循环与do-while循环.md
+        - 07_循环读入: oi_tutorial/cpp/C1_07_循环读入.md
+        - 08_数组: oi_tutorial/cpp/C1_08_数组.md
+        - 09_循环与分支: oi_tutorial/cpp/C1_09_循环与分支.md
+        - 10_循环嵌套: oi_tutorial/cpp/C1_10_循环嵌套.md
+        - 11_数位拆分专题: oi_tutorial/cpp/C1_11_数位拆分专题.md
+      - C2阶段:
+        - 01 循环语句: oi_tutorial/cpp/C2_01_循环语句.md
+        - 02 数组: oi_tutorial/cpp/C2_02_数组.md
+        - 03 函数: oi_tutorial/cpp/C2_03_函数.md
+        - 04 字符串: oi_tutorial/cpp/C2_04_字符串.md
+  - 数学问题:
+    - 素数的判定: math/素数的判定.md
+    - 唯一分解定理: math/唯一分解定理.md
+    - 最大公约数/最小公倍数: math/最大公约数_最小公倍数.md
+    - 欧拉函数: math/euler-function.md
+  # - OJ平台: http://101.42.90.238/ 
+  - 参考文档:
       - 复合数据类型:
-          - 指针: cpp_tutorial/compound_data_type/pointer.md
+          - 指针: cpp_reference/compound_data_type/pointer.md
       - 类:
-          - 类基础与构造函数: cpp_tutorial/class/class_basics.md
-          - 运算符重载与类模板: cpp_tutorial/class/operator_overloading.md
-          - 类的特殊成员: cpp_tutorial/class/special_members.md
-          - 友元与继承: cpp_tutorial/class/friendship_and_inheritance.md
-          - 多态: cpp_tutorial/class/polymorphism.md
+          - 类基础与构造函数: cpp_reference/class/class_basics.md
+          - 运算符重载与类模板: cpp_reference/class/operator_overloading.md
+          - 类的特殊成员: cpp_reference/class/special_members.md
+          - 友元与继承: cpp_reference/class/friendship_and_inheritance.md
+          - 多态: cpp_reference/class/polymorphism.md
       # - STL模板:
       #     - STL介绍: cpp_reference/STL/stl.md
       #     - "map": cpp_reference/STL/map.md
   # - 算法基础:
   #     - 前缀和: 算法基础/前缀和.md
-  - 数学问题:
-      - 素数的判定: math/素数的判定.md
-      - 唯一分解定理: math/唯一分解定理.md
-      - 最大公约数/最小公倍数: math/最大公约数_最小公倍数.md
-      - 欧拉函数: math/euler-function.md
-  - OJ平台: http://101.42.90.238/ 
+
 
 # Theme 主题设置
 theme:

@@ -19,6 +19,7 @@ nav:
         - 12_标记法专题: oi_tutorial/cpp/C1_12_标记法专题.md
   - 信奥CSP-J算法:
       - J1阶段:
+        - 01_map: oi_tutorial\csp-j\J1-01_map.md 
         - 02_前缀和: oi_tutorial\csp-j\J1-02_前缀和.md
         - 04_唯一分解定理: oi_tutorial\csp-j\J1-04_唯一分解定理.md
         - 06_欧几里得算法: oi_tutorial\csp-j\J1-06_欧几里得算法.md

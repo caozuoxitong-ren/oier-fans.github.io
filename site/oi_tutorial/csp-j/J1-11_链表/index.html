@@ -1,0 +1,3982 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../J1-06_%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/">
+      
+      
+        <link rel="next" href="../../../math/%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E5%AE%9A/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>11_链表 - 信奥爱好者 OIer Fans</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-header__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            信奥爱好者 OIer Fans
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              11_链表
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cpp/C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+          
+  
+  
+  信奥语法入门
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../J1-02_%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-tabs__link">
+          
+  
+  
+  信奥CSP-J算法
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../math/%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E5%AE%9A/" class="md-tabs__link">
+          
+  
+  
+  数学问题
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cpp_reference/compound_data_type/pointer/" class="md-tabs__link">
+          
+  
+  
+  参考文档
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-nav__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    信奥爱好者 OIer Fans
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    信奥语法入门
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    信奥语法入门
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1阶段
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C1阶段
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 程序设计入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_02_%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 变量及其输入输出
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_03_%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 比较运算符与if语句
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_04_%E5%88%86%E6%94%AF%E5%B5%8C%E5%A5%97%E4%B8%8E%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 分支嵌套与逻辑运算符
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_05_for%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05_for循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_06_while%E5%BE%AA%E7%8E%AF%E4%B8%8Edo-while%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06_while循环和do-while循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_07_%E5%BE%AA%E7%8E%AF%E8%AF%BB%E5%85%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07_循环读入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_08_%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08_数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_09_%E5%BE%AA%E7%8E%AF%E4%B8%8E%E5%88%86%E6%94%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09_循环与分支
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_10_%E5%BE%AA%E7%8E%AF%E5%B5%8C%E5%A5%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10_循环嵌套
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_11_%E6%95%B0%E4%BD%8D%E6%8B%86%E5%88%86%E4%B8%93%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11_数位拆分专题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/C1_12_%E6%A0%87%E8%AE%B0%E6%B3%95%E4%B8%93%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12_标记法专题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    信奥CSP-J算法
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    信奥CSP-J算法
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J1阶段
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    J1阶段
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../J1-02_%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02_前缀和
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../J1-04_%E5%94%AF%E4%B8%80%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04_唯一分解定理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../J1-06_%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06_欧几里得算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11_链表
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11_链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、教学目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、教学内容概览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、教学重点与难点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、教学重点与难点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        教学重点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        教学难点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、什么是链表——从数组的局限说起
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、什么是链表——从数组的局限说起">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        引入：数组的弱点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        链表的核心思想
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、单链表的手写实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、单链表的手写实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 定义节点：struct 与指针
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-new-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 创建节点：new 与 ->
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 连接节点与遍历
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 头插法：在头部插入新节点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 在指定节点后插入
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 删除指定节点后的节点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、双向链表的手写实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、双向链表的手写实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 为什么需要双向
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 节点定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 创建与连接
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 双向链表的后插操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、STL list 入门
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、STL list 入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-stl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 什么是 STL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 使用 list 的基本框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-list_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、STL list 常用函数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、STL list 常用函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 函数速查表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 增删查改完整示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-list_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、STL list 的遍历与迭代器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、STL list 的遍历与迭代器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 迭代器入门
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-auto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 用 auto 简化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-range-based-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 range-based for 循环（最简单）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-insert-erase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 insert 与 erase 的正确用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、常见题型汇总
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十、常见题型汇总">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 约瑟夫问题（STL list 的经典应用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 队列安排（数组模拟双向链表）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 单向链表操作（数组模拟单链表）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、常见错误与注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、方法、套路与策略小结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、方法、套路与策略小结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 链表插入三步套路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 数组 vs 链表决策表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-vs-stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 手写 vs STL list 决策表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 策略意识
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十三、分级分类练习题单
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十三、分级分类练习题单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A 级（本课核心）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B 级（综合/挑战）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自编题：list 基本操作练习
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录 · 本课代码模板速查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录 · 本课代码模板速查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 1：手写单链表遍历与头插
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 2：手写单链表指定位置后插与删
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 3：STL list 基本操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 4：STL list 遍历三种方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 5：数组模拟双向链表（竞赛常用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 6：约瑟夫问题（STL list 版）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学问题
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数学问题
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E5%AE%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    素数的判定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/唯一分解定理.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    唯一分解定理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/最大公约数_最小公倍数.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    最大公约数/最小公倍数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/euler-function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欧拉函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文档
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    参考文档
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    复合数据类型
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    复合数据类型
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/compound_data_type/pointer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指针
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    类
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/class_basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类基础与构造函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/operator_overloading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运算符重载与类模板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/special_members/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类的特殊成员
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/friendship_and_inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    友元与继承
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp_reference/class/polymorphism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、教学目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、教学内容概览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、教学重点与难点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、教学重点与难点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        教学重点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        教学难点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、什么是链表——从数组的局限说起
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、什么是链表——从数组的局限说起">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        引入：数组的弱点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        链表的核心思想
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、单链表的手写实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、单链表的手写实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 定义节点：struct 与指针
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-new-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 创建节点：new 与 ->
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 连接节点与遍历
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 头插法：在头部插入新节点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 在指定节点后插入
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 删除指定节点后的节点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、双向链表的手写实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、双向链表的手写实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 为什么需要双向
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 节点定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 创建与连接
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 双向链表的后插操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、STL list 入门
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、STL list 入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-stl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 什么是 STL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 使用 list 的基本框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-list_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、STL list 常用函数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、STL list 常用函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 函数速查表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 增删查改完整示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-list_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、STL list 的遍历与迭代器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、STL list 的遍历与迭代器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 迭代器入门
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-auto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 用 auto 简化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-range-based-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 range-based for 循环（最简单）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-insert-erase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 insert 与 erase 的正确用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、常见题型汇总
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十、常见题型汇总">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 约瑟夫问题（STL list 的经典应用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 队列安排（数组模拟双向链表）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 单向链表操作（数组模拟单链表）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、常见错误与注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、方法、套路与策略小结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、方法、套路与策略小结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 链表插入三步套路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 数组 vs 链表决策表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-vs-stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 手写 vs STL list 决策表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 策略意识
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十三、分级分类练习题单
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十三、分级分类练习题单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A 级（本课核心）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B 级（综合/挑战）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自编题：list 基本操作练习
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录 · 本课代码模板速查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录 · 本课代码模板速查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 1：手写单链表遍历与头插
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 2：手写单链表指定位置后插与删
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 3：STL list 基本操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 4：STL list 遍历三种方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 5：数组模拟双向链表（竞赛常用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6stl-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 6：约瑟夫问题（STL list 版）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="11">第11课 · 链表</h1>
+<blockquote>
+<p><strong>衔接回顾</strong>：我们学过一维数组——用连续的内存空间存一组数据。数组最大的优点是<strong>随机访问</strong>（<code>a[i]</code> 一步到位，O(1)）。但数组有一个致命弱点：<strong>在中间插入或删除元素很慢</strong>（要搬动后面所有元素，O(n)）。如果一道题需要频繁在序列中间插入、删除，数组就力不从心了。链表就是为解决这个问题而生的数据结构。本课我们从链表的原理讲起，手写单链表和双向链表，再学习 C++ STL 提供的 <code>list</code> 模板，最后汇总常见题型。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、教学目标</h2>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>目标表述（ABCD）</th>
+<th>分类定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1 记忆</td>
+<td>在给出链表节点定义的条件下，学生能说出节点的两个组成部分（数据域 + 指针域）及头指针的作用，正确率不低于 90%。</td>
+<td>事实性知识 × 记忆</td>
+</tr>
+<tr>
+<td>G2 理解</td>
+<td>在给出单链表插入操作图示的条件下，学生能解释"先连后断"的指针修改顺序及其原因，表述准确。</td>
+<td>概念性知识 × 理解</td>
+</tr>
+<tr>
+<td>G3 应用</td>
+<td>在给出 <code>struct Node</code> 定义的条件下，学生能手写单链表的创建、遍历、头插法插入代码，并通过样例验证。</td>
+<td>程序性知识 × 应用</td>
+</tr>
+<tr>
+<td>G4 应用</td>
+<td>在给出 STL <code>list</code> 常用函数表的条件下，学生能用 <code>push_back</code>/<code>push_front</code>/<code>pop_back</code>/<code>pop_front</code>/<code>size</code>/<code>front</code>/<code>back</code> 编写程序，正确率不低于 100%。</td>
+<td>程序性知识 × 应用</td>
+</tr>
+<tr>
+<td>G5 应用</td>
+<td>在给出 <code>list</code> 迭代器和 range-based for 两种遍历方式的条件下，学生能选择合适方式遍历链表并输出所有元素。</td>
+<td>程序性知识 × 应用</td>
+</tr>
+<tr>
+<td>G6 分析</td>
+<td>在给出数组和链表两种数据结构的条件下，学生能比较两者在随机访问、插入删除、内存占用三方面的差异，说明各自适用场景。</td>
+<td>概念性知识 × 分析</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>目标说明</strong>：本课认知重心在"应用"与"理解"——既要手写链表理解底层原理，又要会用 STL <code>list</code> 解决实际问题。知识类型以程序性知识（怎么写链表代码）和概念性知识（为什么这样连指针）为主。本课边界：学完能理解链表原理、手写单链表与双向链表、使用 STL <code>list</code> 常用函数、解决约瑟夫问题与队列安排等经典链表题；STL 其他容器（<code>vector</code>/<code>stack</code>/<code>queue</code>）、更复杂的数据结构（树、图）留待后续课程。</p>
+</blockquote>
+<hr />
+<h2 id="_2">二、教学内容概览</h2>
+<p>本课共 8 个模块：</p>
+<ul>
+<li><strong>什么是链表——从数组的局限说起</strong>——引出链表概念，节点与指针</li>
+<li><strong>单链表的手写实现</strong>——<code>struct Node</code>、<code>new</code>、<code>-&gt;</code>、<code>nullptr</code>、遍历与插入</li>
+<li><strong>双向链表的手写实现</strong>——增加 <code>prev</code> 指针，双向操作</li>
+<li><strong>STL list 入门</strong>——什么是 STL，<code>#include &lt;list&gt;</code>，<code>list&lt;int&gt;</code> 的本质</li>
+<li><strong>STL list 常用函数</strong>——增删查改全套函数</li>
+<li><strong>STL list 的遍历与迭代器</strong>——迭代器、<code>auto</code>、range-based for</li>
+<li><strong>常见题型汇总</strong>——约瑟夫问题、队列安排、单向链表操作</li>
+<li><strong>注意事项与数组链表对比</strong>——何时用链表、迭代器失效、内存管理</li>
+</ul>
+<hr />
+<h2 id="_3">三、教学重点与难点</h2>
+<h3 id="_4">教学重点</h3>
+<ul>
+<li>链表节点结构：数据域 + 指针域，头指针的作用</li>
+<li>单链表插入的"先连后断"顺序：新节点先接后继，前驱再接新节点</li>
+<li>STL <code>list</code> 常用函数：<code>push_back</code>/<code>push_front</code>/<code>pop_back</code>/<code>pop_front</code>/<code>size</code>/<code>front</code>/<code>back</code>/<code>insert</code>/<code>erase</code></li>
+<li>数组模拟链表的思想（信奥竞赛常用技巧）</li>
+<li>数组与链表的对比及选用决策</li>
+</ul>
+<h3 id="_5">教学难点</h3>
+<ul>
+<li>指针修改顺序：插入时若先断开旧链接会丢失后续节点（"先连后断"原则）</li>
+<li><code>new</code> 与 <code>delete</code> 的配对：手写链表需手动管理内存，忘记 <code>delete</code> 会内存泄漏</li>
+<li>迭代器失效：<code>erase</code> 后原迭代器作废，必须用返回值更新</li>
+<li>数组模拟链表中"下标当指针"的思维转换</li>
+<li>STL <code>list</code> 不支持 <code>[]</code> 随机访问（与 <code>vector</code> 的关键区别）</li>
+</ul>
+<hr />
+<h2 id="_6">四、什么是链表——从数组的局限说起</h2>
+<h3 id="_7">引入：数组的弱点</h3>
+<p>第 8 课学过，数组用<strong>连续</strong>的内存空间存数据。要在数组中间插入一个元素，后面的所有元素都要往后挪一位：</p>
+<pre><code>插入前: [10, 20, 30, 40, 50]
+在 20 后插入 25 → 30, 40, 50 全部后移
+插入后: [10, 20, 25, 30, 40, 50]
+
+</code></pre>
+<p>如果数组有 10 万个元素，在头部插入就要搬动 10 万个元素——太慢了。</p>
+<h3 id="_8">链表的核心思想</h3>
+<p>链表不用连续空间。每个元素独立分配内存，用<strong>指针</strong>记录"下一个元素在哪"。就像寻宝游戏：每个线索告诉你下一个线索的位置，你顺着线索一个个找下去。</p>
+<pre><code>节点1 → 节点2 → 节点3 → nullptr(结束)
+
+</code></pre>
+<p>每个"节点"包含两部分：</p>
+<ul>
+<li><strong>数据域</strong>：存实际的数据（如一个整数）</li>
+<li><strong>指针域</strong>：存下一个节点的地址</li>
+</ul>
+<p>这样，插入新节点时只需修改指针的指向，不用搬动任何数据：</p>
+<pre><code>插入前: 节点1 → 节点2 → 节点3
+在节点1后插入新节点:
+  新节点先指向节点2，节点1再指向新节点
+插入后: 节点1 → 新节点 → 节点2 → 节点3
+
+</code></pre>
+<blockquote>
+<p><strong>要点</strong>：链表的核心是"用指针串联独立的节点"。插入删除只需改指针，O(1) 搞定。代价是失去了随机访问能力——要找第 i 个元素，只能从头顺着指针走 i 步。</p>
+</blockquote>
+<hr />
+<h2 id="_9">五、单链表的手写实现</h2>
+<h3 id="51-struct">5.1 定义节点：struct 与指针</h3>
+<p>手写链表需要两个新概念：<strong>结构体</strong>（<code>struct</code>）和<strong>指针</strong>（<code>*</code>）。</p>
+<ul>
+<li><strong>struct</strong>：把多个变量打包在一起。链表节点需要"一个数据 + 一个指针"，用 struct 封装。</li>
+<li><strong>指针</strong>：存一个地址。<code>Node* next</code> 表示 <code>next</code> 这个变量存的是"另一个 Node 的内存地址"。</li>
+</ul>
+<pre><code class="language-cpp">// 定义链表节点
+struct Node {
+    int data;      // 数据域：存一个整数
+    Node* next;    // 指针域：指向下一个节点
+};
+
+</code></pre>
+<blockquote>
+<p><strong>要点</strong>：<code>Node*</code> 读作"指向 Node 的指针"。<code>next</code> 不存数据本身，而是存"下一个节点在哪条街哪个号"——一个地址。</p>
+</blockquote>
+<h3 id="52-new-">5.2 创建节点：new 与 -&gt;</h3>
+<p>用 <code>new</code> 在内存中分配一个新节点，用 <code>-&gt;</code> 访问指针指向的成员：</p>
+<pre><code class="language-cpp">Node* a = new Node;   // 在堆内存中创建一个节点，a 存它的地址
+a-&gt;data = 10;         // 通过 -&gt; 给 data 赋值
+a-&gt;next = nullptr;    // next 设为 nullptr（空指针，表示&quot;后面没有了&quot;）
+
+</code></pre>
+<blockquote>
+<p><strong>要点</strong>：<code>-&gt;</code> 是"指针访问成员"的运算符。<code>a-&gt;data</code> 等价于 <code>(*a).data</code>，读作"a 指向的节点的 data"。<code>nullptr</code> 是 C++ 的空指针关键字，表示"不指向任何东西"。</p>
+</blockquote>
+<h3 id="53">5.3 连接节点与遍历</h3>
+<p>把三个节点连成链表，再用循环遍历：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+int main() {
+    // 创建三个节点
+    Node* a = new Node;  a-&gt;data = 10;
+    Node* b = new Node;  b-&gt;data = 20;
+    Node* c = new Node;  c-&gt;data = 30;
+
+    // 连接: a → b → c → nullptr
+    a-&gt;next = b;
+    b-&gt;next = c;
+    c-&gt;next = nullptr;
+
+    // head 指针指向第一个节点（链表的&quot;入口&quot;）
+    Node* head = a;
+
+    // 遍历：从 head 出发，顺着 next 一直走到 nullptr
+    for (Node* p = head; p != nullptr; p = p-&gt;next) {
+        cout &lt;&lt; p-&gt;data &lt;&lt; ' ';
+    }
+    cout &lt;&lt; '\n';
+    // 输出: 10 20 30
+
+    return 0;
+}
+
+</code></pre>
+<blockquote>
+<p><strong>要点</strong>：遍历链表的标准写法是 <code>for (Node* p = head; p != nullptr; p = p-&gt;next)</code>。<code>p = p-&gt;next</code> 让指针走到下一个节点，<code>p == nullptr</code> 时说明走到末尾了。</p>
+</blockquote>
+<h3 id="54">5.4 头插法：在头部插入新节点</h3>
+<p>在链表头部插入新节点，只需两步：</p>
+<pre><code class="language-cpp">// 在 head 指向的链表头部插入值为 5 的新节点
+Node* newNode = new Node;
+newNode-&gt;data = 5;
+newNode-&gt;next = head;   // 第一步：新节点指向原来的头
+head = newNode;          // 第二步：head 更新为新节点
+
+</code></pre>
+<p>图示：</p>
+<pre><code>插入前: head → [10] → [20] → [30] → nullptr
+newNode = [5]
+第一步: [5] → [10] → [20] → [30] → nullptr  (newNode 接上原链表)
+第二步: head → [5] → [10] → [20] → [30] → nullptr  (head 指向新节点)
+
+</code></pre>
+<h3 id="55">5.5 在指定节点后插入</h3>
+<p>在节点 <code>p</code> 后面插入新节点，注意"先连后断"：</p>
+<pre><code class="language-cpp">// 在 p 后面插入值为 15 的新节点
+Node* newNode = new Node;
+newNode-&gt;data = 15;
+newNode-&gt;next = p-&gt;next;   // 第一步：新节点先接上 p 的后继
+p-&gt;next = newNode;          // 第二步：p 再指向新节点
+
+</code></pre>
+<blockquote>
+<p><strong>易错点</strong>：顺序不能反！如果先写 <code>p-&gt;next = newNode</code>，则 <code>p</code> 原来的后继节点就"丢了"（没有任何指针指向它），链表从那里断裂。口诀：<strong>先连后断</strong>——先把新节点连上后面的，再让前面的指向新节点。</p>
+</blockquote>
+<h3 id="56">5.6 删除指定节点后的节点</h3>
+<p>删除 <code>p</code> 后面的节点，要先用临时指针记住它，再断开链接，最后释放内存：</p>
+<pre><code class="language-cpp">// 删除 p 后面的节点
+Node* tmp = p-&gt;next;      // 第一步：记住要删除的节点
+p-&gt;next = tmp-&gt;next;      // 第二步：p 跳过被删节点，直接指向下下个
+delete tmp;                // 第三步：释放内存
+
+</code></pre>
+<blockquote>
+<p><strong>易错点</strong>：不能先 <code>delete</code> 再断开——删除后 <code>tmp</code> 的内容已无效，<code>tmp-&gt;next</code> 就成了"访问已释放内存"的错误。必须先断开链接，再 <code>delete</code>。</p>
+</blockquote>
+<hr />
+<h2 id="_10">六、双向链表的手写实现</h2>
+<h3 id="61">6.1 为什么需要双向</h3>
+<p>单链表只能往后走，不能往前。如果要从某个节点找它的前驱，只能从头遍历，O(n)。双向链表每个节点多一个 <code>prev</code> 指针指向前一个节点，前后都能走。</p>
+<h3 id="62">6.2 节点定义</h3>
+<pre><code class="language-cpp">struct Node {
+    int data;
+    Node* prev;    // 指向前一个节点
+    Node* next;    // 指向下一个节点
+};
+
+</code></pre>
+<h3 id="63">6.3 创建与连接</h3>
+<pre><code class="language-cpp">Node* a = new Node;  a-&gt;data = 10;
+Node* b = new Node;  b-&gt;data = 20;
+Node* c = new Node;  c-&gt;data = 30;
+
+// 双向连接: a ↔ b ↔ c
+a-&gt;prev = nullptr;  a-&gt;next = b;
+b-&gt;prev = a;         b-&gt;next = c;
+c-&gt;prev = b;         c-&gt;next = nullptr;
+
+Node* head = a;   // 头指针
+Node* tail = c;   // 尾指针（双向链表常同时维护头尾）
+
+</code></pre>
+<h3 id="64">6.4 双向链表的后插操作</h3>
+<p>在 <code>p</code> 后面插入新节点 <code>newNode</code>，需要修改 4 个指针：</p>
+<pre><code class="language-cpp">Node* newNode = new Node;
+newNode-&gt;data = 15;
+
+newNode-&gt;next = p-&gt;next;    // 新节点的 next 接上 p 的后继
+newNode-&gt;prev = p;           // 新节点的 prev 指向 p
+if (p-&gt;next != nullptr) {    // 如果 p 后面原本有节点
+    p-&gt;next-&gt;prev = newNode; // 那个节点的 prev 改指向新节点
+}
+p-&gt;next = newNode;           // p 的 next 指向新节点
+
+</code></pre>
+<blockquote>
+<p><strong>要点</strong>：双向链表插入要改 4 个指针，删除要改 2 个指针。比单链表复杂，但双向遍历更灵活。C++ STL 的 <code>list</code> 底层就是双向链表。</p>
+</blockquote>
+<hr />
+<h2 id="stl-list">七、STL list 入门</h2>
+<h3 id="71-stl">7.1 什么是 STL</h3>
+<p>STL（Standard Template Library，标准模板库）是 C++ 自带的一套现成数据结构和算法库。它提供了链表（<code>list</code>）、动态数组（<code>vector</code>）、栈（<code>stack</code>）、队列（<code>queue</code>）等常用容器，不用自己手写，直接 <code>#include</code> 就能用。</p>
+<h3 id="72-list">7.2 使用 list 的基本框架</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;list&gt;           // 引入 list 头文件
+using namespace std;
+
+int main() {
+    list&lt;int&gt; lst;        // 声明一个存 int 的链表
+    // list&lt;int&gt; 相当于&quot;一个装 int 的双向链表&quot;
+    return 0;
+}
+
+</code></pre>
+<blockquote>
+<p><strong>要点</strong>：<code>list&lt;int&gt;</code> 中的 <code>&lt;int&gt;</code> 是模板参数，表示链表里存的是 <code>int</code> 类型。想存 <code>double</code> 就写 <code>list&lt;double&gt;</code>，想存 <code>char</code> 就写 <code>list&lt;char&gt;</code>。STL <code>list</code> 底层就是双向链表，我们手写的那些指针操作，STL 已经帮我们封装好了。</p>
+</blockquote>
+<hr />
+<h2 id="stl-list_1">八、STL list 常用函数</h2>
+<h3 id="81">8.1 函数速查表</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+<th>时间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>push_back(x)</code></td>
+<td>在尾部添加元素 x</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>push_front(x)</code></td>
+<td>在头部添加元素 x</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>pop_back()</code></td>
+<td>删除尾部元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>pop_front()</code></td>
+<td>删除头部元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>front()</code></td>
+<td>访问头部元素（不删除）</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>back()</code></td>
+<td>访问尾部元素（不删除）</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>size()</code></td>
+<td>返回元素个数</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>empty()</code></td>
+<td>判断是否为空（空返回 true）</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>clear()</code></td>
+<td>清空所有元素</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>insert(it, x)</code></td>
+<td>在迭代器 it 处插入 x</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>erase(it)</code></td>
+<td>删除迭代器 it 处的元素</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82">8.2 增删查改完整示例</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+
+int main() {
+    list&lt;int&gt; lst;
+
+    // 尾部添加
+    lst.push_back(10);
+    lst.push_back(20);
+    lst.push_back(30);
+    // 链表: 10 → 20 → 30
+
+    // 头部添加
+    lst.push_front(5);
+    // 链表: 5 → 10 → 20 → 30
+
+    // 查看头尾和大小
+    cout &lt;&lt; &quot;头: &quot; &lt;&lt; lst.front() &lt;&lt; '\n';   // 5
+    cout &lt;&lt; &quot;尾: &quot; &lt;&lt; lst.back() &lt;&lt; '\n';    // 30
+    cout &lt;&lt; &quot;个数: &quot; &lt;&lt; lst.size() &lt;&lt; '\n';  // 4
+
+    // 删除头尾
+    lst.pop_front();   // 删 5
+    lst.pop_back();    // 删 30
+    // 链表: 10 → 20
+
+    cout &lt;&lt; &quot;删后个数: &quot; &lt;&lt; lst.size() &lt;&lt; '\n';  // 2
+
+    // 清空
+    lst.clear();
+    cout &lt;&lt; &quot;清空后是否为空: &quot; &lt;&lt; lst.empty() &lt;&lt; '\n';  // 1 (true)
+
+    return 0;
+}
+
+</code></pre>
+<blockquote>
+<p><strong>易错点</strong>：对空链表调用 <code>front()</code>、<code>back()</code>、<code>pop_front()</code>、<code>pop_back()</code> 是未定义行为（程序可能崩溃）。调用前先用 <code>empty()</code> 检查。</p>
+</blockquote>
+<hr />
+<h2 id="stl-list_2">九、STL list 的遍历与迭代器</h2>
+<h3 id="91">9.1 迭代器入门</h3>
+<p>迭代器（iterator）是 STL 中类似"指针"的东西，用来指向容器中的某个元素。<code>list</code> 不支持 <code>[]</code> 下标访问，遍历必须用迭代器。</p>
+<pre><code class="language-cpp">list&lt;int&gt; lst;
+lst.push_back(10);
+lst.push_back(20);
+lst.push_back(30);
+
+// 用迭代器遍历
+for (list&lt;int&gt;::iterator it = lst.begin(); it != lst.end(); ++it) {
+    cout &lt;&lt; *it &lt;&lt; ' ';    // *it 取出 it 指向的值
+}
+cout &lt;&lt; '\n';
+// 输出: 10 20 30
+
+</code></pre>
+<ul>
+<li><code>lst.begin()</code>：返回指向第一个元素的迭代器</li>
+<li><code>lst.end()</code>：返回指向"最后一个元素之后"的迭代器（哨兵位置，不指向真实元素）</li>
+<li><code>*it</code>：取出迭代器指向的值（解引用）</li>
+<li><code>++it</code>：迭代器前进一步</li>
+</ul>
+<h3 id="92-auto">9.2 用 auto 简化</h3>
+<p><code>list&lt;int&gt;::iterator</code> 太长，C++11 的 <code>auto</code> 关键字可以自动推导类型：</p>
+<pre><code class="language-cpp">for (auto it = lst.begin(); it != lst.end(); ++it) {
+    cout &lt;&lt; *it &lt;&lt; ' ';
+}
+
+</code></pre>
+<h3 id="93-range-based-for">9.3 range-based for 循环（最简单）</h3>
+<p>C++11 还提供了 range-based for 循环，遍历容器最简洁：</p>
+<pre><code class="language-cpp">for (int x : lst) {     // 每次取出一个元素赋给 x
+    cout &lt;&lt; x &lt;&lt; ' ';
+}
+
+</code></pre>
+<blockquote>
+<p><strong>要点</strong>：三种遍历方式效果相同。日常写题推荐 range-based for（最简洁）；需要在遍历中插入/删除元素时，必须用迭代器（range-based for 内部用迭代器，但删除会使迭代器失效，不能边遍历边删）。</p>
+</blockquote>
+<h3 id="94-insert-erase">9.4 insert 与 erase 的正确用法</h3>
+<pre><code class="language-cpp">list&lt;int&gt; lst;
+lst.push_back(10);
+lst.push_back(20);
+lst.push_back(30);
+// 链表: 10 → 20 → 30
+
+auto it = lst.begin();
+++it;                    // it 指向 20
+
+lst.insert(it, 15);     // 在 20 前面插入 15 → 10 → 15 → 20 → 30
+// 注意: insert 后 it 仍指向 20（list 迭代器不失效）
+
+it = lst.erase(it);     // 删除 20，it 接收返回值，指向 30
+// 链表: 10 → 15 → 30
+// 注意: erase 后 it 作废！必须用返回值更新
+
+</code></pre>
+<blockquote>
+<p><strong>易错点</strong>：<code>erase</code> 会使被删元素的迭代器失效。<code>erase</code> 会返回指向下一个有效元素的迭代器，必须用 <code>it = lst.erase(it)</code> 接收。如果写 <code>lst.erase(it)</code> 后继续用 <code>it</code>，程序行为未定义。</p>
+</blockquote>
+<hr />
+<h2 id="_11">十、常见题型汇总</h2>
+<h3 id="101-stl-list">10.1 约瑟夫问题（STL list 的经典应用）</h3>
+<p><strong>题意</strong>：n 个人围成一圈，从第 1 个人开始报数，数到 m 的人出列，下一个人重新从 1 开始报数，直到所有人出列。输出出列顺序。</p>
+<p><strong>分析</strong>：这是一个环形结构，需要频繁删除当前元素并从下一个继续。STL <code>list</code> 的 <code>erase</code> 配合迭代器循环移动，天然适合。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+
+int main() {
+    int n, m;
+    cin &gt;&gt; n &gt;&gt; m;
+
+    list&lt;int&gt; lst;
+    for (int i = 1; i &lt;= n; i++) {
+        lst.push_back(i);
+    }
+
+    auto it = lst.begin();
+    while (!lst.empty()) {
+        // 数 m-1 个人，it 停在第 m 个人
+        for (int i = 1; i &lt; m; i++) {
+            ++it;
+            if (it == lst.end()) it = lst.begin();  // 到末尾绕回头部
+        }
+        cout &lt;&lt; *it &lt;&lt; ' ';
+        it = lst.erase(it);      // 删除当前，it 指向下一个人
+        if (it == lst.end()) it = lst.begin();  // 删到末尾绕回
+    }
+    cout &lt;&lt; '\n';
+
+    return 0;
+}
+
+</code></pre>
+<p>输入: <code>5 3</code> 输出: <code>3 1 5 2 4</code></p>
+<blockquote>
+<p><strong>要点</strong>：<code>list</code> 的 <code>erase</code> 返回下一个迭代器，正好接上"下一个人重新报数"的逻辑。环形通过 <code>it == lst.end()</code> 时绕回 <code>lst.begin()</code> 实现。</p>
+</blockquote>
+<h3 id="102">10.2 队列安排（数组模拟双向链表）</h3>
+<p><strong>题意</strong>（洛谷 P1160）：N 个同学排成一列。1 号先入列，2~N 号依次插入到某同学的左边或右边。之后去掉 M 个同学，输出最终队列。</p>
+<p><strong>分析</strong>：N 最大 10 万，频繁在序列中间插入删除。用 STL <code>list</code> 每次找位置要 O(N)，总 O(N²) 会超时。信奥竞赛的标准解法是<strong>数组模拟双向链表</strong>——用 <code>l[i]</code> 和 <code>r[i]</code> 数组记录 i 号同学的左右邻居，所有操作 O(1)。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+const int MAXN = 100005;
+int l[MAXN], r[MAXN];  // l[i]=i左边的人, r[i]=i右边的人
+
+int main() {
+    int n;
+    cin &gt;&gt; n;
+
+    // 初始化: 只有 1 号, 0 是哨兵(虚拟头节点)
+    r[0] = 1;  l[0] = 1;
+    r[1] = 0;  l[1] = 0;
+
+    for (int k = 2; k &lt;= n; k++) {
+        int x, op;
+        cin &gt;&gt; op &gt;&gt; x;
+        if (op == 1) {           // k 插到 x 右边
+            r[k] = r[x];  l[k] = x;
+            l[r[x]] = k;  r[x] = k;
+        } else {                 // k 插到 x 左边
+            l[k] = l[x];  r[k] = x;
+            r[l[x]] = k;  l[x] = k;
+        }
+    }
+
+    int m;
+    cin &gt;&gt; m;
+    for (int i = 0; i &lt; m; i++) {
+        int x;
+        cin &gt;&gt; x;
+        // 删除 x: 左右邻居互相连起来
+        r[l[x]] = r[x];
+        l[r[x]] = l[x];
+    }
+
+    // 从哨兵 0 的右边开始, 顺着 r[] 输出
+    for (int p = r[0]; p != 0; p = r[p]) {
+        cout &lt;&lt; p &lt;&lt; ' ';
+    }
+    cout &lt;&lt; '\n';
+
+    return 0;
+}
+
+</code></pre>
+<blockquote>
+<p><strong>要点</strong>：数组模拟链表是信奥竞赛的核心技巧。把"指针"换成"数组下标"，<code>next</code> 换成 <code>r[i]</code>，<code>prev</code> 换成 <code>l[i]</code>。优点：不用 <code>new</code>/<code>delete</code>，速度快，代码短。哨兵节点 <code>0</code> 简化边界处理。</p>
+</blockquote>
+<h3 id="103">10.3 单向链表操作（数组模拟单链表）</h3>
+<p><strong>题意</strong>（洛谷 B3631）：维护一张表（初始只有元素 1），支持三种操作：在 x 后插入 y、查询 x 后面的数、删除 x 后面的数。</p>
+<p><strong>分析</strong>：所有值唯一且在 1~10⁶ 范围内。直接用 <code>nxt[x]</code> 表示"x 后面的数"，数组下标就是值本身，所有操作 O(1)。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+const int MAXV = 1000005;
+int nxt[MAXV];  // nxt[x] = x 后面的数, 0 表示没有
+
+int main() {
+    int q;
+    cin &gt;&gt; q;
+    nxt[1] = 0;  // 初始只有 1, 后面没有
+
+    while (q--) {
+        int op, x;
+        cin &gt;&gt; op &gt;&gt; x;
+        if (op == 1) {            // 在 x 后插入 y
+            int y;
+            cin &gt;&gt; y;
+            nxt[y] = nxt[x];      // y 接上 x 的后继
+            nxt[x] = y;           // x 指向 y
+        } else if (op == 2) {     // 查询 x 后面的数
+            cout &lt;&lt; nxt[x] &lt;&lt; '\n';
+        } else {                  // 删除 x 后面的数
+            nxt[x] = nxt[nxt[x]]; // x 的下一个变成下下个
+        }
+    }
+    return 0;
+}
+
+</code></pre>
+<blockquote>
+<p><strong>要点</strong>：当数据值域不大且唯一时，用"值当数组下标"的数组模拟单链表，代码极简。插入三步、删除一步，全是 O(1)。</p>
+</blockquote>
+<hr />
+<h2 id="_12">十一、常见错误与注意事项</h2>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>错误</th>
+<th>后果</th>
+<th>改正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1</td>
+<td>节点的 <code>next</code> 未初始化为 <code>nullptr</code></td>
+<td>指向随机地址，遍历越界崩溃</td>
+<td><code>new</code> 后立即设 <code>next = nullptr</code></td>
+</tr>
+<tr>
+<td>E2</td>
+<td>插入时先改前驱指针再接后继</td>
+<td>后续节点丢失，链表断裂</td>
+<td>遵循"先连后断"：新节点先接后继，前驱再指新节点</td>
+</tr>
+<tr>
+<td>E3</td>
+<td>删除节点时先 <code>delete</code> 再断链接</td>
+<td>访问已释放内存，未定义行为</td>
+<td>先断开链接，再 <code>delete</code></td>
+</tr>
+<tr>
+<td>E4</td>
+<td><code>new</code> 了节点但从不 <code>delete</code></td>
+<td>内存泄漏，长跑程序内存涨</td>
+<td>删除时配对 <code>delete</code>；或用数组模拟避免</td>
+</tr>
+<tr>
+<td>E5</td>
+<td>对空 <code>list</code> 调用 <code>front()</code>/<code>pop_back()</code></td>
+<td>未定义行为，可能崩溃</td>
+<td>先用 <code>empty()</code> 检查</td>
+</tr>
+<tr>
+<td>E6</td>
+<td>用 <code>lst[i]</code> 访问 <code>list</code> 元素</td>
+<td>编译错误，<code>list</code> 不支持随机访问</td>
+<td>用迭代器或 range-based for 遍历</td>
+</tr>
+<tr>
+<td>E7</td>
+<td><code>erase(it)</code> 后继续使用 <code>it</code></td>
+<td>迭代器失效，未定义行为</td>
+<td>用 <code>it = lst.erase(it)</code> 接收返回值</td>
+</tr>
+<tr>
+<td>E8</td>
+<td>忘记 <code>#include &lt;list&gt;</code></td>
+<td>编译错误，<code>list</code> 未定义</td>
+<td>文件开头加 <code>#include &lt;list&gt;</code></td>
+</tr>
+<tr>
+<td>E9</td>
+<td>range-based for 中删除元素</td>
+<td>迭代器失效，行为未定义</td>
+<td>需要边遍历边删时改用迭代器循环</td>
+</tr>
+<tr>
+<td>E10</td>
+<td>数组模拟链表忘记初始化哨兵</td>
+<td><code>r[0]</code>/<code>l[0]</code> 为 0，链表为空或死循环</td>
+<td>初始化时设好 <code>r[0]</code> 和 <code>l[0]</code> 指向第一个真实节点</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>补充说明——迭代器失效规则</strong>：<code>list</code> 的迭代器在 <code>insert</code> 后<strong>不会失效</strong>（包括指向被插位置的迭代器）；<code>erase</code> 只使<strong>被删元素</strong>的迭代器失效，其他迭代器不受影响。这与 <code>vector</code> 不同（<code>vector</code> 的 <code>insert</code>/<code>erase</code> 可能使所有迭代器失效）。这是 <code>list</code> 底层链表结构决定的——节点独立分配，互不影响。</p>
+</blockquote>
+<hr />
+<h2 id="_13">十二、方法、套路与策略小结</h2>
+<h3 id="121">12.1 链表插入三步套路</h3>
+<p>无论单链表还是双向链表，插入新节点都遵循固定套路：</p>
+<ol>
+<li><strong>建</strong>：<code>new</code> 创建新节点，设好数据域</li>
+<li><strong>连</strong>：新节点的指针先接上后继（和前驱）</li>
+<li><strong>断</strong>：前驱节点的指针改指向新节点</li>
+</ol>
+<p>口诀：<strong>先连后断</strong>。先把新的连上去，再让旧的指向新的。</p>
+<h3 id="122-vs">12.2 数组 vs 链表决策表</h3>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>数组</th>
+<th>链表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>随机访问 <code>a[i]</code></td>
+<td>O(1)，极快</td>
+<td>O(n)，只能从头走</td>
+</tr>
+<tr>
+<td>头部插入/删除</td>
+<td>O(n)，要搬元素</td>
+<td>O(1)，改指针即可</td>
+</tr>
+<tr>
+<td>中间插入/删除</td>
+<td>O(n)，要搬元素</td>
+<td>O(1)，改指针即可（已知位置）</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>连续，紧凑</td>
+<td>离散，每节点多存指针</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>需要随机访问、少插删</td>
+<td>频繁插删、不需随机访问</td>
+</tr>
+</tbody>
+</table>
+<h3 id="123-vs-stl-list">12.3 手写 vs STL list 决策表</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐选择</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>学习理解链表原理</td>
+<td>手写指针版</td>
+<td>直观理解节点与指针</td>
+</tr>
+<tr>
+<td>竞赛需要 O(1) 插删且值域小</td>
+<td>数组模拟</td>
+<td>最快，无内存管理负担</td>
+</tr>
+<tr>
+<td>竞赛需要通用链表</td>
+<td>STL <code>list</code></td>
+<td>现成函数，代码短</td>
+</tr>
+<tr>
+<td>需要随机访问</td>
+<td>都不用，用 <code>vector</code> 或数组</td>
+<td>链表不擅长随机访问</td>
+</tr>
+</tbody>
+</table>
+<h3 id="124">12.4 策略意识</h3>
+<ul>
+<li><strong>性能意识</strong>：竞赛中数组模拟链表比指针版更快（连续内存访问、无 <code>new</code> 开销）。能用数组模拟就别用指针。</li>
+<li><strong>规范意识</strong>：手写指针链表必须 <code>new</code>/<code>delete</code> 配对；STL <code>list</code> 用迭代器操作时注意失效规则。</li>
+<li><strong>策略意识</strong>：看到"频繁在中间插入删除"就想到链表；看到"需要随机访问"就想到数组。选对数据结构，题目就解决了一半。</li>
+</ul>
+<hr />
+<h2 id="_14">十三、分级分类练习题单</h2>
+<h3 id="a">A 级（本课核心）</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>题目</th>
+<th>考查点</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B3631</td>
+<td>单向链表</td>
+<td>数组模拟单链表，插入/查询/删除</td>
+<td>洛谷</td>
+</tr>
+<tr>
+<td>自编-1</td>
+<td>list 基本操作练习</td>
+<td>STL list 增删查改函数</td>
+<td>自编</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b">B 级（综合/挑战）</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>题目</th>
+<th>考查点</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1996</td>
+<td>约瑟夫问题</td>
+<td>STL list 迭代器，环形模拟</td>
+<td>洛谷</td>
+</tr>
+<tr>
+<td>P1160</td>
+<td>队列安排</td>
+<td>数组模拟双向链表，哨兵技巧</td>
+<td>洛谷</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>洛谷入口</strong>：<code>https://www.luogu.com.cn/problem/</code> 后接题号，如 <code>https://www.luogu.com.cn/problem/B3631</code>。<br />
+以上三道洛谷题均为官方 B/P 系列，稳定可靠。</p>
+</blockquote>
+<h3 id="list">自编题：list 基本操作练习</h3>
+<p><strong>题面</strong>：读入 n 个整数，依次用 <code>push_back</code> 加入 <code>list</code>。然后执行：① 用 <code>push_front</code> 在头部加 0；② 用 <code>pop_back</code> 删除尾部；③ 输出当前链表所有元素、头部元素、尾部元素和元素个数。</p>
+<p><strong>输入格式</strong>：第一行 n；第二行 n 个整数。</p>
+<p><strong>输入示例</strong>：</p>
+<pre><code>4
+10 20 30 40
+
+</code></pre>
+<p><strong>输出示例</strong>：</p>
+<pre><code>0 10 20 30
+头: 0
+尾: 30
+个数: 4
+
+</code></pre>
+<p><strong>参考答案</strong>：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cin &gt;&gt; n;
+    list&lt;int&gt; lst;
+    for (int i = 0; i &lt; n; i++) {
+        int x;
+        cin &gt;&gt; x;
+        lst.push_back(x);
+    }
+    lst.push_front(0);
+    lst.pop_back();
+    for (int x : lst) {
+        cout &lt;&lt; x &lt;&lt; ' ';
+    }
+    cout &lt;&lt; '\n';
+    cout &lt;&lt; &quot;头: &quot; &lt;&lt; lst.front() &lt;&lt; '\n';
+    cout &lt;&lt; &quot;尾: &quot; &lt;&lt; lst.back() &lt;&lt; '\n';
+    cout &lt;&lt; &quot;个数: &quot; &lt;&lt; lst.size() &lt;&lt; '\n';
+    return 0;
+}
+
+</code></pre>
+<hr />
+<h2 id="_15">附录 · 本课代码模板速查</h2>
+<h3 id="1">模板 1：手写单链表遍历与头插</h3>
+<pre><code class="language-cpp">struct Node {
+    int data;
+    Node* next;
+};
+
+// 遍历
+for (Node* p = head; p != nullptr; p = p-&gt;next) {
+    cout &lt;&lt; p-&gt;data &lt;&lt; ' ';
+}
+
+// 头插法
+Node* newNode = new Node;
+newNode-&gt;data = x;
+newNode-&gt;next = head;
+head = newNode;
+
+</code></pre>
+<h3 id="2">模板 2：手写单链表指定位置后插与删</h3>
+<pre><code class="language-cpp">// 在 p 后插入
+Node* newNode = new Node;
+newNode-&gt;data = x;
+newNode-&gt;next = p-&gt;next;   // 先连
+p-&gt;next = newNode;          // 后断
+
+// 删除 p 后面的节点
+Node* tmp = p-&gt;next;
+p-&gt;next = tmp-&gt;next;       // 先断开
+delete tmp;                 // 再释放
+
+</code></pre>
+<h3 id="3stl-list">模板 3：STL list 基本操作</h3>
+<pre><code class="language-cpp">#include &lt;list&gt;
+using namespace std;
+
+list&lt;int&gt; lst;
+lst.push_back(x);    // 尾插
+lst.push_front(x);   // 头插
+lst.pop_back();      // 尾删
+lst.pop_front();     // 头删
+lst.front();         // 取头
+lst.back();          // 取尾
+lst.size();          // 元素个数
+lst.empty();         // 是否为空
+lst.clear();         // 清空
+
+</code></pre>
+<h3 id="4stl-list">模板 4：STL list 遍历三种方式</h3>
+<pre><code class="language-cpp">// 方式一：range-based for（最简洁，推荐）
+for (int x : lst) {
+    cout &lt;&lt; x &lt;&lt; ' ';
+}
+
+// 方式二：auto 迭代器
+for (auto it = lst.begin(); it != lst.end(); ++it) {
+    cout &lt;&lt; *it &lt;&lt; ' ';
+}
+
+// 方式三：完整类型迭代器
+for (list&lt;int&gt;::iterator it = lst.begin(); it != lst.end(); ++it) {
+    cout &lt;&lt; *it &lt;&lt; ' ';
+}
+
+</code></pre>
+<h3 id="5">模板 5：数组模拟双向链表（竞赛常用）</h3>
+<pre><code class="language-cpp">const int MAXN = 100005;
+int l[MAXN], r[MAXN];  // l[i]=左邻居, r[i]=右邻居, 0 为哨兵
+
+// 初始化（只有 1 号节点）
+r[0] = 1; l[0] = 1; r[1] = 0; l[1] = 0;
+
+// 在 x 右边插入 k
+r[k] = r[x]; l[k] = x; l[r[x]] = k; r[x] = k;
+
+// 在 x 左边插入 k
+l[k] = l[x]; r[k] = x; r[l[x]] = k; l[x] = k;
+
+// 删除 x
+r[l[x]] = r[x]; l[r[x]] = l[x];
+
+// 遍历输出（从哨兵右边开始）
+for (int p = r[0]; p != 0; p = r[p]) {
+    cout &lt;&lt; p &lt;&lt; ' ';
+}
+
+</code></pre>
+<h3 id="6stl-list">模板 6：约瑟夫问题（STL list 版）</h3>
+<pre><code class="language-cpp">#include &lt;list&gt;
+using namespace std;
+
+list&lt;int&gt; lst;
+for (int i = 1; i &lt;= n; i++) lst.push_back(i);
+auto it = lst.begin();
+while (!lst.empty()) {
+    for (int i = 1; i &lt; m; i++) {
+        if (++it == lst.end()) it = lst.begin();
+    }
+    cout &lt;&lt; *it &lt;&lt; ' ';
+    it = lst.erase(it);
+    if (it == lst.end()) it = lst.begin();
+}
+
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2026 oier.fans All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<admin@oier.fans>" target="_blank" rel="noopener" title="联系邮箱" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

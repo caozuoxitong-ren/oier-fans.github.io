@@ -261,6 +261,36 @@
   
     
     
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../csp-j/J1-02_%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-tabs__link">
+          
+  
+  
+  信奥CSP-J算法
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
       <li class="md-tabs__item">
         <a href="../../../math/%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E5%AE%9A/" class="md-tabs__link">
           
@@ -821,6 +851,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#5-sizeof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 用 sizeof 查看类型或变量占用的字节数
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1107,16 +1148,88 @@
   <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        十二、常见错误与注意事项
+        十二、数据类型转换
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="十二、常见错误与注意事项">
+    <nav class="md-nav" aria-label="十二、数据类型转换">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#1_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 两种转换方式总览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 隐式类型转换（自动转换）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 强制类型转换（显式转换）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 经典应用与例题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 隐式 vs 强制：什么时候用哪个
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十三、常见错误与注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十三、常见错误与注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         输入法与标点提醒
@@ -1132,19 +1245,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        十三、方法、套路与策略小结
+        十四、方法、套路与策略小结
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="十三、方法、套路与策略小结">
+    <nav class="md-nav" aria-label="十四、方法、套路与策略小结">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_8" class="md-nav__link">
+  <a href="#1_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         1. 顺序结构三步套路
@@ -1155,7 +1268,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_9" class="md-nav__link">
+  <a href="#2_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         2. 类型选择决策
@@ -1166,7 +1279,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_6" class="md-nav__link">
+  <a href="#3_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         3. 整数除法防坑三问
@@ -1177,10 +1290,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_6" class="md-nav__link">
+  <a href="#4_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 信奥策略意识
+        4. 类型转换决策表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 信奥策略意识
       
     </span>
   </a>
@@ -1193,27 +1317,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        十四、分级分类练习题单
+        十五、分级分类练习题单
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="十四、分级分类练习题单">
+    <nav class="md-nav" aria-label="十五、分级分类练习题单">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#a" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A 级 · 本课核心（变量 + 输入 + 算术）
+        A 级 · 本课核心（变量 + 输入 + 算术 + 类型转换）
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="A 级 · 本课核心（变量 + 输入 + 算术）">
+    <nav class="md-nav" aria-label="A 级 · 本课核心（变量 + 输入 + 算术 + 类型转换）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1241,6 +1365,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="B 级 · 综合/挑战">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B 级 · 自编题题面
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1249,7 +1390,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       
         附录 · 本课代码模板速查
@@ -1261,7 +1402,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_9" class="md-nav__link">
+  <a href="#1_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         模板 1：变量定义与初始化
@@ -1272,7 +1413,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_10" class="md-nav__link">
+  <a href="#2_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         模板 2：顺序结构万能框架（读入→计算→输出）
@@ -1283,7 +1424,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_7" class="md-nav__link">
+  <a href="#3_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         模板 3：算术运算速记
@@ -1294,10 +1435,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_7" class="md-nav__link">
+  <a href="#4_8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        模板 4：数字拆分（取某一位）
+        模板 4：数据类型转换速记
       
     </span>
   </a>
@@ -1305,10 +1446,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5_1" class="md-nav__link">
+  <a href="#5_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        模板 5：字符大小写转换
+        模板 5：数字拆分（取某一位）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 6：字符大小写转换
       
     </span>
   </a>
@@ -1581,6 +1733,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_12_%E6%A0%87%E8%AE%B0%E6%B3%95%E4%B8%93%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12_标记法专题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1626,7 +1806,7 @@
   <span class="md-ellipsis">
     
   
-    数学问题
+    信奥CSP-J算法
   
 
     
@@ -1639,6 +1819,237 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    信奥CSP-J算法
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J1阶段
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    J1阶段
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../csp-j/J1-02_%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02_前缀和
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../csp-j/J1-04_%E5%94%AF%E4%B8%80%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04_唯一分解定理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../csp-j/J1-06_%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06_欧几里得算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../csp-j/J1-11_%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11_链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学问题
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1683,7 +2094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/%E5%94%AF%E4%B8%80%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/" class="md-nav__link">
+      <a href="../../../math/唯一分解定理.md" class="md-nav__link">
         
   
   
@@ -1711,7 +2122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0_%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" class="md-nav__link">
+      <a href="../../../math/最大公约数_最小公倍数.md" class="md-nav__link">
         
   
   
@@ -1787,10 +2198,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1808,8 +2219,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1839,10 +2250,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
   
   
@@ -1860,8 +2271,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1927,10 +2338,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   
@@ -1948,8 +2359,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2396,6 +2807,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#5-sizeof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 用 sizeof 查看类型或变量占用的字节数
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2682,16 +3104,88 @@
   <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        十二、常见错误与注意事项
+        十二、数据类型转换
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="十二、常见错误与注意事项">
+    <nav class="md-nav" aria-label="十二、数据类型转换">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#1_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 两种转换方式总览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 隐式类型转换（自动转换）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 强制类型转换（显式转换）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 经典应用与例题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 隐式 vs 强制：什么时候用哪个
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十三、常见错误与注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十三、常见错误与注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         输入法与标点提醒
@@ -2707,19 +3201,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        十三、方法、套路与策略小结
+        十四、方法、套路与策略小结
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="十三、方法、套路与策略小结">
+    <nav class="md-nav" aria-label="十四、方法、套路与策略小结">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_8" class="md-nav__link">
+  <a href="#1_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         1. 顺序结构三步套路
@@ -2730,7 +3224,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_9" class="md-nav__link">
+  <a href="#2_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         2. 类型选择决策
@@ -2741,7 +3235,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_6" class="md-nav__link">
+  <a href="#3_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         3. 整数除法防坑三问
@@ -2752,10 +3246,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_6" class="md-nav__link">
+  <a href="#4_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 信奥策略意识
+        4. 类型转换决策表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 信奥策略意识
       
     </span>
   </a>
@@ -2768,27 +3273,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        十四、分级分类练习题单
+        十五、分级分类练习题单
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="十四、分级分类练习题单">
+    <nav class="md-nav" aria-label="十五、分级分类练习题单">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#a" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A 级 · 本课核心（变量 + 输入 + 算术）
+        A 级 · 本课核心（变量 + 输入 + 算术 + 类型转换）
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="A 级 · 本课核心（变量 + 输入 + 算术）">
+    <nav class="md-nav" aria-label="A 级 · 本课核心（变量 + 输入 + 算术 + 类型转换）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2816,6 +3321,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="B 级 · 综合/挑战">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B 级 · 自编题题面
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2824,7 +3346,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       
         附录 · 本课代码模板速查
@@ -2836,7 +3358,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_9" class="md-nav__link">
+  <a href="#1_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         模板 1：变量定义与初始化
@@ -2847,7 +3369,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_10" class="md-nav__link">
+  <a href="#2_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         模板 2：顺序结构万能框架（读入→计算→输出）
@@ -2858,7 +3380,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_7" class="md-nav__link">
+  <a href="#3_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         模板 3：算术运算速记
@@ -2869,10 +3391,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_7" class="md-nav__link">
+  <a href="#4_8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        模板 4：数字拆分（取某一位）
+        模板 4：数据类型转换速记
       
     </span>
   </a>
@@ -2880,10 +3402,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5_1" class="md-nav__link">
+  <a href="#5_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        模板 5：字符大小写转换
+        模板 5：数字拆分（取某一位）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板 6：字符大小写转换
       
     </span>
   </a>
@@ -2914,7 +3447,7 @@
 
 <h1 id="2">第 2 课 · 变量与算术运算</h1>
 <blockquote>
-<p>变量概念 · 命名规范 · 四种基本类型 · 定义与赋值 · cin 输入 · 算术运算 · 分级题单  </p>
+<p>变量概念 · 命名规范 · 四种基本类型 · 定义与赋值 · cin 输入 · 算术运算 · 数据类型转换 · 分级题单</p>
 </blockquote>
 <hr />
 <h2 id="_1">一、教学目标</h2>
@@ -2954,12 +3487,17 @@
 <td>在给出含错误代码的条件下，学生能够区分"未赋值就使用""类型不匹配""整数除法丢小数"等典型错误并改正。</td>
 <td>程序性知识 × 分析</td>
 </tr>
+<tr>
+<td>G6 应用</td>
+<td>在给出混合类型表达式的条件下，学生能判断隐式转换的结果，并会用强制类型转换实现"整数除法转小数""截断取整"等操作，正确率不低于 80%。</td>
+<td>程序性知识 × 应用</td>
+</tr>
 </tbody>
 </table>
 <h3 id="2_1">2. 目标说明</h3>
 <ul>
 <li><strong>认知层次：</strong> 本课承接第一课，认知重心在"记忆—理解—应用"，分析层以纠错形式渗透。</li>
-<li><strong>知识类型：</strong> 概念性知识（变量、数据类型）与程序性知识（定义、输入输出、算术运算）并重。</li>
+<li><strong>知识类型：</strong> 概念性知识（变量、数据类型）与程序性知识（定义、输入输出、算术运算、类型转换）并重。</li>
 <li><strong>边界：</strong> 学完本课可完成"读入数据→计算→输出结果"的顺序结构题目；选择结构（if）留待后续课程。</li>
 </ul>
 <hr />
@@ -2968,14 +3506,15 @@
 <li>模块1　为什么需要变量（从第一课过渡）</li>
 <li>模块2　变量是什么</li>
 <li>模块3　变量名规范与注意事项</li>
-<li>模块4　数据类型与四种基本类型（int / long long / float / double / char / bool）</li>
+<li>模块4　数据类型与四种基本类型（int / long long / float / double / char / bool）+ sizeof 查字节数</li>
 <li>模块5　变量的定义、赋值与初始化</li>
 <li>模块6　用 cin 输入变量的值</li>
 <li>模块7　用 cout 输出变量</li>
 <li>模块8　算术运算符（+ - * / %）</li>
-<li>模块9　常见错误与注意事项</li>
-<li>模块10　方法、套路与策略小结</li>
-<li>模块11　分级分类练习题单（洛谷 + 自编）</li>
+<li>模块9　数据类型转换（隐式转换与强制转换）</li>
+<li>模块10　常见错误与注意事项</li>
+<li>模块11　方法、套路与策略小结</li>
+<li>模块12　分级分类练习题单（洛谷 + 自编）</li>
 </ul>
 <hr />
 <h2 id="_3">三、教学重点与难点</h2>
@@ -2986,6 +3525,8 @@
 <li>变量定义语法 <code>类型 变量名;</code>，赋值 <code>=</code>，初始化 <code>int a = 10;</code>。</li>
 <li>cin 输入语法 <code>cin &gt;&gt; 变量;</code>，与 cout 方向相反（<code>&gt;&gt;</code> 向右流入变量）。</li>
 <li>算术运算五则，尤其整数除法 <code>7/2=3</code> 与求余 <code>7%2=1</code>。</li>
+<li>用 <code>sizeof(类型)</code> 查看类型占用的字节数，理解"1 字节 = 8 位"。</li>
+<li>隐式转换的方向（低精度→高精度）与强制转换的写法 <code>(int)x</code>、<code>static_cast&lt;int&gt;(x)</code>。</li>
 </ul>
 <h3 id="2_2">2. 教学难点</h3>
 <ul>
@@ -2994,6 +3535,8 @@
 <li>整数除整数得整数（直接丢小数，不是四舍五入），是本课最大坑。</li>
 <li><code>%</code> 求余只能用于整数，不能用于 double。</li>
 <li>cin 的 <code>&gt;&gt;</code> 与 cout 的 <code>&lt;&lt;</code> 方向容易记混。</li>
+<li>隐式转换中"赋值时高精度→低精度会截断"（如 <code>int a = 3.14</code> 得 3 而非 4）。</li>
+<li>强制转换只作用于紧跟着的一个表达式：<code>(double)a / b</code> ≠ <code>(double)(a / b)</code>。</li>
 </ul>
 <hr />
 <h2 id="_4">四、为什么需要变量</h2>
@@ -3201,6 +3744,30 @@ bool isEnd = false;
 </code></pre>
 <h3 id="4_1">4. 类型选择口诀</h3>
 <p><strong>整数用 int（可能超 21 亿用 long long），小数用 double，单个字符用 char，是非判断用 bool。</strong></p>
+<h3 id="5-sizeof">5. 用 sizeof 查看类型或变量占用的字节数</h3>
+<p>上面的类型表列出了每种类型"占几个字节"，这些数字怎么来的？C++ 提供了一个运算符 <strong><code>sizeof</code></strong>，可以查看某个类型或变量占多少字节。</p>
+<p><strong>语法：</strong> <code>sizeof(类型)</code> 或 <code>sizeof(变量)</code>，括号不能省。</p>
+<pre><code class="language-cpp">cout &lt;&lt; sizeof(int) &lt;&lt; endl;        // 4
+cout &lt;&lt; sizeof(long long) &lt;&lt; endl;  // 8
+cout &lt;&lt; sizeof(double) &lt;&lt; endl;     // 8
+cout &lt;&lt; sizeof(char) &lt;&lt; endl;       // 1
+cout &lt;&lt; sizeof(bool) &lt;&lt; endl;       // 1
+
+int a = 10;
+cout &lt;&lt; sizeof(a) &lt;&lt; endl;          // 4（和 sizeof(int) 一样，看的是变量类型）
+
+</code></pre>
+<p><strong>几个要点：</strong></p>
+<ul>
+<li><code>sizeof</code> 是<strong>关键字</strong>，不是函数，它是一个<strong>编译期运算符</strong>——程序还没运行，编译器就已经算出结果填进去了。</li>
+<li><code>sizeof(变量)</code> 和 <code>sizeof(变量的类型)</code> 结果相同：它查的是"这个类型占多大"，跟变量里存的值无关。<code>sizeof(a)</code> 不关心 a 是 10 还是 9999，只关心 a 是 <code>int</code>。</li>
+<li><code>sizeof(char)</code> 按标准<strong>恒为 1</strong>，这是 C++ 的规定。</li>
+<li><code>sizeof</code> 返回的是<strong>字节数</strong>，不是位数。1 字节 = 8 位，所以 <code>sizeof(int)=4</code> 表示 int 占 32 位。</li>
+<li>不同类型的大小可能随编译器/平台不同而变化，但信奥评测机（64 位 Linux + g++）上：<code>int=4</code>、<code>long long=8</code>、<code>double=8</code>、<code>float=4</code>、<code>char=1</code>、<code>bool=1</code>，与上表一致。</li>
+</ul>
+<blockquote>
+<p><strong>用途：</strong> 写代码时如果记不清某个类型占多大、会不会溢出，可以用 <code>sizeof</code> 临时打印一下确认。但平时做题不必每次都查，记住"int=4 字节约 21 亿、long long=8 字节约 9.2×10¹⁸"即可。</p>
+</blockquote>
 <hr />
 <h2 id="_8">八、变量的定义、赋值与初始化</h2>
 <h3 id="1_4">1. 定义变量</h3>
@@ -3419,7 +3986,7 @@ cout &lt;&lt; 1.0 / 2;     // 输出 0.5
 
 </code></pre>
 <blockquote>
-<p><strong>规律：</strong> 整数 ÷ 整数 = 整数（丢小数）；只要有一边是小数 = 小数。变量同理：<code>int a=7; cout &lt;&lt; a/2;</code> 输出 3；<code>double x=7; cout &lt;&lt; x/2;</code> 输出 3.5。</p>
+<p><strong>规律：</strong> 整数 ÷ 整数 = 整数（丢小数）；只要有一边是小数 = 小数。变量同理：<code>int a=7; cout &lt;&lt; a/2;</code> 输出 3；<code>double x=7; cout &lt;&lt; x/2;</code> 输出 3.5。背后的原理是<strong>数据类型转换</strong>（见下一节）。</p>
 </blockquote>
 <h3 id="3_5">3. 取余运算 <code>%</code></h3>
 <p><code>%</code> 求的是除法的<strong>余数</strong>。<code>15 % 4</code> 读作"<strong>15 取余 4</strong>"，或"<strong>15 除以 4 的余数</strong>"（两种读法都对，课堂可任选一种统一使用）。</p>
@@ -3453,7 +4020,7 @@ cout &lt;&lt; 10 - 2 * 3;      // 输出 4（先 2*3=6，再 10-6）
 cout &lt;&lt; char(ch - 32);   // 97-32=65，即 'A'，输出 A（小写转大写）
 
 </code></pre>
-<p>小写转大写的规律：小写字母比对应大写字母大 32。<code>'a'-'A'</code> = 32。这是洛谷 P5704（字母转换）的原理。</p>
+<p>小写转大写的规律：小写字母比对应大写字母大 32。<code>'a'-'A'</code> = 32。这是洛谷 P5704（字母转换）的原理。这里的 <code>char(ch - 32)</code> 就用到了<strong>强制类型转换</strong>，下一节详细讲。</p>
 <h3 id="6">6. 复合赋值与自增（拓展，信奥常用）</h3>
 <table>
 <thead>
@@ -3497,7 +4064,310 @@ a++;           // a 变成 16
 
 </code></pre>
 <hr />
-<h2 id="_10">十二、常见错误与注意事项</h2>
+<h2 id="_10">十二、数据类型转换</h2>
+<p>上一节讲到"整数除整数得整数，只要有一边是小数就得小数"——这背后就是<strong>数据类型转换</strong>在起作用。当不同类型的数据混合在一起（运算或赋值）时，C++ 有一套规则来处理类型不匹配的问题。</p>
+<h3 id="1_8">1. 两种转换方式总览</h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>名称</th>
+<th>谁来做</th>
+<th>写法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>隐式转换</td>
+<td>自动类型转换</td>
+<td>编译器自动完成</td>
+<td>不需要额外写</td>
+</tr>
+<tr>
+<td>显式转换</td>
+<td>强制类型转换</td>
+<td>程序员手动指定</td>
+<td><code>(int)x</code>、<code>int(x)</code>、<code>static_cast&lt;int&gt;(x)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_9">2. 隐式类型转换（自动转换）</h3>
+<p>隐式转换是编译器<strong>自动完成</strong>的类型转换，不需要程序员写额外代码。有三种常见场景：</p>
+<p><strong>① 算术转换——混合运算时，低精度自动转高精度</strong></p>
+<p>当不同类型的数据做算术运算时，编译器会先把低精度的一方<strong>自动提升</strong>为高精度，再运算。转换方向（低→高）：</p>
+<pre><code>bool → char → int → long long → float → double
+
+</code></pre>
+<p>最常见的情况是 int 和 double 混合运算：</p>
+<pre><code class="language-cpp">int a = 3;
+double b = 0.14;
+cout &lt;&lt; a + b;     // 输出 3.14（a 自动转为 double，再和 b 相加）
+
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>转换过程</th>
+<th>结果</th>
+<th>结果类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>3 + 0.14</code></td>
+<td>int 3 → double 3.0</td>
+<td>3.14</td>
+<td>double</td>
+</tr>
+<tr>
+<td><code>7 / 2.0</code></td>
+<td>int 7 → double 7.0</td>
+<td>3.5</td>
+<td>double</td>
+</tr>
+<tr>
+<td><code>'A' + 1</code></td>
+<td>char 'A'(65) → int 65</td>
+<td>66</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>这就是"整数除法加 .0 变小数"的原理</strong>：<code>7 / 2.0</code> 中，<code>2.0</code> 是 double，编译器把 <code>7</code> 也自动转为 double，按小数除法算，得 3.5。</p>
+</blockquote>
+<p><strong>② 赋值转换——赋值时，右边类型自动转为左边类型</strong></p>
+<p>赋值运算 <code>=</code> 会把右边值的类型<strong>自动转为</strong>左边变量的类型。如果右边精度高于左边，会<strong>截断</strong>（丢失信息）。</p>
+<pre><code class="language-cpp">int a = 3.14;       // 3.14 是 double，赋给 int 变量，小数部分截断，a = 3
+double x = 5;       // 5 是 int，赋给 double 变量，x = 5.0
+char ch = 65;       // 65 是 int，赋给 char 变量，ch = 'A'（ASCII 65）
+bool flag = 0;      // 0 是 int，赋给 bool 变量，flag = false
+
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>赋值语句</th>
+<th>右边类型</th>
+<th>左边类型</th>
+<th>转换结果</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int a = 3.14;</code></td>
+<td>double</td>
+<td>int</td>
+<td>a = 3</td>
+<td>小数部分直接丢弃（截断，非四舍五入）</td>
+</tr>
+<tr>
+<td><code>int a = 3.99;</code></td>
+<td>double</td>
+<td>int</td>
+<td>a = 3</td>
+<td>即使小数部分是 .99 也截断为 3</td>
+</tr>
+<tr>
+<td><code>double x = 5;</code></td>
+<td>int</td>
+<td>double</td>
+<td>x = 5.0</td>
+<td>整数转小数，不丢信息</td>
+</tr>
+<tr>
+<td><code>char ch = 65;</code></td>
+<td>int</td>
+<td>char</td>
+<td>ch = 'A'</td>
+<td>存 ASCII 码对应的字符</td>
+</tr>
+<tr>
+<td><code>bool b = 5;</code></td>
+<td>int</td>
+<td>bool</td>
+<td>b = true</td>
+<td>非 0 整数转 bool 为 true，0 转 false</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>易错点：</strong> <code>int a = 3.99;</code> 得 3，不是 4！赋值转换是<strong>截断</strong>（直接丢小数部分），不是四舍五入。要四舍五入需用强制转换配合技巧（见第 4 小节）。</p>
+</blockquote>
+<p><strong>③ 整型提升——bool/char 参与运算时自动提升为 int</strong></p>
+<p>bool、char、short 在算术表达式中会<strong>自动提升</strong>为 int 再运算：</p>
+<pre><code class="language-cpp">char ch = 'A';        // ASCII 65
+cout &lt;&lt; ch + 1;       // 66（char 提升为 int 后运算，结果是 int）
+cout &lt;&lt; 'a' - 'A';    // 32（两个 char 都提升为 int 后相减）
+bool t = true;        // true = 1
+cout &lt;&lt; t + 10;       // 11（bool 提升为 int 1 后相加）
+
+</code></pre>
+<blockquote>
+<p><strong>理解要点：</strong> char 本质存的是 ASCII 码（整数），所以参与算术运算时自然按整数算。整型提升让 char 能像整数一样做加减——这就是上一节"字符与整数运算"的底层原理。</p>
+</blockquote>
+<h3 id="3_6">3. 强制类型转换（显式转换）</h3>
+<p>强制类型转换是程序员<strong>主动写出来</strong>的类型转换，明确告诉编译器"把这个值转成什么类型"。</p>
+<p><strong>三种写法：</strong></p>
+<pre><code class="language-cpp">double x = 3.14;
+
+// 写法一：C 风格——(类型)值
+int a = (int)x;              // a = 3
+
+// 写法二：函数风格——类型(值)
+int b = int(x);              // b = 3
+
+// 写法三：C++ 风格——static_cast&lt;类型&gt;(值)
+int c = static_cast&lt;int&gt;(x); // c = 3
+
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>语法</th>
+<th>示例</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C 风格</td>
+<td><code>(类型)表达式</code></td>
+<td><code>(int)3.14</code></td>
+<td>最简洁，信奥中最常见</td>
+</tr>
+<tr>
+<td>函数风格</td>
+<td><code>类型(表达式)</code></td>
+<td><code>int(3.14)</code></td>
+<td>简洁，但只能用于简单类型名</td>
+</tr>
+<tr>
+<td>C++ 风格</td>
+<td><code>static_cast&lt;类型&gt;(表达式)</code></td>
+<td><code>static_cast&lt;int&gt;(3.14)</code></td>
+<td>C++ 推荐写法，更安全规范</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>本课约定：</strong> 三种写法效果相同，零基础阶段以 <strong>C 风格 <code>(int)x</code></strong> 为主（最简洁），了解 <code>static_cast&lt;int&gt;(x)</code> 是 C++ 的推荐写法。后续课程遇到更复杂的场景时再深入。</p>
+</blockquote>
+<h3 id="4_6">4. 经典应用与例题</h3>
+<p><strong>例题 1：整数除法转小数（最常用）</strong></p>
+<p>两个 int 变量相除，想要小数结果，先把其中一个强制转为 double：</p>
+<pre><code class="language-cpp">int a = 7, b = 2;
+cout &lt;&lt; (double)a / b;     // 3.5（a 先转 double，b 隐式转 double，按小数除）
+cout &lt;&lt; 1.0 * a / b;       // 3.5（1.0 是 double，a 隐式提升，效果相同）
+
+</code></pre>
+<blockquote>
+<p><strong>对比：</strong> <code>a / b</code> = <code>7 / 2</code> = 3（整数除法）；<code>(double)a / b</code> = <code>7.0 / 2</code> = 3.5（小数除法）。区别就在于转换的时机——<strong>先转换再除</strong>，还是<strong>先除再转换</strong>。</p>
+<p><strong>易错点：</strong> <code>(double)(a / b)</code> ≠ <code>(double)a / b</code>！前者先做整数除法 <code>7/2=3</code>，再转 double 得 <code>3.0</code>；后者先转再除得 <code>3.5</code>。<strong>强制转换只作用于紧跟着的那一个表达式</strong>，加括号可以改变作用范围。</p>
+</blockquote>
+<p><strong>例题 2：截断小数取整</strong></p>
+<p>强制转 int 会直接丢掉小数部分（截断，非四舍五入）：</p>
+<pre><code class="language-cpp">cout &lt;&lt; (int)3.14;     // 3
+cout &lt;&lt; (int)3.99;     // 3（不是 4！截断非四舍五入）
+cout &lt;&lt; (int)-3.7;     // -3（向零截断：丢小数部分，不是向下取整）
+
+</code></pre>
+<p><strong>例题 3：四舍五入技巧（正数）</strong></p>
+<p>C++ 没有直接的四舍五入运算符，但可以用"加 0.5 后截断"实现正数四舍五入：</p>
+<pre><code class="language-cpp">double x = 3.6;
+cout &lt;&lt; (int)(x + 0.5);    // 4（3.6+0.5=4.1，截断得 4）
+
+double y = 3.4;
+cout &lt;&lt; (int)(y + 0.5);    // 3（3.4+0.5=3.9，截断得 3）
+
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>原值</th>
+<th>+0.5</th>
+<th>截断取整</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.4</td>
+<td>3.9</td>
+<td>3</td>
+<td>向下</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td>4.1</td>
+<td>4</td>
+<td>向上</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>4.0</td>
+<td>4</td>
+<td>向上（四舍五入）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注意：</strong> 此技巧仅适用于正数。负数的四舍五入需要减 0.5 再截断，入门阶段先掌握正数即可。</p>
+</blockquote>
+<p><strong>例题 4：char 与 int 互转</strong></p>
+<pre><code class="language-cpp">char ch = 'a';
+cout &lt;&lt; (int)ch;             // 97（查看字符的 ASCII 码）
+cout &lt;&lt; (char)(ch - 32);     // A（小写转大写：97-32=65，转回 char）
+
+</code></pre>
+<blockquote>
+<p><strong>对比两种写法：</strong> <code>(char)(ch - 32)</code> 和 <code>char(ch - 32)</code> 效果相同，前者是 C 风格，后者是函数风格。上一节"字符与整数运算"中用的 <code>char(ch - 32)</code> 就是函数风格的强制转换。</p>
+</blockquote>
+<h3 id="5-vs">5. 隐式 vs 强制：什么时候用哪个</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>用隐式还是强制</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int + double 混合运算</td>
+<td>隐式（自动完成）</td>
+<td><code>3 + 0.14</code> → 3.14</td>
+</tr>
+<tr>
+<td>整数除法要小数结果</td>
+<td>强制（主动控制）</td>
+<td><code>(double)a / b</code></td>
+</tr>
+<tr>
+<td>double 赋给 int（截断）</td>
+<td>隐式（自动完成）</td>
+<td><code>int a = 3.14;</code> → 3</td>
+</tr>
+<tr>
+<td>四舍五入取整</td>
+<td>强制（配合技巧）</td>
+<td><code>(int)(x + 0.5)</code></td>
+</tr>
+<tr>
+<td>查看字符的 ASCII 码</td>
+<td>强制</td>
+<td><code>(int)ch</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>策略意识：</strong> 隐式转换是编译器"偷偷"做的，理解它有助于读懂代码（如为什么 <code>7/2.0</code> 得 3.5）。强制转换是程序员"主动"做的，用来精确控制类型（如确保除法得到小数）。<strong>拿不准时，主动写强制转换</strong>，让意图更明确。</p>
+</blockquote>
+<hr />
+<h2 id="_11">十三、常见错误与注意事项</h2>
 <table>
 <thead>
 <tr>
@@ -3554,7 +4424,7 @@ a++;           // a 变成 16
 <td>E8</td>
 <td>整数除法丢小数</td>
 <td><code>7/2</code> 得 3 而非 3.5</td>
-<td>改用 <code>7.0/2</code> 或 double</td>
+<td>改用 <code>(double)a/b</code> 或 <code>1.0*a/b</code></td>
 </tr>
 <tr>
 <td>E9</td>
@@ -3574,49 +4444,111 @@ a++;           // a 变成 16
 <td>编译错误</td>
 <td>关键字全小写 <code>int</code></td>
 </tr>
+<tr>
+<td>E12</td>
+<td><code>int a = 3.99</code> 以为得 4</td>
+<td>实际得 3（截断非四舍五入）</td>
+<td>要四舍五入用 <code>(int)(x+0.5)</code></td>
+</tr>
+<tr>
+<td>E13</td>
+<td><code>(double)(a/b)</code> 写成 <code>(double)a/b</code></td>
+<td>先除再转，已丢精度</td>
+<td>先转再除：<code>(double)a / b</code></td>
+</tr>
+<tr>
+<td>E14</td>
+<td>强制转换忘加括号</td>
+<td><code>(int)a / b</code> 可能歧义</td>
+<td>明确加括号：<code>((int)a) / b</code> 或 <code>(int)(a/b)</code></td>
+</tr>
+<tr>
+<td>E15</td>
+<td>把 <code>sizeof</code> 返回值当位数</td>
+<td><code>sizeof(int)=4</code> 误以为 32 位</td>
+<td><code>sizeof</code> 返回<strong>字节数</strong>，1 字节 = 8 位，4 字节 = 32 位</td>
+</tr>
 </tbody>
 </table>
-<h3 id="_11">输入法与标点提醒</h3>
+<h3 id="_12">输入法与标点提醒</h3>
 <ul>
 <li>写代码一律英文输入法。变量名里的中文标点、空格都会报错。</li>
 <li><code>=</code> 是赋值，<code>==</code> 才是"判断相等"（后续课程会学，先记住别混）。</li>
 </ul>
 <hr />
-<h2 id="_12">十三、方法、套路与策略小结</h2>
-<h3 id="1_8">1. 顺序结构三步套路</h3>
+<h2 id="_13">十四、方法、套路与策略小结</h2>
+<h3 id="1_9">1. 顺序结构三步套路</h3>
 <p>信奥里最基础的题目都是"读入→计算→输出"三步：</p>
 <ul>
 <li><strong>第1步 读入：</strong> 先按数据类型定义变量，再用 <code>cin &gt;&gt;</code> 把键盘数据读进变量。</li>
 <li><strong>第2步 计算：</strong> 用算术运算把读入的数据算出结果（可存入新变量，也可直接输出）。</li>
 <li><strong>第3步 输出：</strong> 用 <code>cout &lt;&lt;</code> 把结果输出。</li>
 </ul>
-<h3 id="2_9">2. 类型选择决策</h3>
+<h3 id="2_10">2. 类型选择决策</h3>
 <ul>
 <li>题目说"整数"→ <code>int</code>；数据或结果可能超过 21 亿 → <code>long long</code></li>
 <li>题目说"小数/浮点/保留几位"→ <code>double</code></li>
 <li>题目说"一个字符/字母"→ <code>char</code></li>
 <li>题目说"是否/判断"→ <code>bool</code></li>
 </ul>
-<h3 id="3_6">3. 整数除法防坑三问</h3>
+<h3 id="3_7">3. 整数除法防坑三问</h3>
 <p>写除法前先问自己：</p>
 <ol>
 <li>两个操作数都是整数吗？</li>
 <li>题目要整数结果还是小数结果？</li>
 <li>要小数就加 <code>.0</code> 或用 double 变量。</li>
 </ol>
-<h3 id="4_6">4. 信奥策略意识</h3>
+<h3 id="4_7">4. 类型转换决策表</h3>
+<table>
+<thead>
+<tr>
+<th>需求</th>
+<th>写法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整数除法要小数结果</td>
+<td><code>(double)a / b</code> 或 <code>1.0 * a / b</code></td>
+<td><code>7/2</code> → 3；<code>(double)7/2</code> → 3.5</td>
+</tr>
+<tr>
+<td>double 截断取整</td>
+<td><code>(int)x</code> 或 <code>int(x)</code></td>
+<td><code>(int)3.99</code> → 3</td>
+</tr>
+<tr>
+<td>正数四舍五入</td>
+<td><code>(int)(x + 0.5)</code></td>
+<td><code>(int)(3.6+0.5)</code> → 4</td>
+</tr>
+<tr>
+<td>查看字符 ASCII 码</td>
+<td><code>(int)ch</code></td>
+<td><code>(int)'A'</code> → 65</td>
+</tr>
+<tr>
+<td>整数转字符</td>
+<td><code>(char)n</code> 或 <code>char(n)</code></td>
+<td><code>(char)65</code> → 'A'</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5_1">5. 信奥策略意识</h3>
 <ul>
 <li><strong>定义即初始化</strong>：避免垃圾值，减少调试时间。</li>
 <li><strong>变量名见名知意</strong>：长题目里 <code>sum</code>、<code>cnt</code>、<code>ans</code> 比单字母好维护。</li>
 <li><strong>拿不准加括号</strong>：优先级记不清就加括号，绝不靠猜。</li>
 <li><strong>样例验证</strong>：提交前用样例输入跑一遍，逐字符比对输出。</li>
+<li><strong>转换意图要明确</strong>：需要小数结果时主动写 <code>(double)</code> 或 <code>1.0 *</code>，不依赖隐式转换的"巧合"。</li>
 </ul>
 <hr />
-<h2 id="_13">十四、分级分类练习题单</h2>
+<h2 id="_14">十五、分级分类练习题单</h2>
 <blockquote>
-<p>题单分 A、B 两级。A 级为本课核心（变量 + cin + 算术），B 级为综合/挑战。洛谷题已标注题号，自编题明确标注。</p>
+<p>题单分 A、B 两级。A 级为本课核心（变量 + cin + 算术 + 类型转换），B 级为综合/挑战。洛谷题已标注题号，自编题明确标注。</p>
 </blockquote>
-<h3 id="a">A 级 · 本课核心（变量 + 输入 + 算术）</h3>
+<h3 id="a">A 级 · 本课核心（变量 + 输入 + 算术 + 类型转换）</h3>
 <table>
 <thead>
 <tr>
@@ -3675,6 +4607,12 @@ a++;           // a 变成 16
 <td><code>%</code> 和 <code>/</code> 拆数字</td>
 <td>自编</td>
 </tr>
+<tr>
+<td><code>自编-5</code></td>
+<td>整数除法转小数</td>
+<td>强制类型转换 <code>(double)</code></td>
+<td>自编</td>
+</tr>
 </tbody>
 </table>
 <h4 id="a_1">A 级 · 自编题题面</h4>
@@ -3694,7 +4632,7 @@ A
 
 </code></pre>
 <blockquote>
-<p>思考：如果三个数用 int 相加再除以 3，<code>12/3=4</code> 没问题；但若 <code>4 4 5</code>，<code>13/3=4</code>（丢小数）。要得小数应写成 <code>(a+b+c)/3.0</code>。</p>
+<p>思考：如果三个数用 int 相加再除以 3，<code>12/3=4</code> 没问题；但若 <code>4 4 5</code>，<code>13/3=4</code>（丢小数）。要得小数应写成 <code>(double)(a+b+c) / 3</code> 或 <code>1.0 * (a+b+c) / 3</code>。</p>
 </blockquote>
 <p><strong>自编-4：</strong> 读入一个两位整数，分别输出它的十位和个位。</p>
 <pre><code>输入: 37
@@ -3705,6 +4643,14 @@ A
 </code></pre>
 <blockquote>
 <p>提示：十位 = <code>n / 10</code>，个位 = <code>n % 10</code>。</p>
+</blockquote>
+<p><strong>自编-5：</strong> 读入两个正整数 a 和 b（a ≤ b），输出 a ÷ b 的商（保留小数，至少 1 位小数）。</p>
+<pre><code>输入: 7 2
+输出: 3.5
+
+</code></pre>
+<blockquote>
+<p>提示：<code>cout &lt;&lt; (double)a / b;</code> 或 <code>cout &lt;&lt; 1.0 * a / b;</code>。注意不能写 <code>(double)(a / b)</code>，那样先做整数除法已经丢精度。</p>
 </blockquote>
 <h3 id="b">B 级 · 综合/挑战</h3>
 <table>
@@ -3729,22 +4675,40 @@ A
 <td>整数拆分（% 和 /）+ 重组</td>
 <td>洛谷</td>
 </tr>
+<tr>
+<td><code>自编-6</code></td>
+<td>四舍五入取整</td>
+<td>强制转换 + 四舍五入技巧</td>
+<td>自编</td>
+</tr>
 </tbody>
 </table>
-<p><strong>洛谷入口：</strong> <code>https://www.luogu.com.cn/problem/</code> 后接题号即可，如 <code>https://www.luogu.com.cn/problem/P1001</code>。</p>
-<hr />
-<h2 id="_14">附录 · 本课代码模板速查</h2>
-<h3 id="1_9">模板 1：变量定义与初始化</h3>
-<pre><code class="language-cpp">int a = 10;              // 整型
-long long big = 1000000000000LL;  // 大整数（超 21 亿用 long long）
-float f = 3.14f;         // 单精度浮点（字面量加 f）
-double x = 3.14;         // 双精度浮点（信奥默认用 double）
-char ch = 'A';           // 字符（单引号）
-bool flag = true;        // 布尔
-int b, c, d;             // 多个同类型
+<h4 id="b_1">B 级 · 自编题题面</h4>
+<p><strong>自编-6：</strong> 读入一个正小数 x（0 \&lt; x \&lt; 100），输出 x 四舍五入后的整数。</p>
+<pre><code>输入: 3.6
+输出: 4
+
+输入: 3.4
+输出: 3
 
 </code></pre>
-<h3 id="2_10">模板 2：顺序结构万能框架（读入→计算→输出）</h3>
+<blockquote>
+<p>提示：正数四舍五入 = <code>(int)(x + 0.5)</code>。</p>
+</blockquote>
+<p><strong>洛谷入口：</strong> <code>https://www.luogu.com.cn/problem/</code> 后接题号即可，如 <code>https://www.luogu.com.cn/problem/P1001</code>。</p>
+<hr />
+<h2 id="_15">附录 · 本课代码模板速查</h2>
+<h3 id="1_10">模板 1：变量定义与初始化</h3>
+<pre><code class="language-cpp">int a = 10;               // 整型
+long long big = 1000000000000LL;  // 大整数（超 21 亿用 long long）
+float f = 3.14f;          // 单精度浮点（字面量加 f）
+double x = 3.14;          // 双精度浮点（信奥默认用 double）
+char ch = 'A';            // 字符（单引号）
+bool flag = true;         // 布尔
+int b, c, d;              // 多个同类型
+
+</code></pre>
+<h3 id="2_11">模板 2：顺序结构万能框架（读入→计算→输出）</h3>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 using namespace std;
 int main(){
@@ -3755,7 +4719,7 @@ int main(){
 }
 
 </code></pre>
-<h3 id="3_7">模板 3：算术运算速记</h3>
+<h3 id="3_8">模板 3：算术运算速记</h3>
 <pre><code class="language-cpp">int sum = a + b;        // 加
 int diff = a - b;       // 减
 int prod = a * b;       // 乘
@@ -3764,17 +4728,32 @@ int r = a % b;          // 求余（仅整数）
 double ans = 1.0 * a / b;  // 想要小数结果：先乘 1.0
 
 </code></pre>
-<h3 id="4_7">模板 4：数字拆分（取某一位）</h3>
+<h3 id="4_8">模板 4：数据类型转换速记</h3>
+<pre><code class="language-cpp">// 隐式转换（自动）
+int a = 3.14;           // double→int，截断得 3
+double x = 5;           // int→double，得 5.0
+char ch = 65;           // int→char，得 'A'
+
+// 强制转换（手动）
+int n = (int)3.99;      // 截断取整，得 3
+double d = (double)a / b;  // 整数除法转小数
+int rounded = (int)(x + 0.5);  // 正数四舍五入
+int ascii = (int)ch;    // 查看字符 ASCII 码
+char c = (char)65;      // 整数转字符
+
+</code></pre>
+<h3 id="5_2">模板 5：数字拆分（取某一位）</h3>
 <pre><code class="language-cpp">int n = 123;
 int ge = n % 10;        // 个位: 3
 int shi = n / 10 % 10;  // 十位: 2
 int bai = n / 100 % 10; // 百位: 1
 
 </code></pre>
-<h3 id="5_1">模板 5：字符大小写转换</h3>
+<h3 id="6_1">模板 6：字符大小写转换</h3>
 <pre><code class="language-cpp">char low = 'a';
 char up = low - 32;        // 小写转大写（'a'-'A'=32）
 // 或更稳的写法：up = low - ('a' - 'A');
+// 或用强制转换：up = (char)(low - 32);
 
 </code></pre>
 

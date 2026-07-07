@@ -24,24 +24,23 @@ nav:
         - 04_唯一分解定理: oi_tutorial\csp-j\J1-04_唯一分解定理.md
         - 06_欧几里得算法: oi_tutorial\csp-j\J1-06_欧几里得算法.md
         - 11_链表: oi_tutorial\csp-j\J1-11_链表.md
+  - C++参考手册: reference/reference.md
+      # - 复合数据类型:
+      #     - 指针: cpp_reference/compound_data_type/pointer.md
+      # - 类:
+      #     - 类基础与构造函数: cpp_reference/class/class_basics.md
+      #     - 运算符重载与类模板: cpp_reference/class/operator_overloading.md
+      #     - 类的特殊成员: cpp_reference/class/special_members.md
+      #     - 友元与继承: cpp_reference/class/friendship_and_inheritance.md
+      #     - 多态: cpp_reference/class/polymorphism.md
+      # - STL模板:
+      #     - STL介绍: cpp_reference/STL/stl.md
+      #     - "map": cpp_reference/STL/map.md
+
   # - 数学问题:
   #   - 素数的判定: math/素数的判定.md
-  #   - 唯一分解定理: math/唯一分解定理.md
-  #   - 最大公约数/最小公倍数: math/最大公约数_最小公倍数.md
   #   - 欧拉函数: math/euler-function.md
   # - OJ平台: http://101.42.90.238/ 
-  - 参考文档:
-      - 复合数据类型:
-          - 指针: cpp_reference/compound_data_type/pointer.md
-      - 类:
-          - 类基础与构造函数: cpp_reference/class/class_basics.md
-          - 运算符重载与类模板: cpp_reference/class/operator_overloading.md
-          - 类的特殊成员: cpp_reference/class/special_members.md
-          - 友元与继承: cpp_reference/class/friendship_and_inheritance.md
-          - 多态: cpp_reference/class/polymorphism.md
-      - STL模板:
-          - STL介绍: cpp_reference/STL/stl.md
-          - "map": cpp_reference/STL/map.md
 
 
 # Theme 主题设置

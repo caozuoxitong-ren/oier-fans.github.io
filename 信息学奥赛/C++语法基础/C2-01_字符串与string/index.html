@@ -1,0 +1,4014 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oier.fans/%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B/C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C2-01_%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8Estring/">
+      
+      
+        <link rel="prev" href="../C1_12_%E6%A0%87%E8%AE%B0%E6%B3%95%E4%B8%93%E9%A2%98/">
+      
+      
+        <link rel="next" href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-01_STL%E8%BF%9B%E9%98%B6/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>C2-01 字符串与string - 信奥爱好者 OIer Fans</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c2-01-string" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-header__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            信奥爱好者 OIer Fans
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C2-01 字符串与string
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+          
+  
+  
+  C++语法基础
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-01_STL%E8%BF%9B%E9%98%B6/" class="md-tabs__link">
+          
+  
+  
+  CSP-J入门组
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reference/compound_data_type/pointer/" class="md-tabs__link">
+          
+  
+  
+  C++参考手册
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-nav__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    信奥爱好者 OIer Fans
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++语法基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C++语法基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1阶段
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C1阶段
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 程序设计入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_02_%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 变量及其输入输出
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_03_%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 比较运算符与if语句
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_04_%E5%88%86%E6%94%AF%E5%B5%8C%E5%A5%97%E4%B8%8E%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 分支嵌套与逻辑运算符
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_05_for%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05_for循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_06_while%E5%BE%AA%E7%8E%AF%E4%B8%8Edo-while%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06_while循环和do-while循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_07_%E5%BE%AA%E7%8E%AF%E8%AF%BB%E5%85%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07_循环读入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_08_%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08_数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_09_%E5%BE%AA%E7%8E%AF%E4%B8%8E%E5%88%86%E6%94%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09_循环与分支
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_10_%E5%BE%AA%E7%8E%AF%E5%B5%8C%E5%A5%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10_循环嵌套
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_11_%E6%95%B0%E4%BD%8D%E6%8B%86%E5%88%86%E4%B8%93%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11_数位拆分专题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_12_%E6%A0%87%E8%AE%B0%E6%B3%95%E4%B8%93%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12_标记法专题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C2阶段
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C2阶段
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C2-01 字符串与string
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C2-01 字符串与string
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、字符串与 string 的基础框架
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、字符串与 string 的基础框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 字符串是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 最常用的完整程序骨架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-string-char" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. string 与 char[] 的区别
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、定义、初始化、赋值与基本访问
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、定义、初始化、赋值与基本访问">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 定义和初始化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 赋值、长度与下标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 遍历每个字符
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、输入输出：单词与含空格的整行字符串
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、输入输出：单词与含空格的整行字符串">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cin-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. cin &gt;&gt; s：读入一个单词
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-getlinecin-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. getline(cin, s)：读入一整行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-getline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 先读数字再 getline 的换行陷阱
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、拼接、追加、插入和删除
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、拼接、追加、插入和删除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 字符串拼接
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 插入、删除与替换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、字典序与字符串比较
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、字典序与字符串比较">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 什么是字典序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 直接使用比较运算符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 比较正确性的说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、字符串拆分、子串与查找
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、字符串拆分、子串与查找">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 子串的概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. find 查找子串
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 按分隔符拆分字符串
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 拆分算法正确性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、典型题型一：字符串平移（循环移位）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、典型题型一：字符串平移（循环移位）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 左移和右移
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-substr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 左移的 substr 实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 为什么公式正确
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、典型题型二：特殊字符串——回文字符串
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、典型题型二：特殊字符串——回文字符串">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 回文的定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 双指针判断模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 双指针算法的正确性证明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 变形：忽略大小写和非字母数字
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、典型题型三：字符串排序与最小字典序
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、典型题型三：字符串排序与最小字典序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 对字符串中的字符排序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 对多个字符串排序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 最小字典序拼接的思考
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、典型题型四：字符串应用题的常用模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十、典型题型四：字符串应用题的常用模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 字符统计：统计元音字母个数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 字符替换：把所有 - 改成 /
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 删除指定字符：保留想要的字符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 反转字符串
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 数字串处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、常见错误与修正
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、方法、套路与策略小结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、方法、套路与策略小结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 基础操作速查
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 见题识别套路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 信奥策略意识
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSP-J入门组
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CSP-J入门组
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-01_STL%E8%BF%9B%E9%98%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01_STL进阶
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-02_%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02_前缀和
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-03_%E5%B7%AE%E5%88%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03_差分
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-04_%E5%94%AF%E4%B8%80%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04_唯一分解定理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-06_%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06_欧几里得算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-11_%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11_链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-14_%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14_二分查找
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++参考手册
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C++参考手册
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    复合数据类型
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    复合数据类型
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/compound_data_type/pointer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指针
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    类
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/class/class_basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类基础与构造函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/class/operator_overloading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运算符重载与类模板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/class/special_members/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类的特殊成员
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/class/friendship_and_inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    友元与继承
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/class/polymorphism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、字符串与 string 的基础框架
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、字符串与 string 的基础框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 字符串是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 最常用的完整程序骨架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-string-char" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. string 与 char[] 的区别
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、定义、初始化、赋值与基本访问
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、定义、初始化、赋值与基本访问">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 定义和初始化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 赋值、长度与下标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 遍历每个字符
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、输入输出：单词与含空格的整行字符串
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、输入输出：单词与含空格的整行字符串">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cin-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. cin &gt;&gt; s：读入一个单词
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-getlinecin-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. getline(cin, s)：读入一整行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-getline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 先读数字再 getline 的换行陷阱
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、拼接、追加、插入和删除
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、拼接、追加、插入和删除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 字符串拼接
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 插入、删除与替换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、字典序与字符串比较
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、字典序与字符串比较">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 什么是字典序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 直接使用比较运算符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 比较正确性的说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、字符串拆分、子串与查找
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、字符串拆分、子串与查找">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 子串的概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. find 查找子串
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 按分隔符拆分字符串
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 拆分算法正确性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、典型题型一：字符串平移（循环移位）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、典型题型一：字符串平移（循环移位）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 左移和右移
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-substr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 左移的 substr 实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 为什么公式正确
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、典型题型二：特殊字符串——回文字符串
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、典型题型二：特殊字符串——回文字符串">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 回文的定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 双指针判断模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 双指针算法的正确性证明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 变形：忽略大小写和非字母数字
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、典型题型三：字符串排序与最小字典序
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、典型题型三：字符串排序与最小字典序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 对字符串中的字符排序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 对多个字符串排序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 最小字典序拼接的思考
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、典型题型四：字符串应用题的常用模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十、典型题型四：字符串应用题的常用模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 字符统计：统计元音字母个数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 字符替换：把所有 - 改成 /
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 删除指定字符：保留想要的字符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 反转字符串
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 数字串处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、常见错误与修正
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、方法、套路与策略小结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、方法、套路与策略小结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 基础操作速查
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 见题识别套路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 信奥策略意识
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+        }
+    });
+</script>
+
+<h1 id="c2-01-string">C2-01 字符串与string</h1>
+<p><code>string</code> 是 C++ 标准库提供的字符串类型。它把“一串字符”封装成一个可以直接比较、拼接、查找、截取和排序的对象。信奥基础题中，题目中的姓名、单词、句子、编码、日期、回文串等，通常都可以用 <code>string</code> 处理。</p>
+<blockquote>
+<p><strong>一句话理解</strong>：把 <code>string</code> 当作“长度可变、能按下标访问的字符数组”。</p>
+</blockquote>
+<p>本文所有程序均使用 <strong>C++11</strong> 标准，可在常见 OJ 中直接编译。</p>
+<h2 id="string">一、字符串与 <code>string</code> 的基础框架</h2>
+<h3 id="1">1. 字符串是什么</h3>
+<p>字符串（string）是按顺序排列的字符序列。例如：</p>
+<ul>
+<li><code>"hello"</code>：5 个字符；</li>
+<li><code>"2026-09-10"</code>：10 个字符；</li>
+<li><code>"A B C"</code>：5 个字符，<strong>空格也是字符</strong>；</li>
+<li><code>""</code>：空字符串，长度为 0。</li>
+</ul>
+<p>在 C++ 中，单引号表示一个字符，双引号表示一个字符串：</p>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'A'</code></td>
+<td><code>char</code></td>
+<td>一个字符</td>
+</tr>
+<tr>
+<td><code>"A"</code></td>
+<td>字符串常量</td>
+<td>只含一个字符的字符串</td>
+</tr>
+<tr>
+<td><code>"hello"</code></td>
+<td>字符串常量</td>
+<td>5 个字符组成的字符串</td>
+</tr>
+<tr>
+<td><code>string s = "hello";</code></td>
+<td><code>string</code></td>
+<td>一个可修改的字符串对象</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">2. 最常用的完整程序骨架</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string s = &quot;Hello&quot;;
+
+    cout &lt;&lt; s &lt;&lt; &quot;\n&quot;;
+    cout &lt;&lt; s.length() &lt;&lt; &quot;\n&quot;;
+    cout &lt;&lt; s[0] &lt;&lt; &quot;\n&quot;;
+
+    return 0;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">行号</th>
+<th>代码</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td><code>#include &lt;iostream&gt;</code></td>
+<td>提供 <code>cin</code>、<code>cout</code>。</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td><code>#include &lt;string&gt;</code></td>
+<td>提供 <code>string</code> 类型及其成员函数。</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td><code>using namespace std;</code></td>
+<td>省去每次写 <code>std::</code>。</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td><code>string s = "Hello";</code></td>
+<td>定义并初始化字符串 <code>s</code>。</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td><code>cout &lt;&lt; s</code></td>
+<td>输出整个字符串。</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td><code>s.length()</code></td>
+<td>得到字符串长度。</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td><code>s[0]</code></td>
+<td>访问下标为 0 的第一个字符。</td>
+</tr>
+</tbody>
+</table>
+<p>运行结果：</p>
+<pre><code class="language-text">Hello
+5
+H
+</code></pre>
+<h3 id="3-string-char">3. <code>string</code> 与 <code>char[]</code> 的区别</h3>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th><code>string</code></th>
+<th><code>char[]</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>长度</td>
+<td>用 <code>s.length()</code> 或 <code>s.size()</code></td>
+<td>常用 <code>strlen(a)</code></td>
+</tr>
+<tr>
+<td>比较内容</td>
+<td>可以直接 <code>s1 == s2</code></td>
+<td>不能直接用 <code>==</code> 比较内容</td>
+</tr>
+<tr>
+<td>拼接</td>
+<td>可以直接 <code>s1 + s2</code></td>
+<td>需要 <code>strcat</code> 等函数</td>
+</tr>
+<tr>
+<td>赋值</td>
+<td>可以直接 <code>s = "abc"</code></td>
+<td>数组不能直接整体赋值</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>相对方便，不必手动管理结尾字符</td>
+<td>需注意 <code>'\0'</code> 和数组容量</td>
+</tr>
+<tr>
+<td>信奥基础题推荐</td>
+<td>优先使用</td>
+<td>题目明确要求字符数组时再使用</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>在 <code>string</code> 中，<code>s.length()</code> 与 <code>s.size()</code> 对字符串来说效果相同；初学阶段统一使用 <code>s.length()</code>，更容易记忆。</p>
+</blockquote>
+<hr />
+<h2 id="_1">二、定义、初始化、赋值与基本访问</h2>
+<h3 id="1_1">1. 定义和初始化</h3>
+<pre><code class="language-cpp">string a;                  // 空字符串
+string b = &quot;hello&quot;;        // 用字符串常量初始化
+string c(&quot;world&quot;);         // 另一种初始化写法
+string d(5, 'x');          // &quot;xxxxx&quot;，5 个字符 x
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string a;</code></td>
+<td><code>a</code> 是空串，长度为 0</td>
+</tr>
+<tr>
+<td><code>string b = "hello";</code></td>
+<td><code>b</code> 为 <code>"hello"</code></td>
+</tr>
+<tr>
+<td><code>string d(5, 'x');</code></td>
+<td><code>d</code> 为 <code>"xxxxx"</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_1">2. 赋值、长度与下标</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string s;
+    s = &quot;program&quot;;
+
+    cout &lt;&lt; &quot;字符串：&quot; &lt;&lt; s &lt;&lt; &quot;\n&quot;;
+    cout &lt;&lt; &quot;长度：&quot; &lt;&lt; s.length() &lt;&lt; &quot;\n&quot;;
+
+    s[0] = 'P';
+    cout &lt;&lt; &quot;修改后：&quot; &lt;&lt; s &lt;&lt; &quot;\n&quot;;
+
+    return 0;
+}
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">字符串：program
+长度：7
+修改后：Program
+</code></pre>
+<p>字符串下标从 0 开始。若 <code>s = "cat"</code>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">下标</th>
+<th><code>s[0]</code></th>
+<th><code>s[1]</code></th>
+<th><code>s[2]</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">字符</td>
+<td><code>c</code></td>
+<td><code>a</code></td>
+<td><code>t</code></td>
+</tr>
+</tbody>
+</table>
+<p>合法下标范围为：</p>
+<div class="arithmatex">\[
+0 \le i &lt; s.length()
+\]</div>
+<p>因此最后一个字符的下标是 <code>s.length() - 1</code>。空字符串不能访问 <code>s[0]</code>。</p>
+<h3 id="3">3. 遍历每个字符</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string s = &quot;C++11&quot;;
+
+    for (int i = 0; i &lt; (int)s.length(); i++) {
+        cout &lt;&lt; &quot;s[&quot; &lt;&lt; i &lt;&lt; &quot;] = &quot; &lt;&lt; s[i] &lt;&lt; &quot;\n&quot;;
+    }
+
+    return 0;
+}
+</code></pre>
+<p>这里把 <code>s.length()</code> 转成 <code>int</code>，是为了避免它返回的无符号整数类型与 <code>int i</code> 混合比较带来的警告。基础题中也可以写：</p>
+<pre><code class="language-cpp">for (int i = 0; i &lt; s.size(); i++) {
+    // 使用 s[i]
+}
+</code></pre>
+<hr />
+<h2 id="_2">三、输入输出：单词与含空格的整行字符串</h2>
+<h3 id="1-cin-s">1. <code>cin &gt;&gt; s</code>：读入一个单词</h3>
+<pre><code class="language-cpp">string s;
+cin &gt;&gt; s;
+</code></pre>
+<p><code>cin &gt;&gt; s</code> 会跳过开头空白，并在遇到空格、换行或制表符时停止。因此输入：</p>
+<pre><code class="language-text">hello world
+</code></pre>
+<p>读入后 <code>s</code> 只有：</p>
+<pre><code class="language-text">hello
+</code></pre>
+<p>适合读入不含空格的单词、账号、DNA 序列、数字串等。</p>
+<h3 id="2-getlinecin-s">2. <code>getline(cin, s)</code>：读入一整行</h3>
+<pre><code class="language-cpp">string s;
+getline(cin, s);
+</code></pre>
+<p>输入：</p>
+<pre><code class="language-text">I love C++ programming
+</code></pre>
+<p>读入后 <code>s</code> 为整行，包括其中的空格。</p>
+<table>
+<thead>
+<tr>
+<th>输入方式</th>
+<th>遇到空格</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cin &gt;&gt; s</code></td>
+<td>停止读入</td>
+<td>单词、编码、无空格字符串</td>
+</tr>
+<tr>
+<td><code>getline(cin, s)</code></td>
+<td>继续读入</td>
+<td>句子、地址、标题、含空格文本</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-getline">3. 先读数字再 <code>getline</code> 的换行陷阱</h3>
+<p>如果先用 <code>cin &gt;&gt; n</code>，输入流中通常还留着一个换行符。紧接着 <code>getline</code> 会把这个空行读走。</p>
+<p>错误示例：</p>
+<pre><code class="language-cpp">int n;
+string s;
+cin &gt;&gt; n;
+getline(cin, s);   // 往往读到空串
+</code></pre>
+<p>正确写法：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;limits&gt;
+using namespace std;
+
+int main() {
+    int n;
+    string s;
+
+    cin &gt;&gt; n;
+    cin.ignore();  // 默认忽略 1 个字符
+    getline(cin, s);
+
+    cout &lt;&lt; n &lt;&lt; &quot;\n&quot;;
+    cout &lt;&lt; s &lt;&lt; &quot;\n&quot;;
+
+    return 0;
+}
+</code></pre>
+<p>若题目明确保证数字后只有一个换行，常写 <code>cin.ignore();</code>，默认忽略 1 个字符。</p>
+<blockquote>
+<p><strong>特别提醒</strong>：读完数字以后，若下一项要读“可能含空格的一整行”，先处理残留换行符。</p>
+</blockquote>
+<hr />
+<h2 id="_3">四、拼接、追加、插入和删除</h2>
+<h3 id="1_2">1. 字符串拼接</h3>
+<p><code>+</code> 可以连接两个字符串。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string firstName = &quot;Zhang&quot;;
+    string lastName = &quot;San&quot;;
+    string fullName = firstName + &quot; &quot; + lastName;
+
+    cout &lt;&lt; fullName &lt;&lt; &quot;\n&quot;;
+    return 0;
+}
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">Zhang San
+</code></pre>
+<p><code>+=</code> 表示在原字符串末尾追加内容：</p>
+<pre><code class="language-cpp">string s = &quot;C&quot;;
+s += &quot;+&quot;;
+s += &quot;+&quot;;
+// s 为 &quot;C++&quot;
+</code></pre>
+<p>还可用 <code>push_back</code> 在末尾追加一个字符：</p>
+<pre><code class="language-cpp">string s = &quot;abc&quot;;
+s.push_back('d');  // &quot;abcd&quot;
+</code></pre>
+<h3 id="2_2">2. 插入、删除与替换</h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>写法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插入</td>
+<td><code>s.insert(pos, t)</code></td>
+<td>在下标 <code>pos</code> 前插入字符串 <code>t</code></td>
+</tr>
+<tr>
+<td>删除</td>
+<td><code>s.erase(pos, len)</code></td>
+<td>从 <code>pos</code> 开始删掉 <code>len</code> 个字符</td>
+</tr>
+<tr>
+<td>替换</td>
+<td><code>s.replace(pos, len, t)</code></td>
+<td>用 <code>t</code> 替换原来的 <code>len</code> 个字符</td>
+</tr>
+<tr>
+<td>清空</td>
+<td><code>s.clear()</code></td>
+<td>变成空串</td>
+</tr>
+</tbody>
+</table>
+<p>示例：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string s = &quot;I like apple&quot;;
+
+    s.insert(7, &quot;red &quot;);
+    cout &lt;&lt; s &lt;&lt; &quot;\n&quot;;  // I like red apple
+
+    s.erase(7, 4);
+    cout &lt;&lt; s &lt;&lt; &quot;\n&quot;;  // I like apple
+
+    s.replace(7, 5, &quot;pear&quot;);
+    cout &lt;&lt; s &lt;&lt; &quot;\n&quot;;  // I like pear
+
+    return 0;
+}
+</code></pre>
+<hr />
+<h2 id="_4">五、字典序与字符串比较</h2>
+<h3 id="1_3">1. 什么是字典序</h3>
+<p>字典序就是像查字典一样比较字符串：从左到右找到第一对不同字符，谁的该字符小，谁的字符串就小。</p>
+<p>例如比较 <code>"apple"</code> 和 <code>"apply"</code>：</p>
+<pre><code class="language-text">a 相同，p 相同，p 相同，l 相同；
+第 5 个字符：e &lt; y；
+所以 apple &lt; apply。
+</code></pre>
+<p>如果一个字符串是另一个的前缀，较短字符串更小：</p>
+<pre><code class="language-text">app &lt; apple
+</code></pre>
+<p>因为前 3 个字符相同，<code>"app"</code> 已结束。</p>
+<h3 id="2_3">2. 直接使用比较运算符</h3>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a == b</code></td>
+<td>两串完全相同</td>
+</tr>
+<tr>
+<td><code>a != b</code></td>
+<td>两串不相同</td>
+</tr>
+<tr>
+<td><code>a &lt; b</code></td>
+<td><code>a</code> 的字典序更小</td>
+</tr>
+<tr>
+<td><code>a &gt; b</code></td>
+<td><code>a</code> 的字典序更大</td>
+</tr>
+<tr>
+<td><code>a &lt;= b</code>、<code>a &gt;= b</code></td>
+<td>对应的不大于、不小于比较</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string a = &quot;apple&quot;;
+    string b = &quot;apply&quot;;
+
+    if (a &lt; b) {
+        cout &lt;&lt; a &lt;&lt; &quot; 排在 &quot; &lt;&lt; b &lt;&lt; &quot; 前面\n&quot;;
+    }
+
+    return 0;
+}
+</code></pre>
+<h3 id="3_1">3. 比较正确性的说明</h3>
+<p>设两个字符串从左到右第一次不同的位置为 <code>k</code>。</p>
+<ul>
+<li>在 <code>0</code> 到 <code>k - 1</code> 的位置，字符都相同，无法决定先后；</li>
+<li>第 <code>k</code> 位是第一个能区分二者的位置；</li>
+<li>字符编码较小的字符应排在前面，因此该位置字符较小的字符串字典序较小；</li>
+<li>若始终没有不同字符，则两串相等；若一个先结束，则短串是长串的前缀，短串排前面。</li>
+</ul>
+<p>这正是 <code>string</code> 的 <code>&lt;</code>、<code>&gt;</code> 等比较的含义。</p>
+<blockquote>
+<p>大小写会影响比较：通常 <code>'A' &lt; 'a'</code>。若题目要求“不区分大小写”，应先统一转成小写或大写后再比较。</p>
+</blockquote>
+<hr />
+<h2 id="_5">六、字符串拆分、子串与查找</h2>
+<h3 id="1_4">1. 子串的概念</h3>
+<p>若一个字符串可以通过删除原串开头和结尾若干字符得到，那么得到的字符串叫原串的<strong>子串</strong>。子串必须连续。</p>
+<p>例如 <code>s = "programming"</code>：</p>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.substr(0, 7)</code></td>
+<td><code>"program"</code></td>
+</tr>
+<tr>
+<td><code>s.substr(3, 4)</code></td>
+<td><code>"gram"</code></td>
+</tr>
+<tr>
+<td><code>s.substr(7)</code></td>
+<td><code>"ming"</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>substr(pos, len)</code> 表示从下标 <code>pos</code> 开始取 <code>len</code> 个字符；省略 <code>len</code> 时，取到字符串末尾。</p>
+<h3 id="2-find">2. <code>find</code> 查找子串</h3>
+<pre><code class="language-cpp">string s = &quot;banana&quot;;
+int pos = (int)s.find(&quot;ana&quot;);
+</code></pre>
+<p><code>find</code> 返回第一次找到的位置；找不到时返回 <code>string::npos</code>。</p>
+<p>安全写法：</p>
+<pre><code class="language-cpp">size_t pos = s.find(&quot;ana&quot;);
+if (pos != string::npos) {
+    cout &lt;&lt; &quot;找到，起点为 &quot; &lt;&lt; pos &lt;&lt; &quot;\n&quot;;
+} else {
+    cout &lt;&lt; &quot;未找到\n&quot;;
+}
+</code></pre>
+<blockquote>
+<p><strong>易错点</strong>：不能把 <code>find</code> 的结果直接和 <code>-1</code> 随意混用。最清楚的判断是 <code>pos != string::npos</code>。</p>
+</blockquote>
+<h3 id="3_2">3. 按分隔符拆分字符串</h3>
+<p>以下程序把形如 <code>2026-09-10</code> 的字符串按 <code>-</code> 拆成三部分。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    string s;
+    getline(cin, s);
+
+    vector&lt;string&gt; part;
+    string current = &quot;&quot;;
+
+    for (int i = 0; i &lt; (int)s.length(); i++) {
+        if (s[i] == '-') {
+            part.push_back(current);
+            current = &quot;&quot;;
+        } else {
+            current += s[i];
+        }
+    }
+    part.push_back(current);
+
+    for (int i = 0; i &lt; (int)part.size(); i++) {
+        cout &lt;&lt; part[i] &lt;&lt; &quot;\n&quot;;
+    }
+
+    return 0;
+}
+</code></pre>
+<p>输入：</p>
+<pre><code class="language-text">2026-09-10
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">2026
+09
+10
+</code></pre>
+<p>逐行关键解释：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">行号</th>
+<th>代码</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">10</td>
+<td><code>vector&lt;string&gt; part;</code></td>
+<td>保存拆分出的每一段。</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td><code>string current = "";</code></td>
+<td>暂存当前正在收集的一段字符。</td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td><code>if (s[i] == '-')</code></td>
+<td>遇到分隔符时，一段结束。</td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td><code>part.push_back(current);</code></td>
+<td>把这一段放入答案。</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td><code>current = "";</code></td>
+<td>清空，准备下一段。</td>
+</tr>
+<tr>
+<td style="text-align: right;">18</td>
+<td><code>current += s[i];</code></td>
+<td>非分隔符则属于当前段。</td>
+</tr>
+<tr>
+<td style="text-align: right;">21</td>
+<td><code>part.push_back(current);</code></td>
+<td>循环结束后，最后一段还未入库，必须补上。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">4. 拆分算法正确性</h3>
+<p>遍历到任意位置时，<code>current</code> 始终恰好保存“从上一个分隔符后到当前位置之前的所有非分隔符字符”。</p>
+<ul>
+<li>遇到普通字符，追加到 <code>current</code>，这个不变式继续成立；</li>
+<li>遇到分隔符，<code>current</code> 正好是一整段，存入答案并清空；</li>
+<li>循环结束后，末尾一段没有下一个分隔符触发保存，因此再保存一次即可。</li>
+</ul>
+<p>每个字符只处理一次，时间复杂度为 <span class="arithmatex">\(O(n)\)</span>，其中 <span class="arithmatex">\(n\)</span> 是字符串长度。</p>
+<hr />
+<h2 id="_6">七、典型题型一：字符串平移（循环移位）</h2>
+<h3 id="1_5">1. 左移和右移</h3>
+<p>设 <code>s = "abcdef"</code>。</p>
+<ul>
+<li>左移 2 位：<code>"cdefab"</code>；</li>
+<li>右移 2 位：<code>"efabcd"</code>。</li>
+</ul>
+<p>左移 <code>k</code> 位的本质是：</p>
+<pre><code class="language-text">前 k 个字符移到末尾。
+</code></pre>
+<p>若 <span class="arithmatex">\(k\)</span> 可能大于字符串长度 <span class="arithmatex">\(n\)</span>，先取：</p>
+<div class="arithmatex">\[
+k \leftarrow k \bmod n
+\]</div>
+<p>因为完整移动 <span class="arithmatex">\(n\)</span> 位后，字符串恢复原状。</p>
+<h3 id="2-substr">2. 左移的 <code>substr</code> 实现</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string s;
+    int k;
+    cin &gt;&gt; s &gt;&gt; k;
+
+    int n = (int)s.length();
+    if (n &gt; 0) {
+        k %= n;
+        s = s.substr(k) + s.substr(0, k);
+    }
+
+    cout &lt;&lt; s &lt;&lt; &quot;\n&quot;;
+    return 0;
+}
+</code></pre>
+<p>输入：</p>
+<pre><code class="language-text">abcdef 8
+</code></pre>
+<p>计算：<span class="arithmatex">\(8 \bmod 6 = 2\)</span>，输出：</p>
+<pre><code class="language-text">cdefab
+</code></pre>
+<h3 id="3_3">3. 为什么公式正确</h3>
+<p>左移 <code>k</code> 位后：</p>
+<ul>
+<li>原串下标 <code>k</code> 到 <code>n - 1</code> 的字符应排到前面，即 <code>s.substr(k)</code>；</li>
+<li>原串下标 <code>0</code> 到 <code>k - 1</code> 的字符应接到后面，即 <code>s.substr(0, k)</code>；</li>
+<li>二者按这个顺序拼接，恰好得到左移结果。</li>
+</ul>
+<p>时间复杂度为 <span class="arithmatex">\(O(n)\)</span>，因为需要构造一个长度为 <span class="arithmatex">\(n\)</span> 的新字符串。</p>
+<hr />
+<h2 id="_7">八、典型题型二：特殊字符串——回文字符串</h2>
+<h3 id="1_6">1. 回文的定义</h3>
+<p>正着读和反着读完全相同的字符串叫回文串。</p>
+<table>
+<thead>
+<tr>
+<th>字符串</th>
+<th>是否回文</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"level"</code></td>
+<td>是</td>
+<td>正反均为 <code>level</code></td>
+</tr>
+<tr>
+<td><code>"abba"</code></td>
+<td>是</td>
+<td>两端依次相同</td>
+</tr>
+<tr>
+<td><code>"abc"</code></td>
+<td>否</td>
+<td><code>a</code> 与 <code>c</code> 不同</td>
+</tr>
+<tr>
+<td><code>""</code></td>
+<td>是</td>
+<td>没有矛盾的字符对</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_4">2. 双指针判断模板</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string s;
+    cin &gt;&gt; s;
+
+    int left = 0;
+    int right = (int)s.length() - 1;
+    bool ok = true;
+
+    while (left &lt; right) {
+        if (s[left] != s[right]) {
+            ok = false;
+            break;
+        }
+        left++;
+        right--;
+    }
+
+    if (ok) {
+        cout &lt;&lt; &quot;Yes\n&quot;;
+    } else {
+        cout &lt;&lt; &quot;No\n&quot;;
+    }
+
+    return 0;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">行号</th>
+<th>代码</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">9</td>
+<td><code>int left = 0;</code></td>
+<td>左指针从首字符开始。</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td><code>int right = ... - 1;</code></td>
+<td>右指针从尾字符开始。</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td><code>while (left &lt; right)</code></td>
+<td>每次比较一对对称位置，交错后无需继续。</td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td><code>s[left] != s[right]</code></td>
+<td>一对不同即可说明不是回文。</td>
+</tr>
+<tr>
+<td style="text-align: right;">18—19</td>
+<td><code>left++; right--;</code></td>
+<td>向中间移动，继续比较下一对。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3_4">3. 双指针算法的正确性证明</h3>
+<p>循环开始前，尚未比较任何对称字符。</p>
+<p>每轮循环比较 <code>s[left]</code> 与 <code>s[right]</code>：</p>
+<ul>
+<li>若不同，这一对在回文定义中必须相同，却实际不同，所以字符串一定不是回文；</li>
+<li>若相同，说明最外层这一对满足要求，两个指针向内移动；</li>
+<li>当 <code>left &gt;= right</code> 时，所有对称位置都已比较且相同，因此字符串是回文。</li>
+</ul>
+<p>每个字符至多参与一次比较，时间复杂度为 <span class="arithmatex">\(O(n)\)</span>，额外空间复杂度为 <span class="arithmatex">\(O(1)\)</span>。</p>
+<h3 id="4_1">4. 变形：忽略大小写和非字母数字</h3>
+<p>题目若说“忽略大小写、空格和标点”，不能直接按原串比较。做法是：</p>
+<ol>
+<li>遇到非字母数字就跳过；</li>
+<li>将两端字符统一转小写；</li>
+<li>再比较。</li>
+</ol>
+<pre><code class="language-cpp">#include &lt;cctype&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string s;
+    getline(cin, s);
+
+    int left = 0;
+    int right = (int)s.length() - 1;
+    bool ok = true;
+
+    while (left &lt; right) {
+        while (left &lt; right &amp;&amp; !isalnum((unsigned char)s[left])) {
+            left++;
+        }
+        while (left &lt; right &amp;&amp; !isalnum((unsigned char)s[right])) {
+            right--;
+        }
+
+        char a = (char)tolower((unsigned char)s[left]);
+        char b = (char)tolower((unsigned char)s[right]);
+
+        if (a != b) {
+            ok = false;
+            break;
+        }
+        left++;
+        right--;
+    }
+
+    cout &lt;&lt; (ok ? &quot;Yes&quot; : &quot;No&quot;) &lt;&lt; &quot;\n&quot;;
+    return 0;
+}
+</code></pre>
+<hr />
+<h2 id="_8">九、典型题型三：字符串排序与最小字典序</h2>
+<h3 id="1_7">1. 对字符串中的字符排序</h3>
+<p><code>sort(s.begin(), s.end())</code> 可以把字符串中的字符按升序排列。</p>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string s;
+    cin &gt;&gt; s;
+
+    sort(s.begin(), s.end());
+
+    cout &lt;&lt; s &lt;&lt; &quot;\n&quot;;
+    return 0;
+}
+</code></pre>
+<p>输入：</p>
+<pre><code class="language-text">cabca
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">aabcc
+</code></pre>
+<p><code>sort</code> 的时间复杂度是 <span class="arithmatex">\(O(n \log n)\)</span>。</p>
+<h3 id="2_5">2. 对多个字符串排序</h3>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cin &gt;&gt; n;
+
+    vector&lt;string&gt; words(n);
+    for (int i = 0; i &lt; n; i++) {
+        cin &gt;&gt; words[i];
+    }
+
+    sort(words.begin(), words.end());
+
+    for (int i = 0; i &lt; n; i++) {
+        cout &lt;&lt; words[i] &lt;&lt; &quot;\n&quot;;
+    }
+
+    return 0;
+}
+</code></pre>
+<p><code>string</code> 本身已经定义了字典序比较，因此 <code>sort(words.begin(), words.end())</code> 会按字典序排列。</p>
+<p>输入：</p>
+<pre><code class="language-text">4
+banana
+apple
+app
+cat
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">app
+apple
+banana
+cat
+</code></pre>
+<h3 id="3_5">3. 最小字典序拼接的思考</h3>
+<p>若题目要求将两个字符串 <code>a</code>、<code>b</code> 拼接，使结果尽量小，不应只比较 <code>a &lt; b</code>，而应比较：</p>
+<pre><code class="language-cpp">a + b &lt; b + a
+</code></pre>
+<p>例如 <code>a = "9"</code>，<code>b = "34"</code>：</p>
+<pre><code class="language-text">a + b = &quot;934&quot;
+b + a = &quot;349&quot;
+</code></pre>
+<p>显然应让 <code>"34"</code> 排在前面。</p>
+<blockquote>
+<p>这类题的比较对象不是原串本身，而是“交换前后的拼接结果”。</p>
+</blockquote>
+<hr />
+<h2 id="_9">十、典型题型四：字符串应用题的常用模型</h2>
+<h3 id="1_8">1. 字符统计：统计元音字母个数</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string s;
+    getline(cin, s);
+
+    int count = 0;
+    for (int i = 0; i &lt; (int)s.length(); i++) {
+        char ch = s[i];
+        if (ch == 'a' || ch == 'e' || ch == 'i' ||
+            ch == 'o' || ch == 'u' ||
+            ch == 'A' || ch == 'E' || ch == 'I' ||
+            ch == 'O' || ch == 'U') {
+            count++;
+        }
+    }
+
+    cout &lt;&lt; count &lt;&lt; &quot;\n&quot;;
+    return 0;
+}
+</code></pre>
+<p>它的套路是“逐个字符扫描 + 满足条件就统计”，时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
+<h3 id="2-">2. 字符替换：把所有 <code>-</code> 改成 <code>/</code></h3>
+<pre><code class="language-cpp">for (int i = 0; i &lt; (int)s.length(); i++) {
+    if (s[i] == '-') {
+        s[i] = '/';
+    }
+}
+</code></pre>
+<p>适用于日期格式转换、敏感字符替换、大小写转换、编码规范化等。</p>
+<h3 id="3_6">3. 删除指定字符：保留想要的字符</h3>
+<pre><code class="language-cpp">string result = &quot;&quot;;
+
+for (int i = 0; i &lt; (int)s.length(); i++) {
+    if (s[i] != ' ') {
+        result += s[i];
+    }
+}
+</code></pre>
+<p>例如把 <code>"a b c"</code> 变成 <code>"abc"</code>。这个写法比一边遍历一边 <code>erase</code> 更容易保证下标不乱。</p>
+<h3 id="4_2">4. 反转字符串</h3>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+
+reverse(s.begin(), s.end());
+</code></pre>
+<p>例如 <code>"hello"</code> 反转后为 <code>"olleh"</code>。回文题也可以复制一份、反转后比较：</p>
+<pre><code class="language-cpp">string t = s;
+reverse(t.begin(), t.end());
+if (s == t) {
+    // 是回文
+}
+</code></pre>
+<p>这种写法清楚，但额外空间为 <span class="arithmatex">\(O(n)\)</span>；双指针法只需 <span class="arithmatex">\(O(1)\)</span> 额外空间。</p>
+<h3 id="5">5. 数字串处理</h3>
+<p>输入 <code>"001230"</code> 时，字符串方式可以保留前导零：</p>
+<pre><code class="language-cpp">string s;
+cin &gt;&gt; s;
+</code></pre>
+<p>常见操作：</p>
+<ul>
+<li>每位数字求和：<code>sum += s[i] - '0';</code></li>
+<li>判断是否只含数字：检查每个字符是否在 <code>'0'</code> 到 <code>'9'</code>；</li>
+<li>模拟大整数加减、竖式运算；</li>
+<li>判断手机号、身份证号、日期格式等固定格式。</li>
+</ul>
+<blockquote>
+<p><code>s[i] - '0'</code> 的前提是 <code>s[i]</code> 确实是数字字符；不要对字母或符号直接这样计算。</p>
+</blockquote>
+<hr />
+<h2 id="_10">十一、常见错误与修正</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">编号</th>
+<th>错误</th>
+<th>后果</th>
+<th>改正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>用 <code>cin &gt;&gt; s</code> 读一句话</td>
+<td>空格后的内容丢失</td>
+<td>含空格时用 <code>getline(cin, s)</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td><code>cin &gt;&gt; n</code> 后直接 <code>getline</code></td>
+<td>常读到空串</td>
+<td>先用 <code>cin.ignore(...)</code> 清理换行</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>访问 <code>s[s.length()]</code></td>
+<td>越界，最后一个合法下标不是它</td>
+<td>最后一个字符用 <code>s[s.length() - 1]</code>，且先保证非空</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>空串也访问 <code>s[0]</code></td>
+<td>越界</td>
+<td>先判断 <code>!s.empty()</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td><code>find</code> 找不到时仍用返回值取下标</td>
+<td>越界或逻辑错</td>
+<td>先判断 <code>pos != string::npos</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>拆分时忘记加入最后一段</td>
+<td>最后一段丢失</td>
+<td>循环结束后补 <code>part.push_back(current)</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>平移时没有 <code>k %= n</code></td>
+<td><code>k</code> 过大导致逻辑复杂或越界</td>
+<td>非空时先取模</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>一边按递增下标遍历一边 <code>erase</code></td>
+<td>删除后后面的字符左移，可能漏检查</td>
+<td>优先新建 <code>result</code> 收集保留字符</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>用 <code>==</code> 比较两个 <code>char[]</code></td>
+<td>比较的是地址，不是内容</td>
+<td>使用 <code>string</code>，或字符数组用 <code>strcmp</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>把 <code>s[i] - '0'</code> 用在非数字字符上</td>
+<td>得到无意义数值</td>
+<td>先保证字符是 <code>'0'</code> 到 <code>'9'</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>字符串题先问三个问题</strong>：输入是否有空格？下标是否会越界？题目要求的是字符顺序、单词顺序，还是字典序？</p>
+</blockquote>
+<hr />
+<h2 id="_11">十二、方法、套路与策略小结</h2>
+<h3 id="1_9">1. 基础操作速查</h3>
+<table>
+<thead>
+<tr>
+<th>需求</th>
+<th>常用写法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义字符串</td>
+<td><code>string s;</code></td>
+</tr>
+<tr>
+<td>读一个单词</td>
+<td><code>cin &gt;&gt; s;</code></td>
+</tr>
+<tr>
+<td>读一整行</td>
+<td><code>getline(cin, s);</code></td>
+</tr>
+<tr>
+<td>长度</td>
+<td><code>s.length()</code></td>
+</tr>
+<tr>
+<td>第 <code>i</code> 个字符</td>
+<td><code>s[i]</code></td>
+</tr>
+<tr>
+<td>拼接</td>
+<td><code>a + b</code>、<code>a += b</code></td>
+</tr>
+<tr>
+<td>截取</td>
+<td><code>s.substr(pos, len)</code></td>
+</tr>
+<tr>
+<td>查找</td>
+<td><code>s.find(t)</code></td>
+</tr>
+<tr>
+<td>比较</td>
+<td><code>a &lt; b</code>、<code>a == b</code></td>
+</tr>
+<tr>
+<td>反转</td>
+<td><code>reverse(s.begin(), s.end())</code></td>
+</tr>
+<tr>
+<td>排序</td>
+<td><code>sort(s.begin(), s.end())</code></td>
+</tr>
+<tr>
+<td>清空</td>
+<td><code>s.clear()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_6">2. 见题识别套路</h3>
+<ul>
+<li><strong>题目给一句话、地址、标题</strong>：优先想 <code>getline</code>。</li>
+<li><strong>题目要求某个字符出现次数、替换、删除、转换大小写</strong>：从左到右扫描每个字符。</li>
+<li><strong>题目要求按逗号、横线、空格切开</strong>：维护 <code>current</code>，遇分隔符就存入答案。</li>
+<li><strong>题目问两个串谁排前面</strong>：用字典序比较；若是拼接最小/最大，比较 <code>a+b</code> 与 <code>b+a</code>。</li>
+<li><strong>题目包含“首尾相同、正反一样、对称”</strong>：优先考虑双指针回文判断。</li>
+<li><strong>题目包含“向左/向右移动”</strong>：先对长度取模，再用两段子串拼接。</li>
+<li><strong>题目要求重新排列字符</strong>：若只处理一个字符串的字符，使用 <code>sort(s.begin(), s.end())</code>。</li>
+<li><strong>题目是长数字、前导零不能丢、逐位操作</strong>：把输入当 <code>string</code>，不要立刻转整数。</li>
+</ul>
+<h3 id="3_7">3. 信奥策略意识</h3>
+<ul>
+<li>读完题先写清楚字符串的下标范围：<code>0</code> 到 <code>n - 1</code>。</li>
+<li><code>string</code> 题的绝大多数基础操作可在 <span class="arithmatex">\(O(n)\)</span> 或 <span class="arithmatex">\(O(n \log n)\)</span> 内完成；不必为了小数据写复杂结构。</li>
+<li>遇到边界样例要主动验证：空串、单字符、全相同字符、首尾不同、分隔符在开头或结尾。</li>
+<li>字符串含空格时，输入方式本身就是题目的一部分；代码逻辑对了，读入错了也会 WA。</li>
+<li>提交前至少手算两类样例：一个普通样例，一个边界样例。例如回文题同时测试 <code>level</code> 与 <code>abc</code>；平移题同时测试 <code>k &lt; n</code> 与 <code>k &gt; n</code>。</li>
+</ul>
+<p>掌握 <code>string</code> 后，很多“看起来像文字题”的题目都会变成固定流程：<strong>读入 → 遍历/比较/切分 → 按规则构造答案 → 输出</strong>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2026 oier.fans All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<admin@oier.fans>" target="_blank" rel="noopener" title="联系邮箱" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -77,12 +77,3 @@ extra:
       link: mailto:<admin@oier.fans>
       name: 联系邮箱
   # generator: false # 移除生成标记 Made with Material for MkDocs
-
-# 设置数学公式渲染
-markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
-
-extra_javascript:
-  - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js

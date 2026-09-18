@@ -1617,12 +1617,12 @@
 
 <h1 id="_1">素数的判定</h1>
 <h2 id="_2">什么是素数？</h2>
-<p>素数，又称为质数，指在一个大于 <span class="arithmatex">\(1\)</span> 的自然数中，除了 <span class="arithmatex">\(1\)</span> 和此整数自身外，无法被其他自然数整除的数（也可以定义为只有 <span class="arithmatex">\(1\)</span> 和本身两个因数的数）。</p>
-<p>比 <span class="arithmatex">\(1\)</span> 大但不是素数的数成为合数。 <span class="arithmatex">\(1\)</span> 和 <span class="arithmatex">\(0\)</span> 既非素数也非合数。</p>
+<p>素数，又称为质数，指在一个大于 $1$ 的自然数中，除了 $1$ 和此整数自身外，无法被其他自然数整除的数（也可以定义为只有 $1$ 和本身两个因数的数）。</p>
+<p>比 $1$ 大但不是素数的数成为合数。 $1$ 和 $0$ 既非素数也非合数。</p>
 <p>素数在数论中有着很重要的地位。</p>
 <h2 id="_3">素数的判定</h2>
 <h3 id="_4">朴素试除法</h3>
-<p>思路：要判断 <span class="arithmatex">\(N\)</span> 是否为素数，只需检查从 <span class="arithmatex">\(2\)</span> 到 <span class="arithmatex">\(N-1\)</span> 的每一个数是否能整除 <span class="arithmatex">\(N\)</span> 即可。若存在能整除 <span class="arithmatex">\(N\)</span> 的数，则说明 <span class="arithmatex">\(N\)</span> 不是素数；若都不能整除 <span class="arithmatex">\(N\)</span> ，则说明 <span class="arithmatex">\(N\)</span> 为素数。时间复杂度为 <span class="arithmatex">\(O(n)\)</span> .</p>
+<p>思路：要判断 $N$ 是否为素数，只需检查从 $2$ 到 $N-1$ 的每一个数是否能整除 $N$ 即可。若存在能整除 $N$ 的数，则说明 $N$ 不是素数；若都不能整除 $N$ ，则说明 $N$ 为素数。时间复杂度为 $O(n)$ .</p>
 <p>代码实现：</p>
 <pre><code class="language-cpp">bool isPrime(int n){
     if(n&lt;2) return false;
@@ -1633,27 +1633,27 @@
 } 
 </code></pre>
 <h3 id="_5">平方根优化试除法</h3>
-<p>思路：整数 <span class="arithmatex">\(N\)</span> 的因子是成对出现的：若 <span class="arithmatex">\(1\)</span> 是 <span class="arithmatex">\(N\)</span> 的因子，则 <span class="arithmatex">\(N/1\)</span> 必是 <span class="arithmatex">\(N\)</span> 的因子；若 <span class="arithmatex">\(2\)</span> 是 <span class="arithmatex">\(N\)</span> 的因子，则 <span class="arithmatex">\(N/2\)</span> 必是 <span class="arithmatex">\(N\)</span> 的因子；若 <span class="arithmatex">\(3\)</span> 是 <span class="arithmatex">\(N\)</span> 的因子，则 <span class="arithmatex">\(N/3\)</span> 必是 <span class="arithmatex">\(N\)</span> 的因子；... ...；若 <span class="arithmatex">\(N\)</span> 是 <span class="arithmatex">\(N\)</span> 的因子，则 <span class="arithmatex">\(N/N\)</span> 必是 <span class="arithmatex">\(N\)</span> 的因子。</p>
+<p>思路：整数 $N$ 的因子是成对出现的：若 $1$ 是 $N$ 的因子，则 $N/1$ 必是 $N$ 的因子；若 $2$ 是 $N$ 的因子，则 $N/2$ 必是 $N$ 的因子；若 $3$ 是 $N$ 的因子，则 $N/3$ 必是 $N$ 的因子；... ...；若 $N$ 是 $N$ 的因子，则 $N/N$ 必是 $N$ 的因子。</p>
 <p>可能的<strong>因子对</strong>：<br>
-<span class="arithmatex">\(1\)</span>　　　　<span class="arithmatex">\(N/1\)</span> <br>
-<span class="arithmatex">\(2\)</span>　　　　<span class="arithmatex">\(N/2\)</span> <br>
-<span class="arithmatex">\(3\)</span>　　　　<span class="arithmatex">\(N/3\)</span> <br>
-<span class="arithmatex">\(4\)</span>　　　　<span class="arithmatex">\(N/4\)</span> <br>
-<span class="arithmatex">\(5\)</span>　　　　<span class="arithmatex">\(N/5\)</span> <br>
-<span class="arithmatex">\(...\)</span>　　　<span class="arithmatex">\(...\)</span> <br>
-<span class="arithmatex">\(\sqrt{N}\)</span>　　<span class="arithmatex">\(\sqrt{N}\)</span> <br>
-<span class="arithmatex">\(...\)</span>　　　<span class="arithmatex">\(...\)</span> <br>
-<span class="arithmatex">\(N/5\)</span>　　　<span class="arithmatex">\(5\)</span> <br>
-<span class="arithmatex">\(N/4\)</span>　　　<span class="arithmatex">\(4\)</span> <br>
-<span class="arithmatex">\(N/3\)</span>　　　<span class="arithmatex">\(3\)</span> <br>
-<span class="arithmatex">\(N/2\)</span>　　　<span class="arithmatex">\(2\)</span> <br>
-<span class="arithmatex">\(N/1\)</span>　　　<span class="arithmatex">\(1\)</span> <br></p>
+$1$　　　　$N/1$ <br>
+$2$　　　　$N/2$ <br>
+$3$　　　　$N/3$ <br>
+$4$　　　　$N/4$ <br>
+$5$　　　　$N/5$ <br>
+$...$　　　$...$ <br>
+$\sqrt{N}$　　$\sqrt{N}$ <br>
+$...$　　　$...$ <br>
+$N/5$　　　$5$ <br>
+$N/4$　　　$4$ <br>
+$N/3$　　　$3$ <br>
+$N/2$　　　$2$ <br>
+$N/1$　　　$1$ <br></p>
 <p>可以发现：</p>
 <ol>
-<li>以<span class="arithmatex">\(\sqrt{N}\)</span>为界，前半部分的因子对和后半部分的因子对是左右翻转对称的，因此只需考察<span class="arithmatex">\(\sqrt{N}\)</span>之前所有的因子对即可。</li>
-<li>对于<span class="arithmatex">\(\sqrt{N}\)</span>及之前的因子对，若左侧因子 <span class="arithmatex">\(i\)</span> 能整除 <span class="arithmatex">\(N\)</span> ，则右侧因子 <span class="arithmatex">\(N/i\)</span> 必能整除 <span class="arithmatex">\(N\)</span> ，因此只需考察前半部分的左侧因子即可。</li>
+<li>以$\sqrt{N}$为界，前半部分的因子对和后半部分的因子对是左右翻转对称的，因此只需考察$\sqrt{N}$之前所有的因子对即可。</li>
+<li>对于$\sqrt{N}$及之前的因子对，若左侧因子 $i$ 能整除 $N$ ，则右侧因子 $N/i$ 必能整除 $N$ ，因此只需考察前半部分的左侧因子即可。</li>
 </ol>
-<p>所以，只需检查区间 <span class="arithmatex">\([2,\sqrt{N}]\)</span> 内的每个数字能否整除 <span class="arithmatex">\(N\)</span>，即可判断 <span class="arithmatex">\(N\)</span> 是否为素数。时间复杂度为 <span class="arithmatex">\(O(\sqrt{N})\)</span>.</p>
+<p>所以，只需检查区间 $[2,\sqrt{N}]$ 内的每个数字能否整除 $N$，即可判断 $N$ 是否为素数。时间复杂度为 $O(\sqrt{N})$.</p>
 <p>代码实现：</p>
 <pre><code class="language-cpp">bool isPrime(int n){
     if(n&lt;2) return false;
@@ -1738,10 +1738,6 @@
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

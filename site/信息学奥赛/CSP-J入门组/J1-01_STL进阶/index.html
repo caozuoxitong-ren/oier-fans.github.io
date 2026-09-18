@@ -2716,7 +2716,7 @@
 <tr>
 <td><code>vector</code></td>
 <td>动态数组</td>
-<td>按下标访问 $O(1)$，尾部增删均摊 $O(1)$</td>
+<td>按下标访问 <span class="arithmatex">\(O(1)\)</span>，尾部增删均摊 <span class="arithmatex">\(O(1)\)</span></td>
 <td>可变长数组</td>
 </tr>
 <tr>
@@ -2751,7 +2751,7 @@
 </tr>
 </tbody>
 </table>
-<p>本课重点讲 <code>map</code> 和 <code>set</code>。它们底层都是平衡二叉搜索树，对查找、插入和删除等按 key/元素的操作，时间复杂度通常为 $O(\log n)$。</p>
+<p>本课重点讲 <code>map</code> 和 <code>set</code>。它们底层都是平衡二叉搜索树，对查找、插入和删除等按 key/元素的操作，时间复杂度通常为 <span class="arithmatex">\(O(\log n)\)</span>。</p>
 <hr />
 <h2 id="map">二、map：有序键值对容器</h2>
 <h3 id="1-map">1. map 是什么</h3>
@@ -2780,11 +2780,11 @@ map&lt;string, int&gt; mp;  // 字符串 → 整数，可用于统计每个单�
 </tr>
 <tr>
 <td>按键访问</td>
-<td><code>mp[key]</code> 用 key 查找或创建元素，复杂度为 $O(\log n)$，不是 $O(1)$ 随机访问。</td>
+<td><code>mp[key]</code> 用 key 查找或创建元素，复杂度为 <span class="arithmatex">\(O(\log n)\)</span>，不是 <span class="arithmatex">\(O(1)\)</span> 随机访问。</td>
 </tr>
 <tr>
 <td>复杂度</td>
-<td><code>find</code>、<code>count</code>、<code>insert</code>、<code>erase(key)</code> 的复杂度一般为 $O(\log n)$。</td>
+<td><code>find</code>、<code>count</code>、<code>insert</code>、<code>erase(key)</code> 的复杂度一般为 <span class="arithmatex">\(O(\log n)\)</span>。</td>
 </tr>
 </tbody>
 </table>
@@ -3068,43 +3068,43 @@ for (const pair&lt;const string, int&gt;&amp; p : mp) {
 <td>元素个数</td>
 <td><code>mp.size()</code></td>
 <td>元素数量</td>
-<td>$O(1)$</td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>
 <td>判空</td>
 <td><code>mp.empty()</code></td>
 <td><code>bool</code></td>
-<td>$O(1)$</td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>
 <td>统计</td>
 <td><code>mp.count(key)</code></td>
 <td><code>0</code> 或 <code>1</code></td>
-<td>$O(\log n)$</td>
+<td><span class="arithmatex">\(O(\log n)\)</span></td>
 </tr>
 <tr>
 <td>查找</td>
 <td><code>mp.find(key)</code></td>
 <td>迭代器</td>
-<td>$O(\log n)$</td>
+<td><span class="arithmatex">\(O(\log n)\)</span></td>
 </tr>
 <tr>
 <td>清空</td>
 <td><code>mp.clear()</code></td>
 <td>删除所有元素</td>
-<td>$O(n)$</td>
+<td><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 <tr>
 <td>下界</td>
 <td><code>mp.lower_bound(key)</code></td>
 <td>第一个不小于 key 的迭代器</td>
-<td>$O(\log n)$</td>
+<td><span class="arithmatex">\(O(\log n)\)</span></td>
 </tr>
 <tr>
 <td>上界</td>
 <td><code>mp.upper_bound(key)</code></td>
 <td>第一个大于 key 的迭代器</td>
-<td>$O(\log n)$</td>
+<td><span class="arithmatex">\(O(\log n)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3260,7 +3260,7 @@ for (set&lt;int&gt;::iterator it = s2.begin(); it != s2.end(); it++) {
 </tr>
 <tr>
 <td>复杂度</td>
-<td><code>insert</code>、<code>erase</code>、<code>find</code>、<code>count</code> 一般为 $O(\log n)$</td>
+<td><code>insert</code>、<code>erase</code>、<code>find</code>、<code>count</code> 一般为 <span class="arithmatex">\(O(\log n)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3546,28 +3546,28 @@ if (it != ms.end()) {
 <h3 id="1_5">1. 基础题目</h3>
 <ul>
 <li>map<ul>
-<li><a href="https://marsoj.cn/p/P1077" target="_blank">P1077. 记名字（有重复key）</a></li>
-<li><a href="https://marsoj.cn/p/P1114" target="_blank">P1114. 一个数出现多少次</a></li>
-<li><a href="https://marsoj.cn/p/P1122" target="_blank">P1122. 第一次出现的位置</a></li>
-<li><a href="https://marsoj.cn/p/P1162" target="_blank">P1162. Babelfish</a></li>
-<li><a href="https://marsoj.cn/p/P1163" target="_blank">P1163. Hardwood Species</a></li>
-<li><a href="https://marsoj.cn/p/P2139" target="_blank">P2139. 第k次出现的位置</a></li>
+<li><a href="https://marsoj.cn/p/P1077">P1077. 记名字（有重复key）</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1114">P1114. 一个数出现多少次</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1122">P1122. 第一次出现的位置</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1162">P1162. Babelfish</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1163">P1163. Hardwood Species</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P2139">P2139. 第k次出现的位置</a>{:target="_blank"}</li>
 </ul>
 </li>
 <li>set<ul>
-<li><a href="https://marsoj.cn/p/P1156" target="_blank">P1156. 不重复数字</a></li>
-<li><a href="https://marsoj.cn/p/P1962" target="_blank">P1962. 人见人爱A-B</a></li>
-<li><a href="https://marsoj.cn/p/P1591" target="_blank">P1591. 序列和</a></li>
+<li><a href="https://marsoj.cn/p/P1156">P1156. 不重复数字</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1962">P1962. 人见人爱A-B</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1591">P1591. 序列和</a>{:target="_blank"}</li>
 </ul>
 </li>
 </ul>
 <h3 id="2_5">2. 拓展题目</h3>
 <ul>
-<li><a href="https://marsoj.cn/p/P1593" target="_blank">P1593. 第几个字符串</a></li>
-<li><a href="https://marsoj.cn/p/P1592" target="_blank">P1592. 恩尼格码机</a></li>
-<li><a href="https://marsoj.cn/p/P1161" target="_blank">P1161. 电梯里的爱情</a></li>
-<li><a href="https://marsoj.cn/p/P1964" target="_blank">P1964. 贪婪的送礼者Greedy Gift Givers</a></li>
-<li><a href="https://marsoj.cn/p/P1164" target="_blank">P1164. Double Queue</a></li>
+<li><a href="https://marsoj.cn/p/P1593">P1593. 第几个字符串</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1592">P1592. 恩尼格码机</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1161">P1161. 电梯里的爱情</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1964">P1964. 贪婪的送礼者Greedy Gift Givers</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1164">P1164. Double Queue</a>{:target="_blank"}</li>
 </ul>
 
 
@@ -3639,6 +3639,10 @@ if (it != ms.end()) {
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

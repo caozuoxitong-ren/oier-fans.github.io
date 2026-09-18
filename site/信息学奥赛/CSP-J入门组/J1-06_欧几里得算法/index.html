@@ -2435,21 +2435,21 @@
 <h1 id="_1">欧几里得算法（辗转相除法）</h1>
 <h2 id="_2">一、公约数与最大公约数</h2>
 <h3 id="1">1. 定义与记法</h3>
-<p>如果一个整数 $x$ 既是整数 $A$ 的约数，也是整数 $B$ 的约数，那么 $x$ 就是 $A$ 和 $B$ 的<strong>公约数</strong>（也叫公因数）。</p>
+<p>如果一个整数 <span class="arithmatex">\(x\)</span> 既是整数 <span class="arithmatex">\(A\)</span> 的约数，也是整数 <span class="arithmatex">\(B\)</span> 的约数，那么 <span class="arithmatex">\(x\)</span> 就是 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 的<strong>公约数</strong>（也叫公因数）。</p>
 <p>例如：5 是 20 和 15 的公约数，7 是 21 和 35 的公约数。</p>
-<p>公约数中最大的那个，称为<strong>最大公约数</strong>（Greatest Common Divisor），记作 $\gcd(A, B)$。</p>
-<p>例如：24、36、60 的公约数有 2、3、4、6、12，其中最大的是 12，所以 $\gcd(24, 36, 60) = 12$。</p>
+<p>公约数中最大的那个，称为<strong>最大公约数</strong>（Greatest Common Divisor），记作 <span class="arithmatex">\(\gcd(A, B)\)</span>。</p>
+<p>例如：24、36、60 的公约数有 2、3、4、6、12，其中最大的是 12，所以 <span class="arithmatex">\(\gcd(24, 36, 60) = 12\)</span>。</p>
 <h3 id="2">2. 基本规定</h3>
-<p>$$
+<div class="arithmatex">\[
 \gcd(a, 0) = \gcd(a, a) = a
-$$</p>
+\]</div>
 <blockquote>
-<p><strong>理解：</strong> 任何数都是 0 的约数（因为 $a \times 0 = 0$），所以 $\gcd(a, 0) = a$。这个规定是辗转相除法递归终止的基础。</p>
+<p><strong>理解：</strong> 任何数都是 0 的约数（因为 <span class="arithmatex">\(a \times 0 = 0\)</span>），所以 <span class="arithmatex">\(\gcd(a, 0) = a\)</span>。这个规定是辗转相除法递归终止的基础。</p>
 </blockquote>
 <hr />
 <h2 id="gcd">二、求 GCD 的方法</h2>
 <h3 id="1_1">1. 暴力枚举法</h3>
-<p><strong>思路：</strong> $\gcd(a, b)$ 一定在 $[1, \min(a, b)]$ 之间，枚举这个区间内所有数，找最大的公约数。</p>
+<p><strong>思路：</strong> <span class="arithmatex">\(\gcd(a, b)\)</span> 一定在 <span class="arithmatex">\([1, \min(a, b)]\)</span> 之间，枚举这个区间内所有数，找最大的公约数。</p>
 <p><strong>从小到大枚举：</strong></p>
 <pre><code class="language-cpp">int gcd = 1;
 for(int i = 1; i &lt;= min(a, b); i++){
@@ -2457,7 +2457,7 @@ for(int i = 1; i &lt;= min(a, b); i++){
 }
 cout &lt;&lt; gcd &lt;&lt; endl;
 </code></pre>
-<p><strong>从大到小枚举（优化）：</strong> 从 $\min(a, b)$ 往下枚举，找到的第一个公约数就是最大的，直接 break。</p>
+<p><strong>从大到小枚举（优化）：</strong> 从 <span class="arithmatex">\(\min(a, b)\)</span> 往下枚举，找到的第一个公约数就是最大的，直接 break。</p>
 <pre><code class="language-cpp">int gcd = 1;
 for(int i = min(a, b); i &gt;= 1; i--){
     if(a % i == 0 &amp;&amp; b % i == 0){
@@ -2467,17 +2467,17 @@ for(int i = min(a, b); i &gt;= 1; i--){
 }
 cout &lt;&lt; gcd &lt;&lt; endl;
 </code></pre>
-<p><strong>时间复杂度：</strong> $O(\min(a, b))$。当 $a$、$b$ 很大时（如 $10^9$），会超时。</p>
+<p><strong>时间复杂度：</strong> <span class="arithmatex">\(O(\min(a, b))\)</span>。当 <span class="arithmatex">\(a\)</span>、<span class="arithmatex">\(b\)</span> 很大时（如 <span class="arithmatex">\(10^9\)</span>），会超时。</p>
 <h3 id="2_1">2. 更相减损法</h3>
 <p>更相减损术是中国古代《九章算术》记载的求最大公约数的算法，通过反复相减实现化简。</p>
-<p><strong>核心结论：</strong> 整数 $a$ 和 $b$（设 $a \geq b$）的最大公约数，等于 $a - b$ 和 $b$ 的最大公约数，即：</p>
-<p>$$
+<p><strong>核心结论：</strong> 整数 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span>（设 <span class="arithmatex">\(a \geq b\)</span>）的最大公约数，等于 <span class="arithmatex">\(a - b\)</span> 和 <span class="arithmatex">\(b\)</span> 的最大公约数，即：</p>
+<div class="arithmatex">\[
 \gcd(a, b) = \gcd(a - b, b)
-$$</p>
-<p><strong>证明：</strong> 设 $c = \gcd(a, b)$，则 $a = p \times c$，$b = q \times c$（$p$、$q$ 互质）。</p>
-<p>那么 $a - b = p \times c - q \times c = (p - q) \times c$，也是 $c$ 的倍数，所以 $c$ 是 $a - b$ 和 $b$ 的公约数。</p>
-<p>再证 $c$ 是<strong>最大</strong>的：假设 $a - b$ 和 $b$ 有更大的公约数 $d = k \times c &gt; c$，则 $d$ 也能整除 $a = (a-b) + b$，说明 $a$ 和 $b$ 有公约数 $d &gt; c$，与 $c = \gcd(a, b)$ 矛盾。所以 $c = \gcd(a-b, b)$。</p>
-<p><strong>举例：</strong> 求 $\gcd(28, 60)$</p>
+\]</div>
+<p><strong>证明：</strong> 设 <span class="arithmatex">\(c = \gcd(a, b)\)</span>，则 <span class="arithmatex">\(a = p \times c\)</span>，<span class="arithmatex">\(b = q \times c\)</span>（<span class="arithmatex">\(p\)</span>、<span class="arithmatex">\(q\)</span> 互质）。</p>
+<p>那么 <span class="arithmatex">\(a - b = p \times c - q \times c = (p - q) \times c\)</span>，也是 <span class="arithmatex">\(c\)</span> 的倍数，所以 <span class="arithmatex">\(c\)</span> 是 <span class="arithmatex">\(a - b\)</span> 和 <span class="arithmatex">\(b\)</span> 的公约数。</p>
+<p>再证 <span class="arithmatex">\(c\)</span> 是<strong>最大</strong>的：假设 <span class="arithmatex">\(a - b\)</span> 和 <span class="arithmatex">\(b\)</span> 有更大的公约数 <span class="arithmatex">\(d = k \times c &gt; c\)</span>，则 <span class="arithmatex">\(d\)</span> 也能整除 <span class="arithmatex">\(a = (a-b) + b\)</span>，说明 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 有公约数 <span class="arithmatex">\(d &gt; c\)</span>，与 <span class="arithmatex">\(c = \gcd(a, b)\)</span> 矛盾。所以 <span class="arithmatex">\(c = \gcd(a-b, b)\)</span>。</p>
+<p><strong>举例：</strong> 求 <span class="arithmatex">\(\gcd(28, 60)\)</span></p>
 <table>
 <thead>
 <tr>
@@ -2498,59 +2498,59 @@ $$</p>
 <td>第 1 次</td>
 <td>32</td>
 <td>28</td>
-<td>$60 - 28 = 32$</td>
+<td><span class="arithmatex">\(60 - 28 = 32\)</span></td>
 </tr>
 <tr>
 <td>第 2 次</td>
 <td>28</td>
 <td>4</td>
-<td>$32 - 28 = 4$</td>
+<td><span class="arithmatex">\(32 - 28 = 4\)</span></td>
 </tr>
 <tr>
 <td>第 3 次</td>
 <td>24</td>
 <td>4</td>
-<td>$28 - 4 = 24$</td>
+<td><span class="arithmatex">\(28 - 4 = 24\)</span></td>
 </tr>
 <tr>
 <td>第 4 次</td>
 <td>20</td>
 <td>4</td>
-<td>$24 - 4 = 20$</td>
+<td><span class="arithmatex">\(24 - 4 = 20\)</span></td>
 </tr>
 <tr>
 <td>第 5 次</td>
 <td>16</td>
 <td>4</td>
-<td>$20 - 4 = 16$</td>
+<td><span class="arithmatex">\(20 - 4 = 16\)</span></td>
 </tr>
 <tr>
 <td>第 6 次</td>
 <td>12</td>
 <td>4</td>
-<td>$16 - 4 = 12$</td>
+<td><span class="arithmatex">\(16 - 4 = 12\)</span></td>
 </tr>
 <tr>
 <td>第 7 次</td>
 <td>8</td>
 <td>4</td>
-<td>$12 - 4 = 8$</td>
+<td><span class="arithmatex">\(12 - 4 = 8\)</span></td>
 </tr>
 <tr>
 <td>第 8 次</td>
 <td>4</td>
 <td>4</td>
-<td>$8 - 4 = 4$，两数相等</td>
+<td><span class="arithmatex">\(8 - 4 = 4\)</span>，两数相等</td>
 </tr>
 <tr>
 <td>第 9 次</td>
 <td>4</td>
 <td>0</td>
-<td>$4 - 4 = 0$，最小值为0</td>
+<td><span class="arithmatex">\(4 - 4 = 0\)</span>，最小值为0</td>
 </tr>
 </tbody>
 </table>
-<p>一个数为0时，另一个数就是最大公约数，即 $\gcd(28, 60) = 4$。</p>
+<p>一个数为0时，另一个数就是最大公约数，即 <span class="arithmatex">\(\gcd(28, 60) = 4\)</span>。</p>
 <p><strong>代码实现：</strong></p>
 <pre><code class="language-cpp">int gcd(int a, int b){
     //边界条件：若移除，则当a==0 且 b&gt;0时，死循环
@@ -2563,41 +2563,41 @@ $$</p>
     return a;
 }
 </code></pre>
-<p><strong>问题：</strong> 当 $a$ 远大于 $b$ 时（如 $a = 10^{10}$，$b = 1$），需要减 $10^{10} - 1$ 次，时间复杂度退化为 $O(\max(a, b))$。</p>
+<p><strong>问题：</strong> 当 <span class="arithmatex">\(a\)</span> 远大于 <span class="arithmatex">\(b\)</span> 时（如 <span class="arithmatex">\(a = 10^{10}\)</span>，<span class="arithmatex">\(b = 1\)</span>），需要减 <span class="arithmatex">\(10^{10} - 1\)</span> 次，时间复杂度退化为 <span class="arithmatex">\(O(\max(a, b))\)</span>。</p>
 <h3 id="3">3. 辗转相除法（欧几里得算法）</h3>
 <h4 id="31">3.1 从更相减损法到辗转相除法</h4>
-<p>更相减损法中，$\gcd(a, b) = \gcd(a - b, b)$。当 $a \gg b$ 时，要从 $a$ 中连续减很多次 $b$ 直到不够减，剩下的就是余数 $a \bmod b$。与其一次次减，不如直接用除法取余数：</p>
-<p>$$
+<p>更相减损法中，<span class="arithmatex">\(\gcd(a, b) = \gcd(a - b, b)\)</span>。当 <span class="arithmatex">\(a \gg b\)</span> 时，要从 <span class="arithmatex">\(a\)</span> 中连续减很多次 <span class="arithmatex">\(b\)</span> 直到不够减，剩下的就是余数 <span class="arithmatex">\(a \bmod b\)</span>。与其一次次减，不如直接用除法取余数：</p>
+<div class="arithmatex">\[
 \gcd(a, b) = \gcd(b, a \bmod b)
-$$</p>
+\]</div>
 <p>这就是<strong>辗转相除法</strong>，又称<strong>欧几里得算法</strong>。</p>
 <h4 id="32">3.2 正确性证明</h4>
-<p><strong>要证：</strong> $\gcd(a, b) = \gcd(b, a \bmod b)$，其中设 $a = q \times b + r$（$r = a \bmod b$，$0 \leq r &lt; b$）。</p>
+<p><strong>要证：</strong> <span class="arithmatex">\(\gcd(a, b) = \gcd(b, a \bmod b)\)</span>，其中设 <span class="arithmatex">\(a = q \times b + r\)</span>（<span class="arithmatex">\(r = a \bmod b\)</span>，<span class="arithmatex">\(0 \leq r &lt; b\)</span>）。</p>
 <p><strong>证明：</strong></p>
-<p>设 $d = \gcd(a, b)$，则 $d \mid a$ 且 $d \mid b$。</p>
-<p>因为 $r = a - q \times b$，而 $d \mid a$ 且 $d \mid b$，所以 $d \mid r$。因此 $d$ 是 $b$ 和 $r$ 的公约数。</p>
-<p>反过来，设 $d' = \gcd(b, r)$，则 $d' \mid b$ 且 $d' \mid r$。因为 $a = q \times b + r$，所以 $d' \mid a$。因此 $d'$ 是 $a$ 和 $b$ 的公约数。</p>
-<p>两边互为公约数，所以 $d = d'$，即 $\gcd(a, b) = \gcd(b, a \bmod b)$。$\blacksquare$</p>
+<p>设 <span class="arithmatex">\(d = \gcd(a, b)\)</span>，则 <span class="arithmatex">\(d \mid a\)</span> 且 <span class="arithmatex">\(d \mid b\)</span>。</p>
+<p>因为 <span class="arithmatex">\(r = a - q \times b\)</span>，而 <span class="arithmatex">\(d \mid a\)</span> 且 <span class="arithmatex">\(d \mid b\)</span>，所以 <span class="arithmatex">\(d \mid r\)</span>。因此 <span class="arithmatex">\(d\)</span> 是 <span class="arithmatex">\(b\)</span> 和 <span class="arithmatex">\(r\)</span> 的公约数。</p>
+<p>反过来，设 <span class="arithmatex">\(d' = \gcd(b, r)\)</span>，则 <span class="arithmatex">\(d' \mid b\)</span> 且 <span class="arithmatex">\(d' \mid r\)</span>。因为 <span class="arithmatex">\(a = q \times b + r\)</span>，所以 <span class="arithmatex">\(d' \mid a\)</span>。因此 <span class="arithmatex">\(d'\)</span> 是 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 的公约数。</p>
+<p>两边互为公约数，所以 <span class="arithmatex">\(d = d'\)</span>，即 <span class="arithmatex">\(\gcd(a, b) = \gcd(b, a \bmod b)\)</span>。<span class="arithmatex">\(\blacksquare\)</span></p>
 <h4 id="33">3.3 时间复杂度证明</h4>
-<p><strong>结论：</strong> $O(\log(\max(a, b)))$</p>
+<p><strong>结论：</strong> <span class="arithmatex">\(O(\log(\max(a, b)))\)</span></p>
 <p><strong>关键：</strong> 每两次递归，较大的数至少减半。</p>
-<p>设 $a \ge b&gt;0$，序列 $r_0=a,\ r_1=b$，且 $r_{i+1}=r_{i-1}\bmod r_i$，那么有：</p>
-<p>$(r_0, r_1) \to (r_1, r_2) \to (r_2, r_3) \to \cdots$</p>
-<p>于是，对于递归序列为 $r_0, r_1, r_2, \dots$，有：</p>
+<p>设 <span class="arithmatex">\(a \ge b&gt;0\)</span>，序列 <span class="arithmatex">\(r_0=a,\ r_1=b\)</span>，且 <span class="arithmatex">\(r_{i+1}=r_{i-1}\bmod r_i\)</span>，那么有：</p>
+<p><span class="arithmatex">\((r_0, r_1) \to (r_1, r_2) \to (r_2, r_3) \to \cdots\)</span></p>
+<p>于是，对于递归序列为 <span class="arithmatex">\(r_0, r_1, r_2, \dots\)</span>，有：</p>
 <ul>
-<li>若 $r_k \leq r_{k-1} / 2$，根据 $r_{k+1}=r_{k-1}\bmod r_k$，则 $r_{k+1} &lt; r_k \leq r_{k-1} / 2$，较大值减半。</li>
-<li>若 $r_k &gt; r_{k-1} / 2$，则 $r_{k+1} = r_{k-1} \bmod r_k = r_{k-1} - r_k &lt; r_{k-1} / 2$，下一步的较大值 $r_k$ 的余数 $r_{k+1} &lt; r_{k-1}/2$，也减半。</li>
+<li>若 <span class="arithmatex">\(r_k \leq r_{k-1} / 2\)</span>，根据 <span class="arithmatex">\(r_{k+1}=r_{k-1}\bmod r_k\)</span>，则 <span class="arithmatex">\(r_{k+1} &lt; r_k \leq r_{k-1} / 2\)</span>，较大值减半。</li>
+<li>若 <span class="arithmatex">\(r_k &gt; r_{k-1} / 2\)</span>，则 <span class="arithmatex">\(r_{k+1} = r_{k-1} \bmod r_k = r_{k-1} - r_k &lt; r_{k-1} / 2\)</span>，下一步的较大值 <span class="arithmatex">\(r_k\)</span> 的余数 <span class="arithmatex">\(r_{k+1} &lt; r_{k-1}/2\)</span>，也减半。</li>
 </ul>
-<p>所以每两步，数至少减半，总步数不超过 $2 \log_2(\max(a, b))$。</p>
+<p>所以每两步，数至少减半，总步数不超过 <span class="arithmatex">\(2 \log_2(\max(a, b))\)</span>。</p>
 <h4 id="34">3.4 举例验证</h4>
-<p>求 $\gcd(28, 60)$：</p>
+<p>求 <span class="arithmatex">\(\gcd(28, 60)\)</span>：</p>
 <table>
 <thead>
 <tr>
 <th>步骤</th>
-<th>$a$</th>
-<th>$b$</th>
-<th>$a \bmod b$</th>
+<th><span class="arithmatex">\(a\)</span></th>
+<th><span class="arithmatex">\(b\)</span></th>
+<th><span class="arithmatex">\(a \bmod b\)</span></th>
 <th>操作</th>
 </tr>
 </thead>
@@ -2613,33 +2613,33 @@ $$</p>
 <td>第 1 次</td>
 <td>60</td>
 <td>28</td>
-<td>$28 \bmod 60 = 28$</td>
-<td>$\gcd(28, 60) = \gcd(60, 28)$</td>
+<td><span class="arithmatex">\(28 \bmod 60 = 28\)</span></td>
+<td><span class="arithmatex">\(\gcd(28, 60) = \gcd(60, 28)\)</span></td>
 </tr>
 <tr>
 <td>第 2 次</td>
 <td>28</td>
-<td>$60 \bmod 28 = 4$</td>
+<td><span class="arithmatex">\(60 \bmod 28 = 4\)</span></td>
 <td>—</td>
-<td>$\gcd(60, 28) = \gcd(28, 4)$</td>
+<td><span class="arithmatex">\(\gcd(60, 28) = \gcd(28, 4)\)</span></td>
 </tr>
 <tr>
 <td>第 3 次</td>
 <td>4</td>
-<td>$28 \bmod 4 = 0$</td>
+<td><span class="arithmatex">\(28 \bmod 4 = 0\)</span></td>
 <td>—</td>
-<td>$\gcd(28, 4) = \gcd(4, 0)$</td>
+<td><span class="arithmatex">\(\gcd(28, 4) = \gcd(4, 0)\)</span></td>
 </tr>
 <tr>
 <td>终止</td>
 <td>4</td>
 <td>0</td>
 <td>—</td>
-<td>$b = 0$，返回 $a = 4$</td>
+<td><span class="arithmatex">\(b = 0\)</span>，返回 <span class="arithmatex">\(a = 4\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>$\gcd(28, 60) = 4$ ✓（与更相减损法结果一致，但只用了 3 步）</p>
+<p><span class="arithmatex">\(\gcd(28, 60) = 4\)</span> ✓（与更相减损法结果一致，但只用了 3 步）</p>
 <h4 id="35">3.5 代码实现</h4>
 <p><strong>递归写法：</strong></p>
 <pre><code class="language-cpp">int gcd(int a, int b){
@@ -2658,11 +2658,11 @@ $$</p>
 <tbody>
 <tr>
 <td><code>if(b == 0) return a</code></td>
-<td>递归终止：$b=0$ 时，$a$ 就是 GCD</td>
+<td>递归终止：<span class="arithmatex">\(b=0\)</span> 时，<span class="arithmatex">\(a\)</span> 就是 GCD</td>
 </tr>
 <tr>
 <td><code>return gcd(b, a % b)</code></td>
-<td>辗转相除：把 $b$ 放前面，$a \bmod b$ 放后面</td>
+<td>辗转相除：把 <span class="arithmatex">\(b\)</span> 放前面，<span class="arithmatex">\(a \bmod b\)</span> 放后面</td>
 </tr>
 </tbody>
 </table>
@@ -2680,15 +2680,15 @@ $$</p>
 <p><strong>递归 vs 迭代：</strong> 两者逻辑完全相同。递归写法更简洁（一行核心代码），迭代写法无函数调用开销。信奥中两种都常见，递归更易记。</p>
 </blockquote>
 <h3 id="4-stein">4. Stein 算法（更相减损法优化）</h3>
-<p>针对更相减损法在 $a$ 远大于 $b$ 时的低效问题，Stein 算法利用"偶数可以快速除以 2"的性质进行优化。</p>
+<p>针对更相减损法在 <span class="arithmatex">\(a\)</span> 远大于 <span class="arithmatex">\(b\)</span> 时的低效问题，Stein 算法利用"偶数可以快速除以 2"的性质进行优化。</p>
 <p><strong>三条规则：</strong></p>
 <ol>
-<li>若 $a$ 和 $b$ 都是偶数，则 $\gcd(a, b) = 2 \times \gcd(a/2, b/2)$</li>
-<li>若只有一个偶数，把偶数的因子 2 丢弃：$\gcd(a, b) = \gcd(a/2, b)$ 或 $\gcd(a, b/2)$</li>
-<li>若 $a$ 和 $b$ 都是奇数，则 $\gcd(a, b) = \gcd(|a-b|, \min(a, b))$</li>
+<li>若 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 都是偶数，则 <span class="arithmatex">\(\gcd(a, b) = 2 \times \gcd(a/2, b/2)\)</span></li>
+<li>若只有一个偶数，把偶数的因子 2 丢弃：<span class="arithmatex">\(\gcd(a, b) = \gcd(a/2, b)\)</span> 或 <span class="arithmatex">\(\gcd(a, b/2)\)</span></li>
+<li>若 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 都是奇数，则 <span class="arithmatex">\(\gcd(a, b) = \gcd(|a-b|, \min(a, b))\)</span></li>
 </ol>
 <blockquote>
-<p><strong>为什么快：</strong> 两个奇数相减得到偶数，下一步就可以除以 2。所以每 1～2 次操作，较大值至少减半，时间复杂度 $O(\log(\max(a, b)))$。</p>
+<p><strong>为什么快：</strong> 两个奇数相减得到偶数，下一步就可以除以 2。所以每 1～2 次操作，较大值至少减半，时间复杂度 <span class="arithmatex">\(O(\log(\max(a, b)))\)</span>。</p>
 </blockquote>
 <p><strong>代码实现：</strong></p>
 <pre><code class="language-cpp">int gcd_stein(int a, int b){
@@ -2731,26 +2731,26 @@ $$</p>
 <tbody>
 <tr>
 <td>暴力枚举法</td>
-<td>枚举 $[1, \min(a,b)]$</td>
-<td>$O(\min(a,b))$</td>
+<td>枚举 <span class="arithmatex">\([1, \min(a,b)]\)</span></td>
+<td><span class="arithmatex">\(O(\min(a,b))\)</span></td>
 <td>理解概念，不用于比赛</td>
 </tr>
 <tr>
 <td>更相减损法</td>
 <td>大减小，直到相等</td>
-<td>$O(\max(a,b))$ 最坏</td>
+<td><span class="arithmatex">\(O(\max(a,b))\)</span> 最坏</td>
 <td>历史了解，实际不用</td>
 </tr>
 <tr>
 <td>辗转相除法</td>
-<td>$\gcd(a,b) = \gcd(b, a \bmod b)$</td>
-<td>$O(\log(\max(a,b)))$</td>
+<td><span class="arithmatex">\(\gcd(a,b) = \gcd(b, a \bmod b)\)</span></td>
+<td><span class="arithmatex">\(O(\log(\max(a,b)))\)</span></td>
 <td><strong>比赛首选</strong></td>
 </tr>
 <tr>
 <td>Stein 算法</td>
 <td>更相减损 + 消因子 2</td>
-<td>$O(\log(\max(a,b)))$</td>
+<td><span class="arithmatex">\(O(\log(\max(a,b)))\)</span></td>
 <td>大整数（取模昂贵时）</td>
 </tr>
 </tbody>
@@ -2761,25 +2761,25 @@ $$</p>
 <hr />
 <h2 id="_3">三、公倍数与最小公倍数</h2>
 <h3 id="1_2">1. 定义与记法</h3>
-<p>如果一个整数 $x$ 既是 $A$ 的倍数，也是 $B$ 的倍数，那么 $x$ 是 $A$ 和 $B$ 的<strong>公倍数</strong>。</p>
-<p>公倍数中最小的那个，称为<strong>最小公倍数</strong>（Least Common Multiple），记作 $\text{lcm}(A, B)$。</p>
-<p>例如：2、3、6 的公倍数有 6、12、24…，最小的是 6，所以 $\text{lcm}(2, 3, 6) = 6$。</p>
+<p>如果一个整数 <span class="arithmatex">\(x\)</span> 既是 <span class="arithmatex">\(A\)</span> 的倍数，也是 <span class="arithmatex">\(B\)</span> 的倍数，那么 <span class="arithmatex">\(x\)</span> 是 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 的<strong>公倍数</strong>。</p>
+<p>公倍数中最小的那个，称为<strong>最小公倍数</strong>（Least Common Multiple），记作 <span class="arithmatex">\(\text{lcm}(A, B)\)</span>。</p>
+<p>例如：2、3、6 的公倍数有 6、12、24…，最小的是 6，所以 <span class="arithmatex">\(\text{lcm}(2, 3, 6) = 6\)</span>。</p>
 <h3 id="2-lcm">2. 求 LCM 的方法</h3>
 <h4 id="21">2.1 暴力枚举法</h4>
-<p><strong>思路：</strong> $\text{lcm}(a, b)$ 不超过 $a \times b$，在 $[1, a \times b]$ 内从小到大枚举，找第一个同时被 $a$ 和 $b$ 整除的数。</p>
+<p><strong>思路：</strong> <span class="arithmatex">\(\text{lcm}(a, b)\)</span> 不超过 <span class="arithmatex">\(a \times b\)</span>，在 <span class="arithmatex">\([1, a \times b]\)</span> 内从小到大枚举，找第一个同时被 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 整除的数。</p>
 <pre><code class="language-cpp">int lcm(int a, int b){
     for(int i = 1; i &lt;= a * b; i++){
         if(i % a == 0 &amp;&amp; i % b == 0) return i;
     }
 }
 </code></pre>
-<p><strong>时间复杂度：</strong> $O(a \times b)$，当 $a$、$b$ 较大时严重超时。</p>
+<p><strong>时间复杂度：</strong> <span class="arithmatex">\(O(a \times b)\)</span>，当 <span class="arithmatex">\(a\)</span>、<span class="arithmatex">\(b\)</span> 较大时严重超时。</p>
 <h4 id="22-gcd-lcm">2.2 用 GCD 计算 LCM</h4>
 <p>这是最实用的方法，先求 GCD，再用公式算 LCM。</p>
 <p><strong>公式：</strong></p>
-<p>$$
+<div class="arithmatex">\[
 \text{lcm}(a, b) = \frac{a \times b}{\gcd(a, b)}
-$$</p>
+\]</div>
 <p><strong>代码实现：</strong></p>
 <pre><code class="language-cpp">int gcd(int a, int b){
     if(b == 0) return a;
@@ -2791,37 +2791,37 @@ int lcm(int a, int b){
 }
 </code></pre>
 <blockquote>
-<p><strong>关键技巧：</strong> 写成 <code>a / gcd(a, b) * b</code>，<strong>先除后乘</strong>。如果写成 <code>a * b / gcd(a, b)</code>，<code>a * b</code> 可能溢出（如 $a = b = 10^9$ 时，$a \times b = 10^{18}$ 超过 <code>int</code> 范围）。</p>
+<p><strong>关键技巧：</strong> 写成 <code>a / gcd(a, b) * b</code>，<strong>先除后乘</strong>。如果写成 <code>a * b / gcd(a, b)</code>，<code>a * b</code> 可能溢出（如 <span class="arithmatex">\(a = b = 10^9\)</span> 时，<span class="arithmatex">\(a \times b = 10^{18}\)</span> 超过 <code>int</code> 范围）。</p>
 <p><strong>公式的推导见第四节</strong>，它来自唯一分解定理。</p>
 </blockquote>
 <hr />
 <h2 id="gcdlcm">四、唯一分解定理与 GCD、LCM 的关系</h2>
 <h3 id="1-gcd">1. 从唯一分解定理看 GCD（取小指数）</h3>
-<p>由唯一分解定理，设 $a$ 和 $b$ 分解质因数为（缺失的质因子指数视为 0）：</p>
-<p>$$
+<p>由唯一分解定理，设 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 分解质因数为（缺失的质因子指数视为 0）：</p>
+<div class="arithmatex">\[
 a = p_1^{a_1} \times p_2^{a_2} \times \dots \times p_n^{a_n}
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 b = p_1^{b_1} \times p_2^{b_2} \times \dots \times p_n^{b_n}
-$$</p>
+\]</div>
 <p>则：</p>
-<p>$$
+<div class="arithmatex">\[
 \gcd(a, b) = p_1^{\min(a_1, b_1)} \times p_2^{\min(a_2, b_2)} \times \dots \times p_n^{\min(a_n, b_n)}
-$$</p>
+\]</div>
 <blockquote>
-<p><strong>理解：</strong> GCD 取每个质因数在两数中指数的<strong>较小值</strong>。只出现在一个数中的质因子，另一个数指数为 0，$\min$ 取 0，所以不参与 GCD。</p>
+<p><strong>理解：</strong> GCD 取每个质因数在两数中指数的<strong>较小值</strong>。只出现在一个数中的质因子，另一个数指数为 0，<span class="arithmatex">\(\min\)</span> 取 0，所以不参与 GCD。</p>
 </blockquote>
 <p>这就是<strong>质因数分解法</strong>求 GCD 的理论基础。</p>
 <blockquote>
 <p><strong>核心口诀：GCD 取公共质因数的小指数。</strong></p>
 </blockquote>
-<p><strong>举例：</strong> $a = 360 = 2^3 \times 3^2 \times 5^1$，$b = 120 = 2^3 \times 3^1 \times 5^1$</p>
+<p><strong>举例：</strong> <span class="arithmatex">\(a = 360 = 2^3 \times 3^2 \times 5^1\)</span>，<span class="arithmatex">\(b = 120 = 2^3 \times 3^1 \times 5^1\)</span></p>
 <table>
 <thead>
 <tr>
 <th>质因子</th>
-<th>$a$ 的指数</th>
-<th>$b$ 的指数</th>
+<th><span class="arithmatex">\(a\)</span> 的指数</th>
+<th><span class="arithmatex">\(b\)</span> 的指数</th>
 <th>GCD 取小</th>
 </tr>
 </thead>
@@ -2846,9 +2846,9 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<p>$$
+<div class="arithmatex">\[
 \gcd(360, 120) = 2^3 \times 3^1 \times 5^1 = 120
-$$</p>
+\]</div>
 <p><strong>代码实现：</strong></p>
 <pre><code class="language-cpp">int gcd(int a, int b){
     // 对 a 分解质因数
@@ -2889,9 +2889,9 @@ $$</p>
 <p><strong>注意：</strong> GCD 只取<strong>公共</strong>质因数，非公共的（只出现在一个数中的）不参与。这与 LCM 不同，下面对比。</p>
 </blockquote>
 <h3 id="2-lcm_1">2. 从唯一分解定理看 LCM（取大指数）</h3>
-<p>$$
+<div class="arithmatex">\[
 \text{lcm}(a, b) = p_1^{\max(a_1, b_1)} \times p_2^{\max(a_2, b_2)} \times \dots \times p_n^{\max(a_n, b_n)}
-$$</p>
+\]</div>
 <blockquote>
 <p><strong>理解：</strong> LCM 取每个质因数在两数中指数的<strong>较大值</strong>。只出现在一个数中的质因子也参与，取那个非零的指数。</p>
 </blockquote>
@@ -2900,13 +2900,13 @@ $$</p>
 <p><strong>核心口诀：LCM 取所有质因数的大指数。</strong></p>
 <p><strong>与 GCD 的区别：</strong> GCD 只取<strong>公共</strong>质因数的小指数；LCM 取<strong>所有</strong>质因数的大指数（包括只出现在一个数中的）。</p>
 </blockquote>
-<p><strong>举例：</strong> $a = 360 = 2^3 \times 3^2 \times 5^1$，$b = 120 = 2^3 \times 3^1 \times 5^1$</p>
+<p><strong>举例：</strong> <span class="arithmatex">\(a = 360 = 2^3 \times 3^2 \times 5^1\)</span>，<span class="arithmatex">\(b = 120 = 2^3 \times 3^1 \times 5^1\)</span></p>
 <table>
 <thead>
 <tr>
 <th>质因子</th>
-<th>$a$ 的指数</th>
-<th>$b$ 的指数</th>
+<th><span class="arithmatex">\(a\)</span> 的指数</th>
+<th><span class="arithmatex">\(b\)</span> 的指数</th>
 <th>LCM 取大</th>
 </tr>
 </thead>
@@ -2931,9 +2931,9 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<p>$$
+<div class="arithmatex">\[
 \text{lcm}(360, 120) = 2^3 \times 3^2 \times 5^1 = 360
-$$</p>
+\]</div>
 <p><strong>代码实现：</strong></p>
 <pre><code class="language-cpp">int lcm(int a, int b){
     // 对 a 分解质因数
@@ -2978,38 +2978,38 @@ $$</p>
 }
 </code></pre>
 <blockquote>
-<p><strong>易错点：</strong> LCM 的质因数分解法必须处理<strong>所有</strong>质因数，包括只出现在 $a$ 或只出现在 $b$ 中的。只处理公共质因数会漏掉非公共部分，导致结果偏小。</p>
+<p><strong>易错点：</strong> LCM 的质因数分解法必须处理<strong>所有</strong>质因数，包括只出现在 <span class="arithmatex">\(a\)</span> 或只出现在 <span class="arithmatex">\(b\)</span> 中的。只处理公共质因数会漏掉非公共部分，导致结果偏小。</p>
 </blockquote>
 <h3 id="3-gcd-lcm-a-b">3. 核心公式：GCD × LCM = A × B</h3>
-<p><strong>观察：</strong> 对每个质因子 $p_i$，$\min(a_i, b_i)$ 和 $\max(a_i, b_i)$ 分别取到了 $a_i$ 和 $b_i$ 各一次，所以：</p>
-<p>$$
+<p><strong>观察：</strong> 对每个质因子 <span class="arithmatex">\(p_i\)</span>，<span class="arithmatex">\(\min(a_i, b_i)\)</span> 和 <span class="arithmatex">\(\max(a_i, b_i)\)</span> 分别取到了 <span class="arithmatex">\(a_i\)</span> 和 <span class="arithmatex">\(b_i\)</span> 各一次，所以：</p>
+<div class="arithmatex">\[
 \min(a_i, b_i) + \max(a_i, b_i) = a_i + b_i
-$$</p>
+\]</div>
 <p>因此：</p>
-<p>$$
+<div class="arithmatex">\[
 \gcd(a, b) \times \text{lcm}(a, b) = \prod_{i=1}^{n} p_i^{\min(a_i, b_i) + \max(a_i, b_i)} = \prod_{i=1}^{n} p_i^{a_i + b_i} = a \times b
-$$</p>
+\]</div>
 <p>即：</p>
-<p>$$
+<div class="arithmatex">\[
 \boxed{\gcd(a, b) \times \text{lcm}(a, b) = a \times b}
-$$</p>
+\]</div>
 <p>变形得：</p>
-<p>$$
+<div class="arithmatex">\[
 \text{lcm}(a, b) = \frac{a \times b}{\gcd(a, b)}
-$$</p>
+\]</div>
 <blockquote>
 <p>这就是第三节中"用 GCD 计算 LCM"公式的由来。</p>
 </blockquote>
 <h3 id="4">4. 举例验证</h3>
-<p><strong>例：</strong> $a = 12 = 2^2 \times 3^1$，$b = 18 = 2^1 \times 3^2$</p>
+<p><strong>例：</strong> <span class="arithmatex">\(a = 12 = 2^2 \times 3^1\)</span>，<span class="arithmatex">\(b = 18 = 2^1 \times 3^2\)</span></p>
 <table>
 <thead>
 <tr>
 <th>质因子</th>
-<th>$a$ 的指数</th>
-<th>$b$ 的指数</th>
-<th>GCD 取 $\min$</th>
-<th>LCM 取 $\max$</th>
+<th><span class="arithmatex">\(a\)</span> 的指数</th>
+<th><span class="arithmatex">\(b\)</span> 的指数</th>
+<th>GCD 取 <span class="arithmatex">\(\min\)</span></th>
+<th>LCM 取 <span class="arithmatex">\(\max\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -3029,13 +3029,13 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<p>$$
+<div class="arithmatex">\[
 \gcd(12, 18) = 2^1 \times 3^1 = 6
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \text{lcm}(12, 18) = 2^2 \times 3^2 = 36
-$$</p>
-<p>验证公式：$\gcd \times \text{lcm} = 6 \times 36 = 216$，$a \times b = 12 \times 18 = 216$ ✓</p>
+\]</div>
+<p>验证公式：<span class="arithmatex">\(\gcd \times \text{lcm} = 6 \times 36 = 216\)</span>，<span class="arithmatex">\(a \times b = 12 \times 18 = 216\)</span> ✓</p>
 <hr />
 <h2 id="_4">五、常见错误与注意事项</h2>
 <table>
@@ -3051,7 +3051,7 @@ $$</p>
 <tr>
 <td>E1</td>
 <td>LCM 写成 <code>a * b / gcd(a,b)</code></td>
-<td>$a \times b$ 溢出</td>
+<td><span class="arithmatex">\(a \times b\)</span> 溢出</td>
 <td>写成 <code>a / gcd(a,b) * b</code>，先除后乘</td>
 </tr>
 <tr>
@@ -3070,19 +3070,19 @@ $$</p>
 <td>E4</td>
 <td>忘记 <code>gcd(a, 0) = a</code> 的规定</td>
 <td>边界情况处理错误</td>
-<td>记住 0 的约数是所有数，$\gcd(a, 0) = a$</td>
+<td>记住 0 的约数是所有数，<span class="arithmatex">\(\gcd(a, 0) = a\)</span></td>
 </tr>
 <tr>
 <td>E5</td>
-<td>更相减损法用于 $a$ 远大于 $b$</td>
-<td>超时（如 $a=10^{10}, b=1$）</td>
+<td>更相减损法用于 <span class="arithmatex">\(a\)</span> 远大于 <span class="arithmatex">\(b\)</span></td>
+<td>超时（如 <span class="arithmatex">\(a=10^{10}, b=1\)</span>）</td>
 <td>用辗转相除法或 Stein 算法</td>
 </tr>
 <tr>
 <td>E6</td>
 <td>GCD 和 LCM 的取指数搞反</td>
 <td>GCD 取了大指数，LCM 取了小指数</td>
-<td>GCD 取 $\min$，LCM 取 $\max$</td>
+<td>GCD 取 <span class="arithmatex">\(\min\)</span>，LCM 取 <span class="arithmatex">\(\max\)</span></td>
 </tr>
 <tr>
 <td>E7</td>
@@ -3100,45 +3100,45 @@ $$</p>
 <h3 id="1-gcd_1">1. 求 GCD 的套路</h3>
 <ul>
 <li><strong>比赛首选：</strong> 辗转相除法（欧几里得算法），一行递归搞定。</li>
-<li><strong>记忆公式：</strong> $\gcd(a, b) = \gcd(b, a \bmod b)$，终止于 $b = 0$。</li>
+<li><strong>记忆公式：</strong> <span class="arithmatex">\(\gcd(a, b) = \gcd(b, a \bmod b)\)</span>，终止于 <span class="arithmatex">\(b = 0\)</span>。</li>
 <li><strong>大整数场景：</strong> 取模昂贵时用 Stein 算法（加减 + 除以 2）。</li>
 <li><strong>需要分解结果：</strong> 用质因数分解法（见第四节），顺便得到每个质因数的指数。</li>
 </ul>
 <h3 id="2-lcm_2">2. 求 LCM 的套路</h3>
 <ul>
-<li><strong>比赛首选：</strong> 先求 GCD，再套公式 $\text{lcm} = a / \gcd(a, b) \times b$。</li>
+<li><strong>比赛首选：</strong> 先求 GCD，再套公式 <span class="arithmatex">\(\text{lcm} = a / \gcd(a, b) \times b\)</span>。</li>
 <li><strong>防溢出：</strong> 先除后乘，<code>a / gcd(a, b) * b</code>。</li>
 <li><strong>口诀：</strong> LCM 取所有质因数的大指数（全大），GCD 取公共质因数的小指数（公小）。</li>
 </ul>
 <h3 id="3-gcdlcm">3. 唯一分解定理与 GCD/LCM 的关系</h3>
 <ul>
 <li><strong>桥梁：</strong> 唯一分解定理是 GCD 和 LCM 的理论基础。</li>
-<li><strong>核心公式：</strong> $\gcd(a, b) \times \text{lcm}(a, b) = a \times b$，知道 GCD 就能算 LCM，反之亦然。</li>
-<li><strong>指数关系：</strong> $\min + \max = a_i + b_i$，所以 GCD 和 LCM 的指数互补。</li>
+<li><strong>核心公式：</strong> <span class="arithmatex">\(\gcd(a, b) \times \text{lcm}(a, b) = a \times b\)</span>，知道 GCD 就能算 LCM，反之亦然。</li>
+<li><strong>指数关系：</strong> <span class="arithmatex">\(\min + \max = a_i + b_i\)</span>，所以 GCD 和 LCM 的指数互补。</li>
 </ul>
 <h3 id="4_1">4. 信奥策略意识</h3>
 <ul>
-<li><strong>复杂度意识：</strong> 辗转相除法 $O(\log(\max(a, b)))$，即使 $a, b = 10^{18}$ 也只需约 60 步，极快。</li>
+<li><strong>复杂度意识：</strong> 辗转相除法 <span class="arithmatex">\(O(\log(\max(a, b)))\)</span>，即使 <span class="arithmatex">\(a, b = 10^{18}\)</span> 也只需约 60 步，极快。</li>
 <li><strong>溢出意识：</strong> 求 LCM 时先除后乘；如果结果可能超过 <code>int</code>，用 <code>long long</code>。</li>
 <li><strong>代码简洁意识：</strong> 递归一行 <code>return b ? gcd(b, a % b) : a;</code> 是最简写法。</li>
-<li><strong>验证习惯：</strong> 算完 GCD 后用唯一分解定理验证；算完 LCM 后用 $\gcd \times \text{lcm} = a \times b$ 验证。</li>
+<li><strong>验证习惯：</strong> 算完 GCD 后用唯一分解定理验证；算完 LCM 后用 <span class="arithmatex">\(\gcd \times \text{lcm} = a \times b\)</span> 验证。</li>
 </ul>
 <h2 id="_6">七、训练题单</h2>
 <h3 id="1_3">1. 基础题目</h3>
 <ul>
-<li><a href="https://marsoj.cn/p/P1066" target="_blank">P1066. 最大公约数（GCD）</a></li>
-<li><a href="https://marsoj.cn/p/P1087" target="_blank">P1087. 分数约分</a></li>
-<li><a href="https://marsoj.cn/p/P1065" target="_blank">P1065. 最小公倍数（LCM）</a></li>
-<li><a href="https://marsoj.cn/p/P1355" target="_blank">P1355. 晨跑(多个数的lcm)</a></li>
+<li><a href="https://marsoj.cn/p/P1066">P1066. 最大公约数（GCD）</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1087">P1087. 分数约分</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1065">P1065. 最小公倍数（LCM）</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1355">P1355. 晨跑(多个数的lcm)</a>{:target="_blank"}</li>
 </ul>
 <h3 id="2_2">2. 拓展题目</h3>
 <ul>
-<li><a href="https://marsoj.cn/p/P1297" target="_blank">P1297. 最大_公约数</a></li>
-<li><a href="https://marsoj.cn/p/P1428" target="_blank">P1428. GCD总和</a></li>
-<li><a href="https://marsoj.cn/p/P1463" target="_blank">P1463. 相同因子2.0</a></li>
-<li><a href="https://marsoj.cn/p/P1431" target="_blank">P1431. 最大的GCD</a></li>
-<li><a href="https://marsoj.cn/p/P1125" target="_blank">P1125. 【NOIP2001普及组】 最大公约数和最小公倍数问题</a></li>
-<li><a href="https://marsoj.cn/p/P1324" target="_blank">P1324. 华华对月月的忠诚</a></li>
+<li><a href="https://marsoj.cn/p/P1297">P1297. 最大_公约数</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1428">P1428. GCD总和</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1463">P1463. 相同因子2.0</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1431">P1431. 最大的GCD</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1125">P1125. 【NOIP2001普及组】 最大公约数和最小公倍数问题</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1324">P1324. 华华对月月的忠诚</a>{:target="_blank"}</li>
 </ul>
 
 
@@ -3210,6 +3210,10 @@ $$</p>
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

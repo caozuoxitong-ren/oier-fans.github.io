@@ -1176,7 +1176,7 @@
   <a href="#2-sqrtn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 优化法（利用 $\sqrt{N}$ 结论）
+        2. 优化法（利用 \(\sqrt{N}\) 结论）
       
     </span>
   </a>
@@ -1971,7 +1971,7 @@
   <a href="#2-sqrtn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 优化法（利用 $\sqrt{N}$ 结论）
+        2. 优化法（利用 \(\sqrt{N}\) 结论）
       
     </span>
   </a>
@@ -2258,24 +2258,24 @@
 <h2 id="_2">一、算术基本定理</h2>
 <h3 id="1">1. 定理内容</h3>
 <p><strong>算术基本定理</strong>，又称<strong>唯一分解定理</strong>：每个大于 1 的自然数，要么本身是质数，要么可以唯一地写成若干个质数的乘积（不考虑顺序）。</p>
-<p><strong>形式化表述：</strong> 对于任意正整数 $N &gt; 1$，存在唯一的质因数分解形式</p>
-<p>$$
+<p><strong>形式化表述：</strong> 对于任意正整数 <span class="arithmatex">\(N &gt; 1\)</span>，存在唯一的质因数分解形式</p>
+<div class="arithmatex">\[
 N = p_{1}^{a_{1}} \times p_{2}^{a_{2}} \times \dots \times p_{k}^{a_{k}}
-$$</p>
-<p>其中 $p_1 &lt; p_2 &lt; \dots &lt; p_k$ 为互不相同的质数，$a_i$ 为正整数。这种表示<strong>存在</strong>且<strong>唯一</strong>。</p>
+\]</div>
+<p>其中 <span class="arithmatex">\(p_1 &lt; p_2 &lt; \dots &lt; p_k\)</span> 为互不相同的质数，<span class="arithmatex">\(a_i\)</span> 为正整数。这种表示<strong>存在</strong>且<strong>唯一</strong>。</p>
 <p><strong>举例：</strong></p>
-<p>$$
+<div class="arithmatex">\[
 6936 = 2^3 \times 3 \times 17^2
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 1200 = 2^4 \times 3 \times 5^2
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 5207 = 41 \times 127
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 19 = 19 \quad (\text{质数本身就是分解结果})
-$$</p>
+\]</div>
 <h3 id="2">2. 定理的两个部分</h3>
 <p>算术基本定理的内容由两部分构成：</p>
 <table>
@@ -2289,7 +2289,7 @@ $$</p>
 <tbody>
 <tr>
 <td><strong>存在性</strong></td>
-<td>任意 $N &gt; 1$ 都<strong>能</strong>分解为质数之积</td>
+<td>任意 <span class="arithmatex">\(N &gt; 1\)</span> 都<strong>能</strong>分解为质数之积</td>
 <td>质数是"积木"，任何大于 1 的数都能用质数拼出来</td>
 </tr>
 <tr>
@@ -2300,13 +2300,13 @@ $$</p>
 </tbody>
 </table>
 <blockquote>
-<p><strong>关键理解：</strong> "唯一"指的是质因数的<strong>种类</strong>和<strong>每个质因数的指数</strong>唯一确定，与书写顺序无关。例如 $12 = 2^2 \times 3$ 和 $12 = 3 \times 2^2$ 是同一种分解。</p>
+<p><strong>关键理解：</strong> "唯一"指的是质因数的<strong>种类</strong>和<strong>每个质因数的指数</strong>唯一确定，与书写顺序无关。例如 <span class="arithmatex">\(12 = 2^2 \times 3\)</span> 和 <span class="arithmatex">\(12 = 3 \times 2^2\)</span> 是同一种分解。</p>
 </blockquote>
 <hr />
 <h2 id="_3">二、分解质因数的方法</h2>
 <h3 id="1_1">1. 暴力枚举法</h3>
-<p><strong>思路：</strong> $N$ 的质因子一定在 $[2, N]$ 之间，枚举 2 到 $N$ 的每个数 $i$，若 $i$ 能整除 $N$，则 $i$ 是质因子，连续除以 $i$ 直到 $N$ 不再含因子 $i$，同时记录个数。</p>
-<p><strong>时间复杂度：</strong> $O(N)$</p>
+<p><strong>思路：</strong> <span class="arithmatex">\(N\)</span> 的质因子一定在 <span class="arithmatex">\([2, N]\)</span> 之间，枚举 2 到 <span class="arithmatex">\(N\)</span> 的每个数 <span class="arithmatex">\(i\)</span>，若 <span class="arithmatex">\(i\)</span> 能整除 <span class="arithmatex">\(N\)</span>，则 <span class="arithmatex">\(i\)</span> 是质因子，连续除以 <span class="arithmatex">\(i\)</span> 直到 <span class="arithmatex">\(N\)</span> 不再含因子 <span class="arithmatex">\(i\)</span>，同时记录个数。</p>
+<p><strong>时间复杂度：</strong> <span class="arithmatex">\(O(N)\)</span></p>
 <pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
 
@@ -2331,18 +2331,18 @@ int main(){
     return 0;
 }
 </code></pre>
-<h3 id="2-sqrtn">2. 优化法（利用 $\sqrt{N}$ 结论）</h3>
-<p><strong>关键结论：</strong> 任意正整数 $N$ <strong>至多有一个</strong>大于 $\sqrt{N}$ 的质因子。</p>
-<p><strong>证明（反证法）：</strong> 假设 $N$ 有两个不同的质因子 $a$ 和 $b$，且 $a &gt; \sqrt{N}$，$b &gt; \sqrt{N}$。</p>
+<h3 id="2-sqrtn">2. 优化法（利用 <span class="arithmatex">\(\sqrt{N}\)</span> 结论）</h3>
+<p><strong>关键结论：</strong> 任意正整数 <span class="arithmatex">\(N\)</span> <strong>至多有一个</strong>大于 <span class="arithmatex">\(\sqrt{N}\)</span> 的质因子。</p>
+<p><strong>证明（反证法）：</strong> 假设 <span class="arithmatex">\(N\)</span> 有两个不同的质因子 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span>，且 <span class="arithmatex">\(a &gt; \sqrt{N}\)</span>，<span class="arithmatex">\(b &gt; \sqrt{N}\)</span>。</p>
 <ul>
-<li>因为 $a$ 和 $b$ 都是 $N$ 的质因子且互质，所以 $ab \mid N$，即 $ab \leq N$　　①</li>
-<li>但 $a &gt; \sqrt{N}$，$b &gt; \sqrt{N}$，所以 $ab &gt; \sqrt{N} \times \sqrt{N} = N$　　②</li>
+<li>因为 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 都是 <span class="arithmatex">\(N\)</span> 的质因子且互质，所以 <span class="arithmatex">\(ab \mid N\)</span>，即 <span class="arithmatex">\(ab \leq N\)</span>　　①</li>
+<li>但 <span class="arithmatex">\(a &gt; \sqrt{N}\)</span>，<span class="arithmatex">\(b &gt; \sqrt{N}\)</span>，所以 <span class="arithmatex">\(ab &gt; \sqrt{N} \times \sqrt{N} = N\)</span>　　②</li>
 </ul>
-<p>①和②矛盾，假设不成立。因此 $N$ 不可能有两个都大于 $\sqrt{N}$ 的质因子，至多只有一个。</p>
+<p>①和②矛盾，假设不成立。因此 <span class="arithmatex">\(N\)</span> 不可能有两个都大于 <span class="arithmatex">\(\sqrt{N}\)</span> 的质因子，至多只有一个。</p>
 <blockquote>
-<p><strong>推论：</strong> 枚举到 $\sqrt{N}$ 就够了。如果除完之后 $N &gt; 1$，说明剩下的这个 $N$ 就是那个唯一的大于 $\sqrt{N}$ 的质因子。</p>
+<p><strong>推论：</strong> 枚举到 <span class="arithmatex">\(\sqrt{N}\)</span> 就够了。如果除完之后 <span class="arithmatex">\(N &gt; 1\)</span>，说明剩下的这个 <span class="arithmatex">\(N\)</span> 就是那个唯一的大于 <span class="arithmatex">\(\sqrt{N}\)</span> 的质因子。</p>
 </blockquote>
-<p><strong>时间复杂度：</strong> $O(\sqrt{N})$</p>
+<p><strong>时间复杂度：</strong> <span class="arithmatex">\(O(\sqrt{N})\)</span></p>
 <pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
 
@@ -2380,13 +2380,13 @@ int main(){
 <tbody>
 <tr>
 <td>枚举范围</td>
-<td>$[2, N]$</td>
-<td>$[2, \sqrt{N}]$</td>
+<td><span class="arithmatex">\([2, N]\)</span></td>
+<td><span class="arithmatex">\([2, \sqrt{N}]\)</span></td>
 </tr>
 <tr>
 <td>时间复杂度</td>
-<td>$O(N)$</td>
-<td>$O(\sqrt{N})$</td>
+<td><span class="arithmatex">\(O(N)\)</span></td>
+<td><span class="arithmatex">\(O(\sqrt{N})\)</span></td>
 </tr>
 <tr>
 <td>循环条件</td>
@@ -2406,38 +2406,38 @@ int main(){
 </tbody>
 </table>
 <blockquote>
-<p><strong>易错点：</strong> 循环条件写成 <code>i * i &lt;= num</code> 也能用，但当 $N$ 接近 <code>int</code> 上限时 <code>i * i</code> 可能溢出。用 <code>i &lt;= num / i</code> 更安全，不会溢出。</p>
+<p><strong>易错点：</strong> 循环条件写成 <code>i * i &lt;= num</code> 也能用，但当 <span class="arithmatex">\(N\)</span> 接近 <code>int</code> 上限时 <code>i * i</code> 可能溢出。用 <code>i &lt;= num / i</code> 更安全，不会溢出。</p>
 </blockquote>
 <hr />
 <h2 id="_4">三、约数个数定理</h2>
 <h3 id="1_2">1. 定理内容</h3>
-<p>由算术基本定理，正整数 $N &gt; 1$ 分解为</p>
-<p>$$
+<p>由算术基本定理，正整数 <span class="arithmatex">\(N &gt; 1\)</span> 分解为</p>
+<div class="arithmatex">\[
 N = p_{1}^{a_{1}} \times p_{2}^{a_{2}} \times \dots \times p_{k}^{a_{k}}
-$$</p>
-<p>则 $N$ 的正约数个数为</p>
-<p>$$
+\]</div>
+<p>则 <span class="arithmatex">\(N\)</span> 的正约数个数为</p>
+<div class="arithmatex">\[
 d(N) = (a_{1}+1)(a_{2}+1) \dots (a_{k}+1) = \prod_{i=1}^{k}(a_{i}+1)
-$$</p>
+\]</div>
 <h3 id="2_1">2. 证明</h3>
-<p>对于第 $i$ 个质因子 $p_i^{a_i}$，它的正约数有 $p_i^0, p_i^1, p_i^2, \dots, p_i^{a_i}$，共 $a_i + 1$ 个。</p>
-<p>$N$ 的任意一个约数，对每个质因子 $p_i$ 都可以选 $p_i^0$ 到 $p_i^{a_i}$ 中的某一项，共 $a_i + 1$ 种选择。根据<strong>乘法原理</strong>，$k$ 个质因子的选择互相独立，所以约数总数为</p>
-<p>$$
+<p>对于第 <span class="arithmatex">\(i\)</span> 个质因子 <span class="arithmatex">\(p_i^{a_i}\)</span>，它的正约数有 <span class="arithmatex">\(p_i^0, p_i^1, p_i^2, \dots, p_i^{a_i}\)</span>，共 <span class="arithmatex">\(a_i + 1\)</span> 个。</p>
+<p><span class="arithmatex">\(N\)</span> 的任意一个约数，对每个质因子 <span class="arithmatex">\(p_i\)</span> 都可以选 <span class="arithmatex">\(p_i^0\)</span> 到 <span class="arithmatex">\(p_i^{a_i}\)</span> 中的某一项，共 <span class="arithmatex">\(a_i + 1\)</span> 种选择。根据<strong>乘法原理</strong>，<span class="arithmatex">\(k\)</span> 个质因子的选择互相独立，所以约数总数为</p>
+<div class="arithmatex">\[
 d(N) = \prod_{i=1}^{k}(a_{i}+1)
-$$</p>
+\]</div>
 <blockquote>
-<p><strong>一句话理解：</strong> 每个质因子的指数从 0 取到 $a_i$，有 $a_i + 1$ 种取法，各质因子取法相乘就是约数总数。</p>
+<p><strong>一句话理解：</strong> 每个质因子的指数从 0 取到 <span class="arithmatex">\(a_i\)</span>，有 <span class="arithmatex">\(a_i + 1\)</span> 种取法，各质因子取法相乘就是约数总数。</p>
 </blockquote>
 <h3 id="3_1">3. 举例</h3>
-<p><strong>例 1：</strong> $60 = 2^2 \times 3^1 \times 5^1$，质因子 2、3、5 的指数分别为 2、1、1，所以 60 的约数个数为</p>
-<p>$$
+<p><strong>例 1：</strong> <span class="arithmatex">\(60 = 2^2 \times 3^1 \times 5^1\)</span>，质因子 2、3、5 的指数分别为 2、1、1，所以 60 的约数个数为</p>
+<div class="arithmatex">\[
 d(60) = (2+1) \times (1+1) \times (1+1) = 3 \times 2 \times 2 = 12
-$$</p>
-<p>12 个约数分别为：$1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60$。</p>
-<p><strong>例 2：</strong> $360 = 2^3 \times 3^2 \times 5^1$，约数个数</p>
-<p>$$
+\]</div>
+<p>12 个约数分别为：<span class="arithmatex">\(1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60\)</span>。</p>
+<p><strong>例 2：</strong> <span class="arithmatex">\(360 = 2^3 \times 3^2 \times 5^1\)</span>，约数个数</p>
+<div class="arithmatex">\[
 d(360) = (3+1) \times (2+1) \times (1+1) = 4 \times 3 \times 2 = 24
-$$</p>
+\]</div>
 <h3 id="4">4. 代码实现</h3>
 <pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
@@ -2480,69 +2480,69 @@ int main(){
 </tr>
 <tr>
 <td><code>ans *= (cnt + 1)</code></td>
-<td>套用公式，每个质因子贡献 $(指数+1)$</td>
+<td>套用公式，每个质因子贡献 <span class="arithmatex">\((指数+1)\)</span></td>
 </tr>
 <tr>
 <td><code>if(num &gt; 1) ans *= 2</code></td>
-<td>剩下的大于 $\sqrt{N}$ 的质因子指数为 1，贡献 $(1+1) = 2$</td>
+<td>剩下的大于 <span class="arithmatex">\(\sqrt{N}\)</span> 的质因子指数为 1，贡献 <span class="arithmatex">\((1+1) = 2\)</span></td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="_5">四、约数和定理</h2>
 <h3 id="1_3">1. 定理内容</h3>
-<p>由算术基本定理，正整数 $N &gt; 1$ 分解为</p>
-<p>$$
+<p>由算术基本定理，正整数 <span class="arithmatex">\(N &gt; 1\)</span> 分解为</p>
+<div class="arithmatex">\[
 N = p_{1}^{a_{1}} \times p_{2}^{a_{2}} \times \dots \times p_{k}^{a_{k}}
-$$</p>
-<p>则 $N$ 的所有正约数之和为</p>
-<p>$$
+\]</div>
+<p>则 <span class="arithmatex">\(N\)</span> 的所有正约数之和为</p>
+<div class="arithmatex">\[
 S(N) = \prod_{i=1}^{k} \frac{p_i^{a_i+1} - 1}{p_i - 1}
-$$</p>
+\]</div>
 <p>展开写就是</p>
-<p>$$
+<div class="arithmatex">\[
 S(N) = (p_1^0 + p_1^1 + \dots + p_1^{a_1}) \times (p_2^0 + p_2^1 + \dots + p_2^{a_2}) \times \dots \times (p_k^0 + p_k^1 + \dots + p_k^{a_k})
-$$</p>
+\]</div>
 <h3 id="2_2">2. 证明</h3>
-<p><strong>第一步：</strong> 对第 $i$ 个质因子 $p_i^{a_i}$，它的约数有 $p_i^0, p_i^1, \dots, p_i^{a_i}$，这些约数之和为</p>
-<p>$$
+<p><strong>第一步：</strong> 对第 <span class="arithmatex">\(i\)</span> 个质因子 <span class="arithmatex">\(p_i^{a_i}\)</span>，它的约数有 <span class="arithmatex">\(p_i^0, p_i^1, \dots, p_i^{a_i}\)</span>，这些约数之和为</p>
+<div class="arithmatex">\[
 S_i = p_i^0 + p_i^1 + \dots + p_i^{a_i}
-$$</p>
-<p>这是一个等比数列求和，首项为 1，公比为 $p_i$，项数为 $a_i + 1$。</p>
+\]</div>
+<p>这是一个等比数列求和，首项为 1，公比为 <span class="arithmatex">\(p_i\)</span>，项数为 <span class="arithmatex">\(a_i + 1\)</span>。</p>
 <p><strong>第二步：</strong> 用等比数列求和公式化简。记</p>
-<p>$$
+<div class="arithmatex">\[
 S_i = 1 + p_i + p_i^2 + \dots + p_i^{a_i} \quad \text{①}
-$$</p>
-<p>两边同乘公比 $p_i$：</p>
-<p>$$
+\]</div>
+<p>两边同乘公比 <span class="arithmatex">\(p_i\)</span>：</p>
+<div class="arithmatex">\[
 p_i \times S_i = p_i + p_i^2 + \dots + p_i^{a_i} + p_i^{a_i+1} \quad \text{②}
-$$</p>
+\]</div>
 <p>②式减去①式：</p>
-<p>$$
+<div class="arithmatex">\[
 (p_i - 1) \times S_i = p_i^{a_i+1} - 1
-$$</p>
+\]</div>
 <p>所以</p>
-<p>$$
+<div class="arithmatex">\[
 S_i = \frac{p_i^{a_i+1} - 1}{p_i - 1}
-$$</p>
-<p><strong>第三步：</strong> $N$ 的每个约数都是从每个质因子 $p_i$ 的约数中选一个相乘得到的。所有约数的和就是各组约数和的乘积（乘法原理）：</p>
-<p>$$
+\]</div>
+<p><strong>第三步：</strong> <span class="arithmatex">\(N\)</span> 的每个约数都是从每个质因子 <span class="arithmatex">\(p_i\)</span> 的约数中选一个相乘得到的。所有约数的和就是各组约数和的乘积（乘法原理）：</p>
+<div class="arithmatex">\[
 S(N) = \prod_{i=1}^{k} S_i = \prod_{i=1}^{k} \frac{p_i^{a_i+1} - 1}{p_i - 1}
-$$</p>
+\]</div>
 <blockquote>
-<p><strong>一句话理解：</strong> 每个质因子贡献一组约数之和 $S_i$，各组之间用乘法原理组合，总约数和 = 各组约数和之积。</p>
+<p><strong>一句话理解：</strong> 每个质因子贡献一组约数之和 <span class="arithmatex">\(S_i\)</span>，各组之间用乘法原理组合，总约数和 = 各组约数和之积。</p>
 </blockquote>
 <h3 id="3_2">3. 举例</h3>
-<p><strong>例 1：</strong> $60 = 2^2 \times 3^1 \times 5^1$</p>
-<p>$$
+<p><strong>例 1：</strong> <span class="arithmatex">\(60 = 2^2 \times 3^1 \times 5^1\)</span></p>
+<div class="arithmatex">\[
 S(60) = \frac{2^3 - 1}{2 - 1} \times \frac{3^2 - 1}{3 - 1} \times \frac{5^2 - 1}{5 - 1} = \frac{7}{1} \times \frac{8}{2} \times \frac{24}{4} = 7 \times 4 \times 6 = 168
-$$</p>
-<p>验证：$1+2+3+4+5+6+10+12+15+20+30+60 = 168$ ✓</p>
-<p><strong>例 2：</strong> $12 = 2^2 \times 3^1$</p>
-<p>$$
+\]</div>
+<p>验证：<span class="arithmatex">\(1+2+3+4+5+6+10+12+15+20+30+60 = 168\)</span> ✓</p>
+<p><strong>例 2：</strong> <span class="arithmatex">\(12 = 2^2 \times 3^1\)</span></p>
+<div class="arithmatex">\[
 S(12) = \frac{2^3-1}{2-1} \times \frac{3^2-1}{3-1} = \frac{7}{1} \times \frac{8}{2} = 7 \times 4 = 28
-$$</p>
-<p>验证：$1+2+3+4+6+12 = 28$ ✓</p>
+\]</div>
+<p>验证：<span class="arithmatex">\(1+2+3+4+6+12 = 28\)</span> ✓</p>
 <h3 id="4_1">4. 代码实现</h3>
 <pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
@@ -2575,7 +2575,7 @@ int main(){
 }
 </code></pre>
 <blockquote>
-<p><strong>注意：</strong> 约数和可能很大，<code>ans</code> 必须用 <code>long long</code>，否则会溢出。上面代码用直接累加 $p^0 + p^1 + \dots + p^{a_i}$ 的方式计算 $S_i$，避免除法，更稳妥。</p>
+<p><strong>注意：</strong> 约数和可能很大，<code>ans</code> 必须用 <code>long long</code>，否则会溢出。上面代码用直接累加 <span class="arithmatex">\(p^0 + p^1 + \dots + p^{a_i}\)</span> 的方式计算 <span class="arithmatex">\(S_i\)</span>，避免除法，更稳妥。</p>
 </blockquote>
 <hr />
 <h2 id="_6">五、三个定理的关系</h2>
@@ -2590,23 +2590,23 @@ int main(){
 <tbody>
 <tr>
 <td>唯一分解定理</td>
-<td>把 $N$ 拆成质数之积</td>
-<td>$N = \prod p_i^{a_i}$</td>
+<td>把 <span class="arithmatex">\(N\)</span> 拆成质数之积</td>
+<td><span class="arithmatex">\(N = \prod p_i^{a_i}\)</span></td>
 </tr>
 <tr>
 <td>约数个数定理</td>
-<td>求 $N$ 有多少个约数</td>
-<td>$d(N) = \prod (a_i + 1)$</td>
+<td>求 <span class="arithmatex">\(N\)</span> 有多少个约数</td>
+<td><span class="arithmatex">\(d(N) = \prod (a_i + 1)\)</span></td>
 </tr>
 <tr>
 <td>约数和定理</td>
-<td>求 $N$ 所有约数之和</td>
-<td>$S(N) = \prod \frac{p_i^{a_i+1}-1}{p_i-1}$</td>
+<td>求 <span class="arithmatex">\(N\)</span> 所有约数之和</td>
+<td><span class="arithmatex">\(S(N) = \prod \frac{p_i^{a_i+1}-1}{p_i-1}\)</span></td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>逻辑链条：</strong> 唯一分解定理是"根"，约数个数定理和约数和定理都建立在它之上。先有分解 $N = \prod p_i^{a_i}$，才能套公式求约数个数和约数和。</p>
+<p><strong>逻辑链条：</strong> 唯一分解定理是"根"，约数个数定理和约数和定理都建立在它之上。先有分解 <span class="arithmatex">\(N = \prod p_i^{a_i}\)</span>，才能套公式求约数个数和约数和。</p>
 </blockquote>
 <hr />
 <h2 id="_7">六、常见错误与注意事项</h2>
@@ -2623,7 +2623,7 @@ int main(){
 <tr>
 <td>E1</td>
 <td>循环条件写 <code>i * i &lt;= num</code></td>
-<td>$N$ 接近 <code>int</code> 上限时 <code>i*i</code> 溢出</td>
+<td><span class="arithmatex">\(N\)</span> 接近 <code>int</code> 上限时 <code>i*i</code> 溢出</td>
 <td>写 <code>i &lt;= num / i</code></td>
 </tr>
 <tr>
@@ -2640,9 +2640,9 @@ int main(){
 </tr>
 <tr>
 <td>E4</td>
-<td>约数个数公式写成 $\prod a_i$</td>
-<td>漏了 $+1$</td>
-<td>公式是 $\prod (a_i + 1)$</td>
+<td>约数个数公式写成 <span class="arithmatex">\(\prod a_i\)</span></td>
+<td>漏了 <span class="arithmatex">\(+1\)</span></td>
+<td>公式是 <span class="arithmatex">\(\prod (a_i + 1)\)</span></td>
 </tr>
 <tr>
 <td>E5</td>
@@ -2654,7 +2654,7 @@ int main(){
 <td>E6</td>
 <td>列举约数时把非约数算进去</td>
 <td>验证不通过</td>
-<td>逐个用 $N \div d$ 检查是否整除</td>
+<td>逐个用 <span class="arithmatex">\(N \div d\)</span> 检查是否整除</td>
 </tr>
 <tr>
 <td>E7</td>
@@ -2668,41 +2668,41 @@ int main(){
 <h2 id="_8">七、方法、套路与策略小结</h2>
 <h3 id="1_4">1. 分解质因数的套路</h3>
 <ul>
-<li><strong>定范围：</strong> 枚举范围是 $[2, \sqrt{N}]$，不是 $[2, N]$。</li>
+<li><strong>定范围：</strong> 枚举范围是 <span class="arithmatex">\([2, \sqrt{N}]\)</span>，不是 <span class="arithmatex">\([2, N]\)</span>。</li>
 <li><strong>除干净：</strong> 每个质因子用 <code>while</code> 循环除到不能整除为止，统计指数。</li>
-<li><strong>查剩余：</strong> 循环结束后若 $N &gt; 1$，剩下的就是那个唯一的大于 $\sqrt{N}$ 的质因子。</li>
+<li><strong>查剩余：</strong> 循环结束后若 <span class="arithmatex">\(N &gt; 1\)</span>，剩下的就是那个唯一的大于 <span class="arithmatex">\(\sqrt{N}\)</span> 的质因子。</li>
 <li><strong>防溢出：</strong> 循环条件用 <code>i &lt;= num / i</code>，不用 <code>i * i &lt;= num</code>。</li>
 </ul>
 <h3 id="2_3">2. 求约数个数/约数和的套路</h3>
 <ul>
-<li><strong>先分解：</strong> 先做质因数分解，得到每个 $p_i$ 和 $a_i$。</li>
-<li><strong>套公式：</strong> 约数个数套 $\prod (a_i + 1)$，约数和套 $\prod \frac{p_i^{a_i+1}-1}{p_i-1}$。</li>
+<li><strong>先分解：</strong> 先做质因数分解，得到每个 <span class="arithmatex">\(p_i\)</span> 和 <span class="arithmatex">\(a_i\)</span>。</li>
+<li><strong>套公式：</strong> 约数个数套 <span class="arithmatex">\(\prod (a_i + 1)\)</span>，约数和套 <span class="arithmatex">\(\prod \frac{p_i^{a_i+1}-1}{p_i-1}\)</span>。</li>
 <li><strong>防溢出：</strong> 约数和用 <code>long long</code>，中间结果也注意范围。</li>
 <li><strong>收尾处理：</strong> 别忘了 <code>if(num &gt; 1)</code> 的剩余质因子，指数为 1。</li>
 </ul>
 <h3 id="3_3">3. 信奥策略意识</h3>
 <ul>
-<li><strong>复杂度意识：</strong> $O(\sqrt{N})$ 的分解是数论题的基础工具，$N \leq 10^{12}$ 时 $\sqrt{N} \leq 10^6$，1 秒内能过。</li>
+<li><strong>复杂度意识：</strong> <span class="arithmatex">\(O(\sqrt{N})\)</span> 的分解是数论题的基础工具，<span class="arithmatex">\(N \leq 10^{12}\)</span> 时 <span class="arithmatex">\(\sqrt{N} \leq 10^6\)</span>，1 秒内能过。</li>
 <li><strong>数据范围意识：</strong> 约数个数和约数和都可能很大，根据题目数据范围选择 <code>int</code> 或 <code>long long</code>，必要时取模。</li>
 <li><strong>验证习惯：</strong> 算完约数个数后，可以列举验证；算完约数和后，可以暴力求和对照小数据验证。</li>
-<li><strong>公式记忆：</strong> 三个公式一脉相承，记住分解形式 $N = \prod p_i^{a_i}$，其余两个公式自然推导出来，不用死记。</li>
+<li><strong>公式记忆：</strong> 三个公式一脉相承，记住分解形式 <span class="arithmatex">\(N = \prod p_i^{a_i}\)</span>，其余两个公式自然推导出来，不用死记。</li>
 </ul>
 <h2 id="_9">八、训练题单</h2>
 <h3 id="1_5">1. 基础题目</h3>
 <ul>
-<li><a href="https://marsoj.cn/p/P1351" target="_blank">P1351. 判断素数（复习）</a></li>
-<li><a href="https://marsoj.cn/p/P1451" target="_blank">P1451. 分解质因子（唯一分解定理）</a></li>
-<li><a href="https://marsoj.cn/p/P1499" target="_blank">P1499. 不同因子个数（约数个数定理）</a></li>
-<li><a href="https://marsoj.cn/p/P1742" target="_blank">P1742. 七夕节（约数和定理）</a></li>
+<li><a href="https://marsoj.cn/p/P1351">P1351. 判断素数（复习）</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1451">P1451. 分解质因子（唯一分解定理）</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1499">P1499. 不同因子个数（约数个数定理）</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1742">P1742. 七夕节（约数和定理）</a>{:target="_blank"}</li>
 </ul>
 <h3 id="2_4">2. 拓展练习</h3>
 <ul>
-<li><a href="https://marsoj.cn/p/P2880" target="_blank">P2880. 分解质因数</a></li>
-<li><a href="https://marsoj.cn/p/P1497" target="_blank">P1497. 不同质因子的个数</a></li>
-<li><a href="https://marsoj.cn/p/P1500" target="_blank">P1500. 分解合数</a></li>
-<li><a href="https://marsoj.cn/p/P1191" target="_blank">P1191. 奇数因子</a></li>
-<li><a href="https://marsoj.cn/p/P1967" target="_blank">P1967. 正规数的判定</a></li>
-<li><a href="https://marsoj.cn/p/P1032" target="_blank">P1032. 质因数分解 NOIP2012 普及组 T1</a></li>
+<li><a href="https://marsoj.cn/p/P2880">P2880. 分解质因数</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1497">P1497. 不同质因子的个数</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1500">P1500. 分解合数</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1191">P1191. 奇数因子</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1967">P1967. 正规数的判定</a>{:target="_blank"}</li>
+<li><a href="https://marsoj.cn/p/P1032">P1032. 质因数分解 NOIP2012 普及组 T1</a>{:target="_blank"}</li>
 </ul>
 
 
@@ -2774,6 +2774,10 @@ int main(){
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

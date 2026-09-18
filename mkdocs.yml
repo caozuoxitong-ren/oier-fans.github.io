@@ -79,8 +79,6 @@ extra:
   # generator: false # 移除生成标记 Made with Material for MkDocs
 markdown_extensions:
   - attr_list
-  - pymdownx.arithmatex:
-      generic: true
 
 extra_javascript:
   - javascripts/mathjax.js

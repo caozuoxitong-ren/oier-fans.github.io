@@ -3031,9 +3031,9 @@ int main() {
 </tbody>
 </table>
 <p>合法下标范围为：</p>
-<div class="arithmatex">\[
+<p>$$
 0 \le i &lt; s.length()
-\]</div>
+$$</p>
 <p>因此最后一个字符的下标是 <code>s.length() - 1</code>。空字符串不能访问 <code>s[0]</code>。</p>
 <h3 id="3">3. 遍历每个字符</h3>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
@@ -3419,7 +3419,7 @@ int main() {
 <li>遇到分隔符，<code>current</code> 正好是一整段，存入答案并清空；</li>
 <li>循环结束后，末尾一段没有下一个分隔符触发保存，因此再保存一次即可。</li>
 </ul>
-<p>每个字符只处理一次，时间复杂度为 <span class="arithmatex">\(O(n)\)</span>，其中 <span class="arithmatex">\(n\)</span> 是字符串长度。</p>
+<p>每个字符只处理一次，时间复杂度为 $O(n)$，其中 $n$ 是字符串长度。</p>
 <hr />
 <h2 id="_6">七、典型题型一：字符串平移（循环移位）</h2>
 <h3 id="1_5">1. 左移和右移</h3>
@@ -3431,11 +3431,11 @@ int main() {
 <p>左移 <code>k</code> 位的本质是：</p>
 <pre><code class="language-text">前 k 个字符移到末尾。
 </code></pre>
-<p>若 <span class="arithmatex">\(k\)</span> 可能大于字符串长度 <span class="arithmatex">\(n\)</span>，先取：</p>
-<div class="arithmatex">\[
+<p>若 $k$ 可能大于字符串长度 $n$，先取：</p>
+<p>$$
 k \leftarrow k \bmod n
-\]</div>
-<p>因为完整移动 <span class="arithmatex">\(n\)</span> 位后，字符串恢复原状。</p>
+$$</p>
+<p>因为完整移动 $n$ 位后，字符串恢复原状。</p>
 <h3 id="2-substr">2. 左移的 <code>substr</code> 实现</h3>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 #include &lt;string&gt;
@@ -3459,7 +3459,7 @@ int main() {
 <p>输入：</p>
 <pre><code class="language-text">abcdef 8
 </code></pre>
-<p>计算：<span class="arithmatex">\(8 \bmod 6 = 2\)</span>，输出：</p>
+<p>计算：$8 \bmod 6 = 2$，输出：</p>
 <pre><code class="language-text">cdefab
 </code></pre>
 <h3 id="3_3">3. 为什么公式正确</h3>
@@ -3469,7 +3469,7 @@ int main() {
 <li>原串下标 <code>0</code> 到 <code>k - 1</code> 的字符应接到后面，即 <code>s.substr(0, k)</code>；</li>
 <li>二者按这个顺序拼接，恰好得到左移结果。</li>
 </ul>
-<p>时间复杂度为 <span class="arithmatex">\(O(n)\)</span>，因为需要构造一个长度为 <span class="arithmatex">\(n\)</span> 的新字符串。</p>
+<p>时间复杂度为 $O(n)$，因为需要构造一个长度为 $n$ 的新字符串。</p>
 <hr />
 <h2 id="_7">八、典型题型二：特殊字符串——回文字符串</h2>
 <h3 id="1_6">1. 回文的定义</h3>
@@ -3580,7 +3580,7 @@ int main() {
 <li>若相同，说明最外层这一对满足要求，两个指针向内移动；</li>
 <li>当 <code>left &gt;= right</code> 时，所有对称位置都已比较且相同，因此字符串是回文。</li>
 </ul>
-<p>每个字符至多参与一次比较，时间复杂度为 <span class="arithmatex">\(O(n)\)</span>，额外空间复杂度为 <span class="arithmatex">\(O(1)\)</span>。</p>
+<p>每个字符至多参与一次比较，时间复杂度为 $O(n)$，额外空间复杂度为 $O(1)$。</p>
 <h3 id="4_1">4. 变形：忽略大小写和非字母数字</h3>
 <p>题目若说“忽略大小写、空格和标点”，不能直接按原串比较。做法是：</p>
 <ol>
@@ -3649,7 +3649,7 @@ int main() {
 <p>输出：</p>
 <pre><code class="language-text">aabcc
 </code></pre>
-<p><code>sort</code> 的时间复杂度是 <span class="arithmatex">\(O(n \log n)\)</span>。</p>
+<p><code>sort</code> 的时间复杂度是 $O(n \log n)$。</p>
 <h3 id="2_5">2. 对多个字符串排序</h3>
 <pre><code class="language-cpp">#include &lt;algorithm&gt;
 #include &lt;iostream&gt;
@@ -3727,7 +3727,7 @@ int main() {
     return 0;
 }
 </code></pre>
-<p>它的套路是“逐个字符扫描 + 满足条件就统计”，时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
+<p>它的套路是“逐个字符扫描 + 满足条件就统计”，时间复杂度为 $O(n)$。</p>
 <h3 id="2-">2. 字符替换：把所有 <code>-</code> 改成 <code>/</code></h3>
 <pre><code class="language-cpp">for (int i = 0; i &lt; (int)s.length(); i++) {
     if (s[i] == '-') {
@@ -3758,7 +3758,7 @@ if (s == t) {
     // 是回文
 }
 </code></pre>
-<p>这种写法清楚，但额外空间为 <span class="arithmatex">\(O(n)\)</span>；双指针法只需 <span class="arithmatex">\(O(1)\)</span> 额外空间。</p>
+<p>这种写法清楚，但额外空间为 $O(n)$；双指针法只需 $O(1)$ 额外空间。</p>
 <h3 id="5">5. 数字串处理</h3>
 <p>输入 <code>"001230"</code> 时，字符串方式可以保留前导零：</p>
 <pre><code class="language-cpp">string s;
@@ -3926,7 +3926,7 @@ cin &gt;&gt; s;
 <h3 id="3_7">3. 信奥策略意识</h3>
 <ul>
 <li>读完题先写清楚字符串的下标范围：<code>0</code> 到 <code>n - 1</code>。</li>
-<li><code>string</code> 题的绝大多数基础操作可在 <span class="arithmatex">\(O(n)\)</span> 或 <span class="arithmatex">\(O(n \log n)\)</span> 内完成；不必为了小数据写复杂结构。</li>
+<li><code>string</code> 题的绝大多数基础操作可在 $O(n)$ 或 $O(n \log n)$ 内完成；不必为了小数据写复杂结构。</li>
 <li>遇到边界样例要主动验证：空串、单字符、全相同字符、首尾不同、分隔符在开头或结尾。</li>
 <li>字符串含空格时，输入方式本身就是题目的一部分；代码逻辑对了，读入错了也会 WA。</li>
 <li>提交前至少手算两类样例：一个普通样例，一个边界样例。例如回文题同时测试 <code>level</code> 与 <code>abc</code>；平移题同时测试 <code>k &lt; n</code> 与 <code>k &gt; n</code>。</li>

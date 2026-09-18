@@ -2388,6 +2388,21 @@
 
 
 
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <h1 id="03">第 03 课 差分</h1>
 <blockquote>
 <p><strong>专题定位</strong>：面向零基础信奥学生的一维差分入门。掌握“记录变化、最后还原”的核心思想。</p>
@@ -2396,32 +2411,32 @@
 <h2 id="_1">一、差分的概念与计算</h2>
 <h3 id="1">1. 数学定义</h3>
 <p>给定一维数组：</p>
-<div class="arithmatex">\[
+<p>$$
 a_1,a_2,\dots,a_n.
-\]</div>
+$$</p>
 <p>定义差分数组：</p>
-<div class="arithmatex">\[
+<p>$$
 diff_1=a_1,
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 diff_i=a_i-a_{i-1},\qquad 2\le i\le n.
-\]</div>
-<p>也可以规定 <span class="arithmatex">\(a_0=0\)</span>，统一写成：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>也可以规定 $a_0=0$，统一写成：</p>
+<p>$$
 diff_i=a_i-a_{i-1},\qquad 1\le i\le n.
-\]</div>
-<p><code>diff[i]</code> 表示从第 <span class="arithmatex">\(i-1\)</span> 项到第 <span class="arithmatex">\(i\)</span> 项时，数值发生了多少变化。</p>
+$$</p>
+<p><code>diff[i]</code> 表示从第 $i-1$ 项到第 $i$ 项时，数值发生了多少变化。</p>
 <p>例如：</p>
 <pre><code class="language-text">原数组：   3  3  5  8  8
 差分数组： 3  0  2  3  0
 </code></pre>
 <p>因为：</p>
-<div class="arithmatex">\[
+<p>$$
 diff_1=3,\quad diff_2=3-3=0,\quad diff_3=5-3=2,
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 diff_4=8-5=3,\quad diff_5=8-8=0.
-\]</div>
+$$</p>
 <blockquote>
 <p><strong>一句话理解</strong>：原数组记录“每个位置是多少”，差分数组记录“从前一个位置走到这里变化了多少”。</p>
 </blockquote>
@@ -2448,13 +2463,13 @@ for (int i = 1; i &lt;= n; i++) {
 </code></pre>
 <h3 id="3">3. 由差分恢复原数组</h3>
 <p>由定义：</p>
-<div class="arithmatex">\[
+<p>$$
 diff_i=a_i-a_{i-1}.
-\]</div>
+$$</p>
 <p>移项得到：</p>
-<div class="arithmatex">\[
+<p>$$
 a_i=a_{i-1}+diff_i.
-\]</div>
+$$</p>
 <p>所以从左到右累加差分即可恢复：</p>
 <pre><code class="language-cpp">long long current = 0;
 for (int i = 1; i &lt;= n; i++) {
@@ -2463,18 +2478,18 @@ for (int i = 1; i &lt;= n; i++) {
 }
 </code></pre>
 <p>数学上：</p>
-<div class="arithmatex">\[
+<p>$$
 a_i=\sum_{k=1}^{i}diff_k.
-\]</div>
+$$</p>
 <p>证明：</p>
-<div class="arithmatex">\[
+<p>$$
 \begin{aligned}
 \sum_{k=1}^{i}diff_k
-&amp;=a_1+(a_2-a_1)+(a_3-a_2)+\dots+(a_i-a_{i-1})\\
+&amp;=a_1+(a_2-a_1)+(a_3-a_2)+\dots+(a_i-a_{i-1})\
 &amp;=a_i.
 \end{aligned}
-\]</div>
-<p>中间项全部抵消，只剩下 <span class="arithmatex">\(a_i\)</span>。</p>
+$$</p>
+<p>中间项全部抵消，只剩下 $a_i$。</p>
 <h3 id="4">4. 复杂度</h3>
 <table>
 <thead>
@@ -2487,28 +2502,28 @@ a_i=\sum_{k=1}^{i}diff_k.
 <tbody>
 <tr>
 <td>构造差分数组</td>
-<td style="text-align: right;"><span class="arithmatex">\(O(n)\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: right;">$O(n)$</td>
+<td style="text-align: right;">$O(n)$</td>
 </tr>
 <tr>
 <td>恢复原数组</td>
-<td style="text-align: right;"><span class="arithmatex">\(O(n)\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(O(1)\)</span>（直接覆盖原数组时）</td>
+<td style="text-align: right;">$O(n)$</td>
+<td style="text-align: right;">$O(1)$（直接覆盖原数组时）</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="_2">二、区间修改的原理</h2>
 <h3 id="1_1">1. 问题形式</h3>
-<p>现在要把区间 <span class="arithmatex">\([L,R]\)</span> 中的每个数都增加 <span class="arithmatex">\(K\)</span>：</p>
-<div class="arithmatex">\[
+<p>现在要把区间 $[L,R]$ 中的每个数都增加 $K$：</p>
+<p>$$
 a_L,a_{L+1},\dots,a_R
-\]</div>
+$$</p>
 <p>同时变成：</p>
-<div class="arithmatex">\[
+<p>$$
 a_L+K,a_{L+1}+K,\dots,a_R+K.
-\]</div>
-<p>如果直接修改原数组，需要循环访问 <span class="arithmatex">\(L\)</span> 到 <span class="arithmatex">\(R\)</span> 的每一个位置，单次操作复杂度为 <span class="arithmatex">\(O(R-L+1)\)</span>。</p>
+$$</p>
+<p>如果直接修改原数组，需要循环访问 $L$ 到 $R$ 的每一个位置，单次操作复杂度为 $O(R-L+1)$。</p>
 <p>差分的想法是：不立即修改区间内的每个数，而是记录这次变化的<strong>开始位置</strong>和<strong>结束位置</strong>。</p>
 <h3 id="2_1">2. 两个端点的关键操作</h3>
 <p>只需修改：</p>
@@ -2517,11 +2532,11 @@ diff[R + 1] -= K;
 </code></pre>
 <p>含义是：</p>
 <ul>
-<li>从第 <span class="arithmatex">\(L\)</span> 项开始，后面的恢复值整体多出 <span class="arithmatex">\(K\)</span>；</li>
-<li>从第 <span class="arithmatex">\(R+1\)</span> 项开始，把多出的 <span class="arithmatex">\(K\)</span> 抵消掉。</li>
+<li>从第 $L$ 项开始，后面的恢复值整体多出 $K$；</li>
+<li>从第 $R+1$ 项开始，把多出的 $K$ 抵消掉。</li>
 </ul>
 <blockquote>
-<p><strong>注意</strong>: 因为修改第n个元素时，需要用到 <span class="arithmatex">\(diff[n + 1]\)</span> ,此处用到了下标 <span class="arithmatex">\(n + 1\)</span> ，所以差分数组一般会开辟 <span class="arithmatex">\(n + 2\)</span>个空间，如 <code>int diff[N+2]={}</code>. </p>
+<p><strong>注意</strong>: 因为修改第n个元素时，需要用到 $diff[n + 1]$ ,此处用到了下标 $n + 1$ ，所以差分数组一般会开辟 $n + 2$个空间，如 <code>int diff[N+2]={}</code>. </p>
 </blockquote>
 <h3 id="3_1">3. 端点示意图</h3>
 <pre><code class="language-text">                      从这里开始 +K    从这里开始 -K
@@ -2537,10 +2552,10 @@ diff[R+1] -= K：                          -K -K -K -K
 效果叠加后，只有区间 [L,R] 中的元素受到了“修改”效果。
 </code></pre>
 <h3 id="4_1">4. 为什么能覆盖整个区间</h3>
-<p>设修改后的差分为 <span class="arithmatex">\(diff'\)</span>，恢复后的数组为 <span class="arithmatex">\(a'\)</span>。由于恢复过程是前缀和：</p>
-<div class="arithmatex">\[
-a^{\prime}_i = \sum_{k=1}^{i} \mathrm{diff}^{\prime}_k.
-\]</div>
+<p>设修改后的差分为 $newdiff$，恢复后的数组为 $newa$。由于恢复过程是前缀和：</p>
+<p>$$
+newa_i = \sum_{k=1}^{i} \mathrm{newdiff}_k
+$$</p>
 <p>分三种情况：</p>
 <table>
 <thead>
@@ -2552,28 +2567,28 @@ a^{\prime}_i = \sum_{k=1}^{i} \mathrm{diff}^{\prime}_k.
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\(i&lt;L\)</span></td>
+<td>$i&lt;L$</td>
 <td>还没有遇到 <code>+K</code></td>
-<td><span class="arithmatex">\(a'_i=a_i\)</span></td>
+<td>$a'_i=a_i$</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(L\le i\le R\)</span></td>
+<td>$L\le i\le R$</td>
 <td>已遇到 <code>+K</code>，还没有遇到 <code>-K</code></td>
-<td><span class="arithmatex">\(a'_i=a_i+K\)</span></td>
+<td>$a'_i=a_i+K$</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(i\ge R+1\)</span></td>
+<td>$i\ge R+1$</td>
 <td><code>+K</code> 和 <code>-K</code> 都遇到了</td>
-<td><span class="arithmatex">\(a'_i=a_i+K-K=a_i\)</span></td>
+<td>$a'_i=a_i+K-K=a_i$</td>
 </tr>
 </tbody>
 </table>
-<p>因此，只有 <span class="arithmatex">\([L,R]\)</span> 内的元素增加了 <span class="arithmatex">\(K\)</span>。</p>
+<p>因此，只有 $[L,R]$ 内的元素增加了 $K$。</p>
 <blockquote>
 <p><strong>必须记住</strong>：</p>
-<div class="arithmatex">\[
+<p>$$
 diff[L]\mathrel{+}=K,\qquad diff[R+1]\mathrel{-}=K.
-\]</div>
+$$</p>
 <p>数组通常开到 <code>n + 2</code>，保证 <code>R + 1</code> 可以安全访问。</p>
 </blockquote>
 <h3 id="5">5. 与前缀和的区别</h3>
@@ -2602,7 +2617,7 @@ diff[L]\mathrel{+}=K,\qquad diff[R+1]\mathrel{-}=K.
 <h2 id="_3">三、差分的应用</h2>
 <h3 id="1_2">1. 区间修改问题</h3>
 <h4 id="1_3">（1）题目模型</h4>
-<p>给定 <span class="arithmatex">\(n\)</span> 个整数，之后进行 <span class="arithmatex">\(q\)</span> 次修改。每次给出 <span class="arithmatex">\(L,R,K\)</span>，使区间 <span class="arithmatex">\([L,R]\)</span> 中所有数增加 <span class="arithmatex">\(K\)</span>。最后输出最终数组。</p>
+<p>给定 $n$ 个整数，之后进行 $q$ 次修改。每次给出 $L,R,K$，使区间 $[L,R]$ 中所有数增加 $K$。最后输出最终数组。</p>
 <h4 id="2_2">（2）解题步骤</h4>
 <ol>
 <li>先构造原数组的差分；</li>
@@ -2659,58 +2674,58 @@ int main() {
     return 0;
 }
 </code></pre>
-<p>时间复杂度为 <span class="arithmatex">\(O(n+q)\)</span>，空间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
+<p>时间复杂度为 $O(n+q)$，空间复杂度为 $O(n)$。</p>
 <blockquote>
 <p><strong>这一题就是差分的标准模板。</strong></p>
 </blockquote>
 <h3 id="2_3">2. 序列增减问题</h3>
 <h4 id="1_4">（1）题目模型</h4>
-<p>给定一个数列。每次可以选择一个区间，使区间内所有数同时加 <span class="arithmatex">\(1\)</span> 或同时减 <span class="arithmatex">\(1\)</span>。求：</p>
+<p>给定一个数列。每次可以选择一个区间，使区间内所有数同时加 $1$ 或同时减 $1$。求：</p>
 <ol>
 <li>使整个数列变成相同的数，最少需要多少次操作；</li>
 <li>在最少操作次数下，最终可能得到多少种不同的相同数列。</li>
 </ol>
 <h4 id="2_4">（2）转化为相邻差分</h4>
 <p>定义：</p>
-<div class="arithmatex">\[
+<p>$$
 diff_i=a_i-a_{i-1},\qquad 2\le i\le n.
-\]</div>
-<p>数列全部相同时，所有相邻差分必须为 <span class="arithmatex">\(0\)</span>。</p>
-<p>一次区间加 <span class="arithmatex">\(1\)</span>，只会影响区间左端和右端后一位：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>数列全部相同时，所有相邻差分必须为 $0$。</p>
+<p>一次区间加 $1$，只会影响区间左端和右端后一位：</p>
+<p>$$
 diff_l\mathrel{+}=1,\qquad diff_{r+1}\mathrel{-}=1.
-\]</div>
-<p>因此，这道题可以理解为：把所有相邻差分逐渐消成 <span class="arithmatex">\(0\)</span>。</p>
+$$</p>
+<p>因此，这道题可以理解为：把所有相邻差分逐渐消成 $0$。</p>
 <h4 id="3_3">（3）正差额与负差额</h4>
 <p>统计：</p>
-<div class="arithmatex">\[
+<p>$$
 positive=\sum_{i=2}^{n}\max(diff_i,0),
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 negative=\sum_{i=2}^{n}\max(-diff_i,0).
-\]</div>
-<p>对于 <span class="arithmatex">\([2,n]\)</span> 中的每个 <code>diff[i]</code>：</p>
+$$</p>
+<p>对于 $[2,n]$ 中的每个 <code>diff[i]</code>：</p>
 <ul>
 <li>优先匹配正差额和负差额。一次操作可以同时配对消掉一份正差额和一份负差额，匹配次数为 <code>min(positive, negative)</code>；</li>
-<li>剩余的只有正差额或负差额，需要单独处理。修改 <code>diff[1]</code> 或 <code>diff[n+1]</code> 不影响最终序列是否相等，因此可以选择 <span class="arithmatex">\([1,i]\)</span> 或 <span class="arithmatex">\([i,n]\)</span> 来消掉剩余差额；</li>
+<li>剩余的只有正差额或负差额，需要单独处理。修改 <code>diff[1]</code> 或 <code>diff[n+1]</code> 不影响最终序列是否相等，因此可以选择 $[1,i]$ 或 $[i,n]$ 来消掉剩余差额；</li>
 <li>综上，最少操作数为：</li>
 </ul>
-<div class="arithmatex">\[
+<p>$$
 min(positive,negative)+|positive-negative|=max(positive,negative).
-\]</div>
+$$</p>
 <p>在最少操作下，单独的正差额或负差额可选择落在最终公共值的不同方向上，因此最终公共值的可能数量为：</p>
-<div class="arithmatex">\[
+<p>$$
 |positive-negative|+1.
-\]</div>
+$$</p>
 <p>例如：</p>
 <pre><code class="language-text">数列：1 1 2 2
 差分：0 1 0
 </code></pre>
 <ul>
-<li>把 <span class="arithmatex">\([3,4]\)</span> 减 <span class="arithmatex">\(1\)</span>，得到 <code>1 1 1 1</code>；</li>
-<li>把 <span class="arithmatex">\([1,2]\)</span> 加 <span class="arithmatex">\(1\)</span>，得到 <code>2 2 2 2</code>。</li>
+<li>把 $[3,4]$ 减 $1$，得到 <code>1 1 1 1</code>；</li>
+<li>把 $[1,2]$ 加 $1$，得到 <code>2 2 2 2</code>。</li>
 </ul>
-<p>此时 <code>positive = 1</code>、<code>negative = 0</code>。所以最少操作数为 <span class="arithmatex">\(1\)</span>，最终结果有 <span class="arithmatex">\(2\)</span> 种。</p>
+<p>此时 <code>positive = 1</code>、<code>negative = 0</code>。所以最少操作数为 $1$，最终结果有 $2$ 种。</p>
 <h4 id="4_2">（4）完整代码</h4>
 <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
@@ -2746,15 +2761,15 @@ int main() {
     return 0;
 }
 </code></pre>
-<p>时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。代码只统计相邻差分，不需要模拟每次区间操作。</p>
+<p>时间复杂度为 $O(n)$。代码只统计相邻差分，不需要模拟每次区间操作。</p>
 <h3 id="3_4">3. 定长区间修改问题</h3>
 <h4 id="1_5">（1）题目模型</h4>
-<p>有 <span class="arithmatex">\(n\)</span> 个灯，初始状态和目标状态都是由 <code>0</code>、<code>1</code> 组成的字符串。每次只能翻转一个长度固定为 <span class="arithmatex">\(m\)</span> 的连续区间：</p>
+<p>有 $n$ 个灯，初始状态和目标状态都是由 <code>0</code>、<code>1</code> 组成的字符串。每次只能翻转一个长度固定为 $m$ 的连续区间：</p>
 <ul>
 <li><code>0</code> 变成 <code>1</code>；</li>
 <li><code>1</code> 变成 <code>0</code>。</li>
 </ul>
-<p>求最少翻转次数；如果无法完成，输出 <span class="arithmatex">\(-1\)</span>。</p>
+<p>求最少翻转次数；如果无法完成，输出 $-1$。</p>
 <h4 id="2_5">（2）转化为异或差分</h4>
 <p>先比较初始串和目标串：</p>
 <ul>
@@ -2762,20 +2777,20 @@ int main() {
 <li>不同的位置记为 <code>need = 1</code>。</li>
 </ul>
 <p>当前位置被翻转奇数次就能改变状态，被翻转偶数次则等于没有改变。因此这里使用异或：</p>
-<div class="arithmatex">\[
+<p>$$
 1\oplus1=0.
-\]</div>
-<p>当从位置 <span class="arithmatex">\(i\)</span> 开始翻转长度为 <span class="arithmatex">\(m\)</span> 的区间时：</p>
+$$</p>
+<p>当从位置 $i$ 开始翻转长度为 $m$ 的区间时：</p>
 <pre><code class="language-cpp">flip[i] ^= 1;
 flip[i + m] ^= 1;
 </code></pre>
-<p>表示翻转效果从 <span class="arithmatex">\(i\)</span> 开始生效，从 <span class="arithmatex">\(i+m\)</span> 开始失效。</p>
+<p>表示翻转效果从 $i$ 开始生效，从 $i+m$ 开始失效。</p>
 <h4 id="3_5">（3）为什么必须从左到右贪心</h4>
-<p>扫描到位置 <span class="arithmatex">\(i\)</span> 时，起点大于 <span class="arithmatex">\(i\)</span> 的长度为 <span class="arithmatex">\(m\)</span> 的区间已经无法覆盖位置 <span class="arithmatex">\(i\)</span>。因此：</p>
+<p>扫描到位置 $i$ 时，起点大于 $i$ 的长度为 $m$ 的区间已经无法覆盖位置 $i$。因此：</p>
 <ul>
-<li>如果当前位置已经匹配，就不能再从 <span class="arithmatex">\(i\)</span> 翻转；</li>
-<li>如果当前位置不匹配，就必须从 <span class="arithmatex">\(i\)</span> 开始翻转；</li>
-<li>如果剩余长度不足 <span class="arithmatex">\(m\)</span>，则一定无解。</li>
+<li>如果当前位置已经匹配，就不能再从 $i$ 翻转；</li>
+<li>如果当前位置不匹配，就必须从 $i$ 开始翻转；</li>
+<li>如果剩余长度不足 $m$，则一定无解。</li>
 </ul>
 <blockquote>
 <p><strong>贪心正确性</strong>：当前位置的决定被题目强制，无法留给后面的位置补救；因此从左到右的选择不仅可行，而且是最优的。</p>
@@ -2787,7 +2802,7 @@ flip[i + m] ^= 1;
 第 2 到第 4 个灯翻转一次：
 10101 → 11011
 </code></pre>
-<p>答案为 <span class="arithmatex">\(1\)</span>。</p>
+<p>答案为 $1$。</p>
 <h4 id="5_1">（5）完整代码</h4>
 <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
@@ -2835,7 +2850,7 @@ int main() {
     return 0;
 }
 </code></pre>
-<p>时间复杂度为 <span class="arithmatex">\(O(n)\)</span>，空间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
+<p>时间复杂度为 $O(n)$，空间复杂度为 $O(n)$。</p>
 <hr />
 <h2 id="_4">四、常见错误与注意事项</h2>
 <table>
@@ -2851,13 +2866,13 @@ int main() {
 <tr>
 <td>1</td>
 <td>把 <code>diff[R + 1] -= K</code> 写成 <code>diff[R] -= K</code></td>
-<td>第 <span class="arithmatex">\(R\)</span> 项被提前取消</td>
-<td>结束位置是 <span class="arithmatex">\(R+1\)</span></td>
+<td>第 $R$ 项被提前取消</td>
+<td>结束位置是 $R+1$</td>
 </tr>
 <tr>
 <td>2</td>
 <td>差分数组没有多开一位</td>
-<td><span class="arithmatex">\(R=n\)</span> 时访问越界</td>
+<td>$R=n$ 时访问越界</td>
 <td>使用 <code>n + 2</code></td>
 </tr>
 <tr>
@@ -2874,7 +2889,7 @@ int main() {
 </tr>
 <tr>
 <td>5</td>
-<td>固定长度翻转中，剩余长度不足 <span class="arithmatex">\(m\)</span> 仍然翻转</td>
+<td>固定长度翻转中，剩余长度不足 $m$ 仍然翻转</td>
 <td>区间越界</td>
 <td>输出 <code>-1</code></td>
 </tr>
@@ -2900,10 +2915,10 @@ int main() {
 </ul>
 <h3 id="2_6">2. 序列增减问题</h3>
 <ul>
-<li>把“所有数相同”转化为“相邻差分全部为 <span class="arithmatex">\(0\)</span>”；</li>
+<li>把“所有数相同”转化为“相邻差分全部为 $0$”；</li>
 <li>统计正差额总量和负差额总量；</li>
 <li>最少操作数为两者最大值；</li>
-<li>最终结果种数为两者差的绝对值加 <span class="arithmatex">\(1\)</span>。</li>
+<li>最终结果种数为两者差的绝对值加 $1$。</li>
 </ul>
 <h3 id="3_6">3. 定长区间修改问题</h3>
 <ul>

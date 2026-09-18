@@ -2716,7 +2716,7 @@
 <tr>
 <td><code>vector</code></td>
 <td>动态数组</td>
-<td>按下标访问 <span class="arithmatex">\(O(1)\)</span>，尾部增删均摊 <span class="arithmatex">\(O(1)\)</span></td>
+<td>按下标访问 $O(1)$，尾部增删均摊 $O(1)$</td>
 <td>可变长数组</td>
 </tr>
 <tr>
@@ -2751,7 +2751,7 @@
 </tr>
 </tbody>
 </table>
-<p>本课重点讲 <code>map</code> 和 <code>set</code>。它们底层都是平衡二叉搜索树，对查找、插入和删除等按 key/元素的操作，时间复杂度通常为 <span class="arithmatex">\(O(\log n)\)</span>。</p>
+<p>本课重点讲 <code>map</code> 和 <code>set</code>。它们底层都是平衡二叉搜索树，对查找、插入和删除等按 key/元素的操作，时间复杂度通常为 $O(\log n)$。</p>
 <hr />
 <h2 id="map">二、map：有序键值对容器</h2>
 <h3 id="1-map">1. map 是什么</h3>
@@ -2780,11 +2780,11 @@ map&lt;string, int&gt; mp;  // 字符串 → 整数，可用于统计每个单�
 </tr>
 <tr>
 <td>按键访问</td>
-<td><code>mp[key]</code> 用 key 查找或创建元素，复杂度为 <span class="arithmatex">\(O(\log n)\)</span>，不是 <span class="arithmatex">\(O(1)\)</span> 随机访问。</td>
+<td><code>mp[key]</code> 用 key 查找或创建元素，复杂度为 $O(\log n)$，不是 $O(1)$ 随机访问。</td>
 </tr>
 <tr>
 <td>复杂度</td>
-<td><code>find</code>、<code>count</code>、<code>insert</code>、<code>erase(key)</code> 的复杂度一般为 <span class="arithmatex">\(O(\log n)\)</span>。</td>
+<td><code>find</code>、<code>count</code>、<code>insert</code>、<code>erase(key)</code> 的复杂度一般为 $O(\log n)$。</td>
 </tr>
 </tbody>
 </table>
@@ -3068,43 +3068,43 @@ for (const pair&lt;const string, int&gt;&amp; p : mp) {
 <td>元素个数</td>
 <td><code>mp.size()</code></td>
 <td>元素数量</td>
-<td><span class="arithmatex">\(O(1)\)</span></td>
+<td>$O(1)$</td>
 </tr>
 <tr>
 <td>判空</td>
 <td><code>mp.empty()</code></td>
 <td><code>bool</code></td>
-<td><span class="arithmatex">\(O(1)\)</span></td>
+<td>$O(1)$</td>
 </tr>
 <tr>
 <td>统计</td>
 <td><code>mp.count(key)</code></td>
 <td><code>0</code> 或 <code>1</code></td>
-<td><span class="arithmatex">\(O(\log n)\)</span></td>
+<td>$O(\log n)$</td>
 </tr>
 <tr>
 <td>查找</td>
 <td><code>mp.find(key)</code></td>
 <td>迭代器</td>
-<td><span class="arithmatex">\(O(\log n)\)</span></td>
+<td>$O(\log n)$</td>
 </tr>
 <tr>
 <td>清空</td>
 <td><code>mp.clear()</code></td>
 <td>删除所有元素</td>
-<td><span class="arithmatex">\(O(n)\)</span></td>
+<td>$O(n)$</td>
 </tr>
 <tr>
 <td>下界</td>
 <td><code>mp.lower_bound(key)</code></td>
 <td>第一个不小于 key 的迭代器</td>
-<td><span class="arithmatex">\(O(\log n)\)</span></td>
+<td>$O(\log n)$</td>
 </tr>
 <tr>
 <td>上界</td>
 <td><code>mp.upper_bound(key)</code></td>
 <td>第一个大于 key 的迭代器</td>
-<td><span class="arithmatex">\(O(\log n)\)</span></td>
+<td>$O(\log n)$</td>
 </tr>
 </tbody>
 </table>
@@ -3260,7 +3260,7 @@ for (set&lt;int&gt;::iterator it = s2.begin(); it != s2.end(); it++) {
 </tr>
 <tr>
 <td>复杂度</td>
-<td><code>insert</code>、<code>erase</code>、<code>find</code>、<code>count</code> 一般为 <span class="arithmatex">\(O(\log n)\)</span></td>
+<td><code>insert</code>、<code>erase</code>、<code>find</code>、<code>count</code> 一般为 $O(\log n)$</td>
 </tr>
 </tbody>
 </table>

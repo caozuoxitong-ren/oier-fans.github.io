@@ -6,28 +6,28 @@ nav:
   - 首页: index.md
   - C++语法基础:
       - C1阶段:
-          - 01 程序设计入门: 信息学奥赛/C++语法基础/C1_01_程序设计入门.md
-          - 02 变量及其输入输出: 信息学奥赛/C++语法基础/C1_02_变量及其输入输出.md
-          - 03 比较运算符与if语句: 信息学奥赛/C++语法基础/C1_03_分支语句与比较运算符.md
-          - 04 分支嵌套与逻辑运算符: 信息学奥赛/C++语法基础/C1_04_分支嵌套与逻辑运算符.md
-          - 05_for循环: 信息学奥赛/C++语法基础/C1_05_for循环.md
-          - 06_while循环和do-while循环: 信息学奥赛/C++语法基础/C1_06_while循环与do-while循环.md
-          - 07_循环读入: 信息学奥赛/C++语法基础/C1_07_循环读入.md
-          - 08_数组: 信息学奥赛/C++语法基础/C1_08_数组.md
-          - 09_循环与分支: 信息学奥赛/C++语法基础/C1_09_循环与分支.md
-          - 10_循环嵌套: 信息学奥赛/C++语法基础/C1_10_循环嵌套.md
-          - 11_数位拆分专题: 信息学奥赛/C++语法基础/C1_11_数位拆分专题.md
-          - 12_标记法专题: 信息学奥赛/C++语法基础/C1_12_标记法专题.md
+          - C1-01 程序设计入门: 信息学奥赛/C++语法基础/C1_01_程序设计入门.md
+          - C1-02 变量及其输入输出: 信息学奥赛/C++语法基础/C1_02_变量及其输入输出.md
+          - C1-03 比较运算符与if语句: 信息学奥赛/C++语法基础/C1_03_分支语句与比较运算符.md
+          - C1-04 分支嵌套与逻辑运算符: 信息学奥赛/C++语法基础/C1_04_分支嵌套与逻辑运算符.md
+          - C1-05 for循环: 信息学奥赛/C++语法基础/C1_05_for循环.md
+          - C1-06 while和do-while循环: 信息学奥赛/C++语法基础/C1_06_while循环与do-while循环.md
+          - C1-07 循环读入: 信息学奥赛/C++语法基础/C1_07_循环读入.md
+          - C1-08 数组: 信息学奥赛/C++语法基础/C1_08_数组.md
+          - C1-09 循环与分支: 信息学奥赛/C++语法基础/C1_09_循环与分支.md
+          - C1-10 循环嵌套: 信息学奥赛/C++语法基础/C1_10_循环嵌套.md
+          - C1-11 数位拆分专题: 信息学奥赛/C++语法基础/C1_11_数位拆分专题.md
+          - C1-12 标记法专题: 信息学奥赛/C++语法基础/C1_12_标记法专题.md
       - C2阶段:
           - C2-01 字符串与string: 信息学奥赛/C++语法基础/C2-01_字符串与string.md
   - CSP-J入门组:
-      - 01_STL进阶: 信息学奥赛/CSP-J入门组/J1-01_STL进阶.md
-      - 02_前缀和: 信息学奥赛/CSP-J入门组/J1-02_前缀和.md
-      - 03_差分: 信息学奥赛/CSP-J入门组/J1-03_差分.md
-      - 04_唯一分解定理: 信息学奥赛/CSP-J入门组/J1-04_唯一分解定理.md
-      - 06_欧几里得算法: 信息学奥赛/CSP-J入门组/J1-06_欧几里得算法.md
-      - 11_链表: 信息学奥赛/CSP-J入门组/J1-11_链表.md
-      - 14_二分查找: 信息学奥赛/CSP-J入门组/J1-14_二分查找.md
+      - J1-01 STL进阶: 信息学奥赛/CSP-J入门组/J1-01_STL进阶.md
+      - J1-02 前缀和: 信息学奥赛/CSP-J入门组/J1-02_前缀和.md
+      - J1-03 差分: 信息学奥赛/CSP-J入门组/J1-03_差分.md
+      - J1-04 唯一分解定理: 信息学奥赛/CSP-J入门组/J1-04_唯一分解定理.md
+      - J1-06 欧几里得算法: 信息学奥赛/CSP-J入门组/J1-06_欧几里得算法.md
+      - J1-11 链表: 信息学奥赛/CSP-J入门组/J1-11_链表.md
+      - J1-14 二分查找: 信息学奥赛/CSP-J入门组/J1-14_二分查找.md
   - C++参考手册: 
       - 复合数据类型:
           - 指针: reference/compound_data_type/pointer.md
@@ -38,54 +38,98 @@ nav:
           - 友元与继承: reference/class/friendship_and_inheritance.md
           - 多态: reference/class/polymorphism.md
 
-  # - 数学问题:
-  #   - 素数的判定: math/素数的判定.md
-  #   - 欧拉函数: math/euler-function.md
   # - OJ平台: http://101.42.90.238/ 
 
-
-# Theme 主题设置
+# ===== 主题设置 =====
 theme:
+  # 使用 Material for MkDocs 主题
   name: material
+
+  # 主题功能开关
   features:
+    # 顶部导航栏以标签页形式展示（适合栏目较多的站点）
     - navigation.tabs
+    # 默认展开左侧导航栏中的所有子项
     - navigation.expand
+
+  # 界面语言设为中文
   language: 'zh'
+
+  # 字体设置
   font:
+    # 正文字体
     text: 'Fira Sans'
+    # 代码块字体
     code: 'Fira Mono'
-  palette: # 白天模式/黑夜模式
-    # Toggle light mode
-    - scheme: default
-      primary: white
-      accent: red
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to dark mode
-    # Toggle dark mode
-    - scheme: slate
-      primary: black
-      accent: teal
-      toggle:
-        icon: material/weather-night
-        name: Switch to light mode
 
-# 设置底部
-copyright: 'Copyright &copy; 2024 - 2026 oier.fans All Rights Reserved.'
+  # 配色方案（日间 / 夜间模式）
+  palette:
+    # --- 日间模式 ---
+    - scheme: default          # default 表示浅色主题
+      primary: white           # 主色调：白色
+      accent: red              # 强调色：红色
+      toggle:
+        icon: material/weather-sunny   # 切换按钮图标（太阳）
+        name: Switch to dark mode      # 鼠标悬停提示文字
+
+    # --- 夜间模式 ---
+    - scheme: slate            # slate 表示深色主题
+      primary: black           # 主色调：黑色
+      accent: teal             # 强调色：青色
+      toggle:
+        icon: material/weather-night   # 切换按钮图标（月亮）
+        name: Switch to light mode     # 鼠标悬停提示文字
+
+# ===== 底部版权信息 =====
+copyright: 'Copyright &copy; 2025 - present oier.fans All Rights Reserved.'
+
+# ===== 额外配置 =====
 extra:
+  # 社交链接（显示在页面底部或侧边）
   social:
-    - icon: fontawesome/solid/paper-plane
-      link: mailto:<admin@oier.fans>
-      name: 联系邮箱
-  # generator: false # 移除生成标记 Made with Material for MkDocs
+    - icon: fontawesome/solid/paper-plane   # 使用 FontAwesome 的纸飞机图标
+      link: mailto:<admin@oier.fans>        # 点击后打开邮件客户端
+      name: 联系邮箱                         # 链接的提示文字
 
-# 设置数学公式支持
+  # 如果取消下面这行的注释，页面底部将不再显示
+  # “Made with Material for MkDocs” 的生成标记
+  # generator: false
+
+# 这里配置所有要启用的 Markdown 扩展
 markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
-      tex_inline_wrap: ['\(', '\)', '$', '$']
-      tex_block_wrap: ['\[', '\]', '$$', '$$']
+  # 允许在 Markdown 中使用属性列表，例如：
+  # [链接](https://example.com){: target="_blank" rel="noopener" }
+  # 也可以给标题、代码块等元素添加 class、id 等属性
+  - attr_list
 
+  # 启用数学公式支持，使用 pymdownx.arithmatex 扩展
+  - pymdownx.arithmatex:
+      # generic: true 表示输出通用的数学标记，不绑定特定渲染器，
+      # 由前端 MathJax（或 KaTeX）负责最终渲染
+      generic: true
+      # 定义行内公式的分隔符，成对出现：开始符和结束符。
+      # 这里同时支持 \( ... \) 和 $ ... $ 两种写法
+      tex_inline_wrap: ['\(', '\)', '$', '$']
+      # 定义块级公式的分隔符，成对出现：开始符和结束符。
+      # 这里同时支持 \[ ... \] 和 $$ ... $$ 两种写法
+      tex_block_wrap: ['\[', '\]', '$$', '$$']
+  
+  # 代码块增强，Mermaid 依赖它来识别自定义代码块
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+# 额外加载的 JavaScript 文件，按顺序加载
 extra_javascript:
+  # 先加载自定义的 MathJax 配置脚本（位于 docs/javascripts/mathjax.js）
   - javascripts/mathjax.js
+  # 再加载 MathJax 主库（从 CDN 获取）。
+  # 顺序不能反：必须先加载配置，再加载主库，否则配置不生效。
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+  # 加入 Mermaid 的加载脚本
+  - javascripts/mermaid.js
+  - javascripts/mermaid.min.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

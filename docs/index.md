@@ -1,6 +1,4 @@
-<p style="text-align: justify; margin-bottom: 1em;">
-欢迎来到 <b>OIer Fans</b> ！本站内容基于<a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.zh-hans" target="_blank"><b>CC BY-SA 4.0</b></a> 协议发布。
-</p>
+欢迎来到 **信奥爱好者** **OIer Fans** ！本站内容基于 [**CC BY-SA 4.0**](https://creativecommons.org/licenses/by-sa/4.0/legalcode.zh-hans) 协议发布。
 
 <div style="position: relative; text-align: center; width: fit-content; max-width: 100%; margin: 0 auto;">
   <img id="rainImage" src="/OI.jpeg" alt="oier.fans" style="display: block; width: 100%; height: auto; border-radius: 8px;" />

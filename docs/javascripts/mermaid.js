@@ -6,7 +6,12 @@ function initMermaid() {
   mermaid.initialize({
     startOnLoad: false,
     theme: "default",
-    securityLevel: "loose"
+    securityLevel: "loose",
+    flowchart: {
+      padding: 6,  // 默认值通常是 15 或 20，可以改为 8 或更小
+      nodeSpacing: 30,   // 可选：调整节点之间的垂直间距
+      rankSpacing: 40    // 可选：调整层级之间的水平间距
+    }
   });
 
   // 渲染所有 class="mermaid" 的代码块

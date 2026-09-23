@@ -10,8 +10,8 @@ nav:
           - C1-02 变量及其输入输出: 信息学奥赛/C++语法基础/C1_02_变量及其输入输出.md
           - C1-03 比较运算符与if语句: 信息学奥赛/C++语法基础/C1_03_分支语句与比较运算符.md
           - C1-04 分支嵌套与逻辑运算符: 信息学奥赛/C++语法基础/C1_04_分支嵌套与逻辑运算符.md
-          - C1-05 for循环: 信息学奥赛/C++语法基础/C1_05_for循环.md
-          - C1-06 while和do-while循环: 信息学奥赛/C++语法基础/C1_06_while循环与do-while循环.md
+          - C1-05 while和do-while循环: 信息学奥赛/C++语法基础/C1_05_while与do-while循环.md
+          - C1-06 for循环: 信息学奥赛/C++语法基础/C1_06_for循环.md
           - C1-07 循环读入: 信息学奥赛/C++语法基础/C1_07_循环读入.md
           - C1-08 数组: 信息学奥赛/C++语法基础/C1_08_数组.md
           - C1-09 循环与分支: 信息学奥赛/C++语法基础/C1_09_循环与分支.md
@@ -28,15 +28,15 @@ nav:
       - J1-06 欧几里得算法: 信息学奥赛/CSP-J入门组/J1-06_欧几里得算法.md
       - J1-11 链表: 信息学奥赛/CSP-J入门组/J1-11_链表.md
       - J1-14 二分查找: 信息学奥赛/CSP-J入门组/J1-14_二分查找.md
-  - C++参考手册: 
-      - 复合数据类型:
-          - 指针: reference/compound_data_type/pointer.md
-      - 类:
-          - 类基础与构造函数: reference/class/class_basics.md
-          - 运算符重载与类模板: reference/class/operator_overloading.md
-          - 类的特殊成员: reference/class/special_members.md
-          - 友元与继承: reference/class/friendship_and_inheritance.md
-          - 多态: reference/class/polymorphism.md
+  - C++参考手册: https://zh.cppreference.com/cpp
+      # - 复合数据类型:
+      #     - 指针: reference/compound_data_type/pointer.md
+      # - 类:
+      #     - 类基础与构造函数: reference/class/class_basics.md
+      #     - 运算符重载与类模板: reference/class/operator_overloading.md
+      #     - 类的特殊成员: reference/class/special_members.md
+      #     - 友元与继承: reference/class/friendship_and_inheritance.md
+      #     - 多态: reference/class/polymorphism.md
 
   # - OJ平台: http://101.42.90.238/ 
 
@@ -130,6 +130,8 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
   # 加入 Mermaid 的加载脚本
+  - javascripts/mathjax.js
   - javascripts/mermaid.js
   - javascripts/mermaid.min.js
+  - javascripts/external-links.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

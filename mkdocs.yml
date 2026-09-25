@@ -21,7 +21,7 @@ nav:
           - 07 循环读入: 信奥课程讲义/C++语法基础/C1_07_循环读入.md
           - 08 数组: 信奥课程讲义/C++语法基础/C1_08_数组.md
           - 09 循环与分支: 信奥课程讲义/C++语法基础/C1_09_循环与分支.md
-          # - 10 循环嵌套: 信奥课程讲义/C++语法基础/C1_10_循环嵌套.md
+          - 10 循环嵌套: 信奥课程讲义/C++语法基础/C1_10_循环嵌套.md
           # - 11 数位拆分专题: 信奥课程讲义/C++语法基础/C1_11_数位拆分专题.md
           # - 12 标记法专题: 信奥课程讲义/C++语法基础/C1_12_标记法专题.md
       # - 第2阶段:
@@ -104,21 +104,16 @@ extra:
 
 # 这里配置所有要启用的 Markdown 扩展
 markdown_extensions:
-  # 允许在 Markdown 中使用属性列表，例如：
-  # [链接](https://example.com){: target="_blank" rel="noopener" }
-  # 也可以给标题、代码块等元素添加 class、id 等属性
+  # 允许在 Markdown 中使用属性列表，例如：[链接](https://example.com){: target="_blank" rel="noopener" }
   - attr_list
 
   # 启用数学公式支持，使用 pymdownx.arithmatex 扩展
   - pymdownx.arithmatex:
-      # generic: true 表示输出通用的数学标记，不绑定特定渲染器，
-      # 由前端 MathJax（或 KaTeX）负责最终渲染
+      # generic: true 表示输出通用的数学标记，不绑定特定渲染器，由前端 MathJax（或 KaTeX）负责最终渲染
       generic: true
-      # 定义行内公式的分隔符，成对出现：开始符和结束符。
-      # 这里同时支持 \( ... \) 和 $ ... $ 两种写法
+      # 定义行内公式的分隔符，成对出现：开始符和结束符。这里同时支持 \( ... \) 和 $ ... $ 两种写法
       tex_inline_wrap: ['\(', '\)', '$', '$']
-      # 定义块级公式的分隔符，成对出现：开始符和结束符。
-      # 这里同时支持 \[ ... \] 和 $$ ... $$ 两种写法
+      # 定义块级公式的分隔符，成对出现：开始符和结束符。这里同时支持 \[ ... \] 和 $$ ... $$ 两种写法
       tex_block_wrap: ['\[', '\]', '$$', '$$']
   
   # 代码块增强，Mermaid 依赖它来识别自定义代码块
@@ -127,7 +122,7 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-
+      
 # 额外加载的 JavaScript 文件，按顺序加载
 extra_javascript:
   # 先加载自定义的 MathJax 配置脚本（位于 docs/javascripts/mathjax.js）

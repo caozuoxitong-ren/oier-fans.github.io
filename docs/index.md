@@ -47,4 +47,3 @@
     window.addEventListener('resize', () => { if (width) { init(); } });
   })();
 </script>
-

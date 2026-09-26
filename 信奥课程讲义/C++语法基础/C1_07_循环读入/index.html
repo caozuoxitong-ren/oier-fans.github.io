@@ -1,0 +1,2842 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oier.fans/%E4%BF%A1%E5%A5%A5%E8%AF%BE%E7%A8%8B%E8%AE%B2%E4%B9%89/C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_07_%E5%BE%AA%E7%8E%AF%E8%AF%BB%E5%85%A5/">
+      
+      
+        <link rel="prev" href="../C1_06_for%E5%BE%AA%E7%8E%AF/">
+      
+      
+        <link rel="next" href="../C1_08_%E6%95%B0%E7%BB%84/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>07 循环读入 - 信奥爱好者 OIer Fans</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c1-07" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-header__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            信奥爱好者 OIer Fans
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              07 循环读入
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B/%E8%B5%9B%E4%BA%8B%E4%BF%A1%E6%81%AF/2026NOI%E7%B3%BB%E5%88%97%E6%B4%BB%E5%8A%A8%E5%92%8C%E8%AE%A4%E8%AF%81%E6%97%A5%E5%8E%86/" class="md-tabs__link">
+          
+  
+  
+  信息学奥赛
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+          
+  
+  
+  C++语法基础
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-01_STL%E8%BF%9B%E9%98%B6/" class="md-tabs__link">
+          
+  
+  
+  CSP-J入门组
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://zh.cppreference.com/cpp" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++参考手册
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-nav__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    信奥爱好者 OIer Fans
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    信息学奥赛
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    信息学奥赛
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    赛事信息
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    赛事信息
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B/%E8%B5%9B%E4%BA%8B%E4%BF%A1%E6%81%AF/2026NOI%E7%B3%BB%E5%88%97%E6%B4%BB%E5%8A%A8%E5%92%8C%E8%AE%A4%E8%AF%81%E6%97%A5%E5%8E%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026NOI系列活动和认证日历
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B/%E8%B5%9B%E4%BA%8B%E4%BF%A1%E6%81%AF/CSP-JS%E5%8C%97%E4%BA%AC%E5%8E%86%E5%B9%B4%E5%88%86%E6%95%B0%E7%BA%BF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    北京地区CSP-JS历年分数线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术规则
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    技术规则
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B/%E6%8A%80%E6%9C%AF%E8%A7%84%E5%88%99/NOI%E8%B5%9B%E4%BA%8B%E5%92%8CGESP%E8%AE%A4%E8%AF%81%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%89%88%E6%9C%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOI赛事和GESP的编译器版本
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++语法基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C++语法基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1阶段
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第1阶段
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 程序设计入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_02_%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 变量及其输入输出
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_03_%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 比较运算符与if语句
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_04_%E5%88%86%E6%94%AF%E5%B5%8C%E5%A5%97%E4%B8%8E%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 分支嵌套与逻辑运算符
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_05_while%E4%B8%8Edo-while%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 while和do-while循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_06_for%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 for循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 循环读入
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 循环读入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、为什么需要循环读入
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、为什么需要循环读入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 之前的程序只读一组数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 循环读入的基本模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 三种常见场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、三种循环读入场景总览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、指定个数读入：使用 for
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、指定个数读入：使用 for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 场景描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 标准写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-i-n-i-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. i &lt; n 和 i &lt;= n
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 多个数据分别统计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、哨兵终止读入：使用 while
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、哨兵终止读入：使用 while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 什么是哨兵值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 推荐写法：在条件中排除哨兵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 使用 break 的写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 哨兵值不能参与计算
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eofwhile-cin-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、读到 EOF：while (cin &gt;&gt; x)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、读到 EOF：while (cin &gt;&gt; x)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-eof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 什么是 EOF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 标准写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-while-cin-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. while (cin &gt;&gt; x) 为什么能控制循环
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 本地键盘调试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-while-cineof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 不要用 while (!cin.eof())
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、多变量循环读入
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、多变量循环读入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-while-cin-a-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. while (cin &gt;&gt; a &gt;&gt; b)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 不要写成逗号表达式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-eof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 指定次数和读到 EOF 的区别
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、三种场景怎样选择
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、常见错误与注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、常见错误与注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 有编译器提示的错误
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 没有固定报错，但结果或运行过程不对
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 累加器、累乘器和计数器的位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 循环读入题的检查顺序
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、本课小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_08_%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_09_%E5%BE%AA%E7%8E%AF%E4%B8%8E%E5%88%86%E6%94%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 循环与分支
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_10_%E5%BE%AA%E7%8E%AF%E5%B5%8C%E5%A5%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 循环嵌套
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C1_11_%E5%BE%AA%E7%8E%AF%E4%B9%A0%E9%A2%98%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 循环习题分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSP-J入门组
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CSP-J入门组
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-01_STL%E8%BF%9B%E9%98%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 STL进阶
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-02_%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 前缀和
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-03_%E5%B7%AE%E5%88%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 差分
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-04_%E5%94%AF%E4%B8%80%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 唯一分解定理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-06_%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 欧几里得算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://zh.cppreference.com/cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++参考手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、为什么需要循环读入
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、为什么需要循环读入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 之前的程序只读一组数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 循环读入的基本模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 三种常见场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、三种循环读入场景总览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、指定个数读入：使用 for
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、指定个数读入：使用 for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 场景描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 标准写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-i-n-i-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. i &lt; n 和 i &lt;= n
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 多个数据分别统计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、哨兵终止读入：使用 while
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、哨兵终止读入：使用 while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 什么是哨兵值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 推荐写法：在条件中排除哨兵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 使用 break 的写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 哨兵值不能参与计算
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eofwhile-cin-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、读到 EOF：while (cin &gt;&gt; x)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、读到 EOF：while (cin &gt;&gt; x)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-eof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 什么是 EOF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 标准写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-while-cin-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. while (cin &gt;&gt; x) 为什么能控制循环
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 本地键盘调试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-while-cineof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 不要用 while (!cin.eof())
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、多变量循环读入
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、多变量循环读入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-while-cin-a-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. while (cin &gt;&gt; a &gt;&gt; b)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 不要写成逗号表达式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-eof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 指定次数和读到 EOF 的区别
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、三种场景怎样选择
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、常见错误与注意事项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、常见错误与注意事项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 有编译器提示的错误
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 没有固定报错，但结果或运行过程不对
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 累加器、累乘器和计数器的位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 循环读入题的检查顺序
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、本课小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="c1-07">C1-07 循环读入</h1>
+<p>指定个数、哨兵值与文件结束</p>
+<blockquote>
+<p>学习目标：理解为什么需要在循环中反复读入数据；能够根据题目中的输入格式选择 <code>for</code>、哨兵 <code>while</code> 或 <code>while (cin &gt;&gt; x)</code>；掌握指定个数、哨兵终止、读到 EOF 和多变量读入的基本写法；知道累加器、累乘器和计数器必须在循环外初始化，并能排查循环读入中的常见错误。</p>
+</blockquote>
+<h2 id="_1">一、为什么需要循环读入</h2>
+<h3 id="1">1. 之前的程序只读一组数据</h3>
+<p>前几课中，程序通常只读入一组数据，例如两个数 <code>a</code> 和 <code>b</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+</code></pre></div>
+<p>这种写法适合“只处理一次”的问题。</p>
+<p>但实际题目中，经常需要处理很多个数据：</p>
+<ul>
+<li>读入 <code>n</code> 个成绩，求总分；</li>
+<li>读入若干天的数量，统计总数；</li>
+<li>不断读入正整数，直到读到 <code>0</code>；</li>
+<li>输入有多少个数并不确定，只能一直读到文件结束。</li>
+</ul>
+<p>这时不能只写一次 <code>cin &gt;&gt; x</code>，而要把读入语句放进循环中，让程序重复完成“读入并处理”。</p>
+<h3 id="2">2. 循环读入的基本模式</h3>
+<p>循环读入通常可以分成两步：</p>
+<div class="highlight"><pre><span></span><code>读入一个数据 → 处理这个数据 → 再读下一个数据
+</code></pre></div>
+<p>例如求一批数的和：</p>
+<div class="highlight"><pre><span></span><code><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">循环</span><span class="err">：</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>
+<p>本课的重点不是重新学习循环语法，而是判断<strong>循环应该读多少次、什么时候停止</strong>。</p>
+<h3 id="3">3. 三种常见场景</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">场景</th>
+<th style="text-align: center;">数据个数</th>
+<th style="text-align: center;">常用循环</th>
+<th style="text-align: left;">典型说法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">指定个数</td>
+<td style="text-align: center;">已知 <code>n</code> 个</td>
+<td style="text-align: center;"><code>for</code></td>
+<td style="text-align: left;">“第一行是 <code>n</code>，接下来有 <code>n</code> 个数”</td>
+</tr>
+<tr>
+<td style="text-align: center;">哨兵终止</td>
+<td style="text-align: center;">个数未知</td>
+<td style="text-align: center;"><code>while</code></td>
+<td style="text-align: left;">“读到 <code>0</code> 为止”</td>
+</tr>
+<tr>
+<td style="text-align: center;">读到 EOF</td>
+<td style="text-align: center;">个数未知</td>
+<td style="text-align: center;"><code>while (cin &gt;&gt; x)</code></td>
+<td style="text-align: left;">“输入若干个数，直到文件结束”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">二、三种循环读入场景总览</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">场景</th>
+<th style="text-align: left;">标准写法</th>
+<th style="text-align: left;">什么时候停止</th>
+<th style="text-align: center;">结束标记是否参与计算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">指定个数</td>
+<td style="text-align: left;"><code>for (int i = 0; i &lt; n; i++)</code></td>
+<td style="text-align: left;">读满 <code>n</code> 次</td>
+<td style="text-align: center;">不存在额外结束标记</td>
+</tr>
+<tr>
+<td style="text-align: center;">哨兵终止</td>
+<td style="text-align: left;"><code>while (cin &gt;&gt; x &amp;&amp; x != 0)</code></td>
+<td style="text-align: left;">读到哨兵值</td>
+<td style="text-align: center;">不参与</td>
+</tr>
+<tr>
+<td style="text-align: center;">读到 EOF</td>
+<td style="text-align: left;"><code>while (cin &gt;&gt; x)</code></td>
+<td style="text-align: left;">读取失败，通常是 EOF</td>
+<td style="text-align: center;">不存在哨兵值</td>
+</tr>
+</tbody>
+</table>
+<p>可以先记住下面的选择口诀：</p>
+<div class="highlight"><pre><span></span><code>给了 n       → 用 for
+给了哨兵值   → 用 while + 哨兵判断
+什么都没给   → 用 while (cin &gt;&gt; x)
+</code></pre></div>
+<h2 id="for">三、指定个数读入：使用 <code>for</code></h2>
+<h3 id="1_1">1. 场景描述</h3>
+<p>题目如果明确告诉你有 <code>n</code> 个数据，就可以用 <code>for</code> 循环读 <code>n</code> 次。</p>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code>第一行输入 n，接下来输入 n 个整数。
+</code></pre></div>
+<p>这里的 <code>n</code> 就是循环次数。</p>
+<h3 id="2_1">2. 标准写法</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+</code></pre></div>
+<p>程序的执行过程是：</p>
+<ol>
+<li>先读入数据个数 <code>n</code>；</li>
+<li>把累加器 <code>sum</code> 初始化为 <code>0</code>；</li>
+<li>循环 <code>n</code> 次；</li>
+<li>每次读入一个 <code>x</code>，再把 <code>x</code> 加入 <code>sum</code>；</li>
+<li>循环结束后输出总和。</li>
+</ol>
+<p>输入：</p>
+<div class="highlight"><pre><span></span><code>5
+1 2 3 4 5
+</code></pre></div>
+<p>输出：</p>
+<div class="highlight"><pre><span></span><code>15
+</code></pre></div>
+<h3 id="3-i-n-i-n">3. <code>i &lt; n</code> 和 <code>i &lt;= n</code></h3>
+<p>读 <code>n</code> 个数据时，常见有两种写法：</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// i 取 0, 1, ..., n-1，共 n 次</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// i 取 1, 2, ..., n，共 n 次</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>两种写法都正确，但起点和条件必须配套。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">初始化</th>
+<th style="text-align: center;">条件</th>
+<th style="text-align: center;">循环次数</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>i = 0</code></td>
+<td style="text-align: center;"><code>i &lt; n</code></td>
+<td style="text-align: center;"><code>n</code> 次</td>
+<td style="text-align: left;">常用于读入 <code>n</code> 个数据</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>i = 1</code></td>
+<td style="text-align: center;"><code>i &lt;= n</code></td>
+<td style="text-align: center;"><code>n</code> 次</td>
+<td style="text-align: left;">更接近“第 1 次到第 n 次”</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>i = 0</code></td>
+<td style="text-align: center;"><code>i &lt;= n</code></td>
+<td style="text-align: center;"><code>n + 1</code> 次</td>
+<td style="text-align: left;">错误，多读一次</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>关键提醒：</strong> 从 <code>0</code> 开始通常配 <code>&lt; n</code>；从 <code>1</code> 开始通常配 <code>&lt;= n</code>。不要只看条件，还要同时检查初始化值。</p>
+</blockquote>
+<h3 id="4">4. 多个数据分别统计</h3>
+<p>如果每次读入多个数据，可以设置多个累加器。</p>
+<p>例如，统计 <code>n</code> 天的金牌、银牌和铜牌总数：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">gold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">silver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">bronze</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">gold</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">g</span><span class="p">;</span>
+<span class="w">    </span><span class="n">silver</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="n">bronze</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">gold</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">' '</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">silver</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">' '</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">bronze</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+</code></pre></div>
+<p>这里每轮读入三个数，但循环次数仍然由 <code>n</code> 决定。三个累加器都在循环外初始化，循环内只负责累加。</p>
+<h2 id="while">四、哨兵终止读入：使用 <code>while</code></h2>
+<h3 id="1_2">1. 什么是哨兵值</h3>
+<p>有些题目不会告诉你数据有多少个，而是规定读到某个特殊值就停止。例如：</p>
+<div class="highlight"><pre><span></span><code>读入若干个正整数，以 0 结束，0 不参与计算。
+</code></pre></div>
+<p>这里的 <code>0</code> 就是<strong>哨兵值</strong>。它的作用像站岗的标记：程序读到它，就知道输入结束。</p>
+<p>常见的哨兵值有：</p>
+<ul>
+<li>正整数序列以 <code>0</code> 结束；</li>
+<li>非负数序列以 <code>-1</code> 结束；</li>
+<li>题目明确指定的其他特殊值。</li>
+</ul>
+<h3 id="2_2">2. 推荐写法：在条件中排除哨兵</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+</code></pre></div>
+<p>输入：</p>
+<div class="highlight"><pre><span></span><code>3 5 7 0
+</code></pre></div>
+<p>输出：</p>
+<div class="highlight"><pre><span></span><code>15
+</code></pre></div>
+<p>条件 <code>cin &gt;&gt; x &amp;&amp; x != 0</code> 可以分成两部分理解：</p>
+<ol>
+<li>先尝试读入 <code>x</code>；</li>
+<li>读取成功并且 <code>x</code> 不是 <code>0</code> 时，才执行循环体。</li>
+</ol>
+<p>因此，<code>0</code> 只负责结束循环，不会被加入 <code>sum</code>。</p>
+<h3 id="3-break">3. 使用 <code>break</code> 的写法</h3>
+<p>也可以先读入，再用 <code>break</code> 跳出循环：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+</code></pre></div>
+<p><code>break</code> 表示立即结束当前循环。这个写法和前面的写法等价，逻辑分成了“读入”“判断”“处理”三步，初学时比较直观。</p>
+<h3 id="4_1">4. 哨兵值不能参与计算</h3>
+<p>哨兵是结束标记，不是普通数据。特别是在求乘积或计数时，把哨兵混入结果会产生明显错误。</p>
+<p>例如，读到 <code>-1</code> 为止，求前面所有数的乘积：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">product</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+</code></pre></div>
+<p>输入：</p>
+<div class="highlight"><pre><span></span><code>2 3 4 -1
+</code></pre></div>
+<p>输出：</p>
+<div class="highlight"><pre><span></span><code>24
+</code></pre></div>
+<p>如果把 <code>-1</code> 也乘进去，结果就会变成 <code>-24</code>，说明哨兵值没有被正确排除。</p>
+<h2 id="eofwhile-cin-x">五、读到 EOF：<code>while (cin &gt;&gt; x)</code></h2>
+<h3 id="1-eof">1. 什么是 EOF</h3>
+<p>EOF 是 <code>End Of File</code> 的缩写，意思是“文件结束”。</p>
+<p>在在线评测系统中，程序的输入通常来自一个文件。文件中的数据全部读完后，就到达 EOF。此时没有下一个数据可以读入，循环就应该结束。</p>
+<p>有些题目会说：</p>
+<div class="highlight"><pre><span></span><code>输入若干个整数，求它们的和。
+</code></pre></div>
+<p>如果题目没有给出 <code>n</code>，也没有给出 <code>0</code>、<code>-1</code> 之类的结束标记，就可以读到 EOF。</p>
+<h3 id="2_3">2. 标准写法</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+</code></pre></div>
+<p>输入：</p>
+<div class="highlight"><pre><span></span><code>1 2 3 4 5
+</code></pre></div>
+<p>输出：</p>
+<div class="highlight"><pre><span></span><code>15
+</code></pre></div>
+<p>这里没有写固定次数，也没有判断某个特殊数。程序会不断读入，直到读取失败。</p>
+<h3 id="3-while-cin-x">3. <code>while (cin &gt;&gt; x)</code> 为什么能控制循环</h3>
+<p><code>cin &gt;&gt; x</code> 做了两件事：</p>
+<ol>
+<li>尝试从输入中读入一个数据，保存到 <code>x</code>；</li>
+<li>根据读取是否成功，给出一个可以用于判断的状态。</li>
+</ol>
+<p>可以把它简单理解为：</p>
+<div class="highlight"><pre><span></span><code>读取成功 → 条件为真 → 执行循环体
+读取失败 → 条件为假 → 退出循环
+</code></pre></div>
+<p>读取失败最常见的原因是已经到达 EOF。也可能是输入内容和变量类型不匹配，例如 <code>x</code> 是整数，却读到了不能解释为整数的内容。</p>
+<blockquote>
+<p>初学阶段只要记住：<code>while (cin &gt;&gt; x)</code> 的意思是“读入成功就继续，读不到就停止”。</p>
+</blockquote>
+<h3 id="4_2">4. 本地键盘调试</h3>
+<p>在 OJ 中，文件读完会自动产生 EOF；但在本地用键盘输入时，程序不知道你是否还要继续输入，所以可能一直等待。</p>
+<p>输入完数据后，可以用快捷键告诉程序“输入结束”：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">系统</th>
+<th style="text-align: center;">快捷键</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Windows</td>
+<td style="text-align: center;"><code>Ctrl + Z</code>，再按回车</td>
+<td style="text-align: left;">通常先提交当前行，再结束输入</td>
+</tr>
+<tr>
+<td style="text-align: center;">Linux / macOS</td>
+<td style="text-align: center;"><code>Ctrl + D</code></td>
+<td style="text-align: left;">在新行开头结束输入</td>
+</tr>
+</tbody>
+</table>
+<p>这只是本地键盘调试的方法，在线评测时不需要手动操作。</p>
+<h3 id="5-while-cineof">5. 不要用 <code>while (!cin.eof())</code></h3>
+<p>初学者有时会写：</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">cin</span><span class="p">.</span><span class="n">eof</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>这种写法容易把最后一次读取失败时的旧数据再次处理，产生错误结果。</p>
+<p>正确写法是把读取动作直接放进条件：</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="_3">六、多变量循环读入</h2>
+<h3 id="1-while-cin-a-b">1. <code>while (cin &gt;&gt; a &gt;&gt; b)</code></h3>
+<p>如果每次需要读入两个数，可以把两个读入动作连续写在条件中：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>它表示：</p>
+<div class="highlight"><pre><span></span><code>只有 a 和 b 都读取成功，才执行一次循环体。
+</code></pre></div>
+<p>输入：</p>
+<div class="highlight"><pre><span></span><code>1 2
+3 4
+5 6
+</code></pre></div>
+<p>输出：</p>
+<div class="highlight"><pre><span></span><code>3
+7
+11
+</code></pre></div>
+<p>每读入一对 <code>a</code>、<code>b</code>，就立即计算并输出它们的和。</p>
+<h3 id="2_4">2. 不要写成逗号表达式</h3>
+<p>错误写法：</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>这里的逗号不是“继续读入 <code>b</code>”，而是逗号表达式的一部分，<code>b</code> 并没有通过 <code>cin</code> 读入。</p>
+<p>正确写法：</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="3-eof">3. 指定次数和读到 EOF 的区别</h3>
+<p>如果题目说“第一行有 <code>n</code>，接下来有 <code>n</code> 行”，使用 <code>for</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>如果题目没有给出 <code>n</code>，只说“输入若干行，每行两个数”，使用：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>两段代码都能处理多对数据，但停止条件不同：</p>
+<ul>
+<li><code>for</code> 根据给出的 <code>n</code> 停止；</li>
+<li><code>while (cin &gt;&gt; a &gt;&gt; b)</code> 根据读取失败停止。</li>
+</ul>
+<h2 id="_4">七、三种场景怎样选择</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">题目中的关键词</th>
+<th style="text-align: center;">选择的循环</th>
+<th style="text-align: left;">典型代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">“第一行是 <code>n</code>”“接下来有 <code>n</code> 个”</td>
+<td style="text-align: center;"><code>for</code></td>
+<td style="text-align: left;"><code>for (int i = 0; i &lt; n; i++)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">“读到 <code>0</code> 为止”“以 <code>-1</code> 结束”</td>
+<td style="text-align: center;"><code>while</code></td>
+<td style="text-align: left;"><code>while (cin &gt;&gt; x &amp;&amp; x != 0)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">“输入若干个数”“直到文件结束”</td>
+<td style="text-align: center;"><code>while</code></td>
+<td style="text-align: left;"><code>while (cin &gt;&gt; x)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">“每行两个数，输入若干行”</td>
+<td style="text-align: center;"><code>while</code></td>
+<td style="text-align: left;"><code>while (cin &gt;&gt; a &gt;&gt; b)</code></td>
+</tr>
+</tbody>
+</table>
+<p>可以按下面三个问题判断：</p>
+<ol>
+<li>题目有没有直接告诉数据个数？</li>
+<li>如果没有，题目有没有给出结束标记？</li>
+<li>如果既没有个数，也没有结束标记，就读到 EOF。</li>
+</ol>
+<blockquote>
+<p><strong>选择口诀：</strong> 给个数用 <code>for</code>，给哨兵用 <code>while</code> 加判断，什么都不给用 <code>while (cin &gt;&gt; x)</code>。</p>
+</blockquote>
+<h2 id="_5">八、常见错误与注意事项</h2>
+<h3 id="1_3">1. 有编译器提示的错误</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">编号</th>
+<th style="text-align: left;">错误</th>
+<th style="text-align: left;">常见识别信息</th>
+<th style="text-align: left;">后果</th>
+<th style="text-align: left;">改正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">E1</td>
+<td style="text-align: left;"><code>for</code> 或 <code>while</code> 的括号没有配对</td>
+<td style="text-align: left;"><code>expected ')'</code></td>
+<td style="text-align: left;">循环结构无法编译</td>
+<td style="text-align: left;">检查圆括号和花括号</td>
+</tr>
+<tr>
+<td style="text-align: center;">E2</td>
+<td style="text-align: left;">把 <code>while (cin &gt;&gt; x)</code> 写成不完整的表达式</td>
+<td style="text-align: left;"><code>expected primary-expression</code> 等</td>
+<td style="text-align: left;">条件无法判断</td>
+<td style="text-align: left;">检查 <code>cin</code>、<code>&gt;&gt;</code> 和变量名</td>
+</tr>
+<tr>
+<td style="text-align: center;">E3</td>
+<td style="text-align: left;">使用了没有定义的变量</td>
+<td style="text-align: left;"><code>'x' was not declared</code></td>
+<td style="text-align: left;">编译器找不到读入目标</td>
+<td style="text-align: left;">先定义 <code>int x</code> 等变量</td>
+</tr>
+<tr>
+<td style="text-align: center;">E4</td>
+<td style="text-align: left;">多变量读入符号写错</td>
+<td style="text-align: left;">语法错误或逻辑异常</td>
+<td style="text-align: left;"><code>a</code>、<code>b</code> 没有按预期读入</td>
+<td style="text-align: left;">写成 <code>cin &gt;&gt; a &gt;&gt; b</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_5">2. 没有固定报错，但结果或运行过程不对</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">编号</th>
+<th style="text-align: left;">错误</th>
+<th style="text-align: left;">后果</th>
+<th style="text-align: left;">改正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">E5</td>
+<td style="text-align: left;">累加器在循环体内初始化</td>
+<td style="text-align: left;">每轮清零，结果只保留最后一次</td>
+<td style="text-align: left;"><code>sum = 0</code> 放在循环外</td>
+</tr>
+<tr>
+<td style="text-align: center;">E6</td>
+<td style="text-align: left;">忘记在循环体内读入数据</td>
+<td style="text-align: left;">变量不变，可能死循环</td>
+<td style="text-align: left;">每轮先执行 <code>cin &gt;&gt; x</code>，或把它写在 <code>while</code> 条件中</td>
+</tr>
+<tr>
+<td style="text-align: center;">E7</td>
+<td style="text-align: left;"><code>i = 0</code> 却写成 <code>i &lt;= n</code></td>
+<td style="text-align: left;">多读一次，读入次数变成 <code>n+1</code></td>
+<td style="text-align: left;">使用 <code>i &lt; n</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">E8</td>
+<td style="text-align: left;">哨兵值参与计算</td>
+<td style="text-align: left;">求和、乘积或计数结果错误</td>
+<td style="text-align: left;">在条件中排除哨兵，或读到后先 <code>break</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">E9</td>
+<td style="text-align: left;">把 <code>while (cin &gt;&gt; x)</code> 写成 <code>while (!cin.eof())</code></td>
+<td style="text-align: left;">最后一次读取失败时可能重复处理旧数据</td>
+<td style="text-align: left;">直接把读取写进条件</td>
+</tr>
+<tr>
+<td style="text-align: center;">E10</td>
+<td style="text-align: left;">把哨兵判断中的 <code>!=</code> 写成 <code>=</code></td>
+<td style="text-align: left;">赋值代替判断，循环行为异常</td>
+<td style="text-align: left;">判断使用 <code>==</code>、<code>!=</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">E11</td>
+<td style="text-align: left;">只测试了普通数据</td>
+<td style="text-align: left;">边界数据或空输入时结果错误</td>
+<td style="text-align: left;">测试 <code>n=1</code>、只有哨兵、多个数据和 EOF</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3_1">3. 累加器、累乘器和计数器的位置</h3>
+<p>这些变量通常都要在循环外初始化一次：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="n">product</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>不要把初始化写在循环体内：</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 错误示例</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>每次进入循环，<code>sum</code> 都会重新变成 <code>0</code>，之前的结果就丢失了。</p>
+<h3 id="4_3">4. 循环读入题的检查顺序</h3>
+<p>写完程序后，可以按下面顺序检查：</p>
+<ol>
+<li>是否先读入了 <code>n</code>，或者正确设置了哨兵条件？</li>
+<li><code>for</code> 的循环次数是否正好等于数据个数？</li>
+<li>是否每轮都成功读入了需要处理的数据？</li>
+<li>累加器、累乘器或计数器是否只在循环外初始化一次？</li>
+<li>哨兵值有没有被加入结果？</li>
+<li><code>while (cin &gt;&gt; x)</code> 是否直接把读取写在条件中？</li>
+<li>是否测试了最小数据、结束标记和文件结束等情况？</li>
+</ol>
+<h2 id="_6">九、本课小结</h2>
+<p>循环读入的关键不是“把 <code>cin</code> 写进循环”这么简单，而是先判断题目规定的停止方式：</p>
+<ul>
+<li><strong>指定个数</strong>：先读 <code>n</code>，用 <code>for</code> 循环恰好读 <code>n</code> 次；</li>
+<li><strong>哨兵终止</strong>：用 <code>while</code> 读入，哨兵值只负责结束，不参与计算；</li>
+<li><strong>读到 EOF</strong>：用 <code>while (cin &gt;&gt; x)</code>，读取成功继续，读取失败停止；</li>
+<li><strong>多变量读入</strong>：使用 <code>while (cin &gt;&gt; a &gt;&gt; b)</code>，只有两个数据都读成功才处理。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      本站总访问量 <span id="vercount_value_site_pv">Loading</span> 次 · 访客数 <span id="vercount_value_site_uv">Loading</span> 人 · Copyright &copy; 2025 - present oier.fans All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<admin@oier.fans>" target="_blank" rel="noopener" title="联系邮箱" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/mermaid.js"></script>
+      
+        <script src="../../../javascripts/mermaid.min.js"></script>
+      
+        <script src="../../../javascripts/external-links.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://vercount.one/js"></script>
+      
+    
+  </body>
+</html>

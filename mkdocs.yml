@@ -1,15 +1,23 @@
-site_name: 信奥爱好者 OIer Fans # 设置网站名称
+# ============================================================
+# 站点信息
+# ============================================================
+site_name: 信奥爱好者 OIer Fans
 site_url: https://oier.fans/
 
+# ============================================================
 # 导航目录
+# ============================================================
 nav:
   - 首页: index.md
+
   - 信息学奥赛:
-      - 赛事信息: 
+      - 赛事信息:
           - 2026NOI系列活动和认证日历: 信息学奥赛/赛事信息/2026NOI系列活动和认证日历.md
           - 北京地区CSP-JS历年分数线: 信息学奥赛/赛事信息/CSP-JS北京历年分数线.md
-      - 技术规则: 
-          - NOI赛事和GESP的编译器版本: 信息学奥赛/技术规则/NOI赛事和GESP认证的编译器版本.md
+          - 2025CSP-JS复赛各省分数线: 信息学奥赛/赛事信息/2025CSP-JS复赛各省分数线.md
+      - 技术规则:
+          - NOI和GESP默认编译器版本区别: 信息学奥赛/技术规则/NOI和GESP默认编译器版本区别.md
+
   - C++语法基础:
       - 第1阶段:
           - 01 程序设计入门: 信奥课程讲义/C++语法基础/C1_01_程序设计入门.md
@@ -26,7 +34,8 @@ nav:
           # - 11 数位拆分专题: 信奥课程讲义/C++语法基础/C1_11_数位拆分专题.md
           # - 12 标记法专题: 信奥课程讲义/C++语法基础/C1_12_标记法专题.md
       # - 第2阶段:
-          # - 01 字符串与string: 信奥课程讲义/C++语法基础/C2-01_字符串与string.md
+      #     - 01 字符串与string: 信奥课程讲义/C++语法基础/C2-01_字符串与string.md
+
   - CSP-J入门组:
       - 01 STL进阶: 信奥课程讲义/CSP-J入门组/J1-01_STL进阶.md
       - 02 前缀和: 信奥课程讲义/CSP-J入门组/J1-02_前缀和.md
@@ -37,109 +46,106 @@ nav:
       # - 14 二分查找: 信奥课程讲义/CSP-J入门组/J1-14_二分查找.md
 
   - C++参考手册: https://zh.cppreference.com/cpp
-      # - 复合数据类型:
-      #     - 指针: reference/compound_data_type/pointer.md
-      # - 类:
-      #     - 类基础与构造函数: reference/class/class_basics.md
-      #     - 运算符重载与类模板: reference/class/operator_overloading.md
-      #     - 类的特殊成员: reference/class/special_members.md
-      #     - 友元与继承: reference/class/friendship_and_inheritance.md
-      #     - 多态: reference/class/polymorphism.md
+  - 文本对比工具: tools/diff-tool.md
 
-  # - OJ平台: http://101.42.90.238/ 
+  # - OJ平台: http://101.42.90.238/
 
-# ===== 主题设置 =====
+# ============================================================
+# 主题设置
+# ============================================================
 theme:
-  # 使用 Material for MkDocs 主题
   name: material
 
-  # 主题功能开关
   features:
-    # 顶部导航栏以标签页形式展示（适合栏目较多的站点）
+    # 顶部导航栏以标签页形式展示
     - navigation.tabs
     # 默认展开左侧导航栏中的所有子项
     - navigation.expand
 
-  # 界面语言设为中文
-  language: 'zh'
+  # 界面语言
+  language: zh
 
-  # 字体设置
+  # 字体
   font:
-    # 正文字体
-    text: 'Fira Sans'
-    # 代码块字体
-    code: 'Fira Mono'
+    text: Fira Sans
+    code: Fira Mono
 
-  # 配色方案（日间 / 夜间模式）
+  # 配色方案（日间 / 夜间）
   palette:
-    # --- 日间模式 ---
-    - scheme: default          # default 表示浅色主题
-      primary: white           # 主色调：白色
-      accent: red              # 强调色：红色
+    # 日间模式
+    - scheme: default
+      primary: white
+      accent: red
       toggle:
-        icon: material/weather-sunny   # 切换按钮图标（太阳）
-        name: Switch to dark mode      # 鼠标悬停提示文字
+        icon: material/weather-sunny
+        name: Switch to dark mode
 
-    # --- 夜间模式 ---
-    - scheme: slate            # slate 表示深色主题
-      primary: black           # 主色调：黑色
-      accent: teal             # 强调色：青色
+    # 夜间模式
+    - scheme: slate
+      primary: black
+      accent: teal
       toggle:
-        icon: material/weather-night   # 切换按钮图标（月亮）
-        name: Switch to light mode     # 鼠标悬停提示文字
+        icon: material/weather-night
+        name: Switch to light mode
 
-# ===== 底部版权信息 =====
-
+# ============================================================
+# 底部版权信息
+# ============================================================
 copyright: >-
   本站总访问量 <span id="vercount_value_site_pv">Loading</span> 次 ·
-  访客数 <span id="vercount_value_site_uv">Loading</span> 人 ·
+  访客数 <span id="vercount_value_site_uv">Loading</span> 人
+  <br>
   Copyright &copy; 2025 - present oier.fans All Rights Reserved.
 
-# ===== 额外配置 =====
+# ============================================================
+# 额外配置
+# ============================================================
 extra:
-  # 社交链接（显示在页面底部或侧边）
   social:
-    - icon: fontawesome/solid/paper-plane   # 使用 FontAwesome 的纸飞机图标
-      link: mailto:<admin@oier.fans>        # 点击后打开邮件客户端
-      name: 联系邮箱                         # 链接的提示文字
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<admin@oier.fans>
+      name: 联系邮箱
 
-  # 如果取消下面这行的注释，页面底部将不再显示
-  # “Made with Material for MkDocs” 的生成标记
+  # 取消注释可隐藏“Made with Material for MkDocs”
   # generator: false
 
-# 这里配置所有要启用的 Markdown 扩展
+# ============================================================
+# Markdown 扩展
+# ============================================================
 markdown_extensions:
-  # 允许在 Markdown 中使用属性列表，例如：[链接](https://example.com){: target="_blank" rel="noopener" }
+  # 允许在 Markdown 中使用属性列表，例如：
+  # [链接](https://example.com){: target="_blank" rel="noopener" }
   - attr_list
 
-  # 启用数学公式支持，使用 pymdownx.arithmatex 扩展
+  # 数学公式支持（由前端 MathJax 渲染）
   - pymdownx.arithmatex:
-      # generic: true 表示输出通用的数学标记，不绑定特定渲染器，由前端 MathJax（或 KaTeX）负责最终渲染
       generic: true
-      # 定义行内公式的分隔符，成对出现：开始符和结束符。这里同时支持 \( ... \) 和 $ ... $ 两种写法
+      # 行内公式分隔符，成对出现：\( ... \) 和 $ ... $
       tex_inline_wrap: ['\(', '\)', '$', '$']
-      # 定义块级公式的分隔符，成对出现：开始符和结束符。这里同时支持 \[ ... \] 和 $$ ... $$ 两种写法
+      # 块级公式分隔符，成对出现：\[ ... \] 和 $$ ... $$
       tex_block_wrap: ['\[', '\]', '$$', '$$']
-  
-  # 代码块增强，Mermaid 依赖它来识别自定义代码块
+
+  # 代码块增强，Mermaid 依赖它识别自定义代码块
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-      
-# 额外加载的 JavaScript 文件，按顺序加载
-extra_javascript:
-  # 先加载自定义的 MathJax 配置脚本（位于 docs/javascripts/mathjax.js）
-  - javascripts/mathjax.js
-  # 再加载 MathJax 主库（从 CDN 获取），顺序不能反：必须先加载配置，再加载主库，否则配置不生效。
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
-  # 加入 Mermaid 的加载脚本
-  - javascripts/mermaid.js
-  - javascripts/mermaid.min.js
-  - javascripts/external-links.js
+# ============================================================
+# 额外加载的 JavaScript（按顺序加载）
+# ============================================================
+extra_javascript:
+  # MathJax：先加载自定义配置（定义 window.MathJax），再加载主库
+  - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+  # Mermaid：先加载主库（定义 window.mermaid），再加载初始化脚本
+  - javascripts/mermaid.min.js
+  - javascripts/mermaid.js
+
+  # 让站外链接在新标签页打开
+  - javascripts/external-links.js
 
   # 网站访问计数器
   - https://vercount.one/js

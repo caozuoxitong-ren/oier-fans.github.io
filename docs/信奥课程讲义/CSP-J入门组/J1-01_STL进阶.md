@@ -1,13 +1,3 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-<script type="text/x-mathjax-config">
-	MathJax.Hub.Config({
-		tex2jax: {
-			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-			inlineMath: [['$','$']]
-		}
-	});
-</script>
-
 # 第 01 课 STL进阶
 
 **学习目标**：认识 STL 的容器、算法与迭代器；掌握 `pair`、`map`、`set` 的定义、增删改查和遍历；理解有序、去重、比较器与常见坑。

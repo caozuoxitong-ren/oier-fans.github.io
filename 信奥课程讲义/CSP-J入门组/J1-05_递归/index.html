@@ -1,0 +1,2830 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oier.fans/%E4%BF%A1%E5%A5%A5%E8%AF%BE%E7%A8%8B%E8%AE%B2%E4%B9%89/CSP-J%E5%85%A5%E9%97%A8%E7%BB%84/J1-05_%E9%80%92%E5%BD%92/">
+      
+      
+        <link rel="prev" href="../J1-04_%E5%94%AF%E4%B8%80%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/">
+      
+      
+        <link rel="next" href="../J1-06_%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>05 递归 - 信奥爱好者 OIer Fans</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#05" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-header__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            信奥爱好者 OIer Fans
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              05 递归
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B/%E8%B5%9B%E4%BA%8B%E4%BF%A1%E6%81%AF/2026NOI%E7%B3%BB%E5%88%97%E6%B4%BB%E5%8A%A8%E5%92%8C%E8%AE%A4%E8%AF%81%E6%97%A5%E5%8E%86/" class="md-tabs__link">
+          
+  
+  
+  信息学奥赛
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+          
+  
+  
+  C++语法基础
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../J1-01_STL%E8%BF%9B%E9%98%B6/" class="md-tabs__link">
+          
+  
+  
+  CSP-J入门组
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://zh.cppreference.com/cpp" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++参考手册
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tools/diff-tool/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  文本对比工具
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="信奥爱好者 OIer Fans" class="md-nav__button md-logo" aria-label="信奥爱好者 OIer Fans" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    信奥爱好者 OIer Fans
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    信息学奥赛
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    信息学奥赛
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    赛事信息
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    赛事信息
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B/%E8%B5%9B%E4%BA%8B%E4%BF%A1%E6%81%AF/2026NOI%E7%B3%BB%E5%88%97%E6%B4%BB%E5%8A%A8%E5%92%8C%E8%AE%A4%E8%AF%81%E6%97%A5%E5%8E%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026NOI系列活动和认证日历
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B/%E8%B5%9B%E4%BA%8B%E4%BF%A1%E6%81%AF/CSP-JS%E5%8C%97%E4%BA%AC%E5%8E%86%E5%B9%B4%E5%88%86%E6%95%B0%E7%BA%BF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    北京地区CSP-JS历年分数线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B/%E8%B5%9B%E4%BA%8B%E4%BF%A1%E6%81%AF/2025CSP-JS%E5%A4%8D%E8%B5%9B%E5%90%84%E7%9C%81%E5%88%86%E6%95%B0%E7%BA%BF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025CSP-JS复赛各省分数线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术规则
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    技术规则
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B/%E6%8A%80%E6%9C%AF%E8%A7%84%E5%88%99/NOI%E5%92%8CGESP%E9%BB%98%E8%AE%A4%E7%BC%96%E8%AF%91%E5%99%A8%E7%89%88%E6%9C%AC%E5%8C%BA%E5%88%AB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOI和GESP默认编译器版本区别
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++语法基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C++语法基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1阶段
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第1阶段
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_01_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 程序设计入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_02_%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 变量及其输入输出
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_03_%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 比较运算符与if语句
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_04_%E5%88%86%E6%94%AF%E5%B5%8C%E5%A5%97%E4%B8%8E%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 分支嵌套与逻辑运算符
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_05_while%E4%B8%8Edo-while%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 while和do-while循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_06_for%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 for循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_07_%E5%BE%AA%E7%8E%AF%E8%AF%BB%E5%85%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 循环读入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_08_%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_09_%E5%BE%AA%E7%8E%AF%E4%B8%8E%E5%88%86%E6%94%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 循环与分支
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_10_%E5%BE%AA%E7%8E%AF%E5%B5%8C%E5%A5%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 循环嵌套
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/C1_11_%E5%BE%AA%E7%8E%AF%E4%B9%A0%E9%A2%98%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 循环习题分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSP-J入门组
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CSP-J入门组
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../J1-01_STL%E8%BF%9B%E9%98%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 STL进阶
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../J1-02_%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 前缀和
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../J1-03_%E5%B7%AE%E5%88%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 差分
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../J1-04_%E5%94%AF%E4%B8%80%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 唯一分解定理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 递归
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 递归
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、什么是递归
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、什么是递归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 递归的概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 自然界和生活中的递归结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 递归必须能够停下来
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、递归函数的基本结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、递归函数的基本结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 递归函数是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 递归函数的语法结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 示例：老和尚给小和尚讲故事
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、递归的执行过程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、递归的执行过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 示例：递归计算阶乘
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 递归的执行过程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 递归前和递归后的语句
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、题目一：小范围斐波那契数列
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、题目一：小范围斐波那契数列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 题意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 分析思路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 参考代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、题目二：上台阶
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、题目二：上台阶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 题意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 分析思路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 参考代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、题目三：铺瓷砖
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、题目三：铺瓷砖">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 题意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 分析思路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 参考代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、题目四：斐波那契数列的记忆化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、题目四：斐波那契数列的记忆化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 题意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 分析思路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 参考代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、题目五：汉诺塔
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、题目五：汉诺塔">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 题意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 分析思路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 参考代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../J1-06_%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 欧几里得算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../J1-07_%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 快速幂
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../J1-08_%E7%B4%A0%E6%95%B0%E7%AD%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 素数筛
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://zh.cppreference.com/cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++参考手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/diff-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文本对比工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、什么是递归
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、什么是递归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 递归的概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 自然界和生活中的递归结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 递归必须能够停下来
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、递归函数的基本结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、递归函数的基本结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 递归函数是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 递归函数的语法结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 示例：老和尚给小和尚讲故事
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、递归的执行过程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、递归的执行过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 示例：递归计算阶乘
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 递归的执行过程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 递归前和递归后的语句
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、题目一：小范围斐波那契数列
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、题目一：小范围斐波那契数列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 题意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 分析思路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 参考代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、题目二：上台阶
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、题目二：上台阶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 题意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 分析思路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 参考代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、题目三：铺瓷砖
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、题目三：铺瓷砖">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 题意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 分析思路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 参考代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、题目四：斐波那契数列的记忆化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、题目四：斐波那契数列的记忆化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 题意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 分析思路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 参考代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、题目五：汉诺塔
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、题目五：汉诺塔">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 题意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 分析思路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 参考代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="05">第 05 课 递归</h1>
+<p>递归适用场景、递归算法思想与经典问题</p>
+<blockquote>
+<p>学习目标：理解递归适用的问题特点；能够用生活中的自相似现象理解递归；掌握递归函数的基本结构以及“递”和“归”的算法思想；能够分析斐波那契数列、走台阶和汉诺塔问题的递归关系；理解重复子问题，并能用记忆化减少重复计算；知道如何检查递归的结束条件、问题规模、返回过程和计算范围。</p>
+</blockquote>
+<h2 id="_1">一、什么是递归</h2>
+<h3 id="1">1. 递归的概念</h3>
+<p>递归，简单说就是“自己调用自己”。它解决一个大问题时，不直接硬解，而是把它拆成一个同类的、更小的问题；如果还解不了，就继续拆小，直到遇到一个能直接给出答案的最小情况。然后，再从这个最小答案出发，一层层往回算，最终得到原问题的答案。一句话：<strong>自己调用自己，但规模越来越小，有终止条件，最后再层层返回。</strong></p>
+<p>例如，求 <code>1 + 2 + 3 + 4 + 5</code>，可以先把最后一个数拿出来：</p>
+<div class="highlight"><pre><span></span><code>sum(5) = 5 + sum(4)
+</code></pre></div>
+<p>接下来，<code>sum(4)</code> 又是同一种问题，只是规模更小。不断拆分，最后会到达一个能直接回答的最简单情况。许多“层层包含”“不断缩小”“分成同类小问题”的任务，都可以考虑递归。</p>
+<p>所以，递归适合处理这样的问题：<strong>当前问题可以拆成一个或几个规模更小、但形式相同的子问题；子问题解决后，又可以用它们的结果构造当前问题的答案。</strong></p>
+<h3 id="2">2. 自然界和生活中的递归结构</h3>
+<p>自然界和生活中有许多<strong>看起来具有递归结构</strong>的例子：</p>
+<ul>
+<li>一棵树的树枝分出更小的树枝，小树枝又继续分叉；</li>
+<li>河流上游由许多支流汇成，支流又由更小的溪流汇成；</li>
+<li>打开套娃，大娃娃里还有小娃娃；</li>
+<li>文件夹里包含子文件夹，子文件夹里还可以包含子文件夹。</li>
+</ul>
+<p>它们都有“整体里包含结构相似的小部分”的特点。计算机程序可以利用这种相似性，把处理整体的方法重复用在较小部分上。</p>
+<p><img alt="alt text" src="../%E4%BF%84%E7%BD%97%E6%96%AF%E5%A5%97%E5%A8%83.jpg" /></p>
+<h3 id="3">3. 递归必须能够停下来</h3>
+<p>递归函数不断调用自己时，必须有一个能够直接求解的<strong>结束条件</strong>；每次递归还必须向这个结束条件靠近。</p>
+<p>如果缺少结束条件，或者问题规模没有变小，递归就会一直调用下去，最后可能发生调用栈溢出。</p>
+<hr />
+<h2 id="_2">二、递归函数的基本结构</h2>
+<h3 id="1_1">1. 递归函数是什么</h3>
+<p>一个函数在自己的函数体中调用自己，这种调用叫作<strong>递归调用</strong>；包含递归调用的函数叫作<strong>递归函数</strong>。</p>
+<p>普通函数可以调用另一个函数：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Hello"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">hello</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>函数也可以在函数体内部调用自己：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">sayHello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Hello"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sayHello</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>这段代码只展示了“函数调用自己”的形式，没有结束条件，因此直接运行，会无限进行下去。</p>
+<h3 id="2_1">2. 递归函数的语法结构</h3>
+<p>有返回值的递归函数通常写成：</p>
+<div class="highlight"><pre><span></span><code><span class="n">返回类型</span><span class="w"> </span><span class="nf">函数名</span><span class="p">(</span><span class="n">参数</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 第一部分：递归出口</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">结束条件</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">最简单情况的答案</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// 第二部分：递归处理</span>
+<span class="w">    </span><span class="c1">// 把当前问题变成更小的同类问题</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">用当前数据和递归调用的结果构造答案</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>递归函数包含三个重要部分：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">部分</th>
+<th style="text-align: center;">作用</th>
+<th style="text-align: center;">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">结束条件</td>
+<td style="text-align: center;">问题足够简单时直接返回</td>
+<td style="text-align: center;"><code>if (n == 1) return 1;</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">递归调用</td>
+<td style="text-align: center;">继续解决规模更小的同类问题</td>
+<td style="text-align: center;"><code>f(n - 1)</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">返回与构造</td>
+<td style="text-align: center;">利用子问题结果构造当前答案</td>
+<td style="text-align: center;"><code>return n + f(n - 1);</code></td>
+</tr>
+</tbody>
+</table>
+<p>如果递归函数只负责打印等操作、不需要计算并返回结果，可以使用 <code>void</code>：</p>
+<h3 id="3_1">3. 示例：老和尚给小和尚讲故事</h3>
+<p>老和尚给小和尚讲一个故事：</p>
+<blockquote>
+<p>从前有座山，山里有座庙，庙里有个老和尚和小和尚。老和尚正在给小和尚讲故事，讲的故事是：</p>
+<p>从前有座山，山里有座庙，庙里有个老和尚和小和尚。老和尚正在给小和尚讲故事，讲的故事是：……</p>
+</blockquote>
+<p>如果把“讲故事”看成一个函数，它调用的还是“讲故事”本身：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">tellStory</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"从前有座山，山里有座庙，庙里有个老和尚和小和尚。"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"老和尚正在给小和尚讲故事，讲的故事是："</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tellStory</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>这个故事故意没有结尾，因此对应的函数也没有结束条件，会一直讲下去。若要让程序停下来，就需要补上停止规则，例如讲到第 <code>n</code> 层时结束：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">tellStory</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"第 "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" 层故事"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tellStory</span><span class="p">(</span><span class="n">level</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>调用 <code>tellStory(1, 3)</code> 时，<code>level</code> 会从 <code>1</code> 增加到 <code>4</code>；当 <code>level &gt; n</code> 时，函数停止继续调用。</p>
+<h2 id="_3">三、递归的执行过程</h2>
+<h3 id="1_2">1. 示例：递归计算阶乘</h3>
+<p>下面的函数计算 <code>n</code> 的阶乘 ：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fact</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//递归出口</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">//递归调用</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>调用：</p>
+<div class="highlight"><pre><span></span><code><span class="n">fact</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</code></pre></div>
+<p>输出：</p>
+<div class="highlight"><pre><span></span><code>120
+</code></pre></div>
+<h3 id="2_2">2. 递归的执行过程</h3>
+<p>程序执行递归函数时，每次调用都会暂时保存当前函数的信息，这些信息会放入一块叫作<strong>调用栈</strong>的内存区域。</p>
+<p>递归调用通常是“先一层层进入，再一层层返回”。</p>
+<p><img alt="alt text" src="../%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B-2.png" /></p>
+<h3 id="3_2">3. 递归前和递归后的语句</h3>
+<p>语句写在递归调用前后，执行顺序会不同：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">printForward</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">' '</span><span class="p">;</span><span class="w">       </span><span class="c1">// 递归调用前</span>
+<span class="w">    </span><span class="n">printForward</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>输出：</p>
+<div class="highlight"><pre><span></span><code>3 2 1
+</code></pre></div>
+<p>如果把输出放到递归调用后面：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">printBackward</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">printBackward</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">' '</span><span class="p">;</span><span class="w">       </span><span class="c1">// 递归调用后</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>调用 <code>printBackward(3)</code>，输出：</p>
+<div class="highlight"><pre><span></span><code>1 2 3
+</code></pre></div>
+<blockquote>
+<p><strong>关键理解：</strong> 递归调用前的语句通常先执行，递归调用后的语句要等更深层函数返回后才执行。</p>
+</blockquote>
+<h2 id="_4">四、题目一：小范围斐波那契数列</h2>
+<h3 id="1_3">1. 题意</h3>
+<p>斐波那契数列定义如下：</p>
+<div class="highlight"><pre><span></span><code>F(1) = 1
+F(2) = 1
+F(n) = F(n - 1) + F(n - 2)    n &gt;= 3
+</code></pre></div>
+<p>给定一个正整数 <code>n</code>（<code>1 &lt;= n &lt;= 30</code>），输出第 <code>n</code> 项。</p>
+<p>例如，输入 <code>6</code>，输出 <code>8</code>。</p>
+<h3 id="2_3">2. 分析思路</h3>
+<p>要求 <code>F(n)</code>，需要先求出两个更小的问题 <code>F(n - 1)</code> 和 <code>F(n - 2)</code>，然后把它们相加：</p>
+<div class="highlight"><pre><span></span><code>F(n) = F(n - 1) + F(n - 2)
+</code></pre></div>
+<p>当 <code>n</code> 为 <code>1</code> 或 <code>2</code> 时，答案可以直接得到，这就是递归出口。</p>
+<p>以 <code>F(5)</code> 为例：</p>
+<div class="highlight"><pre><span></span><code>F(5) = F(4) + F(3)
+     = (F(3) + F(2)) + (F(2) + F(1))
+     = 3 + 2
+     = 5
+</code></pre></div>
+<h3 id="3_3">3. 参考代码</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>本题的范围很小，直接递归可以完成。随着 <code>n</code> 增大，相同的项会被反复计算，后面的记忆化题型会解决这个问题。</p>
+<h2 id="_5">五、题目二：上台阶</h2>
+<h3 id="1_4">1. 题意</h3>
+<p>最底层编号为 <code>1</code>，最顶层编号为 <code>n</code>。每次可以向上走 <code>1</code> 级或 <code>2</code> 级，求从第 <code>1</code> 层走到第 <code>n</code> 层有多少种方法。</p>
+<p>输入一个整数 <code>n</code>（<code>2 &lt;= n &lt;= 25</code>），输出方案数。</p>
+<p>例如，输入 <code>4</code>，输出 <code>3</code>。三种走法可以表示为：</p>
+<div class="highlight"><pre><span></span><code>1 + 1 + 1
+1 + 2
+2 + 1
+</code></pre></div>
+<h3 id="2_4">2. 分析思路</h3>
+<p>到达第 <code>n</code> 层的最后一步只有两种情况：</p>
+<ul>
+<li>从第 <code>n - 1</code> 层走 <code>1</code> 级上来；</li>
+<li>从第 <code>n - 2</code> 层走 <code>2</code> 级上来。</li>
+</ul>
+<p>所以：</p>
+<div class="highlight"><pre><span></span><code>ways(n) = ways(n - 1) + ways(n - 2)
+</code></pre></div>
+<p>按照题目的楼层编号：</p>
+<div class="highlight"><pre><span></span><code>ways(1) = 1
+ways(2) = 1
+</code></pre></div>
+<p>当 <code>n = 4</code> 时，<code>ways(4) = ways(3) + ways(2) = 2 + 1 = 3</code>。</p>
+<h3 id="3_4">3. 参考代码</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">ways</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ways</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ways</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ways</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>这道题和斐波那契数列的递推式相同，但初始条件要根据题目的楼层定义确定，不能只看递推式。</p>
+<h2 id="_6">六、题目三：铺瓷砖</h2>
+<h3 id="1_5">1. 题意</h3>
+<p>有一个 <code>2 * n</code> 的浴室，使用 <code>2 * 1</code> 的小瓷砖和 <code>2 * 2</code> 的小瓷砖铺满。<code>2 * 1</code> 的瓷砖可以横着或竖着放。求铺满浴室的方案数。</p>
+<p>输入第一行一个整数 <code>T</code>，表示数据组数；接下来 <code>T</code> 行每行一个 <code>n</code>（<code>1 &lt;= n &lt;= 20</code>），输出每组的方案数。</p>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code>输入：
+3
+2
+8
+12
+
+输出：
+3
+171
+2731
+</code></pre></div>
+<h3 id="2_5">2. 分析思路</h3>
+<p>假设从左往右铺，观察最右边的一部分，有三种互不重复的放法：</p>
+<ol>
+<li>放一块竖着的 <code>2 * 1</code> 瓷砖，剩下 <code>2 * (n - 1)</code>；</li>
+<li>放两块横着的 <code>2 * 1</code> 瓷砖，剩下 <code>2 * (n - 2)</code>；</li>
+<li>放一块 <code>2 * 2</code> 瓷砖，剩下 <code>2 * (n - 2)</code>。</li>
+</ol>
+<p>因此递推关系为：</p>
+<div class="highlight"><pre><span></span><code>tile(n) = tile(n - 1) + 2 * tile(n - 2)
+</code></pre></div>
+<p>边界情况：</p>
+<div class="highlight"><pre><span></span><code>tile(1) = 1
+tile(2) = 3
+</code></pre></div>
+<p>其中 <code>tile(2) = 3</code> 对应两块竖放、两块横放、一个 <code>2 * 2</code> 瓷砖三种方案。</p>
+<h3 id="3_5">3. 参考代码</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>这道题的关键不是马上写代码，而是先固定最右边的放法，再根据剩余部分写出递归关系。</p>
+<h2 id="_7">七、题目四：斐波那契数列的记忆化</h2>
+<h3 id="1_6">1. 题意</h3>
+<p>仍然求斐波那契数列的第 <code>n</code> 项，但这次要求观察直接递归中的重复计算，并使用<strong>记忆化</strong>保存已经求过的结果。</p>
+<p>为便于学习，本题规定 <code>1 &lt;= n &lt;= 1000000</code>，答案使用 <code>long long</code> 保存，答案对 1000000007 取余。</p>
+<h3 id="2_6">2. 分析思路</h3>
+<p>直接计算 <code>fib(5)</code> 时，<code>fib(3)</code> 会在不同分支中重复出现；当 <code>n</code> 变大，重复计算会越来越多。</p>
+<p>记忆化的做法是：</p>
+<ol>
+<li>先检查 <code>fib(n)</code> 是否已经计算过；</li>
+<li>如果计算过，直接返回保存的结果；</li>
+<li>如果没有计算过，递归求出答案；</li>
+<li>把答案保存到 <code>memo[n]</code>，再返回。</li>
+</ol>
+<p>斐波那契数列的答案都是正数，因此可以用 <code>0</code> 表示“还没有计算”。</p>
+<h3 id="3_6">3. 参考代码</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">mod</span><span class="o">=</span><span class="mi">1000000007</span><span class="p">;</span><span class="c1">//1e9+7</span>
+
+<span class="c1">//策略：记忆化（空间换时间）</span>
+<span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="mi">1000005</span><span class="p">];</span><span class="c1">//1 建表</span>
+
+<span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
+<span class="w">    </span><span class="c1">//3 查表</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+
+<span class="w">    </span><span class="c1">//第一部分：递归边界（边界条件）</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="o">||</span><span class="n">n</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//第二部分：递归处理</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">)</span><span class="o">+</span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="mi">-2</span><span class="p">))</span><span class="o">%</span><span class="n">mod</span><span class="p">;</span><span class="c1">//2 填表</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>记忆化并没有改变递归关系，只是把已经得到的答案保存下来。直接递归会反复计算，记忆化后每个状态只需要完整计算一次。</p>
+<blockquote>
+<p><strong>范围提醒：</strong> 记忆化可以减少重复计算，但不能让 <code>long long</code> 保存无限大的数；如果 <code>n</code> 很大，还要考虑取模，或者用高精度算法进行存储和计算。</p>
+</blockquote>
+<h2 id="_8">八、题目五：汉诺塔</h2>
+<h3 id="1_7">1. 题意</h3>
+<p>有三根柱子 <code>A</code>、<code>B</code>、<code>C</code>，<code>A</code> 柱上有 <code>n</code> 个大小不同的圆盘，大盘在下、小盘在上。要求把所有圆盘从 <code>A</code> 移到 <code>C</code>，可以借助 <code>B</code>，并遵守：</p>
+<ol>
+<li>每次只能移动一个圆盘；</li>
+<li>每次只能移动柱子最上面的圆盘；</li>
+<li>大圆盘不能放在小圆盘上面。</li>
+</ol>
+<p>输出每一步移动，例如把一个圆盘从 <code>A</code> 移到 <code>C</code>，输出 <code>A -&gt; C</code>。</p>
+<h3 id="2_7">2. 分析思路</h3>
+<p>如果已经知道怎样把 <code>n - 1</code> 个圆盘从 <code>A</code> 移到 <code>B</code>，就可以这样移动 <code>n</code> 个圆盘：</p>
+<ol>
+<li>先把上面的 <code>n - 1</code> 个圆盘从 <code>A</code> 移到 <code>B</code>，借助 <code>C</code>；</li>
+<li>把最大的圆盘从 <code>A</code> 移到 <code>C</code>；</li>
+<li>再把 <code>n - 1</code> 个圆盘从 <code>B</code> 移到 <code>C</code>，借助 <code>A</code>。</li>
+</ol>
+<p>因此，大问题由两个 <code>n - 1</code> 的小问题和中间的一次移动组成。<code>n == 1</code> 时，直接输出一步，这就是递归出口。</p>
+<h3 id="3_7">3. 参考代码</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">hanoi</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="kt">char</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="kt">char</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="kt">char</span><span class="w"> </span><span class="n">C</span><span class="p">){</span>
+<span class="w">    </span><span class="c1">//递归出口</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//递归处理</span>
+<span class="w">    </span><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">B</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">A</span><span class="o">&lt;&lt;</span><span class="s">" "</span><span class="o">&lt;&lt;</span><span class="n">C</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">C</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="sc">'A'</span><span class="p">,</span><span class="sc">'B'</span><span class="p">,</span><span class="sc">'C'</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>例如 <code>n = 3</code> 时，一共移动 <code>7</code> 次。移动次数满足：</p>
+<div class="highlight"><pre><span></span><code>T(1) = 1
+T(n) = 2 * T(n - 1) + 1
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      本站总访问量 <span id="vercount_value_site_pv">Loading</span> 次 · 访客数 <span id="vercount_value_site_uv">Loading</span> 人 <br> Copyright &copy; 2025 - present oier.fans All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<admin@oier.fans>" target="_blank" rel="noopener" title="联系邮箱" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/mermaid.min.js"></script>
+      
+        <script src="../../../javascripts/mermaid.js"></script>
+      
+        <script src="../../../javascripts/external-links.js"></script>
+      
+        <script src="https://vercount.one/js"></script>
+      
+    
+  </body>
+</html>

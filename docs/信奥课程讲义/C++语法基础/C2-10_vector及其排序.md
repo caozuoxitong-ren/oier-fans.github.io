@@ -1,4 +1,4 @@
-# 第 10 课 vector 与 sort 排序
+# 第 10 课 vector及其排序
 
 vector数组、二维 vector 与 sort 排序
 
